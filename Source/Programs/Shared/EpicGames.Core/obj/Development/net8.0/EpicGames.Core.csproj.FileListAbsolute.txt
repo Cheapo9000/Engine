@@ -1,0 +1,10 @@
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\bin\Development\net8.0\EpicGames.Core.deps.json
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\bin\Development\net8.0\EpicGames.Core.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\bin\Development\net8.0\EpicGames.Core.pdb
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\obj\Development\net8.0\EpicGames.Core.csproj.AssemblyReference.cache
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\obj\Development\net8.0\EpicGames.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\obj\Development\net8.0\EpicGames.Core.csproj.CoreCompileInputs.cache
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\obj\Development\net8.0\EpicGames.Core.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\obj\Development\net8.0\refint\EpicGames.Core.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\obj\Development\net8.0\EpicGames.Core.pdb
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Core\obj\Development\net8.0\ref\EpicGames.Core.dll

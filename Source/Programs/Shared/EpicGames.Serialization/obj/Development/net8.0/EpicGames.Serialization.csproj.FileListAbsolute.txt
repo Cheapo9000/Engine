@@ -1,0 +1,15 @@
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\bin\Development\net8.0\EpicGames.Serialization.deps.json
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\bin\Development\net8.0\EpicGames.Serialization.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\bin\Development\net8.0\EpicGames.Serialization.pdb
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\bin\Development\net8.0\EpicGames.Core.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\bin\Development\net8.0\EpicGames.IoHash.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\bin\Development\net8.0\EpicGames.IoHash.pdb
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\bin\Development\net8.0\EpicGames.Core.pdb
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\EpicGames.Serialization.csproj.AssemblyReference.cache
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\EpicGames.Serialization.GeneratedMSBuildEditorConfig.editorconfig
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\EpicGames.Serialization.csproj.CoreCompileInputs.cache
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\EpicGame.13665197.Up2Date
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\EpicGames.Serialization.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\refint\EpicGames.Serialization.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\EpicGames.Serialization.pdb
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.Serialization\obj\Development\net8.0\ref\EpicGames.Serialization.dll

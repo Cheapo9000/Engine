@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BgokE8dtUSM=",
+  "success": true,
+  "projectFilePath": "F:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Source\\Programs\\Shared\\EpicGames.Slack\\EpicGames.Slack.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\timst\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\timst\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\bin\Development\net8.0\runtimes\win-x64\native\UbaHost.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\bin\Development\net8.0\runtimes\win-x64\native\UbaDetours.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\bin\Development\net8.0\EpicGames.UBA.deps.json
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\bin\Development\net8.0\EpicGames.UBA.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\bin\Development\net8.0\ref\EpicGames.UBA.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\bin\Development\net8.0\EpicGames.UBA.pdb
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\bin\Development\net8.0\EpicGames.UBA.xml
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\obj\Development\net8.0\EpicGames.UBA.csproj.AssemblyReference.cache
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\obj\Development\net8.0\EpicGames.UBA.GeneratedMSBuildEditorConfig.editorconfig
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\obj\Development\net8.0\EpicGames.UBA.csproj.CoreCompileInputs.cache
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\obj\Development\net8.0\EpicGames.UBA.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\obj\Development\net8.0\refint\EpicGames.UBA.dll
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\obj\Development\net8.0\EpicGames.UBA.xml
+F:\Program Files\Epic Games\UE_5.5\Engine\Source\Programs\Shared\EpicGames.UBA\obj\Development\net8.0\EpicGames.UBA.pdb
