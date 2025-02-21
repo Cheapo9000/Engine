@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"GPULightmass": "UnrealEditor-GPULightmass.dll",
+		"GPULightmassEditor": "UnrealEditor-GPULightmassEditor.dll"
+	}
+}

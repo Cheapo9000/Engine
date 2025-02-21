@@ -1,0 +1,9 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+void gs_set_vertex_attributes(int line_vert_idx)
+{
+    g_depth = v_line_depth_cm[line_vert_idx];
+    g_tan = v_line_tan_cm[line_vert_idx];
+    g_seed = v_line_seed[line_vert_idx];
+    g_ucoord = v_line_u_coord[line_vert_idx];
+}

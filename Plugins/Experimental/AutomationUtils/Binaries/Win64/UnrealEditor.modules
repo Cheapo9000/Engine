@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"AutomationUtils": "UnrealEditor-AutomationUtils.dll",
+		"AutomationUtilsEditor": "UnrealEditor-AutomationUtilsEditor.dll"
+	}
+}

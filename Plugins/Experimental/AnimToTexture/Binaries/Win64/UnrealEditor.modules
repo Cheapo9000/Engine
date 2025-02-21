@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"AnimToTexture": "UnrealEditor-AnimToTexture.dll",
+		"AnimToTextureEditor": "UnrealEditor-AnimToTextureEditor.dll"
+	}
+}

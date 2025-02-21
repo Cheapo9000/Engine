@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"LandscapePatch": "UnrealEditor-LandscapePatch.dll",
+		"LandscapePatchEditorOnly": "UnrealEditor-LandscapePatchEditorOnly.dll"
+	}
+}

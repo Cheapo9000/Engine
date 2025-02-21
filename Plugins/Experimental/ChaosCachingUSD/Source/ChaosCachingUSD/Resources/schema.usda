@@ -1,0 +1,25 @@
+#usda 1.0
+(
+    "This file describes the Unreal Engine Geometric schemata for code generation."
+    subLayers = [
+        @usd/schema.usda@
+    ]
+)
+
+class UEUsdGeomTetMesh "UETetMesh"(
+    inherits = </Mesh>
+    doc = """Tetrahedral mesh with triangles representing the exterior hull of the tet mesh."""
+    customData = {
+        string className = "TetMesh"
+    }
+)
+{
+    int4[] tetVertexIndices (
+        doc = """Tetrahedron indices, that index into the "points" attribute."""
+    )
+    uniform token tetOrientation = "rightHanded" (
+        allowedTokens = ["rightHanded", "leftHanded"]
+        doc = """Orientation specifying the winding order of "tetVertexIndices"."""
+    )
+}
+

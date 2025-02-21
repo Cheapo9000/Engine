@@ -1,0 +1,16 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+struct RenderUnits
+{
+    vec2 card_size_cm;
+    vec2 texture_size_px;
+};
+
+vec2 compute_antialias_params_cm(in vec2 aa_radius_px, in RenderUnits units)
+{
+    vec2 scl_cm_px = units.card_size_cm / units.texture_size_px;
+
+    // Minimum 1px unit in cm (consider using line-projection px size)
+    float len_1px_cm = min(scl_cm_px.x, scl_cm_px.y);
+    return len_1px_cm * aa_radius_px;
+}

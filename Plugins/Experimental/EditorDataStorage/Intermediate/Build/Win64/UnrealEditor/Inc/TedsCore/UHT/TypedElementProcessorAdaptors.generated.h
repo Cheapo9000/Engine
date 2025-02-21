@@ -1,0 +1,724 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Processors/TypedElementProcessorAdaptors.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+#ifdef TEDSCORE_TypedElementProcessorAdaptors_generated_h
+#error "TypedElementProcessorAdaptors.generated.h already included, missing '#pragma once' in TypedElementProcessorAdaptors.h"
+#endif
+#define TEDSCORE_TypedElementProcessorAdaptors_generated_h
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_40_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FTypedElementQueryProcessorData_Statics; \
+	TEDSCORE_API static class UScriptStruct* StaticStruct();
+
+
+template<> TEDSCORE_API UScriptStruct* StaticStruct<struct FTypedElementQueryProcessorData>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_99_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorBase(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorBase_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorBase, UMassProcessor, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorBase)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_99_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorBase(UTypedElementQueryProcessorCallbackAdapterProcessorBase&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorBase(const UTypedElementQueryProcessorCallbackAdapterProcessorBase&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorBase); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorBase); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorBase) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorBase();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_96_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_99_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_99_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_99_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorBase>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_139_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessor(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessor_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessor, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessor)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_139_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessor(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessor(UTypedElementQueryProcessorCallbackAdapterProcessor&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessor(const UTypedElementQueryProcessorCallbackAdapterProcessor&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessor); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessor); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessor) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessor();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_136_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_139_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_139_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_139_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessor>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_153_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_153_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery(UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery(const UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_150_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_153_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_153_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_153_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith1Subquery>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_174_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_174_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries(UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries(const UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_171_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_174_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_174_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_174_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith2Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_195_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_195_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries(UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries(const UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_192_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_195_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_195_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_195_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith3Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_216_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_216_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries(UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries(const UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_213_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_216_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_216_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_216_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith4Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_237_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_237_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries(UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries(const UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_234_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_237_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_237_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_237_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith5Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_258_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_258_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries(UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries(const UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_255_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_258_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_258_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_258_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith6Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_279_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_279_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries(UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries(const UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_276_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_279_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_279_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_279_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith7Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_300_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries, UTypedElementQueryProcessorCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_300_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries(UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries&&); \
+	UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries(const UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries) \
+	NO_API virtual ~UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_297_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_300_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_300_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_300_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryProcessorCallbackAdapterProcessorWith8Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_324_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorBase(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorBase_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorBase, UMassObserverProcessor, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorBase)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_324_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorBase(UTypedElementQueryObserverCallbackAdapterProcessorBase&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorBase(const UTypedElementQueryObserverCallbackAdapterProcessorBase&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorBase); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorBase); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorBase) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorBase();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_321_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_324_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_324_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_324_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorBase>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_365_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessor(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessor_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessor, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessor)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_365_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessor(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessor(UTypedElementQueryObserverCallbackAdapterProcessor&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessor(const UTypedElementQueryObserverCallbackAdapterProcessor&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessor); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessor); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessor) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessor();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_362_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_365_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_365_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_365_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessor>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_379_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_379_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery(UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery(const UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_376_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_379_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_379_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_379_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith1Subquery>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_400_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_400_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries(UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries(const UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_397_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_400_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_400_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_400_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith2Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_421_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_421_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries(UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries(const UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_418_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_421_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_421_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_421_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith3Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_442_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_442_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries(UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries(const UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_439_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_442_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_442_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_442_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith4Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_463_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_463_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries(UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries(const UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_460_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_463_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_463_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_463_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith5Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_484_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_484_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries(UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries(const UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_481_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_484_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_484_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_484_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith6Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_505_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_505_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries(UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries(const UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_502_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_505_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_505_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_505_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith7Subqueries>();
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_526_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries(); \
+	friend struct Z_Construct_UClass_UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries_Statics; \
+public: \
+	DECLARE_CLASS(UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries, UTypedElementQueryObserverCallbackAdapterProcessorBase, COMPILED_IN_FLAGS(0 | CLASS_DefaultConfig | CLASS_Config), CASTCLASS_None, TEXT("/Script/TedsCore"), NO_API) \
+	DECLARE_SERIALIZER(UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries)
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_526_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries(UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries&&); \
+	UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries(const UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries) \
+	NO_API virtual ~UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries();
+
+
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_523_PROLOG
+#define FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_526_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_526_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h_526_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> TEDSCORE_API UClass* StaticClass<class UTypedElementQueryObserverCallbackAdapterProcessorWith8Subqueries>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Experimental_EditorDataStorage_Source_TedsCore_Private_Processors_TypedElementProcessorAdaptors_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

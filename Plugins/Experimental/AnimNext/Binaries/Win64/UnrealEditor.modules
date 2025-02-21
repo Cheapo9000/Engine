@@ -1,0 +1,10 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"AnimNext": "UnrealEditor-AnimNext.dll",
+		"AnimNextEditor": "UnrealEditor-AnimNextEditor.dll",
+		"AnimNextTestSuite": "UnrealEditor-AnimNextTestSuite.dll",
+		"AnimNextUncookedOnly": "UnrealEditor-AnimNextUncookedOnly.dll"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AnimNextAnimGraph\\Module.AnimNextAnimGraph.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AnimNextAnimGraph\\DeadBlending.ispc_avx512skx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AnimNextAnimGraph\\DeadBlending.ispc_avx2.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AnimNextAnimGraph\\DeadBlending.ispc_avx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AnimNextAnimGraph\\DeadBlending.ispc_sse4.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AnimNextAnimGraph\\DeadBlending.ispc.obj"
+	]
+}

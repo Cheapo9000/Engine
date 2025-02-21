@@ -1,0 +1,25 @@
+args:
+  input_path: "${workspaceFolder}/data/grooms/Hair_L_StraightBangs.abc"
+  metadata_path: "${workspaceFolder}/data/output/MetaData/"
+  obj_path: "${workspaceFolder}/data/output/Card/"
+  texture_path: "${workspaceFolder}/data/output/Texture/"
+  output_path: "${workspaceFolder}/data/output/Hair_L_StraightBangs"
+  name: "Hair_L_StraightBangs"
+  debug: True
+  num_cards: 4000
+  v_subdivision: -10
+  h_subdivision: 1
+  area_subd: False
+  atlas_size: 4096
+  num_textures: 150
+  width_scale: 15
+  uv_smoothing_iter: 25
+  accurate_card_geometry: False
+  depth_min_range: -2.0
+  depth_max_range: 2.0
+  random_seed: 12
+  subd_tolerance: 0.01
+  compression_factor: -1
+
+meta:
+  version: 4.4

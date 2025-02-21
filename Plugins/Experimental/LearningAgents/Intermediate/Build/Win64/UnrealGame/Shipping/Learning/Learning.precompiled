@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Learning\\Module.Learning.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Learning\\Learning.ispc_avx512skx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Learning\\Learning.ispc_avx2.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Learning\\Learning.ispc_avx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Learning\\Learning.ispc_sse4.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\Learning\\Learning.ispc.obj"
+	]
+}

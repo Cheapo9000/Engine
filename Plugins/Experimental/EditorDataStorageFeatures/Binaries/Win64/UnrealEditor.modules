@@ -1,0 +1,15 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"TedsAssetData": "UnrealEditor-TedsAssetData.dll",
+		"TedsContentBrowser": "UnrealEditor-TedsContentBrowser.dll",
+		"TedsDebugger": "UnrealEditor-TedsDebugger.dll",
+		"TedsOutliner": "UnrealEditor-TedsOutliner.dll",
+		"TedsPropertyEditor": "UnrealEditor-TedsPropertyEditor.dll",
+		"TedsRevisionControl": "UnrealEditor-TedsRevisionControl.dll",
+		"TedsSettings": "UnrealEditor-TedsSettings.dll",
+		"TedsStyling": "UnrealEditor-TedsStyling.dll",
+		"TedsTableViewer": "UnrealEditor-TedsTableViewer.dll"
+	}
+}

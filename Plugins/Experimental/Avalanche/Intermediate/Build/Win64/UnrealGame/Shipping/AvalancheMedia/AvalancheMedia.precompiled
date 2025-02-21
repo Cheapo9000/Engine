@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AvalancheMedia\\Module.AvalancheMedia.1.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AvalancheMedia\\Module.AvalancheMedia.2.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AvalancheMedia\\Module.AvalancheMedia.3.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AvalancheMedia\\Module.AvalancheMedia.4.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AvalancheMedia\\Module.AvalancheMedia.5.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\AvalancheMedia\\Module.AvalancheMedia.6.cpp.obj"
+	]
+}

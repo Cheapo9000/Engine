@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"DaySequence": "UnrealEditor-DaySequence.dll",
+		"DaySequenceEditor": "UnrealEditor-DaySequenceEditor.dll"
+	}
+}

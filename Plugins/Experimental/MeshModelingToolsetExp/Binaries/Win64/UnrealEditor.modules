@@ -1,0 +1,12 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"GeometryProcessingAdapters": "UnrealEditor-GeometryProcessingAdapters.dll",
+		"MeshModelingToolsEditorOnlyExp": "UnrealEditor-MeshModelingToolsEditorOnlyExp.dll",
+		"MeshModelingToolsExp": "UnrealEditor-MeshModelingToolsExp.dll",
+		"ModelingEditorUI": "UnrealEditor-ModelingEditorUI.dll",
+		"ModelingUI": "UnrealEditor-ModelingUI.dll",
+		"SkeletalMeshModifiers": "UnrealEditor-SkeletalMeshModifiers.dll"
+	}
+}

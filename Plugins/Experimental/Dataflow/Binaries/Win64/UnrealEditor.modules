@@ -1,0 +1,10 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"DataflowAssetTools": "UnrealEditor-DataflowAssetTools.dll",
+		"DataflowEditor": "UnrealEditor-DataflowEditor.dll",
+		"DataflowEnginePlugin": "UnrealEditor-DataflowEnginePlugin.dll",
+		"DataflowNodes": "UnrealEditor-DataflowNodes.dll"
+	}
+}

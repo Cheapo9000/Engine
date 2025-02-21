@@ -1,0 +1,9 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LearningAgents\\Module.LearningAgents.1.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LearningAgents\\Module.LearningAgents.2.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LearningAgents\\Module.LearningAgents.3.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LearningAgents\\Module.LearningAgents.4.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LearningAgents\\Module.LearningAgents.5.cpp.obj"
+	]
+}
