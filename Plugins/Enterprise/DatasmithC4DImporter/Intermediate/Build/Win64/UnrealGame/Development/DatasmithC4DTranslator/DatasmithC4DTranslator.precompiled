@@ -1,0 +1,13 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DImportOptions.gen.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DTranslator.init.gen.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DImporter.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DImporterMaterialSelector.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DImportOptions.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DMelangeSDKOverload.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DTranslator.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DTranslatorModule.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DatasmithC4DTranslator\\DatasmithC4DUtils.cpp.obj"
+	]
+}

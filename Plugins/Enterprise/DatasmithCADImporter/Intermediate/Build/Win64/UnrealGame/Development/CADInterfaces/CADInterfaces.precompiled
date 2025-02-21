@@ -1,0 +1,14 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\CADFileData.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\CADFileReader.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\CADInterfacesModule.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\CADSceneGraph.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\TechSoftBridge.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\TechSoftFileParser.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\TechSoftFileParserCADKernelTessellator.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\TechSoftInterface.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\TechSoftParserUtils.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\CADInterfaces\\TechSoftUtils.cpp.obj"
+	]
+}

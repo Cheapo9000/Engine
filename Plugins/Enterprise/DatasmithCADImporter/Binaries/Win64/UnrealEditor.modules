@@ -1,0 +1,26 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"CADInterfaces": "UnrealEditor-CADInterfaces.dll",
+		"CADKernelSurface": "UnrealEditor-CADKernelSurface.dll",
+		"CADLibrary": "UnrealEditor-CADLibrary.dll",
+		"CADTools": "UnrealEditor-CADTools.dll",
+		"DatasmithCADTranslator": "UnrealEditor-DatasmithCADTranslator.dll",
+		"DatasmithDispatcher": "UnrealEditor-DatasmithDispatcher.dll",
+		"DatasmithOpenNurbsTranslator": "UnrealEditor-DatasmithOpenNurbsTranslator.dll",
+		"DatasmithPLMXMLTranslator": "UnrealEditor-DatasmithPLMXMLTranslator.dll",
+		"DatasmithWireTranslator": "UnrealEditor-DatasmithWireTranslator.dll",
+		"ParametricSurface": "UnrealEditor-ParametricSurface.dll",
+		"ParametricSurfaceExtension": "UnrealEditor-ParametricSurfaceExtension.dll",
+		"WireInterface2020": "UnrealEditor-WireInterface2020.dll",
+		"WireInterface2021_3": "UnrealEditor-WireInterface2021_3.dll",
+		"WireInterface2022": "UnrealEditor-WireInterface2022.dll",
+		"WireInterface2022_1": "UnrealEditor-WireInterface2022_1.dll",
+		"WireInterface2022_2": "UnrealEditor-WireInterface2022_2.dll",
+		"WireInterface2023_0": "UnrealEditor-WireInterface2023_0.dll",
+		"WireInterface2023_1": "UnrealEditor-WireInterface2023_1.dll",
+		"WireInterface2024_1": "UnrealEditor-WireInterface2024_1.dll",
+		"WireInterface2025_0": "UnrealEditor-WireInterface2025_0.dll"
+	}
+}

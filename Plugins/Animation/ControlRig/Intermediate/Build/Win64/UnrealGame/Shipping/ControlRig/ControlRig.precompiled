@@ -1,0 +1,9 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ControlRig\\Module.ControlRig.1.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ControlRig\\Module.ControlRig.2.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ControlRig\\Module.ControlRig.3.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ControlRig\\Module.ControlRig.4.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ControlRig\\Module.ControlRig.5.cpp.obj"
+	]
+}

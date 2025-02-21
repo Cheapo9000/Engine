@@ -1,0 +1,9 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"MultiUserClient": "UnrealEditor-MultiUserClient.dll",
+		"MultiUserClientLibrary": "UnrealEditor-MultiUserClientLibrary.dll",
+		"MultiUserReplicationEditor": "UnrealEditor-MultiUserReplicationEditor.dll"
+	}
+}

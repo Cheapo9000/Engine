@@ -1,0 +1,9 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"Composure": "UnrealEditor-Composure.dll",
+		"ComposureEditor": "UnrealEditor-ComposureEditor.dll",
+		"ComposureLayersEditor": "UnrealEditor-ComposureLayersEditor.dll"
+	}
+}

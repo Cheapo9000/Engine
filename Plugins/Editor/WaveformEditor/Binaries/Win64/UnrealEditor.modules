@@ -1,0 +1,10 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"WaveformEditor": "UnrealEditor-WaveformEditor.dll",
+		"WaveformEditorWidgets": "UnrealEditor-WaveformEditorWidgets.dll",
+		"WaveformTransformations": "UnrealEditor-WaveformTransformations.dll",
+		"WaveformTransformationsWidgets": "UnrealEditor-WaveformTransformationsWidgets.dll"
+	}
+}

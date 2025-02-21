@@ -1,0 +1,10 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"DataprepCore": "UnrealEditor-DataprepCore.dll",
+		"DataprepEditor": "UnrealEditor-DataprepEditor.dll",
+		"DataprepEditorScriptingUtilities": "UnrealEditor-DataprepEditorScriptingUtilities.dll",
+		"DataprepLibraries": "UnrealEditor-DataprepLibraries.dll"
+	}
+}

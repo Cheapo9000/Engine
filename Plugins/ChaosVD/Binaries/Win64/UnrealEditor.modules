@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"ChaosVD": "UnrealEditor-ChaosVD.dll",
+		"ChaosVDBlueprint": "UnrealEditor-ChaosVDBlueprint.dll"
+	}
+}

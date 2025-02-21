@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"MLAdapter": "UnrealEditor-MLAdapter.dll",
+		"MLAdapterTestSuite": "UnrealEditor-MLAdapterTestSuite.dll"
+	}
+}

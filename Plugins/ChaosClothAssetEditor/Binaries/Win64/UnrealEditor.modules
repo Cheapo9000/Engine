@@ -1,0 +1,10 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"ChaosClothAssetDataflowNodes": "UnrealEditor-ChaosClothAssetDataflowNodes.dll",
+		"ChaosClothAssetEditor": "UnrealEditor-ChaosClothAssetEditor.dll",
+		"ChaosClothAssetEditorTools": "UnrealEditor-ChaosClothAssetEditorTools.dll",
+		"ChaosClothAssetTools": "UnrealEditor-ChaosClothAssetTools.dll"
+	}
+}

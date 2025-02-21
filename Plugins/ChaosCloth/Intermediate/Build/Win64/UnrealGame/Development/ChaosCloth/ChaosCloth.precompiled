@@ -1,0 +1,21 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\Module.ChaosCloth.1.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\Module.ChaosCloth.2.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulation.ispc_avx512skx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulation.ispc_avx2.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulation.ispc_avx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulation.ispc_sse4.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulation.ispc.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationMesh.ispc_avx512skx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationMesh.ispc_avx2.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationMesh.ispc_avx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationMesh.ispc_sse4.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationMesh.ispc.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationSolver.ispc_avx512skx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationSolver.ispc_avx2.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationSolver.ispc_avx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationSolver.ispc_sse4.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\ChaosCloth\\ChaosClothingSimulationSolver.ispc.obj"
+	]
+}

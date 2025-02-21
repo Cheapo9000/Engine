@@ -1,0 +1,7 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LidarPointCloudRuntime\\Module.LidarPointCloudRuntime.1.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LidarPointCloudRuntime\\Module.LidarPointCloudRuntime.2.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\LidarPointCloudRuntime\\Module.LidarPointCloudRuntime.3.cpp.obj"
+	]
+}

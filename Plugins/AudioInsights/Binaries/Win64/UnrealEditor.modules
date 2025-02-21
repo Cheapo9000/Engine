@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"AudioInsights": "UnrealEditor-AudioInsights.dll",
+		"AudioInsightsEditor": "UnrealEditor-AudioInsightsEditor.dll"
+	}
+}

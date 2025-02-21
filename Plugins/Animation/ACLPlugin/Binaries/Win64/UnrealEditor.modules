@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"ACLPlugin": "UnrealEditor-ACLPlugin.dll",
+		"ACLPluginEditor": "UnrealEditor-ACLPluginEditor.dll"
+	}
+}

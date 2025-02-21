@@ -1,0 +1,9 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"Concert": "UnrealMultiUserSlateServer-Concert.dll",
+		"ConcertServer": "UnrealMultiUserSlateServer-ConcertServer.dll",
+		"ConcertTransport": "UnrealMultiUserSlateServer-ConcertTransport.dll"
+	}
+}

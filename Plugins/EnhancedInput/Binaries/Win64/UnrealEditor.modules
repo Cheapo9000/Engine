@@ -1,0 +1,9 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"EnhancedInput": "UnrealEditor-EnhancedInput.dll",
+		"InputBlueprintNodes": "UnrealEditor-InputBlueprintNodes.dll",
+		"InputEditor": "UnrealEditor-InputEditor.dll"
+	}
+}

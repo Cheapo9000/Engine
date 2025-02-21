@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ChaosClothAssetEngine\\Module.ChaosClothAssetEngine.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ChaosClothAssetEngine\\ClothSimulationProxy.ispc_avx512skx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ChaosClothAssetEngine\\ClothSimulationProxy.ispc_avx2.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ChaosClothAssetEngine\\ClothSimulationProxy.ispc_avx.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ChaosClothAssetEngine\\ClothSimulationProxy.ispc_sse4.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ChaosClothAssetEngine\\ClothSimulationProxy.ispc.obj"
+	]
+}
