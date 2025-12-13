@@ -1,5 +1,0 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
-void gs_set_vertex_attributes(int line_vert_idx)
-{
-}

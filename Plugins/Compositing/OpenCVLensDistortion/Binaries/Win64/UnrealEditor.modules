@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"OpenCVLensCalibration": "UnrealEditor-OpenCVLensCalibration.dll",
-		"OpenCVLensDistortion": "UnrealEditor-OpenCVLensDistortion.dll"
-	}
-}

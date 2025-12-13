@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"LocalizableMessage": "UnrealEditor-LocalizableMessage.dll",
-		"LocalizableMessageBlueprint": "UnrealEditor-LocalizableMessageBlueprint.dll"
-	}
-}

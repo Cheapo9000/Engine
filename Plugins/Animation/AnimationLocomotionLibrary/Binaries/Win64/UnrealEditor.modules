@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"AnimationLocomotionLibraryEditor": "UnrealEditor-AnimationLocomotionLibraryEditor.dll",
-		"AnimationLocomotionLibraryRuntime": "UnrealEditor-AnimationLocomotionLibraryRuntime.dll"
-	}
-}

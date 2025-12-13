@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"SourceFilteringCore": "UnrealEditor-SourceFilteringCore.dll",
-		"SourceFilteringEditor": "UnrealEditor-SourceFilteringEditor.dll",
-		"SourceFilteringTrace": "UnrealEditor-SourceFilteringTrace.dll"
-	}
-}

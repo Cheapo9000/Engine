@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"BspMode": "UnrealEditor-BspMode.dll",
-		"GeometryMode": "UnrealEditor-GeometryMode.dll",
-		"TextureAlignMode": "UnrealEditor-TextureAlignMode.dll"
-	}
-}

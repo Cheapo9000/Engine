@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"VertexDeltaModel": "UnrealEditor-VertexDeltaModel.dll",
-		"VertexDeltaModelEditor": "UnrealEditor-VertexDeltaModelEditor.dll"
-	}
-}

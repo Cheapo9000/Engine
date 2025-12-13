@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"AnimNextAnimGraph": "UnrealEditor-AnimNextAnimGraph.dll",
-		"AnimNextAnimGraphTestSuite": "UnrealEditor-AnimNextAnimGraphTestSuite.dll",
-		"AnimNextAnimGraphUncookedOnly": "UnrealEditor-AnimNextAnimGraphUncookedOnly.dll"
-	}
-}

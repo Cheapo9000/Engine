@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"ClonerEffector": "UnrealEditor-ClonerEffector.dll",
-		"ClonerEffectorEditor": "UnrealEditor-ClonerEffectorEditor.dll",
-		"ClonerEffectorMeshBuilder": "UnrealEditor-ClonerEffectorMeshBuilder.dll"
-	}
-}

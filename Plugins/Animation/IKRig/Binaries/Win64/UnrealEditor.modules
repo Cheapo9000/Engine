@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"IKRig": "UnrealEditor-IKRig.dll",
-		"IKRigDeveloper": "UnrealEditor-IKRigDeveloper.dll",
-		"IKRigEditor": "UnrealEditor-IKRigEditor.dll"
-	}
-}

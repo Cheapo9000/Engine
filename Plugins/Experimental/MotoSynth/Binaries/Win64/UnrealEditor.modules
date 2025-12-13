@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"MotoSynth": "UnrealEditor-MotoSynth.dll",
-		"MotoSynthEditor": "UnrealEditor-MotoSynthEditor.dll"
-	}
-}

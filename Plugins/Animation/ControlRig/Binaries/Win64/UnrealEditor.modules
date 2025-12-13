@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"ControlRig": "UnrealEditor-ControlRig.dll",
-		"ControlRigDeveloper": "UnrealEditor-ControlRigDeveloper.dll",
-		"ControlRigEditor": "UnrealEditor-ControlRigEditor.dll"
-	}
-}

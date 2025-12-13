@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"ActorModifierCore": "UnrealEditor-ActorModifierCore.dll",
-		"ActorModifierCoreBlueprint": "UnrealEditor-ActorModifierCoreBlueprint.dll",
-		"ActorModifierCoreEditor": "UnrealEditor-ActorModifierCoreEditor.dll"
-	}
-}

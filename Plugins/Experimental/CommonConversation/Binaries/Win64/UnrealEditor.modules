@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"CommonConversationEditor": "UnrealEditor-CommonConversationEditor.dll",
-		"CommonConversationGraph": "UnrealEditor-CommonConversationGraph.dll",
-		"CommonConversationRuntime": "UnrealEditor-CommonConversationRuntime.dll"
-	}
-}

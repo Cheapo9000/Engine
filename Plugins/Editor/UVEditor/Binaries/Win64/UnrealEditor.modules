@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"UVEditor": "UnrealEditor-UVEditor.dll",
-		"UVEditorTools": "UnrealEditor-UVEditorTools.dll",
-		"UVEditorToolsEditorOnly": "UnrealEditor-UVEditorToolsEditorOnly.dll"
-	}
-}

@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"HierarchyTableBuiltinEditor": "UnrealEditor-HierarchyTableBuiltinEditor.dll",
-		"HierarchyTableBuiltinRuntime": "UnrealEditor-HierarchyTableBuiltinRuntime.dll",
-		"HierarchyTableBuiltinUncookedOnly": "UnrealEditor-HierarchyTableBuiltinUncookedOnly.dll"
-	}
-}

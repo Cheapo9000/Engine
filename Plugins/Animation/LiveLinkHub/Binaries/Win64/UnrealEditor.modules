@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"LiveLinkHub": "UnrealEditor-LiveLinkHub.dll",
-		"LiveLinkHubEditor": "UnrealEditor-LiveLinkHubEditor.dll",
-		"LiveLinkHubMessaging": "UnrealEditor-LiveLinkHubMessaging.dll"
-	}
-}

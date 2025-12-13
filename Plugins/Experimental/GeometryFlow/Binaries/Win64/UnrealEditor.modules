@@ -1,9 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"GeometryFlowCore": "UnrealEditor-GeometryFlowCore.dll",
-		"GeometryFlowMeshProcessing": "UnrealEditor-GeometryFlowMeshProcessing.dll",
-		"GeometryFlowMeshProcessingEditor": "UnrealEditor-GeometryFlowMeshProcessingEditor.dll"
-	}
-}

@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"GeometryMask": "UnrealEditor-GeometryMask.dll",
-		"GeometryMaskEditor": "UnrealEditor-GeometryMaskEditor.dll"
-	}
-}

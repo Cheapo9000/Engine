@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"NearestNeighborModel": "UnrealEditor-NearestNeighborModel.dll",
-		"NearestNeighborModelEditor": "UnrealEditor-NearestNeighborModelEditor.dll"
-	}
-}

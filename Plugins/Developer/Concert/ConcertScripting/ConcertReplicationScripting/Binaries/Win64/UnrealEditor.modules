@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"ConcertReplicationScripting": "UnrealEditor-ConcertReplicationScripting.dll",
-		"ConcertReplicationScriptingEditor": "UnrealEditor-ConcertReplicationScriptingEditor.dll"
-	}
-}

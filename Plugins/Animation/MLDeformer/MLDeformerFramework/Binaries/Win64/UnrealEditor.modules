@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"MLDeformerFramework": "UnrealEditor-MLDeformerFramework.dll",
-		"MLDeformerFrameworkEditor": "UnrealEditor-MLDeformerFrameworkEditor.dll"
-	}
-}

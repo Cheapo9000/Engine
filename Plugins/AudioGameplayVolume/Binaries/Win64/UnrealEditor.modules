@@ -1,8 +1,0 @@
-{
-	"BuildId": "37670630",
-	"Modules": 
-	{
-		"AudioGameplayVolume": "UnrealEditor-AudioGameplayVolume.dll",
-		"AudioGameplayVolumeEditor": "UnrealEditor-AudioGameplayVolumeEditor.dll"
-	}
-}
