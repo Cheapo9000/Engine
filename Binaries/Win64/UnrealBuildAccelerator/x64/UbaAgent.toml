@@ -1,0 +1,5 @@
+[Storage]
+ResendCas = true
+
+[Session]
+KeepOutputFileMemoryMapsThreshold = 0

@@ -1,0 +1,12 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AutoRTFM": "UnrealObjectPtrTool-AutoRTFM.dll",
+		"BuildSettings": "UnrealObjectPtrTool-BuildSettings.dll",
+		"Core": "UnrealObjectPtrTool-Core.dll",
+		"Json": "UnrealObjectPtrTool-Json.dll",
+		"Projects": "UnrealObjectPtrTool-Projects.dll",
+		"TraceLog": "UnrealObjectPtrTool-TraceLog.dll"
+	}
+}

@@ -1,0 +1,121 @@
+{
+	"TargetName": "UnrealObjectPtrTool",
+	"Platform": "Win64",
+	"Configuration": "Development",
+	"BuildSettingsVersion": "V6",
+	"TargetBuildEnvironment": "Shared",
+	"TargetType": "Program",
+	"IsTestTarget": false,
+	"Architecture": "x64",
+	"Launch": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool.exe",
+	"Version": 
+	{
+		"MajorVersion": 5,
+		"MinorVersion": 7,
+		"PatchVersion": 0,
+		"Changelist": 47537391,
+		"CompatibleChangelist": 0,
+		"IsLicenseeVersion": 0,
+		"IsPromotedBuild": 1,
+		"BranchName": "++UE5+Release-5.7",
+		"BuildId": "47537391"
+	},
+	"BuildProducts": [
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/tbb12.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/tbbmalloc.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-AutoRTFM.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-AutoRTFM.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-BuildSettings.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-BuildSettings.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-Core.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-Core.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-Json.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-Json.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-Projects.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-Projects.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-TraceLog.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool-TraceLog.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool.exe",
+			"Type": "Executable"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealObjectPtrTool.version",
+			"Type": "RequiredResource"
+		}
+	],
+	"RuntimeDependencies": [
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/DbgHelp/dbghelp.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64/WinPixEventRuntime.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/tbb12.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/tbbmalloc.dll",
+			"Type": "NonUFS"
+		}
+	],
+	"AdditionalProperties": [
+		{
+			"Name": "SDK",
+			"Value": "Not Applicable"
+		}
+	]
+}

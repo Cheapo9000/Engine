@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LinuxTargetPlatform": "UnrealEditor-LinuxTargetPlatform.dll",
+		"LinuxTargetPlatformControls": "UnrealEditor-LinuxTargetPlatformControls.dll",
+		"LinuxTargetPlatformSettings": "UnrealEditor-LinuxTargetPlatformSettings.dll"
+	}
+}

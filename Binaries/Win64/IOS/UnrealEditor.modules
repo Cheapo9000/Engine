@@ -1,0 +1,15 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"IOSPlatformEditor": "UnrealEditor-IOSPlatformEditor.dll",
+		"IOSRuntimeSettings": "UnrealEditor-IOSRuntimeSettings.dll",
+		"IOSTargetPlatform": "UnrealEditor-IOSTargetPlatform.dll",
+		"IOSTargetPlatformControls": "UnrealEditor-IOSTargetPlatformControls.dll",
+		"IOSTargetPlatformSettings": "UnrealEditor-IOSTargetPlatformSettings.dll",
+		"TVOSTargetPlatform": "UnrealEditor-TVOSTargetPlatform.dll",
+		"TVOSTargetPlatformControls": "UnrealEditor-TVOSTargetPlatformControls.dll",
+		"TVOSTargetPlatformSettings": "UnrealEditor-TVOSTargetPlatformSettings.dll",
+		"VisionOSTargetPlatformSettings": "UnrealEditor-VisionOSTargetPlatformSettings.dll"
+	}
+}

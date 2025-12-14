@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LinuxTargetPlatform": "UnrealInsights-LinuxTargetPlatform.dll",
+		"LinuxTargetPlatformControls": "UnrealInsights-LinuxTargetPlatformControls.dll",
+		"LinuxTargetPlatformSettings": "UnrealInsights-LinuxTargetPlatformSettings.dll"
+	}
+}

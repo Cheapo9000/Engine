@@ -1,0 +1,353 @@
+{
+	"TargetName": "DatasmithCADWorker",
+	"Platform": "Win64",
+	"Configuration": "Development",
+	"BuildSettingsVersion": "V6",
+	"TargetBuildEnvironment": "Unique",
+	"TargetType": "Program",
+	"IsTestTarget": false,
+	"Architecture": "x64",
+	"Launch": "$(EngineDir)/Plugins/Enterprise/DatasmithCADImporter/Binaries/Win64/DatasmithCADWorker.exe",
+	"Version": 
+	{
+		"MajorVersion": 5,
+		"MinorVersion": 7,
+		"PatchVersion": 0,
+		"Changelist": 47537391,
+		"CompatibleChangelist": 0,
+		"IsLicenseeVersion": 0,
+		"IsPromotedBuild": 1,
+		"BranchName": "++UE5+Release-5.7",
+		"BuildId": "47537391"
+	},
+	"BuildProducts": [
+		{
+			"Path": "$(EngineDir)/Plugins/Enterprise/DatasmithCADImporter/Binaries/Win64/DatasmithCADWorker.exe",
+			"Type": "Executable"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Enterprise/DatasmithCADImporter/Binaries/Win64/DatasmithCADWorker.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Enterprise/DatasmithCADImporter/Binaries/Win64/tbb12.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Enterprise/DatasmithCADImporter/Binaries/Win64/tbbmalloc.dll",
+			"Type": "DynamicLibrary"
+		}
+	],
+	"RuntimeDependencies": [
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/DbgHelp/dbghelp.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/3mfstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/A3DLIBS.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/a3dpostergeneration.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/ACCAMERA_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/AcIdViewObj_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/AcMPolygonObj15_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/aistep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/ATEXT_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/catstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/cgrstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/cv5step30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/dwfstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/dwgstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/Ideasstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/igestep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/Invstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/ISM_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/JTstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/libBuffer.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/ModelerGeometry_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/nwstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/OdBrepModeler_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/OdConstraints_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/OdOleSsItemHandler_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/oless.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/prostep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/r3dxmlstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/RasterProcessor_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/RecomputeDimBlock_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/RText_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/RxRasterServices_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/satstep31.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/SCENEOE_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/sestep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/slwstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/stepstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/stepxmlstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/stlstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/tbb12.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_AcisBuilder_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Alloc_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_AssetXMLParser_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Br_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_BrepBuilder_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_BrepBuilderFiller_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_BrepRenderer_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Db_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_DbCore_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_DbEntities_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_DbIO_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_DbRoot_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_FtFontEngine_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Ge_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Gi_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Gs_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Root_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_SpatialIndex_25.8_16.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_TfCore_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TD_Zlib.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TfFontMgr.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TfKernel.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TFKGEOM.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/TFUGEOM.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/ThreadPool_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/tinyxml.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/u3dstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/ugstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/Vdastep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/WipeOut_25.8_16.tx",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/wrlstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/xtstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/TechSoft/Win64/Xvlstep30.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64/WinPixEventRuntime.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Enterprise/DatasmithCADImporter/Binaries/Win64/tbb12.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Enterprise/DatasmithCADImporter/Binaries/Win64/tbbmalloc.dll",
+			"Type": "NonUFS"
+		}
+	],
+	"AdditionalProperties": [
+		{
+			"Name": "SDK",
+			"Value": "Not Applicable"
+		}
+	]
+}

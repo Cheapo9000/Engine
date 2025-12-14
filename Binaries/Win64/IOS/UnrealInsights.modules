@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"IOSTargetPlatform": "UnrealInsights-IOSTargetPlatform.dll",
+		"IOSTargetPlatformControls": "UnrealInsights-IOSTargetPlatformControls.dll",
+		"IOSTargetPlatformSettings": "UnrealInsights-IOSTargetPlatformSettings.dll",
+		"TVOSTargetPlatform": "UnrealInsights-TVOSTargetPlatform.dll",
+		"TVOSTargetPlatformControls": "UnrealInsights-TVOSTargetPlatformControls.dll",
+		"TVOSTargetPlatformSettings": "UnrealInsights-TVOSTargetPlatformSettings.dll",
+		"VisionOSTargetPlatformSettings": "UnrealInsights-VisionOSTargetPlatformSettings.dll"
+	}
+}

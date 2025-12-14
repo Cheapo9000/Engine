@@ -1,0 +1,133 @@
+<!-- Copyright Epic Games, Inc. All Rights Reserved. -->     
+<?xml version="1.0"?>
+<materialx version="1.39">  
+	<!-- Declarations of Unreal Engine node definitions not supported by the Standard Library        -->
+	<!--    Node Definitions                             -->
+	<!--    Node: <dot>                                  -->
+	<!-- No-op; passes its input to the output unchanged.-->
+	<nodedef name="ND_dot_integer_float" node="dot" nodegroup="unrealengine">
+		<input name="in" type="integer" value="0" />
+		<input name="note" type="string" value="" uniform="true" />
+		<output name="out" type="float" defaultinput="in" />
+	</nodedef>  
+	<nodedef name="ND_dot_boolean_float" node="dot" nodegroup="unrealengine">
+		<input name="in" type="boolean" value="false" />
+		<input name="note" type="string" value="" uniform="true" />
+		<output name="out" type="float" defaultinput="in" />
+	</nodedef>
+
+	<!-- <sparse_volume> -->
+	<nodedef name="ND_sparse_volume_color4" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_color3" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color3" default="0.0, 0.0, 0.0" />
+		<output name="outB" type="color3" default="0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_vector2" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="vector2" default="0.0, 0.0" />
+		<output name="outB" type="vector2" default="0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_vector3" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="vector3" default="0.0, 0.0, 0.0" />
+		<output name="outB" type="vector3" default="0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_vector4" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="vector4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="vector4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_float" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="float" default="0.0" />
+		<output name="outB" type="float" default="0.0" />
+	</nodedef>
+
+	<nodedef name="ND_sparse_volume_A_color3" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color3" default="0.0, 0.0, 0.0" />
+		<output name="outB" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_A_float" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="float" default="0.0" />
+		<output name="outB" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_A_vector2" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="vector2" default="0.0, 0.0" />
+		<output name="outB" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_A_vector3" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="vector3" default="0.0, 0.0, 0.0" />
+		<output name="outB" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_A_vector4" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="vector4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+
+	<nodedef name="ND_sparse_volume_B_color3" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="color3" default="0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_B_float" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="float" default="0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_B_vector2" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="vector2" default="0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_B_vector3" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="vector3" default="0.0, 0.0, 0.0" />
+	</nodedef>
+	<nodedef name="ND_sparse_volume_B_vector4" node="sparse_volume" nodegroup="unrealengine">
+		<input name="file" type="filename" value="" uniform="true" />
+		<input name="texcoord" type="vector3" uiname="Texture Coordinates" />
+		<output name="outA" type="color4" default="0.0, 0.0, 0.0, 0.0" />
+		<output name="outB" type="vector4" default="0.0, 0.0, 0.0, 0.0" />
+	</nodedef>
+
+	<!--    Node Graphs                                  -->
+	<!--    Node: <convert>                              -->
+	<nodegraph name="NG_convert_integer_float" nodedef="ND_convert_integer_float">
+		<dot name="dot" type="float">
+			<input name="in" type="integer" interfacename="in" />
+		</dot>
+		<output name="out" type="float" nodename="dot" />
+	</nodegraph>  
+	<nodegraph name="NG_convert_boolean_float" nodedef="ND_convert_boolean_float">
+		<dot name="dot" type="float">
+			<input name="in" type="boolean" interfacename="in" />
+		</dot>
+		<output name="out" type="float" nodename="dot" />
+	</nodegraph>
+</materialx>

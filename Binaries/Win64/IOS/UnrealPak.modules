@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"IOSTargetPlatform": "UnrealPak-IOSTargetPlatform.dll",
+		"IOSTargetPlatformControls": "UnrealPak-IOSTargetPlatformControls.dll",
+		"IOSTargetPlatformSettings": "UnrealPak-IOSTargetPlatformSettings.dll",
+		"TVOSTargetPlatform": "UnrealPak-TVOSTargetPlatform.dll",
+		"TVOSTargetPlatformControls": "UnrealPak-TVOSTargetPlatformControls.dll",
+		"TVOSTargetPlatformSettings": "UnrealPak-TVOSTargetPlatformSettings.dll",
+		"VisionOSTargetPlatformSettings": "UnrealPak-VisionOSTargetPlatformSettings.dll"
+	}
+}

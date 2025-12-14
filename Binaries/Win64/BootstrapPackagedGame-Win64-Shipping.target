@@ -1,0 +1,41 @@
+{
+	"TargetName": "BootstrapPackagedGame",
+	"Platform": "Win64",
+	"Configuration": "Shipping",
+	"BuildSettingsVersion": "V6",
+	"TargetBuildEnvironment": "Unique",
+	"TargetType": "Program",
+	"IsTestTarget": false,
+	"Architecture": "x64",
+	"Launch": "$(EngineDir)/Binaries/Win64/BootstrapPackagedGame-Win64-Shipping.exe",
+	"Version": 
+	{
+		"MajorVersion": 5,
+		"MinorVersion": 7,
+		"PatchVersion": 0,
+		"Changelist": 47537391,
+		"CompatibleChangelist": 0,
+		"IsLicenseeVersion": 0,
+		"IsPromotedBuild": 1,
+		"BranchName": "++UE5+Release-5.7",
+		"BuildId": "47537391"
+	},
+	"BuildProducts": [
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/BootstrapPackagedGame-Win64-Shipping.exe",
+			"Type": "Executable"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/BootstrapPackagedGame-Win64-Shipping.pdb",
+			"Type": "SymbolFile"
+		}
+	],
+	"RuntimeDependencies": [
+	],
+	"AdditionalProperties": [
+		{
+			"Name": "SDK",
+			"Value": "Not Applicable"
+		}
+	]
+}

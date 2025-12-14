@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"IOSTargetPlatform": "UnrealFrontend-IOSTargetPlatform.dll",
+		"IOSTargetPlatformControls": "UnrealFrontend-IOSTargetPlatformControls.dll",
+		"IOSTargetPlatformSettings": "UnrealFrontend-IOSTargetPlatformSettings.dll",
+		"TVOSTargetPlatform": "UnrealFrontend-TVOSTargetPlatform.dll",
+		"TVOSTargetPlatformControls": "UnrealFrontend-TVOSTargetPlatformControls.dll",
+		"TVOSTargetPlatformSettings": "UnrealFrontend-TVOSTargetPlatformSettings.dll",
+		"VisionOSTargetPlatformSettings": "UnrealFrontend-VisionOSTargetPlatformSettings.dll"
+	}
+}

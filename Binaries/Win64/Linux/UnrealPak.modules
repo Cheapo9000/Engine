@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LinuxTargetPlatform": "UnrealPak-LinuxTargetPlatform.dll",
+		"LinuxTargetPlatformControls": "UnrealPak-LinuxTargetPlatformControls.dll",
+		"LinuxTargetPlatformSettings": "UnrealPak-LinuxTargetPlatformSettings.dll"
+	}
+}

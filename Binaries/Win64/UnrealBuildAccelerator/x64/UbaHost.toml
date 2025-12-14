@@ -1,0 +1,41 @@
+# This file is case sensitive
+
+[CacheClient]
+ReportMissReason = false
+UseDirectoryPreparsing = true
+ValidateCacheWritesInput = false
+ValidateCacheWritesOutput = false
+ReportCacheKey = false
+
+[CacheNetworkClient]
+RecvBufferSize = 4194304
+SendBufferSize = 4194304
+
+[Storage]
+CreateIndependentMappings = true
+# DropIndependentMappingsOnCopy = false
+
+[Session]
+WriteFilesBottleneck = 24
+WriteFilesFileMapMaxMB = 1
+# RemoteTraceEnabled = true
+# WriteFilesNoBufferingMinMb = 100000
+# AllowCustomAllocator = false
+# AllowMemoryMaps = false
+# AllowKeepFilesInMemory = false
+
+[NetworkBackendTcp]
+IocpWorkerCount = 0
+#UseOverlappedSend = false
+#StatusUpdateSeconds = 2
+
+[NetworkServer]
+# WorkerCount = 500
+
+[Scheduler]
+MaxParallelCacheQueries = 50
+MemWatchdog = true
+# MemPagefileActivityThreshold = 1000
+MemStartWaitPercent = 85
+MemStartKillPercent = 95
+# MemTracingLevel = 1

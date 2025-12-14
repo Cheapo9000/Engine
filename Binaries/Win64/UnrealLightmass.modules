@@ -1,0 +1,26 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ApplicationCore": "UnrealLightmass-ApplicationCore.dll",
+		"AutoRTFM": "UnrealLightmass-AutoRTFM.dll",
+		"BuildSettings": "UnrealLightmass-BuildSettings.dll",
+		"Cbor": "UnrealLightmass-Cbor.dll",
+		"Core": "UnrealLightmass-Core.dll",
+		"CorePreciseFP": "UnrealLightmass-CorePreciseFP.dll",
+		"CoreUObject": "UnrealLightmass-CoreUObject.dll",
+		"DerivedDataCache": "UnrealLightmass-DerivedDataCache.dll",
+		"DevHttp": "UnrealLightmass-DevHttp.dll",
+		"Json": "UnrealLightmass-Json.dll",
+		"Messaging": "UnrealLightmass-Messaging.dll",
+		"NetCommon": "UnrealLightmass-NetCommon.dll",
+		"Networking": "UnrealLightmass-Networking.dll",
+		"Projects": "UnrealLightmass-Projects.dll",
+		"SSL": "UnrealLightmass-SSL.dll",
+		"Serialization": "UnrealLightmass-Serialization.dll",
+		"Sockets": "UnrealLightmass-Sockets.dll",
+		"SwarmInterface": "UnrealLightmass-SwarmInterface.dll",
+		"TraceLog": "UnrealLightmass-TraceLog.dll",
+		"Zen": "UnrealLightmass-Zen.dll"
+	}
+}

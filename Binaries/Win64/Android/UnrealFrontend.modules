@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AndroidDeviceDetection": "UnrealFrontend-AndroidDeviceDetection.dll",
+		"AndroidTargetPlatform": "UnrealFrontend-AndroidTargetPlatform.dll",
+		"AndroidTargetPlatformControls": "UnrealFrontend-AndroidTargetPlatformControls.dll",
+		"AndroidTargetPlatformSettings": "UnrealFrontend-AndroidTargetPlatformSettings.dll"
+	}
+}

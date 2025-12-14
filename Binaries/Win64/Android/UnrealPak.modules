@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AndroidDeviceDetection": "UnrealPak-AndroidDeviceDetection.dll",
+		"AndroidTargetPlatform": "UnrealPak-AndroidTargetPlatform.dll",
+		"AndroidTargetPlatformControls": "UnrealPak-AndroidTargetPlatformControls.dll",
+		"AndroidTargetPlatformSettings": "UnrealPak-AndroidTargetPlatformSettings.dll"
+	}
+}
