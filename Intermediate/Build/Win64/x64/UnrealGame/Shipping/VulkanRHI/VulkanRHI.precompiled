@@ -1,0 +1,9 @@
+{
+	"OutputFiles": [
+		"Module.VulkanRHI.1.cpp.obj",
+		"Module.VulkanRHI.2.cpp.obj",
+		"Module.VulkanRHI.3.cpp.obj",
+		"Module.VulkanRHI.4.cpp.obj",
+		"Module.VulkanRHI.5.cpp.obj"
+	]
+}

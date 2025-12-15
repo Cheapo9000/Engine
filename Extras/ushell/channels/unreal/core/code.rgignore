@@ -1,0 +1,17 @@
+*
+!*/
+!*.bat
+!*.c
+!*.cpp
+!*.cs
+!*.csproj
+!*.h
+!*.hpp
+!*.ini
+!*.inl
+!*.lua
+!*.py
+!*.sh
+!*.target
+!*.uplugin
+!*.uproject

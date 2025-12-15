@@ -1,0 +1,42 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "UniversalObjectLocatorFragment.h"
+
+#ifdef UNIVERSALOBJECTLOCATOR_UniversalObjectLocatorFragment_generated_h
+#error "UniversalObjectLocatorFragment.generated.h already included, missing '#pragma once' in UniversalObjectLocatorFragment.h"
+#endif
+#define UNIVERSALOBJECTLOCATOR_UniversalObjectLocatorFragment_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FUniversalObjectLocatorFragment ***********************************
+struct Z_Construct_UScriptStruct_FUniversalObjectLocatorFragment_Statics;
+#define FID_Engine_Source_Runtime_UniversalObjectLocator_Public_UniversalObjectLocatorFragment_h_37_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FUniversalObjectLocatorFragment_Statics; \
+	UNIVERSALOBJECTLOCATOR_API static class UScriptStruct* StaticStruct();
+
+
+struct FUniversalObjectLocatorFragment;
+// ********** End ScriptStruct FUniversalObjectLocatorFragment *************************************
+
+// ********** Begin ScriptStruct FUniversalObjectLocatorEmptyPayload *******************************
+struct Z_Construct_UScriptStruct_FUniversalObjectLocatorEmptyPayload_Statics;
+#define FID_Engine_Source_Runtime_UniversalObjectLocator_Public_UniversalObjectLocatorFragment_h_436_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FUniversalObjectLocatorEmptyPayload_Statics; \
+	UNIVERSALOBJECTLOCATOR_API static class UScriptStruct* StaticStruct();
+
+
+struct FUniversalObjectLocatorEmptyPayload;
+// ********** End ScriptStruct FUniversalObjectLocatorEmptyPayload *********************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_UniversalObjectLocator_Public_UniversalObjectLocatorFragment_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

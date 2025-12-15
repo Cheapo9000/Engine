@@ -1,0 +1,89 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Quartz/QuartzSubsystem.h"
+
+#ifdef AUDIOMIXER_QuartzSubsystem_generated_h
+#error "QuartzSubsystem.generated.h already included, missing '#pragma once' in QuartzSubsystem.h"
+#endif
+#define AUDIOMIXER_QuartzSubsystem_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class UQuartzClockHandle;
+enum class EQuartzCommandQuantization : uint8;
+struct FQuartzClockSettings;
+struct FQuartzTransportTimeStamp;
+
+// ********** Begin Class UQuartzSubsystem *********************************************************
+#define FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSetQuartzSubsystemTickableWhenPaused); \
+	DECLARE_FUNCTION(execGetRoundTripMaxLatency); \
+	DECLARE_FUNCTION(execGetRoundTripMinLatency); \
+	DECLARE_FUNCTION(execGetRoundTripAverageLatency); \
+	DECLARE_FUNCTION(execGetAudioRenderThreadToGameThreadMaxLatency); \
+	DECLARE_FUNCTION(execGetAudioRenderThreadToGameThreadMinLatency); \
+	DECLARE_FUNCTION(execGetAudioRenderThreadToGameThreadAverageLatency); \
+	DECLARE_FUNCTION(execGetGameThreadToAudioRenderThreadMaxLatency); \
+	DECLARE_FUNCTION(execGetGameThreadToAudioRenderThreadMinLatency); \
+	DECLARE_FUNCTION(execGetGameThreadToAudioRenderThreadAverageLatency); \
+	DECLARE_FUNCTION(execGetEstimatedClockRunTime); \
+	DECLARE_FUNCTION(execGetCurrentClockTimestamp); \
+	DECLARE_FUNCTION(execGetDurationOfQuantizationTypeInSeconds); \
+	DECLARE_FUNCTION(execIsClockRunning); \
+	DECLARE_FUNCTION(execDoesClockExist); \
+	DECLARE_FUNCTION(execGetHandleForClock); \
+	DECLARE_FUNCTION(execDeleteClockByHandle); \
+	DECLARE_FUNCTION(execDeleteClockByName); \
+	DECLARE_FUNCTION(execCreateNewClock); \
+	DECLARE_FUNCTION(execIsQuartzEnabled);
+
+
+struct Z_Construct_UClass_UQuartzSubsystem_Statics;
+AUDIOMIXER_API UClass* Z_Construct_UClass_UQuartzSubsystem_NoRegister();
+
+#define FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_48_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUQuartzSubsystem(); \
+	friend struct ::Z_Construct_UClass_UQuartzSubsystem_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend AUDIOMIXER_API UClass* ::Z_Construct_UClass_UQuartzSubsystem_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UQuartzSubsystem, UTickableWorldSubsystem, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/AudioMixer"), Z_Construct_UClass_UQuartzSubsystem_NoRegister) \
+	DECLARE_SERIALIZER(UQuartzSubsystem)
+
+
+#define FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_48_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UQuartzSubsystem(UQuartzSubsystem&&) = delete; \
+	UQuartzSubsystem(const UQuartzSubsystem&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(AUDIOMIXER_API, UQuartzSubsystem); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UQuartzSubsystem); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UQuartzSubsystem)
+
+
+#define FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_45_PROLOG
+#define FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_48_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_48_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h_48_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UQuartzSubsystem;
+
+// ********** End Class UQuartzSubsystem ***********************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_AudioMixer_Public_Quartz_QuartzSubsystem_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

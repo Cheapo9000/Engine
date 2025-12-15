@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "LandscapeMeshProxyComponent.h"
+
+#ifdef LANDSCAPE_LandscapeMeshProxyComponent_generated_h
+#error "LandscapeMeshProxyComponent.generated.h already included, missing '#pragma once' in LandscapeMeshProxyComponent.h"
+#endif
+#define LANDSCAPE_LandscapeMeshProxyComponent_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class ULandscapeMeshProxyComponent *********************************************
+struct Z_Construct_UClass_ULandscapeMeshProxyComponent_Statics;
+LANDSCAPE_API UClass* Z_Construct_UClass_ULandscapeMeshProxyComponent_NoRegister();
+
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeMeshProxyComponent_h_18_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesULandscapeMeshProxyComponent(); \
+	friend struct ::Z_Construct_UClass_ULandscapeMeshProxyComponent_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend LANDSCAPE_API UClass* ::Z_Construct_UClass_ULandscapeMeshProxyComponent_NoRegister(); \
+public: \
+	DECLARE_CLASS2(ULandscapeMeshProxyComponent, UStaticMeshComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Landscape"), Z_Construct_UClass_ULandscapeMeshProxyComponent_NoRegister) \
+	DECLARE_SERIALIZER(ULandscapeMeshProxyComponent)
+
+
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeMeshProxyComponent_h_18_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	ULandscapeMeshProxyComponent(ULandscapeMeshProxyComponent&&) = delete; \
+	ULandscapeMeshProxyComponent(const ULandscapeMeshProxyComponent&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(LANDSCAPE_API, ULandscapeMeshProxyComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ULandscapeMeshProxyComponent); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ULandscapeMeshProxyComponent) \
+	LANDSCAPE_API virtual ~ULandscapeMeshProxyComponent();
+
+
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeMeshProxyComponent_h_15_PROLOG
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeMeshProxyComponent_h_18_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_Landscape_Classes_LandscapeMeshProxyComponent_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Source_Runtime_Landscape_Classes_LandscapeMeshProxyComponent_h_18_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class ULandscapeMeshProxyComponent;
+
+// ********** End Class ULandscapeMeshProxyComponent ***********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Landscape_Classes_LandscapeMeshProxyComponent_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

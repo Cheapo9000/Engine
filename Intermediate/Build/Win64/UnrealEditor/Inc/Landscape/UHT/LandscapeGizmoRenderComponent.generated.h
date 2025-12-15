@@ -1,0 +1,63 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "LandscapeGizmoRenderComponent.h"
+
+#ifdef LANDSCAPE_LandscapeGizmoRenderComponent_generated_h
+#error "LandscapeGizmoRenderComponent.generated.h already included, missing '#pragma once' in LandscapeGizmoRenderComponent.h"
+#endif
+#define LANDSCAPE_LandscapeGizmoRenderComponent_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class ULandscapeGizmoRenderComponent *******************************************
+struct Z_Construct_UClass_ULandscapeGizmoRenderComponent_Statics;
+LANDSCAPE_API UClass* Z_Construct_UClass_ULandscapeGizmoRenderComponent_NoRegister();
+
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeGizmoRenderComponent_h_16_INCLASS \
+private: \
+	static void StaticRegisterNativesULandscapeGizmoRenderComponent(); \
+	friend struct ::Z_Construct_UClass_ULandscapeGizmoRenderComponent_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend LANDSCAPE_API UClass* ::Z_Construct_UClass_ULandscapeGizmoRenderComponent_NoRegister(); \
+public: \
+	DECLARE_CLASS2(ULandscapeGizmoRenderComponent, UPrimitiveComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Landscape"), Z_Construct_UClass_ULandscapeGizmoRenderComponent_NoRegister) \
+	DECLARE_SERIALIZER(ULandscapeGizmoRenderComponent)
+
+
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeGizmoRenderComponent_h_16_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API ULandscapeGizmoRenderComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ULandscapeGizmoRenderComponent) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ULandscapeGizmoRenderComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ULandscapeGizmoRenderComponent); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	ULandscapeGizmoRenderComponent(ULandscapeGizmoRenderComponent&&) = delete; \
+	ULandscapeGizmoRenderComponent(const ULandscapeGizmoRenderComponent&) = delete; \
+	NO_API virtual ~ULandscapeGizmoRenderComponent();
+
+
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeGizmoRenderComponent_h_13_PROLOG
+#define FID_Engine_Source_Runtime_Landscape_Classes_LandscapeGizmoRenderComponent_h_16_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_Landscape_Classes_LandscapeGizmoRenderComponent_h_16_INCLASS \
+	FID_Engine_Source_Runtime_Landscape_Classes_LandscapeGizmoRenderComponent_h_16_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class ULandscapeGizmoRenderComponent;
+
+// ********** End Class ULandscapeGizmoRenderComponent *********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Landscape_Classes_LandscapeGizmoRenderComponent_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

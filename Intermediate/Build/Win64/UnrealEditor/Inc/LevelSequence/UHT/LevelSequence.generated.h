@@ -1,0 +1,74 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "LevelSequence.h"
+
+#ifdef LEVELSEQUENCE_LevelSequence_generated_h
+#error "LevelSequence.generated.h already included, missing '#pragma once' in LevelSequence.h"
+#endif
+#define LEVELSEQUENCE_LevelSequence_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UClass;
+class UObject;
+
+// ********** Begin Class ULevelSequence ***********************************************************
+#define FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_27_RPC_WRAPPERS \
+	DECLARE_FUNCTION(execRemoveMetaDataByClass); \
+	DECLARE_FUNCTION(execCopyMetaData); \
+	DECLARE_FUNCTION(execFindOrAddMetaDataByClass); \
+	DECLARE_FUNCTION(execFindMetaDataByClass);
+
+
+struct Z_Construct_UClass_ULevelSequence_Statics;
+LEVELSEQUENCE_API UClass* Z_Construct_UClass_ULevelSequence_NoRegister();
+
+#define FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_27_INCLASS \
+private: \
+	static void StaticRegisterNativesULevelSequence(); \
+	friend struct ::Z_Construct_UClass_ULevelSequence_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend LEVELSEQUENCE_API UClass* ::Z_Construct_UClass_ULevelSequence_NoRegister(); \
+public: \
+	DECLARE_CLASS2(ULevelSequence, UMovieSceneSequence, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/LevelSequence"), Z_Construct_UClass_ULevelSequence_NoRegister) \
+	DECLARE_SERIALIZER(ULevelSequence) \
+	virtual UObject* _getUObject() const override { return const_cast<ULevelSequence*>(this); }
+
+
+#define FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_27_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	LEVELSEQUENCE_API ULevelSequence(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ULevelSequence) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(LEVELSEQUENCE_API, ULevelSequence); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ULevelSequence); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	ULevelSequence(ULevelSequence&&) = delete; \
+	ULevelSequence(const ULevelSequence&) = delete; \
+	LEVELSEQUENCE_API virtual ~ULevelSequence();
+
+
+#define FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_23_PROLOG
+#define FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_27_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_27_RPC_WRAPPERS \
+	FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_27_INCLASS \
+	FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h_27_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class ULevelSequence;
+
+// ********** End Class ULevelSequence *************************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_LevelSequence_Public_LevelSequence_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

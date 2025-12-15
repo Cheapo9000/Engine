@@ -1,0 +1,54 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "BodySetupEnums.h"
+
+#ifdef PHYSICSCORE_BodySetupEnums_generated_h
+#error "BodySetupEnums.generated.h already included, missing '#pragma once' in BodySetupEnums.h"
+#endif
+#define PHYSICSCORE_BodySetupEnums_generated_h
+
+#include "Templates/IsUEnumClass.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ReflectedTypeAccessors.h"
+#include "Templates/NoDestroy.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_PhysicsCore_Public_BodySetupEnums_h
+
+// ********** Begin Enum ECollisionTraceFlag *******************************************************
+#define FOREACH_ENUM_ECOLLISIONTRACEFLAG(op) \
+	op(CTF_UseDefault) \
+	op(CTF_UseSimpleAndComplex) \
+	op(CTF_UseSimpleAsComplex) \
+	op(CTF_UseComplexAsSimple) 
+
+enum ECollisionTraceFlag : int;
+template<> PHYSICSCORE_NON_ATTRIBUTED_API UEnum* StaticEnum<ECollisionTraceFlag>();
+// ********** End Enum ECollisionTraceFlag *********************************************************
+
+// ********** Begin Enum EPhysicsType **************************************************************
+#define FOREACH_ENUM_EPHYSICSTYPE(op) \
+	op(PhysType_Default) \
+	op(PhysType_Kinematic) \
+	op(PhysType_Simulated) 
+
+enum EPhysicsType : int;
+template<> PHYSICSCORE_NON_ATTRIBUTED_API UEnum* StaticEnum<EPhysicsType>();
+// ********** End Enum EPhysicsType ****************************************************************
+
+// ********** Begin Enum EBodyCollisionResponse ****************************************************
+#define FOREACH_ENUM_EBODYCOLLISIONRESPONSE(op) \
+	op(EBodyCollisionResponse::BodyCollision_Enabled) \
+	op(EBodyCollisionResponse::BodyCollision_Disabled) 
+
+namespace EBodyCollisionResponse { enum Type : int; }
+template<> PHYSICSCORE_NON_ATTRIBUTED_API UEnum* StaticEnum<EBodyCollisionResponse::Type>();
+// ********** End Enum EBodyCollisionResponse ******************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

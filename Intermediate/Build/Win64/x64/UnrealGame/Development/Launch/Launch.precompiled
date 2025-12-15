@@ -1,0 +1,6 @@
+{
+	"OutputFiles": [
+		"Module.Launch.cpp.obj",
+		"PCLaunch.rc.res"
+	]
+}

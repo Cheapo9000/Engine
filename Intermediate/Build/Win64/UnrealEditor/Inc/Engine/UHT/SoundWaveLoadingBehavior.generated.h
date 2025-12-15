@@ -1,0 +1,38 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Sound/SoundWaveLoadingBehavior.h"
+
+#ifdef ENGINE_SoundWaveLoadingBehavior_generated_h
+#error "SoundWaveLoadingBehavior.generated.h already included, missing '#pragma once' in SoundWaveLoadingBehavior.h"
+#endif
+#define ENGINE_SoundWaveLoadingBehavior_generated_h
+
+#include "Templates/IsUEnumClass.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ReflectedTypeAccessors.h"
+#include "Templates/NoDestroy.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Classes_Sound_SoundWaveLoadingBehavior_h
+
+// ********** Begin Enum ESoundWaveLoadingBehavior *************************************************
+#define FOREACH_ENUM_ESOUNDWAVELOADINGBEHAVIOR(op) \
+	op(ESoundWaveLoadingBehavior::Inherited) \
+	op(ESoundWaveLoadingBehavior::RetainOnLoad) \
+	op(ESoundWaveLoadingBehavior::PrimeOnLoad) \
+	op(ESoundWaveLoadingBehavior::LoadOnDemand) \
+	op(ESoundWaveLoadingBehavior::ForceInline) \
+	op(ESoundWaveLoadingBehavior::Uninitialized) 
+
+enum class ESoundWaveLoadingBehavior : uint8;
+template<> struct TIsUEnumClass<ESoundWaveLoadingBehavior> { enum { Value = true }; };
+template<> ENGINE_NON_ATTRIBUTED_API UEnum* StaticEnum<ESoundWaveLoadingBehavior>();
+// ********** End Enum ESoundWaveLoadingBehavior ***************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

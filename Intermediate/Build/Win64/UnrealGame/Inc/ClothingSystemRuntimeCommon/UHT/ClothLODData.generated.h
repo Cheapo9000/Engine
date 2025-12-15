@@ -1,0 +1,32 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "ClothLODData.h"
+
+#ifdef CLOTHINGSYSTEMRUNTIMECOMMON_ClothLODData_generated_h
+#error "ClothLODData.generated.h already included, missing '#pragma once' in ClothLODData.h"
+#endif
+#define CLOTHINGSYSTEMRUNTIMECOMMON_ClothLODData_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FClothLODDataCommon ***********************************************
+struct Z_Construct_UScriptStruct_FClothLODDataCommon_Statics;
+#define FID_Engine_Source_Runtime_ClothingSystemRuntimeCommon_Public_ClothLODData_h_12_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FClothLODDataCommon_Statics; \
+	CLOTHINGSYSTEMRUNTIMECOMMON_API static class UScriptStruct* StaticStruct();
+
+
+struct FClothLODDataCommon;
+// ********** End ScriptStruct FClothLODDataCommon *************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_ClothingSystemRuntimeCommon_Public_ClothLODData_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

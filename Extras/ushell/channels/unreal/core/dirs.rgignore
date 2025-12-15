@@ -1,0 +1,13 @@
+.vs/
+Binaries/
+Content/
+DerivedDataCache/
+Documentation/
+External_Libraries/
+Intermediate/
+Saved/
+Test/
+enc_temp_folder/
+[Tt]hird*[Pp]arty*/
+
+uLangCore/

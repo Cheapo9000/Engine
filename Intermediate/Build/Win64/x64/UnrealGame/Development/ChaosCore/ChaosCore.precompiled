@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"Module.ChaosCore.cpp.obj",
+		"AABB.ispc_avx512skx.obj",
+		"AABB.ispc_avx2.obj",
+		"AABB.ispc_avx.obj",
+		"AABB.ispc_sse4.obj",
+		"AABB.ispc.obj"
+	]
+}

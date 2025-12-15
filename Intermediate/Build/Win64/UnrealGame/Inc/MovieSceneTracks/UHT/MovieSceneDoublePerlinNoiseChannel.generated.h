@@ -1,0 +1,33 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Channels/MovieSceneDoublePerlinNoiseChannel.h"
+
+#ifdef MOVIESCENETRACKS_MovieSceneDoublePerlinNoiseChannel_generated_h
+#error "MovieSceneDoublePerlinNoiseChannel.generated.h already included, missing '#pragma once' in MovieSceneDoublePerlinNoiseChannel.h"
+#endif
+#define MOVIESCENETRACKS_MovieSceneDoublePerlinNoiseChannel_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FMovieSceneDoublePerlinNoiseChannel *******************************
+struct Z_Construct_UScriptStruct_FMovieSceneDoublePerlinNoiseChannel_Statics;
+#define FID_Engine_Source_Runtime_MovieSceneTracks_Public_Channels_MovieSceneDoublePerlinNoiseChannel_h_13_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FMovieSceneDoublePerlinNoiseChannel_Statics; \
+	MOVIESCENETRACKS_API static class UScriptStruct* StaticStruct(); \
+	typedef FMovieSceneChannel Super;
+
+
+struct FMovieSceneDoublePerlinNoiseChannel;
+// ********** End ScriptStruct FMovieSceneDoublePerlinNoiseChannel *********************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_MovieSceneTracks_Public_Channels_MovieSceneDoublePerlinNoiseChannel_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

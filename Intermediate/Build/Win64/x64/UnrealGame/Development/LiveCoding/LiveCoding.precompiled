@@ -1,0 +1,6 @@
+{
+	"OutputFiles": [
+		"Module.LiveCoding.cpp.obj",
+		"xxhash.c.obj"
+	]
+}

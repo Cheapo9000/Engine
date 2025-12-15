@@ -1,0 +1,33 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "AnimNodes/AnimNode_MultiWayBlend.h"
+
+#ifdef ANIMGRAPHRUNTIME_AnimNode_MultiWayBlend_generated_h
+#error "AnimNode_MultiWayBlend.generated.h already included, missing '#pragma once' in AnimNode_MultiWayBlend.h"
+#endif
+#define ANIMGRAPHRUNTIME_AnimNode_MultiWayBlend_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FAnimNode_MultiWayBlend *******************************************
+struct Z_Construct_UScriptStruct_FAnimNode_MultiWayBlend_Statics;
+#define FID_Engine_Source_Runtime_AnimGraphRuntime_Public_AnimNodes_AnimNode_MultiWayBlend_h_13_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FAnimNode_MultiWayBlend_Statics; \
+	ANIMGRAPHRUNTIME_API static class UScriptStruct* StaticStruct(); \
+	typedef FAnimNode_Base Super;
+
+
+struct FAnimNode_MultiWayBlend;
+// ********** End ScriptStruct FAnimNode_MultiWayBlend *********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_AnimGraphRuntime_Public_AnimNodes_AnimNode_MultiWayBlend_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

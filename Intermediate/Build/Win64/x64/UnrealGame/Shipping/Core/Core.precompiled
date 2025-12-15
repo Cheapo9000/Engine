@@ -1,0 +1,25 @@
+{
+	"OutputFiles": [
+		"Module.Core.1.cpp.obj",
+		"Module.Core.2.cpp.obj",
+		"Module.Core.3.cpp.obj",
+		"Module.Core.4.cpp.obj",
+		"Module.Core.5.cpp.obj",
+		"Module.Core.6.cpp.obj",
+		"Module.Core.7.cpp.obj",
+		"Module.Core.8.cpp.obj",
+		"Module.Core.9.cpp.obj",
+		"Module.Core.10.cpp.obj",
+		"Module.Core.11.cpp.obj",
+		"Module.Core.12.cpp.obj",
+		"Module.Core.13.cpp.obj",
+		"Module.Core.14.cpp.obj",
+		"Module.Core.15.cpp.obj",
+		"Module.Core.16.cpp.obj",
+		"Module.Core.17.cpp.obj",
+		"Module.Core.18.cpp.obj",
+		"Module.Core.19.cpp.obj",
+		"Module.Core.20.cpp.obj",
+		"MiMalloc.c.obj"
+	]
+}

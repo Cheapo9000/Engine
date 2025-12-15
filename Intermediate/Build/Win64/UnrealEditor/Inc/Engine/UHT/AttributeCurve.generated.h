@@ -1,0 +1,43 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Animation/AttributeCurve.h"
+
+#ifdef ENGINE_AttributeCurve_generated_h
+#error "AttributeCurve.generated.h already included, missing '#pragma once' in AttributeCurve.h"
+#endif
+#define ENGINE_AttributeCurve_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FAttributeKey *****************************************************
+struct Z_Construct_UScriptStruct_FAttributeKey_Statics;
+#define FID_Engine_Source_Runtime_Engine_Classes_Animation_AttributeCurve_h_24_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FAttributeKey_Statics; \
+	ENGINE_API static class UScriptStruct* StaticStruct();
+
+
+struct FAttributeKey;
+// ********** End ScriptStruct FAttributeKey *******************************************************
+
+// ********** Begin ScriptStruct FAttributeCurve ***************************************************
+struct Z_Construct_UScriptStruct_FAttributeCurve_Statics;
+#define FID_Engine_Source_Runtime_Engine_Classes_Animation_AttributeCurve_h_62_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FAttributeCurve_Statics; \
+	ENGINE_API static class UScriptStruct* StaticStruct(); \
+	typedef FIndexedCurve Super;
+
+
+struct FAttributeCurve;
+// ********** End ScriptStruct FAttributeCurve *****************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Classes_Animation_AttributeCurve_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

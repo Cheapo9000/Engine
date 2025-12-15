@@ -1,0 +1,160 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Camera/CameraLensEffectInterface.h"
+
+#ifdef ENGINE_CameraLensEffectInterface_generated_h
+#error "CameraLensEffectInterface.generated.h already included, missing '#pragma once' in CameraLensEffectInterface.h"
+#endif
+#define ENGINE_CameraLensEffectInterface_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class ICameraLensEffectInterface;
+class UClass;
+class UFXSystemComponent;
+enum class EInterfaceValidResult : uint8;
+struct FCameraLensInterfaceClassSupport;
+
+// ********** Begin Interface UCameraLensEffectInterface *******************************************
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetPrimaryParticleComponent); \
+	DECLARE_FUNCTION(execGetParticleComponents);
+
+
+struct Z_Construct_UClass_UCameraLensEffectInterface_Statics;
+ENGINE_API UClass* Z_Construct_UClass_UCameraLensEffectInterface_NoRegister();
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	ENGINE_API UCameraLensEffectInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UCameraLensEffectInterface(UCameraLensEffectInterface&&) = delete; \
+	UCameraLensEffectInterface(const UCameraLensEffectInterface&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(ENGINE_API, UCameraLensEffectInterface); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCameraLensEffectInterface); \
+	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCameraLensEffectInterface) \
+	virtual ~UCameraLensEffectInterface() = default;
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_GENERATED_UINTERFACE_BODY() \
+private: \
+	static void StaticRegisterNativesUCameraLensEffectInterface(); \
+	friend struct ::Z_Construct_UClass_UCameraLensEffectInterface_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend ENGINE_API UClass* ::Z_Construct_UClass_UCameraLensEffectInterface_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UCameraLensEffectInterface, UInterface, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Interface), CASTCLASS_None, TEXT("/Script/Engine"), Z_Construct_UClass_UCameraLensEffectInterface_NoRegister) \
+	DECLARE_SERIALIZER(UCameraLensEffectInterface)
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_GENERATED_BODY \
+	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+	FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_GENERATED_UINTERFACE_BODY() \
+	FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_ENHANCED_CONSTRUCTORS \
+private: \
+	PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_INCLASS_IINTERFACE_NO_PURE_DECLS \
+protected: \
+	virtual ~ICameraLensEffectInterface() {} \
+public: \
+	typedef UCameraLensEffectInterface UClassType; \
+	typedef ICameraLensEffectInterface ThisClass; \
+	virtual UObject* _getUObject() const { return nullptr; }
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_15_PROLOG
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_23_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_18_INCLASS_IINTERFACE_NO_PURE_DECLS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UCameraLensEffectInterface;
+
+// ********** End Interface UCameraLensEffectInterface *********************************************
+
+// ********** Begin ScriptStruct FCameraLensInterfaceClassSupport **********************************
+struct Z_Construct_UScriptStruct_FCameraLensInterfaceClassSupport_Statics;
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_72_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FCameraLensInterfaceClassSupport_Statics; \
+	ENGINE_API static class UScriptStruct* StaticStruct();
+
+
+struct FCameraLensInterfaceClassSupport;
+// ********** End ScriptStruct FCameraLensInterfaceClassSupport ************************************
+
+// ********** Begin Class UCameraLensEffectInterfaceClassSupportLibrary ****************************
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_92_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSetInterfaceClass); \
+	DECLARE_FUNCTION(execIsInterfaceValid); \
+	DECLARE_FUNCTION(execIsInterfaceClassValid); \
+	DECLARE_FUNCTION(execGetInterfaceClass);
+
+
+struct Z_Construct_UClass_UCameraLensEffectInterfaceClassSupportLibrary_Statics;
+ENGINE_API UClass* Z_Construct_UClass_UCameraLensEffectInterfaceClassSupportLibrary_NoRegister();
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_92_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUCameraLensEffectInterfaceClassSupportLibrary(); \
+	friend struct ::Z_Construct_UClass_UCameraLensEffectInterfaceClassSupportLibrary_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend ENGINE_API UClass* ::Z_Construct_UClass_UCameraLensEffectInterfaceClassSupportLibrary_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UCameraLensEffectInterfaceClassSupportLibrary, UBlueprintFunctionLibrary, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Engine"), Z_Construct_UClass_UCameraLensEffectInterfaceClassSupportLibrary_NoRegister) \
+	DECLARE_SERIALIZER(UCameraLensEffectInterfaceClassSupportLibrary)
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_92_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UCameraLensEffectInterfaceClassSupportLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UCameraLensEffectInterfaceClassSupportLibrary(UCameraLensEffectInterfaceClassSupportLibrary&&) = delete; \
+	UCameraLensEffectInterfaceClassSupportLibrary(const UCameraLensEffectInterfaceClassSupportLibrary&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UCameraLensEffectInterfaceClassSupportLibrary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCameraLensEffectInterfaceClassSupportLibrary); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCameraLensEffectInterfaceClassSupportLibrary) \
+	NO_API virtual ~UCameraLensEffectInterfaceClassSupportLibrary();
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_89_PROLOG
+#define FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_92_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_92_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_92_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h_92_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UCameraLensEffectInterfaceClassSupportLibrary;
+
+// ********** End Class UCameraLensEffectInterfaceClassSupportLibrary ******************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Classes_Camera_CameraLensEffectInterface_h
+
+// ********** Begin Enum EInterfaceValidResult *****************************************************
+#define FOREACH_ENUM_EINTERFACEVALIDRESULT(op) \
+	op(EInterfaceValidResult::Valid) \
+	op(EInterfaceValidResult::Invalid) 
+
+enum class EInterfaceValidResult : uint8;
+template<> struct TIsUEnumClass<EInterfaceValidResult> { enum { Value = true }; };
+template<> ENGINE_NON_ATTRIBUTED_API UEnum* StaticEnum<EInterfaceValidResult>();
+// ********** End Enum EInterfaceValidResult *******************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

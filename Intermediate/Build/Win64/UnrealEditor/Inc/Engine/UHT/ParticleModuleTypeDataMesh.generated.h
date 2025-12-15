@@ -1,0 +1,110 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Particles/TypeData/ParticleModuleTypeDataMesh.h"
+
+#ifdef ENGINE_ParticleModuleTypeDataMesh_generated_h
+#error "ParticleModuleTypeDataMesh.generated.h already included, missing '#pragma once' in ParticleModuleTypeDataMesh.h"
+#endif
+#define ENGINE_ParticleModuleTypeDataMesh_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UParticleModuleTypeDataMesh **********************************************
+#define FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_64_ARCHIVESERIALIZER \
+	DECLARE_FSTRUCTUREDARCHIVE_SERIALIZER(UParticleModuleTypeDataMesh, ENGINE_API)
+
+
+struct Z_Construct_UClass_UParticleModuleTypeDataMesh_Statics;
+ENGINE_API UClass* Z_Construct_UClass_UParticleModuleTypeDataMesh_NoRegister();
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_64_INCLASS \
+private: \
+	static void StaticRegisterNativesUParticleModuleTypeDataMesh(); \
+	friend struct ::Z_Construct_UClass_UParticleModuleTypeDataMesh_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend ENGINE_API UClass* ::Z_Construct_UClass_UParticleModuleTypeDataMesh_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UParticleModuleTypeDataMesh, UParticleModuleTypeDataBase, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Engine"), Z_Construct_UClass_UParticleModuleTypeDataMesh_NoRegister) \
+	DECLARE_SERIALIZER(UParticleModuleTypeDataMesh) \
+	FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_64_ARCHIVESERIALIZER
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_64_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	ENGINE_API UParticleModuleTypeDataMesh(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UParticleModuleTypeDataMesh) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(ENGINE_API, UParticleModuleTypeDataMesh); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UParticleModuleTypeDataMesh); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UParticleModuleTypeDataMesh(UParticleModuleTypeDataMesh&&) = delete; \
+	UParticleModuleTypeDataMesh(const UParticleModuleTypeDataMesh&) = delete; \
+	ENGINE_API virtual ~UParticleModuleTypeDataMesh();
+
+
+#define FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_61_PROLOG
+#define FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_64_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_64_INCLASS \
+	FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h_64_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UParticleModuleTypeDataMesh;
+
+// ********** End Class UParticleModuleTypeDataMesh ************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Classes_Particles_TypeData_ParticleModuleTypeDataMesh_h
+
+// ********** Begin Enum EMeshScreenAlignment ******************************************************
+#define FOREACH_ENUM_EMESHSCREENALIGNMENT(op) \
+	op(PSMA_MeshFaceCameraWithRoll) \
+	op(PSMA_MeshFaceCameraWithSpin) \
+	op(PSMA_MeshFaceCameraWithLockedAxis) 
+
+enum EMeshScreenAlignment : int;
+template<> ENGINE_NON_ATTRIBUTED_API UEnum* StaticEnum<EMeshScreenAlignment>();
+// ********** End Enum EMeshScreenAlignment ********************************************************
+
+// ********** Begin Enum EMeshCameraFacingUpAxis ***************************************************
+#define FOREACH_ENUM_EMESHCAMERAFACINGUPAXIS(op) \
+	op(CameraFacing_NoneUP) \
+	op(CameraFacing_ZUp) \
+	op(CameraFacing_NegativeZUp) \
+	op(CameraFacing_YUp) \
+	op(CameraFacing_NegativeYUp) 
+
+enum EMeshCameraFacingUpAxis : int;
+template<> ENGINE_NON_ATTRIBUTED_API UEnum* StaticEnum<EMeshCameraFacingUpAxis>();
+// ********** End Enum EMeshCameraFacingUpAxis *****************************************************
+
+// ********** Begin Enum EMeshCameraFacingOptions **************************************************
+#define FOREACH_ENUM_EMESHCAMERAFACINGOPTIONS(op) \
+	op(XAxisFacing_NoUp) \
+	op(XAxisFacing_ZUp) \
+	op(XAxisFacing_NegativeZUp) \
+	op(XAxisFacing_YUp) \
+	op(XAxisFacing_NegativeYUp) \
+	op(LockedAxis_ZAxisFacing) \
+	op(LockedAxis_NegativeZAxisFacing) \
+	op(LockedAxis_YAxisFacing) \
+	op(LockedAxis_NegativeYAxisFacing) \
+	op(VelocityAligned_ZAxisFacing) \
+	op(VelocityAligned_NegativeZAxisFacing) \
+	op(VelocityAligned_YAxisFacing) \
+	op(VelocityAligned_NegativeYAxisFacing) 
+
+enum EMeshCameraFacingOptions : int;
+template<> ENGINE_NON_ATTRIBUTED_API UEnum* StaticEnum<EMeshCameraFacingOptions>();
+// ********** End Enum EMeshCameraFacingOptions ****************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

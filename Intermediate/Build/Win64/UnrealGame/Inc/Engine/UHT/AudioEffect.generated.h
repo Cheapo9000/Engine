@@ -1,0 +1,33 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "AudioEffect.h"
+
+#ifdef ENGINE_AudioEffect_generated_h
+#error "AudioEffect.generated.h already included, missing '#pragma once' in AudioEffect.h"
+#endif
+#define ENGINE_AudioEffect_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FAudioReverbEffect ************************************************
+struct Z_Construct_UScriptStruct_FAudioReverbEffect_Statics;
+#define FID_Engine_Source_Runtime_Engine_Public_AudioEffect_h_27_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FAudioReverbEffect_Statics; \
+	ENGINE_API static class UScriptStruct* StaticStruct(); \
+	typedef FAudioEffectParameters Super;
+
+
+struct FAudioReverbEffect;
+// ********** End ScriptStruct FAudioReverbEffect **************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Public_AudioEffect_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

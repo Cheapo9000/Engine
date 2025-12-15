@@ -1,0 +1,45 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "GameFramework/PlayerMuteList.h"
+
+#ifdef ENGINE_PlayerMuteList_generated_h
+#error "PlayerMuteList.generated.h already included, missing '#pragma once' in PlayerMuteList.h"
+#endif
+#define ENGINE_PlayerMuteList_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FPlayerMuteList ***************************************************
+struct Z_Construct_UScriptStruct_FPlayerMuteList_Statics;
+#define FID_Engine_Source_Runtime_Engine_Classes_GameFramework_PlayerMuteList_h_31_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FPlayerMuteList_Statics; \
+	ENGINE_API static class UScriptStruct* StaticStruct();
+
+
+struct FPlayerMuteList;
+// ********** End ScriptStruct FPlayerMuteList *****************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Classes_GameFramework_PlayerMuteList_h
+
+// ********** Begin Enum EVoiceBlockReasons ********************************************************
+#define FOREACH_ENUM_EVOICEBLOCKREASONS(op) \
+	op(EVoiceBlockReasons::None) \
+	op(EVoiceBlockReasons::Muted) \
+	op(EVoiceBlockReasons::Gameplay) \
+	op(EVoiceBlockReasons::Blocked) \
+	op(EVoiceBlockReasons::BlockedBy) 
+
+enum class EVoiceBlockReasons : uint8;
+template<> struct TIsUEnumClass<EVoiceBlockReasons> { enum { Value = true }; };
+template<> ENGINE_NON_ATTRIBUTED_API UEnum* StaticEnum<EVoiceBlockReasons>();
+// ********** End Enum EVoiceBlockReasons **********************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

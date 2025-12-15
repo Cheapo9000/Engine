@@ -1,0 +1,32 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "GameFramework/ForceFeedbackParameters.h"
+
+#ifdef ENGINE_ForceFeedbackParameters_generated_h
+#error "ForceFeedbackParameters.generated.h already included, missing '#pragma once' in ForceFeedbackParameters.h"
+#endif
+#define ENGINE_ForceFeedbackParameters_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FForceFeedbackParameters ******************************************
+struct Z_Construct_UScriptStruct_FForceFeedbackParameters_Statics;
+#define FID_Engine_Source_Runtime_Engine_Classes_GameFramework_ForceFeedbackParameters_h_10_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FForceFeedbackParameters_Statics; \
+	ENGINE_API static class UScriptStruct* StaticStruct();
+
+
+struct FForceFeedbackParameters;
+// ********** End ScriptStruct FForceFeedbackParameters ********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Classes_GameFramework_ForceFeedbackParameters_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

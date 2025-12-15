@@ -1,0 +1,13 @@
+{
+	"OutputFiles": [
+		"Module.Voronoi.cpp.obj",
+		"cell.cc.obj",
+		"container.cc.obj",
+		"c_loops.cc.obj",
+		"pre_container.cc.obj",
+		"unitcell.cc.obj",
+		"v_base.cc.obj",
+		"v_compute.cc.obj",
+		"wall.cc.obj"
+	]
+}

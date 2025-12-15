@@ -1,0 +1,43 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "LandscapeFileFormatInterface.h"
+
+#ifdef LANDSCAPEEDITOR_LandscapeFileFormatInterface_generated_h
+#error "LandscapeFileFormatInterface.generated.h already included, missing '#pragma once' in LandscapeFileFormatInterface.h"
+#endif
+#define LANDSCAPEEDITOR_LandscapeFileFormatInterface_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FLandscapeFileResolution ******************************************
+struct Z_Construct_UScriptStruct_FLandscapeFileResolution_Statics;
+#define FID_Engine_Source_Editor_LandscapeEditor_Public_LandscapeFileFormatInterface_h_37_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FLandscapeFileResolution_Statics; \
+	LANDSCAPEEDITOR_API static class UScriptStruct* StaticStruct();
+
+
+struct FLandscapeFileResolution;
+// ********** End ScriptStruct FLandscapeFileResolution ********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Editor_LandscapeEditor_Public_LandscapeFileFormatInterface_h
+
+// ********** Begin Enum ELandscapeImportResult ****************************************************
+#define FOREACH_ENUM_ELANDSCAPEIMPORTRESULT(op) \
+	op(ELandscapeImportResult::Success) \
+	op(ELandscapeImportResult::Warning) \
+	op(ELandscapeImportResult::Error) 
+
+enum class ELandscapeImportResult : uint8;
+template<> struct TIsUEnumClass<ELandscapeImportResult> { enum { Value = true }; };
+template<> LANDSCAPEEDITOR_NON_ATTRIBUTED_API UEnum* StaticEnum<ELandscapeImportResult>();
+// ********** End Enum ELandscapeImportResult ******************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

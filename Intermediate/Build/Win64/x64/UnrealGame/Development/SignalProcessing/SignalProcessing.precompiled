@@ -1,0 +1,12 @@
+{
+	"OutputFiles": [
+		"Module.SignalProcessing.1.cpp.obj",
+		"Module.SignalProcessing.2.cpp.obj",
+		"Module.SignalProcessing.3.cpp.obj",
+		"FloatArrayMath.ispc_avx512skx.obj",
+		"FloatArrayMath.ispc_avx2.obj",
+		"FloatArrayMath.ispc_avx.obj",
+		"FloatArrayMath.ispc_sse4.obj",
+		"FloatArrayMath.ispc.obj"
+	]
+}

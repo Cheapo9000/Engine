@@ -1,0 +1,38 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "KeyParams.h"
+
+#ifdef MOVIESCENE_KeyParams_generated_h
+#error "KeyParams.generated.h already included, missing '#pragma once' in KeyParams.h"
+#endif
+#define MOVIESCENE_KeyParams_generated_h
+
+#include "Templates/IsUEnumClass.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ReflectedTypeAccessors.h"
+#include "Templates/NoDestroy.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_MovieScene_Public_KeyParams_h
+
+// ********** Begin Enum EMovieSceneKeyInterpolation ***********************************************
+#define FOREACH_ENUM_EMOVIESCENEKEYINTERPOLATION(op) \
+	op(EMovieSceneKeyInterpolation::Auto) \
+	op(EMovieSceneKeyInterpolation::User) \
+	op(EMovieSceneKeyInterpolation::Break) \
+	op(EMovieSceneKeyInterpolation::Linear) \
+	op(EMovieSceneKeyInterpolation::Constant) \
+	op(EMovieSceneKeyInterpolation::SmartAuto) 
+
+enum class EMovieSceneKeyInterpolation : uint8;
+template<> struct TIsUEnumClass<EMovieSceneKeyInterpolation> { enum { Value = true }; };
+template<> MOVIESCENE_NON_ATTRIBUTED_API UEnum* StaticEnum<EMovieSceneKeyInterpolation>();
+// ********** End Enum EMovieSceneKeyInterpolation *************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

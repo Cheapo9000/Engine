@@ -1,0 +1,18 @@
+{
+	"OutputFiles": [
+		"Module.CADKernelEngine.gen.cpp.obj",
+		"CADKernelEngine.cpp.obj",
+		"CADKernelEnginePrivate.cpp.obj",
+		"CADKernelMesh.cpp.obj",
+		"DynamicMeshWrapper.cpp.obj",
+		"MeshDescriptionWrapper.cpp.obj",
+		"MeshTopologyHelper.cpp.obj",
+		"MeshUtilities.cpp.obj",
+		"CADKernelToTechSoft.cpp.obj",
+		"TechSoftLibrary.cpp.obj",
+		"TechSoftMesh.cpp.obj",
+		"TechSoftToCADKernel.cpp.obj",
+		"TechSoftUniqueObjectImpl.cpp.obj",
+		"TechSoftUtilities.cpp.obj"
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"OutputFiles": [
+		"Module.CADKernelEditor.gen.cpp.obj",
+		"CADKernelRetessellateAction.cpp.obj",
+		"LegacyParametricSurfaceData.cpp.obj",
+		"ParametricSurfaceData.cpp.obj"
+	]
+}

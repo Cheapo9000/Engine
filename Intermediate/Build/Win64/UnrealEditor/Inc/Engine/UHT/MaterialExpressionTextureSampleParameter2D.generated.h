@@ -1,0 +1,63 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Materials/MaterialExpressionTextureSampleParameter2D.h"
+
+#ifdef ENGINE_MaterialExpressionTextureSampleParameter2D_generated_h
+#error "MaterialExpressionTextureSampleParameter2D.generated.h already included, missing '#pragma once' in MaterialExpressionTextureSampleParameter2D.h"
+#endif
+#define ENGINE_MaterialExpressionTextureSampleParameter2D_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UMaterialExpressionTextureSampleParameter2D ******************************
+struct Z_Construct_UClass_UMaterialExpressionTextureSampleParameter2D_Statics;
+ENGINE_API UClass* Z_Construct_UClass_UMaterialExpressionTextureSampleParameter2D_NoRegister();
+
+#define FID_Engine_Source_Runtime_Engine_Public_Materials_MaterialExpressionTextureSampleParameter2D_h_16_INCLASS \
+private: \
+	static void StaticRegisterNativesUMaterialExpressionTextureSampleParameter2D(); \
+	friend struct ::Z_Construct_UClass_UMaterialExpressionTextureSampleParameter2D_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend ENGINE_API UClass* ::Z_Construct_UClass_UMaterialExpressionTextureSampleParameter2D_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UMaterialExpressionTextureSampleParameter2D, UMaterialExpressionTextureSampleParameter, COMPILED_IN_FLAGS(0 | CLASS_Optional | CLASS_Config), CASTCLASS_None, TEXT("/Script/Engine"), Z_Construct_UClass_UMaterialExpressionTextureSampleParameter2D_NoRegister) \
+	DECLARE_SERIALIZER(UMaterialExpressionTextureSampleParameter2D)
+
+
+#define FID_Engine_Source_Runtime_Engine_Public_Materials_MaterialExpressionTextureSampleParameter2D_h_16_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	ENGINE_API UMaterialExpressionTextureSampleParameter2D(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UMaterialExpressionTextureSampleParameter2D) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(ENGINE_API, UMaterialExpressionTextureSampleParameter2D); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UMaterialExpressionTextureSampleParameter2D); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UMaterialExpressionTextureSampleParameter2D(UMaterialExpressionTextureSampleParameter2D&&) = delete; \
+	UMaterialExpressionTextureSampleParameter2D(const UMaterialExpressionTextureSampleParameter2D&) = delete; \
+	ENGINE_API virtual ~UMaterialExpressionTextureSampleParameter2D();
+
+
+#define FID_Engine_Source_Runtime_Engine_Public_Materials_MaterialExpressionTextureSampleParameter2D_h_13_PROLOG
+#define FID_Engine_Source_Runtime_Engine_Public_Materials_MaterialExpressionTextureSampleParameter2D_h_16_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_Engine_Public_Materials_MaterialExpressionTextureSampleParameter2D_h_16_INCLASS \
+	FID_Engine_Source_Runtime_Engine_Public_Materials_MaterialExpressionTextureSampleParameter2D_h_16_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UMaterialExpressionTextureSampleParameter2D;
+
+// ********** End Class UMaterialExpressionTextureSampleParameter2D ********************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_Engine_Public_Materials_MaterialExpressionTextureSampleParameter2D_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

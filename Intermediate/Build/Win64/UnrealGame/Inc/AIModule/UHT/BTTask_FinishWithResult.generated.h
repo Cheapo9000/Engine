@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "BehaviorTree/Tasks/BTTask_FinishWithResult.h"
+
+#ifdef AIMODULE_BTTask_FinishWithResult_generated_h
+#error "BTTask_FinishWithResult.generated.h already included, missing '#pragma once' in BTTask_FinishWithResult.h"
+#endif
+#define AIMODULE_BTTask_FinishWithResult_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UBTTask_FinishWithResult *************************************************
+struct Z_Construct_UClass_UBTTask_FinishWithResult_Statics;
+AIMODULE_API UClass* Z_Construct_UClass_UBTTask_FinishWithResult_NoRegister();
+
+#define FID_Engine_Source_Runtime_AIModule_Classes_BehaviorTree_Tasks_BTTask_FinishWithResult_h_14_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUBTTask_FinishWithResult(); \
+	friend struct ::Z_Construct_UClass_UBTTask_FinishWithResult_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend AIMODULE_API UClass* ::Z_Construct_UClass_UBTTask_FinishWithResult_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UBTTask_FinishWithResult, UBTTaskNode, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/AIModule"), Z_Construct_UClass_UBTTask_FinishWithResult_NoRegister) \
+	DECLARE_SERIALIZER(UBTTask_FinishWithResult)
+
+
+#define FID_Engine_Source_Runtime_AIModule_Classes_BehaviorTree_Tasks_BTTask_FinishWithResult_h_14_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UBTTask_FinishWithResult(UBTTask_FinishWithResult&&) = delete; \
+	UBTTask_FinishWithResult(const UBTTask_FinishWithResult&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(AIMODULE_API, UBTTask_FinishWithResult); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UBTTask_FinishWithResult); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBTTask_FinishWithResult) \
+	AIMODULE_API virtual ~UBTTask_FinishWithResult();
+
+
+#define FID_Engine_Source_Runtime_AIModule_Classes_BehaviorTree_Tasks_BTTask_FinishWithResult_h_11_PROLOG
+#define FID_Engine_Source_Runtime_AIModule_Classes_BehaviorTree_Tasks_BTTask_FinishWithResult_h_14_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Source_Runtime_AIModule_Classes_BehaviorTree_Tasks_BTTask_FinishWithResult_h_14_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Source_Runtime_AIModule_Classes_BehaviorTree_Tasks_BTTask_FinishWithResult_h_14_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UBTTask_FinishWithResult;
+
+// ********** End Class UBTTask_FinishWithResult ***************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Source_Runtime_AIModule_Classes_BehaviorTree_Tasks_BTTask_FinishWithResult_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
