@@ -1,0 +1,4 @@
+{
+	global: libGPUCounters*;
+	local: *;
+};

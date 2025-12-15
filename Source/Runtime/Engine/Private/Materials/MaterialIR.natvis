@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+<!-- FType -->
+<Type Name="MIR::FType">
+	<DisplayString Condition="Kind == MIR::ETypeKind::Poison">Poison</DisplayString>
+	<DisplayString Condition="Kind == MIR::ETypeKind::Void">Void</DisplayString>
+	<DisplayString Condition="Kind == MIR::ETypeKind::Primitive">{Primitive.ScalarKind,en}{(int)Primitive.NumRows}x{(int)Primitive.NumColumns}</DisplayString>
+	<DisplayString Condition="Kind == MIR::ETypeKind::Aggregate">Aggregate {Aggregate,na}</DisplayString>
+	<DisplayString>{Kind,en}</DisplayString>
+	<Expand>
+		<Item Name="Kind">Kind,en</Item>
+		<ExpandedItem Condition="Kind == MIR::ETypeKind::Primitive">Primitive</ExpandedItem>
+		<ExpandedItem Condition="Kind == MIR::ETypeKind::Aggregate">Aggregate</ExpandedItem>
+	</Expand>
+</Type>
+
+<!-- FValue -->
+<Type Name="MIR::FValue">
+	<!-- Constant -->
+	<DisplayString Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Bool">Bool "{((MIR::FConstant*)this)->Boolean}"</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Int">Int "{((MIR::FConstant*)this)->Integer}"</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Float">Float "{((MIR::FConstant*)this)->Float}"</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Double">Double "{((MIR::FConstant*)this)->Double}"</DisplayString>
+  
+	<!-- Composite -->
+	<DisplayString Condition="Kind == MIR::VK_Composite &amp;&amp; Type.Primitive.NumRows == 3 &amp;&amp; Type.Primitive.NumColumns == 1">Composite [{((MIR::TComposite&lt;1&gt;*)this)->Components[0],na}, {((MIR::TComposite&lt;1&gt;*)this)->Components[1],na}, {((MIR::TComposite&lt;1&gt;*)this)->Components[2],na}] </DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Composite &amp;&amp; Type.Primitive.NumRows == 4 &amp;&amp; Type.Primitive.NumColumns == 1">Composite [{((MIR::TComposite&lt;1&gt;*)this)->Components[0],na}, {((MIR::TComposite&lt;1&gt;*)this)->Components[1],na}, {((MIR::TComposite&lt;1&gt;*)this)->Components[2],na}, {((MIR::TComposite&lt;1&gt;*)this)->Components[3],na}] </DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Composite">Composite</DisplayString>
+    
+	<DisplayString Condition="Kind == MIR::VK_Branch">Branch</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_ExternalInput">ExternalInput</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_MaterialParameterCollection">MaterialParameterCollection</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_ScreenTexture">ScreenTexture</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_ShadingModel">ShadingModel</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_HardwarePartialDerivative">HardwarePartialDerivative</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_InlineHLSL">InlineHLSL</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Operator">Operator   {((MIR::FOperator*)this)->Op,en}</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Poison">Poison</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_PromoteSubstrateParameter">PromoteSubstrateParameter</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Scalar">Scalar</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_SetMaterialOutput">SetMaterialOutput</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_StageSwitch">StageSwitch</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Subscript">Subscript</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_TextureObject">TextureObject</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_TextureRead">TextureRead</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_UniformParameter">UniformParameter</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_PreshaderParameter">PreshaderParameter</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_VTPageTableRead">VTPageTableRead</DisplayString>
+	<DisplayString Condition="Kind == MIR::VK_Call">Call</DisplayString>
+	<DisplayString>{Kind}</DisplayString>
+
+	<Expand>
+		<!-- Branch -->
+		<Item Name="ConditionArg" Condition="Kind == MIR::VK_Branch">((MIR::FBranch*)this)->ConditionArg</Item>
+		<Item Name="TrueArg" Condition="Kind == MIR::VK_Branch">((MIR::FBranch*)this)->TrueArg</Item>
+		<Item Name="FalseArg" Condition="Kind == MIR::VK_Branch">((MIR::FBranch*)this)->FalseArg</Item>
+		<Item Name="Type" Condition="Kind == MIR::VK_Branch">((MIR::FBranch*)this)->Type,na</Item>
+
+		<!-- Composite -->
+		<Item Name="[X]" Condition="Kind == MIR::VK_Composite &amp;&amp; Type.Kind == MIR::ETypeKind::Primitive &amp;&amp; Type.Primitive.NumRows == 1 &amp;&amp; Type.Primitive.NumColumns >= 1">
+			((MIR::TComposite&lt;1&gt;*)this)->Components[0]
+		</Item>
+		<Item Name="[Y]" Condition="Kind == MIR::VK_Composite &amp;&amp; Type.Kind == MIR::ETypeKind::Primitive &amp;&amp; Type.Primitive.NumRows == 1 &amp;&amp; Type.Primitive.NumColumns >= 2">
+			((MIR::TComposite&lt;1&gt;*)this)->Components[1]
+		</Item>
+		<Item Name="[Z]" Condition="Kind == MIR::VK_Composite &amp;&amp; Type.Kind == MIR::ETypeKind::Primitive &amp;&amp; Type.Primitive.NumRows == 1 &amp;&amp; Type.Primitive.NumColumns >= 3">
+			((MIR::TComposite&lt;1&gt;*)this)->Components[2]
+		</Item>
+		<Item Name="[W]" Condition="Kind == MIR::VK_Composite &amp;&amp; Type.Kind == MIR::ETypeKind::Primitive &amp;&amp; Type.Primitive.NumRows == 1 &amp;&amp; Type.Primitive.NumColumns >= 4">
+			((MIR::TComposite&lt;1&gt;*)this)->Components[3]
+		</Item>
+		<Item Name="Type" Condition="Kind == MIR::VK_Composite">Type,na</Item>
+		<CustomListItems Condition="Kind == MIR::VK_Composite &amp;&amp; Type.Kind == MIR::ETypeKind::Aggregate">
+			<Variable Name="Index" InitialValue="0" />
+			<Size>Type.Aggregate->Attributes.ArrayNum</Size>
+			<Loop Condition="Index &lt; Type.Aggregate->Attributes.ArrayNum">
+				<Item Name="{(Type.Aggregate->Attributes.AllocatorInstance.Data)[Index]}">
+					((MIR::TComposite&lt;1&gt;*)this)->Components[Index]
+				</Item>
+				<Exec>Index++</Exec>
+			</Loop>
+		</CustomListItems>
+
+		<!-- Constant -->
+		<Item Name="Boolean" Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Bool">((MIR::FConstant*)this)->Boolean</Item>
+		<Item Name="Integer" Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Int">((MIR::FConstant*)this)->Integer</Item>
+		<Item Name="Float" Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Float">((MIR::FConstant*)this)->Float</Item>
+		<Item Name="Double" Condition="Kind == MIR::VK_Constant &amp;&amp; Type.Primitive.ScalarKind == MIR::EScalarKind::Double">((MIR::FConstant*)this)->Double</Item>
+
+		<!-- ExternalInput -->
+		<Item Name="Id" Condition="Kind == MIR::VK_ExternalInput">((MIR::FExternalInput*)this)->Id</Item>
+		<Item Name="Type" Condition="Kind == MIR::VK_ExternalInput">((MIR::FExternalInput*)this)->Type,na</Item>
+		<Item Name="UserData" Condition="Kind == MIR::VK_ExternalInput">((MIR::FExternalInput*)this)->UserData</Item>
+
+		<!-- HardwarePartialDerivative -->
+		<Item Condition="Kind == MIR::VK_HardwarePartialDerivative" Name="Arg">((MIR::FHardwarePartialDerivative*)this)->Arg</Item>
+		<Item Condition="Kind == MIR::VK_HardwarePartialDerivative" Name="Axis">((MIR::FHardwarePartialDerivative*)this)->Axis</Item>
+
+		<!-- InlineHLSL -->
+		<Item Name="Code" Condition="Kind == MIR::VK_InlineHLSL &amp;&amp; (Flags &amp; EValueFlags::HasDynamicHLSLCode)">((MIR::FInlineHLSL*)this)->Code</Item>
+		<Item Name="ExternaCode" Condition="Kind == MIR::VK_InlineHLSL &amp;&amp; !(Flags &amp; EValueFlags::HasDynamicHLSLCode)">((MIR::FInlineHLSL*)this)->ExternalCodeDeclaration->Definition</Item>
+		<ArrayItems Condition="Kind == MIR::VK_InlineHLSL">
+			<Size>((MIR::FInlineHLSL*)this)->NumArguments</Size>
+			<ValuePointer>((MIR::FInlineHLSL*)this)->Arguments</ValuePointer>
+		</ArrayItems>
+		<Item Name="Type" Condition="Kind == MIR::VK_InlineHLSL">((MIR::FExternalInput*)this)->Type,na</Item>
+
+		<!-- MaterialParameterCollection -->
+		<Item Name="Collection" Condition="Kind == MIR::VK_MaterialParameterCollection">((MIR::FMaterialParameterCollection*)this)->Collection</Item>
+
+		<!-- Operator -->
+		<Item Condition="Kind == MIR::VK_Operator" Name="AArg">((MIR::FOperator*)this)->AArg</Item>
+		<Item Condition="Kind == MIR::VK_Operator &amp;&amp; ((MIR::FOperator*)this)->Op >= MIR::BO_FirstBinaryOperator" Name="BArg">((MIR::FOperator*)this)->BArg</Item>
+		<Item Condition="Kind == MIR::VK_Operator &amp;&amp; ((MIR::FOperator*)this)->Op >= MIR::TO_FirstTernaryOperator" Name="CArg">((MIR::FOperator*)this)->CArg</Item>
+		<Item Condition="Kind == MIR::VK_Operator" Name="Type">((MIR::FOperator*)this)->Type</Item>
+
+		<!-- PromoteSubstrateParameter -->
+		<Item Condition="Kind == MIR::VK_PromoteSubstrateParameter" Name="WorldSpaceTangentsAndNormals">((MIR::FPromoteSubstrateParameter*)this)->WorldSpaceTangentsAndNormals</Item>
+		<Item Condition="Kind == MIR::VK_PromoteSubstrateParameter" Name="PropertyArgs">((MIR::FPromoteSubstrateParameter*)this)->PropertyArgs</Item>
+		<Item Condition="Kind == MIR::VK_PromoteSubstrateParameter" Name="bIsUnlit">((MIR::FPromoteSubstrateParameter*)this)->bIsUnlit</Item>
+		<Item Condition="Kind == MIR::VK_PromoteSubstrateParameter" Name="Type">((MIR::FPromoteSubstrateParameter*)this)->Type</Item>
+
+		<!-- Scalar -->
+		<Item Condition="Kind == MIR::VK_Scalar" Name="Arg">((MIR::FScalar*)this)->Arg</Item>
+		<Item Condition="Kind == MIR::VK_Scalar" Name="Type">((MIR::FScalar*)this)->Type,na</Item>
+
+		<!-- ScreenTexture -->
+		<Item Name="TextureKind" Condition="Kind == MIR::VK_ScreenTexture">((MIR::FScreenTexture*)this)->TextureKind,na</Item>
+		<Item Name="Id" Condition="Kind == MIR::VK_ScreenTexture &amp;&amp; ((MIR::FScreenTexture*)this)->TextureKind == MIR::EScreenTexture::SceneTexture">((MIR::FScreenTexture*)this)->Id,na</Item>
+		<Item Name="Name" Condition="Kind == MIR::VK_ScreenTexture &amp;&amp; ((MIR::FScreenTexture*)this)->TextureKind == MIR::EScreenTexture::UserSceneTexture">((MIR::FScreenTexture*)this)->UserSceneTexture</Item>
+		<Item Name="DBufferId" Condition="Kind == MIR::VK_ScreenTexture &amp;&amp; ((MIR::FScreenTexture*)this)->TextureKind == MIR::EScreenTexture::DBufferTexture">((MIR::FScreenTexture*)this)->DBufferId,na</Item>
+
+		<!-- ShadingModel -->
+		<Item Name="Id" Condition="Kind == MIR::VK_ShadingModel">((MIR::FShadingModel*)this)->Id,na</Item>
+
+		<!-- SetMaterialOutput -->
+		<Item Condition="Kind == MIR::VK_SetMaterialOutput" Name="Arg">((MIR::FSetMaterialOutput*)this)->Arg</Item>
+		<Item Condition="Kind == MIR::VK_SetMaterialOutput" Name="Property">((MIR::FSetMaterialOutput*)this)->Property</Item>
+
+		<!-- StageSwitch -->
+		<Item Condition="Kind == MIR::VK_StageSwitch" Name="Args">((MIR::FStageSwitch*)this)->Args</Item>
+
+		<!-- Subscript -->
+		<Item Condition="Kind == MIR::VK_Subscript" Name="Arg">((MIR::FSubscript*)this)->Arg</Item>
+		<Item Condition="Kind == MIR::VK_Subscript" Name="Index">((MIR::FSubscript*)this)->Index</Item>
+
+		<!-- TextureObject -->
+		<Item Condition="Kind == MIR::VK_TextureObject" Name="Texture">((MIR::FTextureObject*)this)->Texture</Item>
+		<Item Condition="Kind == MIR::VK_TextureObject" Name="SamplerType">((MIR::FTextureObject*)this)->SamplerType</Item>
+
+		<!-- RuntimeVirtualTextureObject -->
+		<Item Condition="Kind == MIR::VK_RuntimeVirtualTextureObject" Name="RVTexture">((MIR::FRuntimeVirtualTextureObject*)this)->RVTexture</Item>
+		<Item Condition="Kind == MIR::VK_RuntimeVirtualTextureObject" Name="SamplerType">((MIR::FFRuntimeVirtualTextureObject*)this)->SamplerType</Item>
+
+		<!-- TextureRead -->
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="TextureObject">((MIR::FTextureRead*)this)->TextureObject</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="TexCoord">((MIR::FTextureRead*)this)->TexCoord</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="MipValue">((MIR::FTextureRead*)this)->MipValue</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="TexCoordDdx">((MIR::FTextureRead*)this)->TexCoordDdx</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="TexCoordDdy">((MIR::FTextureRead*)this)->TexCoordDdy</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="VTPageTable">((MIR::FTextureRead*)this)->VTPageTable</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="Mode">((MIR::FTextureRead*)this)->Mode</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="SamplerSourceMode">((MIR::FTextureRead*)this)->SamplerSourceMode</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="SamplerType">((MIR::FTextureRead*)this)->SamplerType</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="bUseAnisoSampler">((MIR::FTextureRead*)this)->bUseAnisoSampler</Item>
+		<Item Condition="Kind == MIR::VK_TextureRead" Name="Type">((MIR::FTextureRead*)this)->Type</Item>
+
+		<!-- UniformParameter -->
+		<!-- TODO:  to improve visualization of this, we need to have the uniform parameter point to its parent FMaterialIRModule to fetch metadata... -->
+		<Item Condition="Kind == MIR::VK_UniformParameter" Name="ParameterIdInModule">((MIR::FUniformParameter*)this)->ParameterIdInModule</Item>
+		<Item Condition="Kind == MIR::VK_UniformParameter" Name="SamplerType">((MIR::FUniformParameter*)this)->SamplerType</Item>
+		<Item Condition="Kind == MIR::VK_UniformParameter" Name="VTLayerIndex">((MIR::FUniformParameter*)this)->VTLayerIndex</Item>
+		<Item Condition="Kind == MIR::VK_UniformParameter" Name="VTPageTableIndex">((MIR::FUniformParameter*)this)->VTPageTableIndex</Item>
+		<Item Condition="Kind == MIR::VK_UniformParameter" Name="Type">((MIR::FUniformParameter*)this)->Type</Item>
+
+		<!-- PreshaderParameter -->
+		<Item Condition="Kind == MIR::VK_PreshaderParameter" Name="SourceParameter">((MIR::FPreshaderParameter*)this)->SourceParameter</Item>
+		<Item Condition="Kind == MIR::VK_PreshaderParameter" Name="Opcode">((MIR::FPreshaderParameter*)this)->Opcode</Item>
+		<Item Condition="Kind == MIR::VK_PreshaderParameter" Name="TextureIndex">((MIR::FPreshaderParameter*)this)->TextureIndex</Item>
+
+		<!-- VTPageTableRead -->
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="TextureObject">((MIR::FVTPageTableRead*)this)->TextureObject</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="TexCoord">((MIR::FVTPageTableRead*)this)->TexCoord</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="TexCoordDdx">((MIR::FVTPageTableRead*)this)->TexCoordDdx</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="TexCoordDdy">((MIR::FVTPageTableRead*)this)->TexCoordDdy</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="VTStackIndex">((MIR::FVTPageTableRead*)this)->VTStackIndex</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="VTLayerIndex">((MIR::FVTPageTableRead*)this)->VTLayerIndex</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="VTFeedbackRequestIndex">((MIR::FVTPageTableRead*)this)->VTFeedbackRequestIndex</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="AddressU">((MIR::FVTPageTableRead*)this)->AddressU</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="AddressV">((MIR::FVTPageTableRead*)this)->AddressV</Item>
+		<Item Condition="Kind == MIR::VK_VTPageTableRead" Name="bEnableFeedback">((MIR::FVTPageTableRead*)this)->bEnableFeedback</Item>
+
+		<!-- Call -->
+		<Item Condition="Kind == MIR::VK_Call" Name="Function">((MIR::FCall*)this)->Function</Item>
+		<ArrayItems Condition="Kind == MIR::VK_Call">
+			<Size>((MIR::FCall*)this)->NumArguments</Size>
+			<ValuePointer>((MIR::FCall*)this)->Arguments</ValuePointer>
+		</ArrayItems>
+	</Expand>
+</Type>
+  
+</AutoVisualizer>

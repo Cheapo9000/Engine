@@ -1,0 +1,16 @@
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Perforce.Native.dll
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Perforce.Native.so
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Perforce.Native.dylib
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Perforce.deps.json
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Perforce.dll
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\ref\EpicGames.Perforce.dll
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Perforce.pdb
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Core.dll
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\bin\Development\net8.0\EpicGames.Core.pdb
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\obj\Development\net8.0\EpicGames.Perforce.csproj.AssemblyReference.cache
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\obj\Development\net8.0\EpicGames.Perforce.GeneratedMSBuildEditorConfig.editorconfig
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\obj\Development\net8.0\EpicGames.Perforce.csproj.CoreCompileInputs.cache
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\obj\Development\net8.0\EpicGame.4CAE03E3.Up2Date
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\obj\Development\net8.0\EpicGames.Perforce.dll
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\obj\Development\net8.0\refint\EpicGames.Perforce.dll
+F:\Program Files\Epic Games\UE_5.7\Engine\Source\Programs\Shared\EpicGames.Perforce\obj\Development\net8.0\EpicGames.Perforce.pdb
