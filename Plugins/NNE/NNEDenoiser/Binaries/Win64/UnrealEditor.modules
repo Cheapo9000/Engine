@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"NNEDenoiser": "UnrealEditor-NNEDenoiser.dll",
+		"NNEDenoiserShaders": "UnrealEditor-NNEDenoiserShaders.dll"
+	}
+}

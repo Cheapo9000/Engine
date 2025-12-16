@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PCG": "UnrealEditor-PCG.dll",
+		"PCGCompute": "UnrealEditor-PCGCompute.dll",
+		"PCGEditor": "UnrealEditor-PCGEditor.dll"
+	}
+}

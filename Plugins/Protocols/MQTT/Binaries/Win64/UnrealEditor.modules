@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MQTTCore": "UnrealEditor-MQTTCore.dll",
+		"MQTTCoreEditor": "UnrealEditor-MQTTCoreEditor.dll"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CustomizableObject": "UnrealEditor-CustomizableObject.dll",
+		"CustomizableObjectEditor": "UnrealEditor-CustomizableObjectEditor.dll",
+		"MutableRuntime": "UnrealEditor-MutableRuntime.dll",
+		"MutableTools": "UnrealEditor-MutableTools.dll",
+		"MutableValidation": "UnrealEditor-MutableValidation.dll"
+	}
+}

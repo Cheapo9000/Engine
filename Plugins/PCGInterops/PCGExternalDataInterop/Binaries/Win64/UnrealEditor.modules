@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PCGExternalDataInterop": "UnrealEditor-PCGExternalDataInterop.dll",
+		"PCGExternalDataInteropEditor": "UnrealEditor-PCGExternalDataInteropEditor.dll"
+	}
+}

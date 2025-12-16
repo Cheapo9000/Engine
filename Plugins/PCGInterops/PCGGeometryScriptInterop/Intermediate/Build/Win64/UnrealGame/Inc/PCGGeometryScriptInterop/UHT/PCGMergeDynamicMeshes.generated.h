@@ -1,0 +1,63 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Elements/PCGMergeDynamicMeshes.h"
+
+#ifdef PCGGEOMETRYSCRIPTINTEROP_PCGMergeDynamicMeshes_generated_h
+#error "PCGMergeDynamicMeshes.generated.h already included, missing '#pragma once' in PCGMergeDynamicMeshes.h"
+#endif
+#define PCGGEOMETRYSCRIPTINTEROP_PCGMergeDynamicMeshes_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UPCGMergeDynamicMeshesSettings *******************************************
+struct Z_Construct_UClass_UPCGMergeDynamicMeshesSettings_Statics;
+PCGGEOMETRYSCRIPTINTEROP_API UClass* Z_Construct_UClass_UPCGMergeDynamicMeshesSettings_NoRegister();
+
+#define FID_Engine_Plugins_PCGInterops_PCGGeometryScriptInterop_Source_PCGGeometryScriptInterop_Public_Elements_PCGMergeDynamicMeshes_h_15_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUPCGMergeDynamicMeshesSettings(); \
+	friend struct ::Z_Construct_UClass_UPCGMergeDynamicMeshesSettings_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend PCGGEOMETRYSCRIPTINTEROP_API UClass* ::Z_Construct_UClass_UPCGMergeDynamicMeshesSettings_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UPCGMergeDynamicMeshesSettings, UPCGDynamicMeshBaseSettings, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/PCGGeometryScriptInterop"), Z_Construct_UClass_UPCGMergeDynamicMeshesSettings_NoRegister) \
+	DECLARE_SERIALIZER(UPCGMergeDynamicMeshesSettings)
+
+
+#define FID_Engine_Plugins_PCGInterops_PCGGeometryScriptInterop_Source_PCGGeometryScriptInterop_Public_Elements_PCGMergeDynamicMeshes_h_15_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	PCGGEOMETRYSCRIPTINTEROP_API UPCGMergeDynamicMeshesSettings(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UPCGMergeDynamicMeshesSettings(UPCGMergeDynamicMeshesSettings&&) = delete; \
+	UPCGMergeDynamicMeshesSettings(const UPCGMergeDynamicMeshesSettings&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(PCGGEOMETRYSCRIPTINTEROP_API, UPCGMergeDynamicMeshesSettings); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UPCGMergeDynamicMeshesSettings); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UPCGMergeDynamicMeshesSettings) \
+	PCGGEOMETRYSCRIPTINTEROP_API virtual ~UPCGMergeDynamicMeshesSettings();
+
+
+#define FID_Engine_Plugins_PCGInterops_PCGGeometryScriptInterop_Source_PCGGeometryScriptInterop_Public_Elements_PCGMergeDynamicMeshes_h_12_PROLOG
+#define FID_Engine_Plugins_PCGInterops_PCGGeometryScriptInterop_Source_PCGGeometryScriptInterop_Public_Elements_PCGMergeDynamicMeshes_h_15_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_PCGInterops_PCGGeometryScriptInterop_Source_PCGGeometryScriptInterop_Public_Elements_PCGMergeDynamicMeshes_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_PCGInterops_PCGGeometryScriptInterop_Source_PCGGeometryScriptInterop_Public_Elements_PCGMergeDynamicMeshes_h_15_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UPCGMergeDynamicMeshesSettings;
+
+// ********** End Class UPCGMergeDynamicMeshesSettings *********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_PCGInterops_PCGGeometryScriptInterop_Source_PCGGeometryScriptInterop_Public_Elements_PCGMergeDynamicMeshes_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
