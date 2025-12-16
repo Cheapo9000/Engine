@@ -1,0 +1,12 @@
+{
+	"OutputFiles": [
+		"Module.DatasmithC4DTranslator.gen.cpp.obj",
+		"DatasmithC4DImporter.cpp.obj",
+		"DatasmithC4DImporterMaterialSelector.cpp.obj",
+		"DatasmithC4DImportOptions.cpp.obj",
+		"DatasmithC4DMelangeSDKOverload.cpp.obj",
+		"DatasmithC4DTranslator.cpp.obj",
+		"DatasmithC4DTranslatorModule.cpp.obj",
+		"DatasmithC4DUtils.cpp.obj"
+	]
+}

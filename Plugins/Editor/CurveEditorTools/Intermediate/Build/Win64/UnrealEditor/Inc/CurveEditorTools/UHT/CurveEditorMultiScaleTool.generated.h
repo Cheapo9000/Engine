@@ -1,0 +1,44 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Tools/CurveEditorMultiScaleTool.h"
+
+#ifdef CURVEEDITORTOOLS_CurveEditorMultiScaleTool_generated_h
+#error "CurveEditorMultiScaleTool.generated.h already included, missing '#pragma once' in CurveEditorMultiScaleTool.h"
+#endif
+#define CURVEEDITORTOOLS_CurveEditorMultiScaleTool_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FMultiScaleToolOptions ********************************************
+struct Z_Construct_UScriptStruct_FMultiScaleToolOptions_Statics;
+#define FID_Engine_Plugins_Editor_CurveEditorTools_Source_CurveEditorTools_Private_Tools_CurveEditorMultiScaleTool_h_80_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FMultiScaleToolOptions_Statics; \
+	CURVEEDITORTOOLS_API static class UScriptStruct* StaticStruct();
+
+
+struct FMultiScaleToolOptions;
+// ********** End ScriptStruct FMultiScaleToolOptions **********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Editor_CurveEditorTools_Source_CurveEditorTools_Private_Tools_CurveEditorMultiScaleTool_h
+
+// ********** Begin Enum EMultiScalePivotType ******************************************************
+#define FOREACH_ENUM_EMULTISCALEPIVOTTYPE(op) \
+	op(EMultiScalePivotType::Average) \
+	op(EMultiScalePivotType::BoundCenter) \
+	op(EMultiScalePivotType::FirstKey) \
+	op(EMultiScalePivotType::LastKey) 
+
+enum class EMultiScalePivotType : uint8;
+template<> struct TIsUEnumClass<EMultiScalePivotType> { enum { Value = true }; };
+template<> CURVEEDITORTOOLS_NON_ATTRIBUTED_API UEnum* StaticEnum<EMultiScalePivotType>();
+// ********** End Enum EMultiScalePivotType ********************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"StylusInput": "UnrealEditor-StylusInput.dll",
+		"StylusInputDebugWidget": "UnrealEditor-StylusInputDebugWidget.dll",
+		"StylusInputRealTimeStylus": "UnrealEditor-StylusInputRealTimeStylus.dll",
+		"StylusInputWintab": "UnrealEditor-StylusInputWintab.dll"
+	}
+}

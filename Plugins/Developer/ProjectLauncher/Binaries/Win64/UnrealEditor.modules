@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CommonLaunchExtensions": "UnrealEditor-CommonLaunchExtensions.dll",
+		"ProjectLauncher": "UnrealEditor-ProjectLauncher.dll"
+	}
+}

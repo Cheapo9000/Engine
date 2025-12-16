@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"NamingTokens": "UnrealEditor-NamingTokens.dll",
+		"NamingTokensUI": "UnrealEditor-NamingTokensUI.dll",
+		"NamingTokensUncookedOnly": "UnrealEditor-NamingTokensUncookedOnly.dll"
+	}
+}

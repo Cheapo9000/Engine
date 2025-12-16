@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"VariantManagerContent": "UnrealEditor-VariantManagerContent.dll",
+		"VariantManagerContentEditor": "UnrealEditor-VariantManagerContentEditor.dll"
+	}
+}

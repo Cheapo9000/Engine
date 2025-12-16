@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"Composite": "UnrealEditor-Composite.dll",
+		"CompositeEditor": "UnrealEditor-CompositeEditor.dll"
+	}
+}

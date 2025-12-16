@@ -1,0 +1,14 @@
+{
+	"OutputFiles": [
+		"CADFileData.cpp.obj",
+		"CADFileReader.cpp.obj",
+		"CADInterfacesModule.cpp.obj",
+		"CADSceneGraph.cpp.obj",
+		"TechSoftBridge.cpp.obj",
+		"TechSoftFileParser.cpp.obj",
+		"TechSoftFileParserCADKernelTessellator.cpp.obj",
+		"TechSoftInterface.cpp.obj",
+		"TechSoftParserUtils.cpp.obj",
+		"TechSoftUtils.cpp.obj"
+	]
+}

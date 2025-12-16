@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"OpenColorIO": "UnrealEditor-OpenColorIO.dll",
+		"OpenColorIOEditor": "UnrealEditor-OpenColorIOEditor.dll"
+	}
+}
