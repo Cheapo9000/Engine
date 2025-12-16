@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"InterchangeDNA": "UnrealEditor-InterchangeDNA.dll",
+		"MetaHumanSDKEditor": "UnrealEditor-MetaHumanSDKEditor.dll",
+		"MetaHumanSDKRuntime": "UnrealEditor-MetaHumanSDKRuntime.dll"
+	}
+}

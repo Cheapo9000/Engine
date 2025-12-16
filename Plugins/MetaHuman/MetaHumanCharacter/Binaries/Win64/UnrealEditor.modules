@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MetaHumanCharacter": "UnrealEditor-MetaHumanCharacter.dll",
+		"MetaHumanCharacterEditor": "UnrealEditor-MetaHumanCharacterEditor.dll",
+		"MetaHumanCharacterMigrationEditor": "UnrealEditor-MetaHumanCharacterMigrationEditor.dll",
+		"MetaHumanCharacterPalette": "UnrealEditor-MetaHumanCharacterPalette.dll",
+		"MetaHumanCharacterPaletteEditor": "UnrealEditor-MetaHumanCharacterPaletteEditor.dll",
+		"MetaHumanDefaultEditorPipeline": "UnrealEditor-MetaHumanDefaultEditorPipeline.dll",
+		"MetaHumanDefaultPipeline": "UnrealEditor-MetaHumanDefaultPipeline.dll"
+	}
+}

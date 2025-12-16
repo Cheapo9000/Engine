@@ -1,0 +1,34 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MeshTrackerInterface": "UnrealEditor-MeshTrackerInterface.dll",
+		"MetaHumanBatchProcessor": "UnrealEditor-MetaHumanBatchProcessor.dll",
+		"MetaHumanCaptureDataEditor": "UnrealEditor-MetaHumanCaptureDataEditor.dll",
+		"MetaHumanCaptureProtocolStack": "UnrealEditor-MetaHumanCaptureProtocolStack.dll",
+		"MetaHumanCaptureSource": "UnrealEditor-MetaHumanCaptureSource.dll",
+		"MetaHumanCaptureUtils": "UnrealEditor-MetaHumanCaptureUtils.dll",
+		"MetaHumanConfig": "UnrealEditor-MetaHumanConfig.dll",
+		"MetaHumanConfigEditor": "UnrealEditor-MetaHumanConfigEditor.dll",
+		"MetaHumanControlsConversionTest": "UnrealEditor-MetaHumanControlsConversionTest.dll",
+		"MetaHumanCore": "UnrealEditor-MetaHumanCore.dll",
+		"MetaHumanCoreEditor": "UnrealEditor-MetaHumanCoreEditor.dll",
+		"MetaHumanDepthGenerator": "UnrealEditor-MetaHumanDepthGenerator.dll",
+		"MetaHumanFaceAnimationSolver": "UnrealEditor-MetaHumanFaceAnimationSolver.dll",
+		"MetaHumanFaceAnimationSolverEditor": "UnrealEditor-MetaHumanFaceAnimationSolverEditor.dll",
+		"MetaHumanFaceContourTracker": "UnrealEditor-MetaHumanFaceContourTracker.dll",
+		"MetaHumanFaceContourTrackerEditor": "UnrealEditor-MetaHumanFaceContourTrackerEditor.dll",
+		"MetaHumanFaceFittingSolver": "UnrealEditor-MetaHumanFaceFittingSolver.dll",
+		"MetaHumanFaceFittingSolverEditor": "UnrealEditor-MetaHumanFaceFittingSolverEditor.dll",
+		"MetaHumanFootageIngest": "UnrealEditor-MetaHumanFootageIngest.dll",
+		"MetaHumanIdentity": "UnrealEditor-MetaHumanIdentity.dll",
+		"MetaHumanIdentityEditor": "UnrealEditor-MetaHumanIdentityEditor.dll",
+		"MetaHumanImageViewerEditor": "UnrealEditor-MetaHumanImageViewerEditor.dll",
+		"MetaHumanPerformance": "UnrealEditor-MetaHumanPerformance.dll",
+		"MetaHumanPipeline": "UnrealEditor-MetaHumanPipeline.dll",
+		"MetaHumanPlatform": "UnrealEditor-MetaHumanPlatform.dll",
+		"MetaHumanSequencer": "UnrealEditor-MetaHumanSequencer.dll",
+		"MetaHumanSpeech2Face": "UnrealEditor-MetaHumanSpeech2Face.dll",
+		"MetaHumanToolkit": "UnrealEditor-MetaHumanToolkit.dll"
+	}
+}

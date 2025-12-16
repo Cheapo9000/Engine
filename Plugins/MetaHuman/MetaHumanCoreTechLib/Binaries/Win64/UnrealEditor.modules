@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MetaHumanCaptureData": "UnrealEditor-MetaHumanCaptureData.dll",
+		"MetaHumanCoreTech": "UnrealEditor-MetaHumanCoreTech.dll",
+		"MetaHumanCoreTechLib": "UnrealEditor-MetaHumanCoreTechLib.dll",
+		"MetaHumanImageViewer": "UnrealEditor-MetaHumanImageViewer.dll",
+		"MetaHumanPipelineCore": "UnrealEditor-MetaHumanPipelineCore.dll"
+	}
+}

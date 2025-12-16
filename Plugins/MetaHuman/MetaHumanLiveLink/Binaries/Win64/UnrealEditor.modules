@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LiveLinkFaceDiscovery": "UnrealEditor-LiveLinkFaceDiscovery.dll",
+		"LiveLinkFaceSource": "UnrealEditor-LiveLinkFaceSource.dll",
+		"LiveLinkFaceSourceEditor": "UnrealEditor-LiveLinkFaceSourceEditor.dll",
+		"MetaHumanLiveLinkSource": "UnrealEditor-MetaHumanLiveLinkSource.dll",
+		"MetaHumanLiveLinkSourceEditor": "UnrealEditor-MetaHumanLiveLinkSourceEditor.dll",
+		"MetaHumanLocalLiveLinkSource": "UnrealEditor-MetaHumanLocalLiveLinkSource.dll",
+		"MetaHumanLocalLiveLinkSourceEditor": "UnrealEditor-MetaHumanLocalLiveLinkSourceEditor.dll"
+	}
+}

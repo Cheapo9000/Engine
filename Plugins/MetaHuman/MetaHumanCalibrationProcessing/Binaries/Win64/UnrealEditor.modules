@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MetaHumanCalibrationCore": "UnrealEditor-MetaHumanCalibrationCore.dll",
+		"MetaHumanCalibrationGenerator": "UnrealEditor-MetaHumanCalibrationGenerator.dll",
+		"MetaHumanCalibrationLib": "UnrealEditor-MetaHumanCalibrationLib.dll"
+	}
+}
