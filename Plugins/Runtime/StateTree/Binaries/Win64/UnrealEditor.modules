@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"StateTreeDeveloper": "UnrealEditor-StateTreeDeveloper.dll",
+		"StateTreeEditorModule": "UnrealEditor-StateTreeEditorModule.dll",
+		"StateTreeModule": "UnrealEditor-StateTreeModule.dll",
+		"StateTreeTestSuite": "UnrealEditor-StateTreeTestSuite.dll"
+	}
+}

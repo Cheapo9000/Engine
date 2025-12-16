@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"OpenXRAR": "UnrealEditor-OpenXRAR.dll",
+		"OpenXREditor": "UnrealEditor-OpenXREditor.dll",
+		"OpenXRHMD": "UnrealEditor-OpenXRHMD.dll",
+		"OpenXRInput": "UnrealEditor-OpenXRInput.dll"
+	}
+}

@@ -1,0 +1,108 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "SubmixEffects/SubmixEffectTapDelay.h"
+
+#ifdef SYNTHESIS_SubmixEffectTapDelay_generated_h
+#error "SubmixEffectTapDelay.generated.h already included, missing '#pragma once' in SubmixEffectTapDelay.h"
+#endif
+#define SYNTHESIS_SubmixEffectTapDelay_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FSubmixEffectTapDelaySettings;
+struct FTapDelayInfo;
+
+// ********** Begin ScriptStruct FTapDelayInfo *****************************************************
+struct Z_Construct_UScriptStruct_FTapDelayInfo_Statics;
+#define FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_48_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FTapDelayInfo_Statics; \
+	SYNTHESIS_API static class UScriptStruct* StaticStruct();
+
+
+struct FTapDelayInfo;
+// ********** End ScriptStruct FTapDelayInfo *******************************************************
+
+// ********** Begin ScriptStruct FSubmixEffectTapDelaySettings *************************************
+struct Z_Construct_UScriptStruct_FSubmixEffectTapDelaySettings_Statics;
+#define FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_88_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FSubmixEffectTapDelaySettings_Statics; \
+	SYNTHESIS_API static class UScriptStruct* StaticStruct();
+
+
+struct FSubmixEffectTapDelaySettings;
+// ********** End ScriptStruct FSubmixEffectTapDelaySettings ***************************************
+
+// ********** Begin Class USubmixEffectTapDelayPreset **********************************************
+#define FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_172_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSetInterpolationTime); \
+	DECLARE_FUNCTION(execGetMaxDelayInMilliseconds); \
+	DECLARE_FUNCTION(execGetTapIds); \
+	DECLARE_FUNCTION(execGetTap); \
+	DECLARE_FUNCTION(execSetTap); \
+	DECLARE_FUNCTION(execRemoveTap); \
+	DECLARE_FUNCTION(execAddTap); \
+	DECLARE_FUNCTION(execSetSettings);
+
+
+struct Z_Construct_UClass_USubmixEffectTapDelayPreset_Statics;
+SYNTHESIS_API UClass* Z_Construct_UClass_USubmixEffectTapDelayPreset_NoRegister();
+
+#define FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_172_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSubmixEffectTapDelayPreset(); \
+	friend struct ::Z_Construct_UClass_USubmixEffectTapDelayPreset_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend SYNTHESIS_API UClass* ::Z_Construct_UClass_USubmixEffectTapDelayPreset_NoRegister(); \
+public: \
+	DECLARE_CLASS2(USubmixEffectTapDelayPreset, USoundEffectSubmixPreset, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Synthesis"), Z_Construct_UClass_USubmixEffectTapDelayPreset_NoRegister) \
+	DECLARE_SERIALIZER(USubmixEffectTapDelayPreset)
+
+
+#define FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_172_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	SYNTHESIS_API USubmixEffectTapDelayPreset(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	USubmixEffectTapDelayPreset(USubmixEffectTapDelayPreset&&) = delete; \
+	USubmixEffectTapDelayPreset(const USubmixEffectTapDelayPreset&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(SYNTHESIS_API, USubmixEffectTapDelayPreset); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USubmixEffectTapDelayPreset); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USubmixEffectTapDelayPreset) \
+	SYNTHESIS_API virtual ~USubmixEffectTapDelayPreset();
+
+
+#define FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_169_PROLOG
+#define FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_172_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_172_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_172_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h_172_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class USubmixEffectTapDelayPreset;
+
+// ********** End Class USubmixEffectTapDelayPreset ************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Runtime_Synthesis_Source_Synthesis_Classes_SubmixEffects_SubmixEffectTapDelay_h
+
+// ********** Begin Enum ETapLineMode **************************************************************
+#define FOREACH_ENUM_ETAPLINEMODE(op) \
+	op(ETapLineMode::SendToChannel) \
+	op(ETapLineMode::Panning) \
+	op(ETapLineMode::Disabled) 
+
+enum class ETapLineMode : uint8;
+template<> struct TIsUEnumClass<ETapLineMode> { enum { Value = true }; };
+template<> SYNTHESIS_NON_ATTRIBUTED_API UEnum* StaticEnum<ETapLineMode>();
+// ********** End Enum ETapLineMode ****************************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

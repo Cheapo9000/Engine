@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AppleARKit": "UnrealEditor-AppleARKit.dll",
+		"AppleARKitPoseTrackingLiveLink": "UnrealEditor-AppleARKitPoseTrackingLiveLink.dll"
+	}
+}

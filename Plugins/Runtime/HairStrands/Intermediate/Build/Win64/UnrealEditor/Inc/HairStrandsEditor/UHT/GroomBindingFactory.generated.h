@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "GroomBindingFactory.h"
+
+#ifdef HAIRSTRANDSEDITOR_GroomBindingFactory_generated_h
+#error "GroomBindingFactory.generated.h already included, missing '#pragma once' in GroomBindingFactory.h"
+#endif
+#define HAIRSTRANDSEDITOR_GroomBindingFactory_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UGroomBindingFactory *****************************************************
+struct Z_Construct_UClass_UGroomBindingFactory_Statics;
+HAIRSTRANDSEDITOR_API UClass* Z_Construct_UClass_UGroomBindingFactory_NoRegister();
+
+#define FID_Engine_Plugins_Runtime_HairStrands_Source_HairStrandsEditor_Public_GroomBindingFactory_h_14_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUGroomBindingFactory(); \
+	friend struct ::Z_Construct_UClass_UGroomBindingFactory_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend HAIRSTRANDSEDITOR_API UClass* ::Z_Construct_UClass_UGroomBindingFactory_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UGroomBindingFactory, UFactory, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/HairStrandsEditor"), Z_Construct_UClass_UGroomBindingFactory_NoRegister) \
+	DECLARE_SERIALIZER(UGroomBindingFactory)
+
+
+#define FID_Engine_Plugins_Runtime_HairStrands_Source_HairStrandsEditor_Public_GroomBindingFactory_h_14_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UGroomBindingFactory(UGroomBindingFactory&&) = delete; \
+	UGroomBindingFactory(const UGroomBindingFactory&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(HAIRSTRANDSEDITOR_API, UGroomBindingFactory); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UGroomBindingFactory); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UGroomBindingFactory) \
+	HAIRSTRANDSEDITOR_API virtual ~UGroomBindingFactory();
+
+
+#define FID_Engine_Plugins_Runtime_HairStrands_Source_HairStrandsEditor_Public_GroomBindingFactory_h_11_PROLOG
+#define FID_Engine_Plugins_Runtime_HairStrands_Source_HairStrandsEditor_Public_GroomBindingFactory_h_14_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Runtime_HairStrands_Source_HairStrandsEditor_Public_GroomBindingFactory_h_14_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Runtime_HairStrands_Source_HairStrandsEditor_Public_GroomBindingFactory_h_14_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UGroomBindingFactory;
+
+// ********** End Class UGroomBindingFactory *******************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Runtime_HairStrands_Source_HairStrandsEditor_Public_GroomBindingFactory_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

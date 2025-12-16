@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RigVM": "UnrealEditor-RigVM.dll",
+		"RigVMDeveloper": "UnrealEditor-RigVMDeveloper.dll",
+		"RigVMEditor": "UnrealEditor-RigVMEditor.dll"
+	}
+}

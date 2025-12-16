@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"InputDebugging": "UnrealEditor-InputDebugging.dll",
+		"InputDebuggingEditor": "UnrealEditor-InputDebuggingEditor.dll"
+	}
+}

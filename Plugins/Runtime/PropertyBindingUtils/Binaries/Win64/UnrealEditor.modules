@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PropertyBindingUtils": "UnrealEditor-PropertyBindingUtils.dll",
+		"PropertyBindingUtilsEditor": "UnrealEditor-PropertyBindingUtilsEditor.dll",
+		"PropertyBindingUtilsTestSuite": "UnrealEditor-PropertyBindingUtilsTestSuite.dll"
+	}
+}

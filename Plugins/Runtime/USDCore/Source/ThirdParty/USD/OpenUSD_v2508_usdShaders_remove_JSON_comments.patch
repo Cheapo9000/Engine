@@ -1,0 +1,13 @@
+diff --git a/pxr/usd/plugin/usdShaders/plugInfo.json b/pxr/usd/plugin/usdShaders/plugInfo.json
+index 7da9691b7..80dde1208 100644
+--- a/pxr/usd/plugin/usdShaders/plugInfo.json
++++ b/pxr/usd/plugin/usdShaders/plugInfo.json
+@@ -8,8 +8,6 @@
+                         "displayName": "USD-based shader definition discovery plugin."
+                     }
+                 },
+-                # Allow usdShaders/shaders to be accessible by hio/glslfx.cpp's 
+-                #   ShaderResourceRegistry
+                 "ShaderResources": "shaders"
+             },
+             "LibraryPath": "@PLUG_INFO_LIBRARY_PATH@",

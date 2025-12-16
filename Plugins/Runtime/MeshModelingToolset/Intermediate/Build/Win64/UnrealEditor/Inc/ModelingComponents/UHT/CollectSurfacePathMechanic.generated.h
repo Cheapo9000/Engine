@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Mechanics/CollectSurfacePathMechanic.h"
+
+#ifdef MODELINGCOMPONENTS_CollectSurfacePathMechanic_generated_h
+#error "CollectSurfacePathMechanic.generated.h already included, missing '#pragma once' in CollectSurfacePathMechanic.h"
+#endif
+#define MODELINGCOMPONENTS_CollectSurfacePathMechanic_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UCollectSurfacePathMechanic **********************************************
+struct Z_Construct_UClass_UCollectSurfacePathMechanic_Statics;
+MODELINGCOMPONENTS_API UClass* Z_Construct_UClass_UCollectSurfacePathMechanic_NoRegister();
+
+#define FID_Engine_Plugins_Runtime_MeshModelingToolset_Source_ModelingComponents_Public_Mechanics_CollectSurfacePathMechanic_h_32_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUCollectSurfacePathMechanic(); \
+	friend struct ::Z_Construct_UClass_UCollectSurfacePathMechanic_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend MODELINGCOMPONENTS_API UClass* ::Z_Construct_UClass_UCollectSurfacePathMechanic_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UCollectSurfacePathMechanic, UInteractionMechanic, COMPILED_IN_FLAGS(0 | CLASS_Transient), CASTCLASS_None, TEXT("/Script/ModelingComponents"), Z_Construct_UClass_UCollectSurfacePathMechanic_NoRegister) \
+	DECLARE_SERIALIZER(UCollectSurfacePathMechanic)
+
+
+#define FID_Engine_Plugins_Runtime_MeshModelingToolset_Source_ModelingComponents_Public_Mechanics_CollectSurfacePathMechanic_h_32_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UCollectSurfacePathMechanic(UCollectSurfacePathMechanic&&) = delete; \
+	UCollectSurfacePathMechanic(const UCollectSurfacePathMechanic&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(MODELINGCOMPONENTS_API, UCollectSurfacePathMechanic); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCollectSurfacePathMechanic); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UCollectSurfacePathMechanic) \
+	MODELINGCOMPONENTS_API virtual ~UCollectSurfacePathMechanic();
+
+
+#define FID_Engine_Plugins_Runtime_MeshModelingToolset_Source_ModelingComponents_Public_Mechanics_CollectSurfacePathMechanic_h_29_PROLOG
+#define FID_Engine_Plugins_Runtime_MeshModelingToolset_Source_ModelingComponents_Public_Mechanics_CollectSurfacePathMechanic_h_32_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Runtime_MeshModelingToolset_Source_ModelingComponents_Public_Mechanics_CollectSurfacePathMechanic_h_32_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Runtime_MeshModelingToolset_Source_ModelingComponents_Public_Mechanics_CollectSurfacePathMechanic_h_32_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UCollectSurfacePathMechanic;
+
+// ********** End Class UCollectSurfacePathMechanic ************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Runtime_MeshModelingToolset_Source_ModelingComponents_Public_Mechanics_CollectSurfacePathMechanic_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

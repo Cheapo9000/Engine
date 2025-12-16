@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AudioCapture": "UnrealEditor-AudioCapture.dll",
+		"AudioCaptureEditor": "UnrealEditor-AudioCaptureEditor.dll"
+	}
+}

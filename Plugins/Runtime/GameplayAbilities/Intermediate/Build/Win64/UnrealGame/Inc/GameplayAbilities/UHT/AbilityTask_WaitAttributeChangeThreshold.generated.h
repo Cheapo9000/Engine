@@ -1,0 +1,79 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Abilities/Tasks/AbilityTask_WaitAttributeChangeThreshold.h"
+
+#ifdef GAMEPLAYABILITIES_AbilityTask_WaitAttributeChangeThreshold_generated_h
+#error "AbilityTask_WaitAttributeChangeThreshold.generated.h already included, missing '#pragma once' in AbilityTask_WaitAttributeChangeThreshold.h"
+#endif
+#define GAMEPLAYABILITIES_AbilityTask_WaitAttributeChangeThreshold_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UAbilityTask_WaitAttributeChangeThreshold;
+class UGameplayAbility;
+struct FGameplayAttribute;
+
+// ********** Begin Delegate FWaitAttributeChangeThresholdDelegate *********************************
+#define FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_15_DELEGATE \
+GAMEPLAYABILITIES_API void FWaitAttributeChangeThresholdDelegate_DelegateWrapper(const FMulticastScriptDelegate& WaitAttributeChangeThresholdDelegate, bool bMatchesComparison, float CurrentValue);
+
+
+// ********** End Delegate FWaitAttributeChangeThresholdDelegate ***********************************
+
+// ********** Begin Class UAbilityTask_WaitAttributeChangeThreshold ********************************
+#define FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_23_RPC_WRAPPERS \
+	DECLARE_FUNCTION(execWaitForAttributeChangeThreshold);
+
+
+struct Z_Construct_UClass_UAbilityTask_WaitAttributeChangeThreshold_Statics;
+GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilityTask_WaitAttributeChangeThreshold_NoRegister();
+
+#define FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_23_INCLASS \
+private: \
+	static void StaticRegisterNativesUAbilityTask_WaitAttributeChangeThreshold(); \
+	friend struct ::Z_Construct_UClass_UAbilityTask_WaitAttributeChangeThreshold_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend GAMEPLAYABILITIES_API UClass* ::Z_Construct_UClass_UAbilityTask_WaitAttributeChangeThreshold_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UAbilityTask_WaitAttributeChangeThreshold, UAbilityTask, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/GameplayAbilities"), Z_Construct_UClass_UAbilityTask_WaitAttributeChangeThreshold_NoRegister) \
+	DECLARE_SERIALIZER(UAbilityTask_WaitAttributeChangeThreshold)
+
+
+#define FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_23_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	GAMEPLAYABILITIES_API UAbilityTask_WaitAttributeChangeThreshold(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UAbilityTask_WaitAttributeChangeThreshold) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(GAMEPLAYABILITIES_API, UAbilityTask_WaitAttributeChangeThreshold); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UAbilityTask_WaitAttributeChangeThreshold); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UAbilityTask_WaitAttributeChangeThreshold(UAbilityTask_WaitAttributeChangeThreshold&&) = delete; \
+	UAbilityTask_WaitAttributeChangeThreshold(const UAbilityTask_WaitAttributeChangeThreshold&) = delete; \
+	GAMEPLAYABILITIES_API virtual ~UAbilityTask_WaitAttributeChangeThreshold();
+
+
+#define FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_20_PROLOG
+#define FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_23_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_23_RPC_WRAPPERS \
+	FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_23_INCLASS \
+	FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h_23_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UAbilityTask_WaitAttributeChangeThreshold;
+
+// ********** End Class UAbilityTask_WaitAttributeChangeThreshold **********************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Runtime_GameplayAbilities_Source_GameplayAbilities_Public_Abilities_Tasks_AbilityTask_WaitAttributeChangeThreshold_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

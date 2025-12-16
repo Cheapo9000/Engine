@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DynamicMesh": "UnrealEditor-DynamicMesh.dll",
+		"GeometryAlgorithms": "UnrealEditor-GeometryAlgorithms.dll",
+		"MeshFileUtils": "UnrealEditor-MeshFileUtils.dll"
+	}
+}

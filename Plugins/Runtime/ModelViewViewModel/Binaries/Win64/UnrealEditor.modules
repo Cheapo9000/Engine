@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ModelViewViewModel": "UnrealEditor-ModelViewViewModel.dll",
+		"ModelViewViewModelBlueprint": "UnrealEditor-ModelViewViewModelBlueprint.dll",
+		"ModelViewViewModelDebugger": "UnrealEditor-ModelViewViewModelDebugger.dll",
+		"ModelViewViewModelDebuggerEditor": "UnrealEditor-ModelViewViewModelDebuggerEditor.dll",
+		"ModelViewViewModelEditor": "UnrealEditor-ModelViewViewModelEditor.dll"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"GeometryCache": "UnrealEditor-GeometryCache.dll",
+		"GeometryCacheEd": "UnrealEditor-GeometryCacheEd.dll",
+		"GeometryCacheSequencer": "UnrealEditor-GeometryCacheSequencer.dll",
+		"GeometryCacheStreamer": "UnrealEditor-GeometryCacheStreamer.dll",
+		"GeometryCacheTracks": "UnrealEditor-GeometryCacheTracks.dll"
+	}
+}

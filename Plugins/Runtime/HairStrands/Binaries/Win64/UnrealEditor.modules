@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"HairCardGeneratorFramework": "UnrealEditor-HairCardGeneratorFramework.dll",
+		"HairStrandsCore": "UnrealEditor-HairStrandsCore.dll",
+		"HairStrandsDataflow": "UnrealEditor-HairStrandsDataflow.dll",
+		"HairStrandsDeformer": "UnrealEditor-HairStrandsDeformer.dll",
+		"HairStrandsEditor": "UnrealEditor-HairStrandsEditor.dll",
+		"HairStrandsRuntime": "UnrealEditor-HairStrandsRuntime.dll",
+		"HairStrandsSolver": "UnrealEditor-HairStrandsSolver.dll"
+	}
+}

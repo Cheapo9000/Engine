@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"OpenXRHandTracking": "UnrealEditor-OpenXRHandTracking.dll",
+		"OpenXRHandTrackingEditor": "UnrealEditor-OpenXRHandTrackingEditor.dll"
+	}
+}

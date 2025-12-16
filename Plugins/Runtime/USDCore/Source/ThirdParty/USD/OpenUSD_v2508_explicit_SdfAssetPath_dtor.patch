@@ -1,0 +1,36 @@
+diff --git a/pxr/usd/sdf/assetPath.cpp b/pxr/usd/sdf/assetPath.cpp
+index 4af6bec9d..bb20971ea 100644
+--- a/pxr/usd/sdf/assetPath.cpp
++++ b/pxr/usd/sdf/assetPath.cpp
+@@ -125,6 +125,14 @@ SdfAssetPath::SdfAssetPath()
+ {
+ }
+ 
++// XXX(Epic Games):
++// We explicitly declare, define, and export a destructor for SdfAssetPaths
++// so that allocations of its member strings can be tracked and deallocated
++// using the correct deallocator.
++SdfAssetPath::~SdfAssetPath()
++{
++}
++
+ SdfAssetPath::SdfAssetPath(const std::string &authoredPath)
+     : _authoredPath(authoredPath)
+ {   
+diff --git a/pxr/usd/sdf/assetPath.h b/pxr/usd/sdf/assetPath.h
+index 9d9282bdc..1d11e579d 100644
+--- a/pxr/usd/sdf/assetPath.h
++++ b/pxr/usd/sdf/assetPath.h
+@@ -84,6 +84,12 @@ public:
+     /// Construct an empty asset path.
+     SDF_API SdfAssetPath();
+ 
++    // XXX(Epic Games):
++    // We explicitly declare, define, and export a destructor for SdfAssetPaths
++    // so that allocations of its member strings can be tracked and deallocated
++    // using the correct deallocator.
++    SDF_API ~SdfAssetPath();
++
+     /// Construct an asset path with \p authoredPath and no associated
+     /// evaluated or resolved path.
+     ///

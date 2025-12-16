@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AudioWidgets": "UnrealEditor-AudioWidgets.dll",
+		"AudioWidgetsCore": "UnrealEditor-AudioWidgetsCore.dll",
+		"AudioWidgetsEditor": "UnrealEditor-AudioWidgetsEditor.dll"
+	}
+}

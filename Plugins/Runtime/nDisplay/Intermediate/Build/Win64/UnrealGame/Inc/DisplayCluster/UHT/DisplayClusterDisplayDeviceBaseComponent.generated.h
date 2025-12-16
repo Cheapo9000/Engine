@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Render/DisplayDevice/Components/DisplayClusterDisplayDeviceBaseComponent.h"
+
+#ifdef DISPLAYCLUSTER_DisplayClusterDisplayDeviceBaseComponent_generated_h
+#error "DisplayClusterDisplayDeviceBaseComponent.generated.h already included, missing '#pragma once' in DisplayClusterDisplayDeviceBaseComponent.h"
+#endif
+#define DISPLAYCLUSTER_DisplayClusterDisplayDeviceBaseComponent_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UDisplayClusterDisplayDeviceBaseComponent ********************************
+struct Z_Construct_UClass_UDisplayClusterDisplayDeviceBaseComponent_Statics;
+DISPLAYCLUSTER_API UClass* Z_Construct_UClass_UDisplayClusterDisplayDeviceBaseComponent_NoRegister();
+
+#define FID_Engine_Plugins_Runtime_nDisplay_Source_DisplayCluster_Public_Render_DisplayDevice_Components_DisplayClusterDisplayDeviceBaseComponent_h_30_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUDisplayClusterDisplayDeviceBaseComponent(); \
+	friend struct ::Z_Construct_UClass_UDisplayClusterDisplayDeviceBaseComponent_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend DISPLAYCLUSTER_API UClass* ::Z_Construct_UClass_UDisplayClusterDisplayDeviceBaseComponent_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UDisplayClusterDisplayDeviceBaseComponent, USceneComponent, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Config), CASTCLASS_None, TEXT("/Script/DisplayCluster"), Z_Construct_UClass_UDisplayClusterDisplayDeviceBaseComponent_NoRegister) \
+	DECLARE_SERIALIZER(UDisplayClusterDisplayDeviceBaseComponent)
+
+
+#define FID_Engine_Plugins_Runtime_nDisplay_Source_DisplayCluster_Public_Render_DisplayDevice_Components_DisplayClusterDisplayDeviceBaseComponent_h_30_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UDisplayClusterDisplayDeviceBaseComponent(UDisplayClusterDisplayDeviceBaseComponent&&) = delete; \
+	UDisplayClusterDisplayDeviceBaseComponent(const UDisplayClusterDisplayDeviceBaseComponent&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UDisplayClusterDisplayDeviceBaseComponent); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDisplayClusterDisplayDeviceBaseComponent); \
+	DEFINE_ABSTRACT_DEFAULT_CONSTRUCTOR_CALL(UDisplayClusterDisplayDeviceBaseComponent) \
+	NO_API virtual ~UDisplayClusterDisplayDeviceBaseComponent();
+
+
+#define FID_Engine_Plugins_Runtime_nDisplay_Source_DisplayCluster_Public_Render_DisplayDevice_Components_DisplayClusterDisplayDeviceBaseComponent_h_26_PROLOG
+#define FID_Engine_Plugins_Runtime_nDisplay_Source_DisplayCluster_Public_Render_DisplayDevice_Components_DisplayClusterDisplayDeviceBaseComponent_h_30_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Runtime_nDisplay_Source_DisplayCluster_Public_Render_DisplayDevice_Components_DisplayClusterDisplayDeviceBaseComponent_h_30_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Runtime_nDisplay_Source_DisplayCluster_Public_Render_DisplayDevice_Components_DisplayClusterDisplayDeviceBaseComponent_h_30_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UDisplayClusterDisplayDeviceBaseComponent;
+
+// ********** End Class UDisplayClusterDisplayDeviceBaseComponent **********************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Runtime_nDisplay_Source_DisplayCluster_Public_Render_DisplayDevice_Components_DisplayClusterDisplayDeviceBaseComponent_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

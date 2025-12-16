@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"EditorScriptableToolsFramework": "UnrealEditor-EditorScriptableToolsFramework.dll",
+		"ScriptableToolsFramework": "UnrealEditor-ScriptableToolsFramework.dll"
+	}
+}

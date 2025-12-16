@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"Synthesis": "UnrealEditor-Synthesis.dll",
+		"SynthesisEditor": "UnrealEditor-SynthesisEditor.dll"
+	}
+}

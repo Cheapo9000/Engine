@@ -1,0 +1,404 @@
+diff --git a/cmake/defaults/CXXDefaults.cmake b/cmake/defaults/CXXDefaults.cmake
+index 5259eb981..3d04fe171 100644
+--- a/cmake/defaults/CXXDefaults.cmake
++++ b/cmake/defaults/CXXDefaults.cmake
+@@ -86,3 +86,10 @@ if (PXR_PREFER_SAFETY_OVER_SPEED)
+ else()
+    set(PXR_PREFER_SAFETY_OVER_SPEED "0")
+ endif()
++
++# Set memory overloads configuration
++if (PXR_ENABLE_RUNTIME_MEMORY_OVERLOADS)
++    set(PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED "1")
++else()
++    set(PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED "0")
++endif()
+diff --git a/cmake/defaults/Options.cmake b/cmake/defaults/Options.cmake
+index 84fd222dd..0e7cdf72f 100644
+--- a/cmake/defaults/Options.cmake
++++ b/cmake/defaults/Options.cmake
+@@ -41,6 +41,7 @@ option(PXR_ENABLE_NAMESPACES "Enable C++ namespaces." ON)
+ option(PXR_PREFER_SAFETY_OVER_SPEED
+        "Enable certain checks designed to avoid crashes or out-of-bounds memory reads with malformed input files.  These checks may negatively impact performance."
+         ON)
++option(PXR_ENABLE_RUNTIME_MEMORY_OVERLOADS "Enable C++ memory overloads." OFF)
+ 
+ if(APPLE)
+     # Cross Compilation detection as defined in CMake docs
+diff --git a/cmake/macros/Private.cmake b/cmake/macros/Private.cmake
+index 6fe1134c1..73713000a 100644
+--- a/cmake/macros/Private.cmake
++++ b/cmake/macros/Private.cmake
+@@ -1538,3 +1538,19 @@ function(_pxr_library NAME)
+         endif()
+     endif()
+ endfunction() # _pxr_library
++
++# Generate a boilerplate source file to overload operator new and delete
++# in each module.
++function(_generate_memory_boilerplate NAME PREFIX OUTPUT_FILE)
++    message("Generating memory overload boilerplate for ${PREFIX}${NAME}")
++
++    set(MEMORY_BOILERPLATE_CPPFILE ${PREFIX}memoryBoilerplate.cpp)
++    set(${OUTPUT_FILE} ${MEMORY_BOILERPLATE_CPPFILE} PARENT_SCOPE)
++
++    file(
++        GENERATE
++        OUTPUT ${MEMORY_BOILERPLATE_CPPFILE}
++        CONTENT
++            "#include \"pxr/base/arch/memoryOverloads.h\"\nOPERATOR_NEW_AND_DELETE_OVERLOADS\n"
++    )
++endfunction()
+diff --git a/cmake/macros/Public.cmake b/cmake/macros/Public.cmake
+index 807cf7d83..90f6f7069 100644
+--- a/cmake/macros/Public.cmake
++++ b/cmake/macros/Public.cmake
+@@ -327,6 +327,17 @@ function(pxr_library NAME)
+         endforeach()
+     endif()
+ 
++    # Generate memory boilerplate for modules with actual source files only,
++    # excluding build-workaround.cpp, which is used for header-only modules.
++    if (PXR_ENABLE_RUNTIME_MEMORY_OVERLOADS AND
++        (args_PRIVATE_CLASSES OR args_PUBLIC_CLASSES OR args_CPPFILES) AND
++        NOT("build-workaround.cpp" IN_LIST args_CPPFILES)
++        )
++
++        _generate_memory_boilerplate(${NAME} "" MEMORY_BOILERPLATE_CPPFILE)
++        list(APPEND args_CPPFILES ${MEMORY_BOILERPLATE_CPPFILE})
++    endif()
++
+     # Collect libraries.
+     if(NOT args_TYPE STREQUAL "PLUGIN")
+         get_property(help CACHE PXR_ALL_LIBS PROPERTY HELPSTRING)
+@@ -430,6 +441,12 @@ function(pxr_library NAME)
+     if(PXR_ENABLE_PYTHON_SUPPORT AND (args_PYMODULE_CPPFILES OR args_PYMODULE_FILES OR args_PYSIDE_UI_FILES))
+         list(APPEND pythonModuleIncludeDirs ${PYTHON_INCLUDE_DIRS})
+ 
++        # Generate memory boilerplate only for Python modules that wrap C++ classes.
++        if (PXR_ENABLE_RUNTIME_MEMORY_OVERLOADS AND args_PYMODULE_CPPFILES)
++            _generate_memory_boilerplate(${NAME} "py" MEMORY_BOILERPLATE_PYTHON_CPPFILE)
++            list(APPEND args_PYMODULE_CPPFILES ${MEMORY_BOILERPLATE_PYTHON_CPPFILE})
++        endif()
++
+         _pxr_python_module(
+             ${NAME}
+             WRAPPED_LIB_INSTALL_PREFIX "${libInstallPrefix}"
+diff --git a/pxr/base/arch/CMakeLists.txt b/pxr/base/arch/CMakeLists.txt
+index b21ebd03a..45680c776 100644
+--- a/pxr/base/arch/CMakeLists.txt
++++ b/pxr/base/arch/CMakeLists.txt
+@@ -9,6 +9,11 @@ if(WIN32)
+     set(PLATFORM_LIBS Ws2_32.lib Dbghelp.lib ${PLATFORM_LIBS})
+ endif()
+ 
++set(MEMORY_OVERLOAD "")
++if (PXR_ENABLE_RUNTIME_MEMORY_OVERLOADS)
++    set(MEMORY_OVERLOAD memoryOverloads)
++endif()
++
+ pxr_library(arch
+     LIBRARIES
+         ${CMAKE_DL_LIBS}
+@@ -36,6 +41,7 @@ pxr_library(arch
+         timing
+         virtualMemory
+         vsnprintf
++        ${MEMORY_OVERLOAD}
+ 
+     PUBLIC_HEADERS
+         api.h
+diff --git a/pxr/base/arch/initConfig.cpp b/pxr/base/arch/initConfig.cpp
+index 95ef7cbbf..5e5679e36 100644
+--- a/pxr/base/arch/initConfig.cpp
++++ b/pxr/base/arch/initConfig.cpp
+@@ -10,6 +10,10 @@
+ #include "pxr/base/arch/stackTrace.h"
+ #include "pxr/base/arch/systemInfo.h"
+ 
++#ifdef PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED
++#include "pxr/base/arch/memoryOverloads.h"
++#endif
++
+ PXR_NAMESPACE_OPEN_SCOPE
+ 
+ void Arch_InitDebuggerAttach();
+@@ -22,6 +26,10 @@ namespace {
+ 
+ ARCH_CONSTRUCTOR(Arch_InitConfig, 2)
+ {
++#ifdef PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED
++    MemoryOverloads::InitMemoryOverrides();
++#endif
++
+     // Initialize the application start time.  First so it's a close as
+     // possible to the real start time.
+     Arch_SetAppLaunchTime();
+diff --git a/pxr/base/arch/memoryOverloads.cpp b/pxr/base/arch/memoryOverloads.cpp
+new file mode 100644
+index 000000000..91d86231f
+--- /dev/null
++++ b/pxr/base/arch/memoryOverloads.cpp
+@@ -0,0 +1,140 @@
++#include "pxr/base/arch/memoryOverloads.h"
++
++#ifdef PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED
++
++#include <limits>
++#include <unordered_set>
++
++PXR_NAMESPACE_OPEN_SCOPE
++
++MallocFuncType MemoryOverloads::mallocFunction = nullptr;
++FreeFuncType MemoryOverloads::freeFunction = nullptr;
++
++// Basic allocator for use with the container tracking memory allocations.
++// This is to prevent infinite recursion in MemoryOverloads::Malloc when
++// calling insert on the container since it creates a new node, which would
++// call the overloaded Malloc which would then call insert, etc.
++template <typename T>
++struct SimpleAllocator
++{
++    using value_type = T;
++
++    SimpleAllocator() = default;
++
++    template <class U>
++    SimpleAllocator(const SimpleAllocator<U>&) {}
++
++    T* allocate(std::size_t size)
++    {
++        if (size <= std::numeric_limits<std::size_t>::max() / sizeof(T))
++        {
++            if (auto ptr = std::malloc(size * sizeof(T)))
++            {
++                return static_cast<T*>(ptr);
++            }
++        }
++        throw std::bad_alloc();
++    }
++
++    void deallocate(T* ptr, std::size_t size)
++    {
++        std::free(ptr);
++    }
++};
++
++template <typename T, typename U>
++inline bool operator == (const SimpleAllocator<T>&, const SimpleAllocator<U>&)
++{
++    return true;
++}
++
++template <typename T, typename U>
++inline bool operator != (const SimpleAllocator<T>& a, const SimpleAllocator<U>& b)
++{
++    return !(a == b);
++}
++
++typedef std::unordered_set<void*, std::hash<void*>, std::equal_to<void*>, SimpleAllocator<void*> > AllocContainer;
++
++// This container is used to track allocations made prior to registering the malloc/free overrides.
++// Once those overrides are registered, new allocations don't have to be tracked since those
++// will be freed with the overridden free, after checking if it was a tracked allocation.
++static AllocContainer* trackedAllocations = nullptr;
++
++void MemoryOverloads::InitMemoryOverrides()
++{
++    trackedAllocations = new AllocContainer();
++}
++
++void* MemoryOverloads::Malloc(std::size_t size, std::size_t alignment)
++{
++    void* ptr = nullptr;
++    if (mallocFunction)
++    {
++        ptr = mallocFunction(size, alignment);
++    }
++    else
++    {
++#if defined(ARCH_COMPILER_MSVC)
++        // MSVC doesn't support the aligned_alloc function
++        ptr = _aligned_malloc(size, alignment);
++#else
++        ptr = std::aligned_alloc(size, alignment);
++#endif
++        if (ptr)
++        {
++            if (trackedAllocations)
++            {
++                trackedAllocations->insert(ptr);
++            }
++            // Some allocations are made from RunConstructors before trackedAllocations is
++            // even created but those are intended to leak so they don't need to be tracked
++        }
++    }
++    return ptr;
++}
++
++void MemoryOverloads::Free(void* ptr)
++{
++    if (freeFunction)
++    {
++        if (auto it = trackedAllocations->find(ptr); it != trackedAllocations->end())
++        {
++            trackedAllocations->erase(it);
++#if defined(ARCH_COMPILER_MSVC)
++            _aligned_free(ptr);
++#else
++            std::free(ptr);
++#endif
++        }
++        else
++        {
++            freeFunction(ptr);
++        }
++    }
++    else
++    {
++        if (trackedAllocations)
++        {
++            if (auto it = trackedAllocations->find(ptr); it != trackedAllocations->end())
++            {
++                trackedAllocations->erase(it);
++            }
++        }
++#if defined(ARCH_COMPILER_MSVC)
++        _aligned_free(ptr);
++#else
++        std::free(ptr);
++#endif
++    }
++}
++
++void MemoryOverloads::RegisterMallocFree(MallocFuncType mallocFunc, FreeFuncType freeFunc)
++{
++    mallocFunction = mallocFunc;
++    freeFunction = freeFunc;
++}
++
++PXR_NAMESPACE_CLOSE_SCOPE
++
++#endif // PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED
+diff --git a/pxr/base/arch/memoryOverloads.h b/pxr/base/arch/memoryOverloads.h
+new file mode 100644
+index 000000000..ca98cb155
+--- /dev/null
++++ b/pxr/base/arch/memoryOverloads.h
+@@ -0,0 +1,88 @@
++#ifndef PXR_BASE_ARCH_MEMORY_OVERLOADS_H
++#define PXR_BASE_ARCH_MEMORY_OVERLOADS_H
++
++#include "pxr/pxr.h"
++
++#ifdef PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED
++
++#include "pxr/base/arch/api.h"
++#include <cstdlib>
++#include <new>
++
++PXR_NAMESPACE_OPEN_SCOPE
++
++typedef void* (*MallocFuncType)(std::size_t, std::size_t);
++typedef void (*FreeFuncType)(void*);
++
++struct MemoryOverloads
++{
++    static ARCH_API void InitMemoryOverrides();
++
++    static ARCH_API void* Malloc(std::size_t size, std::size_t alignment);
++    static ARCH_API void Free(void* ptr);
++    static ARCH_API void RegisterMallocFree(MallocFuncType mallocFunc, FreeFuncType freeFunc);
++
++private:
++    static MallocFuncType mallocFunction;
++    static FreeFuncType freeFunction;
++};
++
++PXR_NAMESPACE_CLOSE_SCOPE
++
++#if !defined(ARCH_COMPILER_MSVC)
++    #if __has_feature(cxx_noexcept)
++        #define OPERATOR_NEW_THROW_SPEC noexcept(false)
++    #else
++        #define OPERATOR_NEW_THROW_SPEC throw(std::bad_alloc)
++    #endif
++    #define OPERATOR_DELETE_THROW_SPEC noexcept(true)
++    #define OPERATOR_NEW_NOTHROW_SPEC noexcept(true)
++    #define OPERATOR_DELETE_NOTHROW_SPEC noexcept(true)
++#endif // !defined(ARCH_COMPILER_MSVC)
++
++#ifndef OPERATOR_NEW_THROW_SPEC
++    #define OPERATOR_NEW_THROW_SPEC
++#endif
++#ifndef OPERATOR_DELETE_THROW_SPEC
++    #define OPERATOR_DELETE_THROW_SPEC
++#endif
++#ifndef OPERATOR_NEW_NOTHROW_SPEC
++    #define OPERATOR_NEW_NOTHROW_SPEC throw()
++#endif
++#ifndef OPERATOR_DELETE_NOTHROW_SPEC
++    #define OPERATOR_DELETE_NOTHROW_SPEC throw()
++#endif
++
++#define OPERATOR_NEW_AND_DELETE_OVERLOADS \
++void* operator new  (std::size_t size) OPERATOR_NEW_THROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, __STDCPP_DEFAULT_NEW_ALIGNMENT__); } \
++void* operator new[](std::size_t size) OPERATOR_NEW_THROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, __STDCPP_DEFAULT_NEW_ALIGNMENT__); } \
++void* operator new  (std::size_t size, const std::nothrow_t&) OPERATOR_NEW_NOTHROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, __STDCPP_DEFAULT_NEW_ALIGNMENT__); } \
++void* operator new[](std::size_t size, const std::nothrow_t&) OPERATOR_NEW_NOTHROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, __STDCPP_DEFAULT_NEW_ALIGNMENT__); } \
++void* operator new  (std::size_t size, std::align_val_t alignment) OPERATOR_NEW_THROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, (std::size_t)alignment); } \
++void* operator new[](std::size_t size, std::align_val_t alignment) OPERATOR_NEW_THROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, (std::size_t)alignment); } \
++void* operator new  (std::size_t size, std::align_val_t alignment, const std::nothrow_t&) OPERATOR_NEW_NOTHROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, (std::size_t)alignment); } \
++void* operator new[](std::size_t size, std::align_val_t alignment, const std::nothrow_t&) OPERATOR_NEW_NOTHROW_SPEC { return PXR_NS::MemoryOverloads::Malloc(size ? size : 1, (std::size_t)alignment); } \
++void operator delete  (void* ptr) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete  (void* ptr, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete  (void* ptr, std::size_t Size) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr, std::size_t Size) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete  (void* ptr, std::size_t Size, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr, std::size_t Size, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete  (void* ptr, std::align_val_t alignment) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr, std::align_val_t alignment) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete  (void* ptr, std::align_val_t alignment, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr, std::align_val_t alignment, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete  (void* ptr, std::size_t Size, std::align_val_t alignment) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr, std::size_t Size, std::align_val_t alignment) OPERATOR_DELETE_THROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete  (void* ptr, std::size_t Size, std::align_val_t alignment, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); } \
++void operator delete[](void* ptr, std::size_t Size, std::align_val_t alignment, const std::nothrow_t&) OPERATOR_DELETE_NOTHROW_SPEC { PXR_NS::MemoryOverloads::Free(ptr); }
++
++#else
++
++#define OPERATOR_NEW_AND_DELETE_OVERLOADS
++
++#endif // PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED
++
++#endif // PXR_BASE_ARCH_MEMORY_OVERLOADS_H
+diff --git a/pxr/external/boost/python/CMakeLists.txt b/pxr/external/boost/python/CMakeLists.txt
+index 3874e7b24..944dd20e7 100644
+--- a/pxr/external/boost/python/CMakeLists.txt
++++ b/pxr/external/boost/python/CMakeLists.txt
+@@ -23,6 +23,8 @@ endforeach()
+ 
+ pxr_library(python
+     LIBRARIES
++        # Depend on arch only to leverage memory overloads.
++        arch
+         boost
+         # Use PYTHON_LIBRARIES instead of the Python3::Python target
+         # directly when specifying library dependencies to ensure
+diff --git a/pxr/pxr.h.in b/pxr/pxr.h.in
+index d0a1d1a09..e6d17bf49 100644
+--- a/pxr/pxr.h.in
++++ b/pxr/pxr.h.in
+@@ -52,6 +52,10 @@ namespace PXR_NS {
+ #define PXR_PREFER_SAFETY_OVER_SPEED
+ #endif
+ 
++#if @PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED@
++#define PXR_RUNTIME_MEMORY_OVERLOADS_ENABLED
++#endif
++
+ #define PXR_USE_INTERNAL_BOOST_PYTHON
+ 
+ #endif //PXR_H

@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AudioMotorSim": "UnrealEditor-AudioMotorSim.dll",
+		"AudioMotorSimDebug": "UnrealEditor-AudioMotorSimDebug.dll",
+		"AudioMotorSimStandardComponents": "UnrealEditor-AudioMotorSimStandardComponents.dll"
+	}
+}

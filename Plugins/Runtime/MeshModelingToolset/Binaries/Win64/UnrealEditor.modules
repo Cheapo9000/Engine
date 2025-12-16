@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MeshModelingTools": "UnrealEditor-MeshModelingTools.dll",
+		"MeshModelingToolsEditorOnly": "UnrealEditor-MeshModelingToolsEditorOnly.dll",
+		"ModelingComponents": "UnrealEditor-ModelingComponents.dll",
+		"ModelingComponentsEditorOnly": "UnrealEditor-ModelingComponentsEditorOnly.dll",
+		"ModelingOperators": "UnrealEditor-ModelingOperators.dll",
+		"ModelingOperatorsEditorOnly": "UnrealEditor-ModelingOperatorsEditorOnly.dll",
+		"SkeletalMeshModifiers": "UnrealEditor-SkeletalMeshModifiers.dll"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ZoneGraph": "UnrealEditor-ZoneGraph.dll",
+		"ZoneGraphDebug": "UnrealEditor-ZoneGraphDebug.dll",
+		"ZoneGraphEditor": "UnrealEditor-ZoneGraphEditor.dll",
+		"ZoneGraphTestSuite": "UnrealEditor-ZoneGraphTestSuite.dll"
+	}
+}

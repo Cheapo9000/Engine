@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MetasoundEditor": "UnrealEditor-MetasoundEditor.dll",
+		"MetasoundEngine": "UnrealEditor-MetasoundEngine.dll",
+		"MetasoundEngineTest": "UnrealEditor-MetasoundEngineTest.dll",
+		"MetasoundFrontend": "UnrealEditor-MetasoundFrontend.dll",
+		"MetasoundGenerator": "UnrealEditor-MetasoundGenerator.dll",
+		"MetasoundGraphCore": "UnrealEditor-MetasoundGraphCore.dll",
+		"MetasoundStandardNodes": "UnrealEditor-MetasoundStandardNodes.dll"
+	}
+}

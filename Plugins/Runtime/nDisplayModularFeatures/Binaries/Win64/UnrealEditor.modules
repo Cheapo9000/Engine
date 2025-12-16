@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DisplayClusterLightCardExtender": "UnrealEditor-DisplayClusterLightCardExtender.dll",
+		"DisplayClusterModularFeaturesEditor": "UnrealEditor-DisplayClusterModularFeaturesEditor.dll"
+	}
+}

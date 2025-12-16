@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ApexDestruction": "UnrealEditor-ApexDestruction.dll",
+		"ApexDestructionEditor": "UnrealEditor-ApexDestructionEditor.dll"
+	}
+}

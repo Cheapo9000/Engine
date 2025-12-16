@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ComputeFramework": "UnrealEditor-ComputeFramework.dll",
+		"ComputeFrameworkEditor": "UnrealEditor-ComputeFrameworkEditor.dll"
+	}
+}

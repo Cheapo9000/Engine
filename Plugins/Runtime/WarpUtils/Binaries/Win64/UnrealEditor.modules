@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PFMExporter": "UnrealEditor-PFMExporter.dll",
+		"WarpUtils": "UnrealEditor-WarpUtils.dll"
+	}
+}

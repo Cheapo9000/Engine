@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"Spatialization": "UnrealEditor-Spatialization.dll",
+		"SpatializationEditor": "UnrealEditor-SpatializationEditor.dll"
+	}
+}

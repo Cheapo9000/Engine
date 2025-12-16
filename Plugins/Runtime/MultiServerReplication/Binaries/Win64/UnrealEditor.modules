@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MultiServerConfiguration": "UnrealEditor-MultiServerConfiguration.dll",
+		"MultiServerReplication": "UnrealEditor-MultiServerReplication.dll"
+	}
+}

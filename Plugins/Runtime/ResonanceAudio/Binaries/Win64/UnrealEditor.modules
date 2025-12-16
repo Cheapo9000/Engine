@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ResonanceAudio": "UnrealEditor-ResonanceAudio.dll",
+		"ResonanceAudioEditor": "UnrealEditor-ResonanceAudioEditor.dll"
+	}
+}

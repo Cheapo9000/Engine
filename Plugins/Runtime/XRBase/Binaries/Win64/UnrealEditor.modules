@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"XRBase": "UnrealEditor-XRBase.dll",
+		"XRBaseEditor": "UnrealEditor-XRBaseEditor.dll"
+	}
+}

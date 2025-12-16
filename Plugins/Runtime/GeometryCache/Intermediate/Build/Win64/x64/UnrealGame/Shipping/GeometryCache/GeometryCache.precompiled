@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"Module.GeometryCache.cpp.obj",
+		"GeometryCacheSceneProxy.ispc_avx512skx.obj",
+		"GeometryCacheSceneProxy.ispc_avx2.obj",
+		"GeometryCacheSceneProxy.ispc_avx.obj",
+		"GeometryCacheSceneProxy.ispc_sse4.obj",
+		"GeometryCacheSceneProxy.ispc.obj"
+	]
+}

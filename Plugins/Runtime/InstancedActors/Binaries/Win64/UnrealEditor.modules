@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"InstancedActors": "UnrealEditor-InstancedActors.dll",
+		"InstancedActorsEditor": "UnrealEditor-InstancedActorsEditor.dll",
+		"InstancedActorsTestSuite": "UnrealEditor-InstancedActorsTestSuite.dll"
+	}
+}

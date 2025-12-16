@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"GeoReferencing": "UnrealEditor-GeoReferencing.dll",
+		"GeoReferencingEditor": "UnrealEditor-GeoReferencingEditor.dll"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"USDClasses": "UnrealEditor-USDClasses.dll",
+		"USDUtilities": "UnrealEditor-USDUtilities.dll",
+		"UnrealUSDWrapper": "UnrealEditor-UnrealUSDWrapper.dll"
+	}
+}

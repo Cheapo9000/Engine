@@ -1,0 +1,17 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"Harmonix": "UnrealEditor-Harmonix.dll",
+		"HarmonixDsp": "UnrealEditor-HarmonixDsp.dll",
+		"HarmonixDspEditor": "UnrealEditor-HarmonixDspEditor.dll",
+		"HarmonixDspTests": "UnrealEditor-HarmonixDspTests.dll",
+		"HarmonixEditor": "UnrealEditor-HarmonixEditor.dll",
+		"HarmonixMetasound": "UnrealEditor-HarmonixMetasound.dll",
+		"HarmonixMetasoundEditor": "UnrealEditor-HarmonixMetasoundEditor.dll",
+		"HarmonixMetasoundTests": "UnrealEditor-HarmonixMetasoundTests.dll",
+		"HarmonixMidi": "UnrealEditor-HarmonixMidi.dll",
+		"HarmonixMidiEditor": "UnrealEditor-HarmonixMidiEditor.dll",
+		"HarmonixMidiTests": "UnrealEditor-HarmonixMidiTests.dll"
+	}
+}

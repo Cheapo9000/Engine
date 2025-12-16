@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"SoundUtilities": "UnrealEditor-SoundUtilities.dll",
+		"SoundUtilitiesEditor": "UnrealEditor-SoundUtilitiesEditor.dll"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"OutputFiles": [
+		"Module.MetasoundFrontend.1.cpp.obj",
+		"Module.MetasoundFrontend.2.cpp.obj",
+		"Module.MetasoundFrontend.3.cpp.obj",
+		"Module.MetasoundFrontend.4.cpp.obj",
+		"Module.MetasoundFrontend.5.cpp.obj"
+	]
+}
