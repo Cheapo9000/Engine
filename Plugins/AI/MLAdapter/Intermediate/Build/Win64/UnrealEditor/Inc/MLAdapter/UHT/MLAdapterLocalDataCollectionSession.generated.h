@@ -1,0 +1,70 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Sessions/MLAdapterLocalDataCollectionSession.h"
+
+#ifdef MLADAPTER_MLAdapterLocalDataCollectionSession_generated_h
+#error "MLAdapterLocalDataCollectionSession.generated.h already included, missing '#pragma once' in MLAdapterLocalDataCollectionSession.h"
+#endif
+#define MLADAPTER_MLAdapterLocalDataCollectionSession_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AController;
+class APawn;
+
+// ********** Begin Class UMLAdapterLocalDataCollectionSession *************************************
+#define FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnPawnControllerChanged);
+
+
+struct Z_Construct_UClass_UMLAdapterLocalDataCollectionSession_Statics;
+MLADAPTER_API UClass* Z_Construct_UClass_UMLAdapterLocalDataCollectionSession_NoRegister();
+
+#define FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_19_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUMLAdapterLocalDataCollectionSession(); \
+	friend struct ::Z_Construct_UClass_UMLAdapterLocalDataCollectionSession_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend MLADAPTER_API UClass* ::Z_Construct_UClass_UMLAdapterLocalDataCollectionSession_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UMLAdapterLocalDataCollectionSession, UMLAdapterSession, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/MLAdapter"), Z_Construct_UClass_UMLAdapterLocalDataCollectionSession_NoRegister) \
+	DECLARE_SERIALIZER(UMLAdapterLocalDataCollectionSession)
+
+
+#define FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_19_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UMLAdapterLocalDataCollectionSession(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UMLAdapterLocalDataCollectionSession(UMLAdapterLocalDataCollectionSession&&) = delete; \
+	UMLAdapterLocalDataCollectionSession(const UMLAdapterLocalDataCollectionSession&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UMLAdapterLocalDataCollectionSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UMLAdapterLocalDataCollectionSession); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UMLAdapterLocalDataCollectionSession) \
+	NO_API virtual ~UMLAdapterLocalDataCollectionSession();
+
+
+#define FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_16_PROLOG
+#define FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_19_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_19_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h_19_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UMLAdapterLocalDataCollectionSession;
+
+// ********** End Class UMLAdapterLocalDataCollectionSession ***************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_AI_MLAdapter_Source_MLAdapter_Public_Sessions_MLAdapterLocalDataCollectionSession_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

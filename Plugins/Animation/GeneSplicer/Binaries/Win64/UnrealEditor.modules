@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"GeneSplicerLib": "UnrealEditor-GeneSplicerLib.dll",
+		"GeneSplicerLibTest": "UnrealEditor-GeneSplicerLibTest.dll",
+		"GeneSplicerModule": "UnrealEditor-GeneSplicerModule.dll"
+	}
+}

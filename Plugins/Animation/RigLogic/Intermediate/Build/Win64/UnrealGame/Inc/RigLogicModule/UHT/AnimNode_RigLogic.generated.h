@@ -1,0 +1,33 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "AnimNode_RigLogic.h"
+
+#ifdef RIGLOGICMODULE_AnimNode_RigLogic_generated_h
+#error "AnimNode_RigLogic.generated.h already included, missing '#pragma once' in AnimNode_RigLogic.h"
+#endif
+#define RIGLOGICMODULE_AnimNode_RigLogic_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FAnimNode_RigLogic ************************************************
+struct Z_Construct_UScriptStruct_FAnimNode_RigLogic_Statics;
+#define FID_Engine_Plugins_Animation_RigLogic_Source_RigLogicModule_Public_AnimNode_RigLogic_h_25_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FAnimNode_RigLogic_Statics; \
+	RIGLOGICMODULE_API static class UScriptStruct* StaticStruct(); \
+	typedef FAnimNode_Base Super;
+
+
+struct FAnimNode_RigLogic;
+// ********** End ScriptStruct FAnimNode_RigLogic **************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Animation_RigLogic_Source_RigLogicModule_Public_AnimNode_RigLogic_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

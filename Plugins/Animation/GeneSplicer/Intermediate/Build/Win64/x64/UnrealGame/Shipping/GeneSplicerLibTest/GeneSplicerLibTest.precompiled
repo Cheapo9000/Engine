@@ -1,0 +1,33 @@
+{
+	"OutputFiles": [
+		"GeneSplicerLibTest.cpp.obj",
+		"GeneSplicerLibTestSuite.cpp.obj",
+		"Fixtures.cpp.obj",
+		"TestGeneSplicer.cpp.obj",
+		"TestJointWeights.cpp.obj",
+		"TestPoolSpliceParams.cpp.obj",
+		"TestRegionAffiliation.cpp.obj",
+		"TestSpliceData.cpp.obj",
+		"TestSpliceWeights.cpp.obj",
+		"TestVertexWeights.cpp.obj",
+		"TestBlendShapePool.cpp.obj",
+		"TestGenePool.cpp.obj",
+		"TestJointBehaviorPool.cpp.obj",
+		"TestNeutralJointPool.cpp.obj",
+		"TestNeutralMeshPool.cpp.obj",
+		"TestOutputIndexTargetOffsets.cpp.obj",
+		"TestSingleJointBehavior.cpp.obj",
+		"TestSkinWeightPool.cpp.obj",
+		"TestBlendShapeRawGenes.cpp.obj",
+		"TestJointBehaviorRawGenes.cpp.obj",
+		"TestJointGroupOutputIndicesMerger.cpp.obj",
+		"TestRawGenes.cpp.obj",
+		"TestRawGenesUtils.cpp.obj",
+		"TestMatrix2D.cpp.obj",
+		"TestMatrix2DView.cpp.obj",
+		"TestMatrix3D.cpp.obj",
+		"TestVariableWidthMatrix.cpp.obj",
+		"TestAlgorithm.cpp.obj",
+		"TestRegionAffiliationReaderWriter.cpp.obj"
+	]
+}

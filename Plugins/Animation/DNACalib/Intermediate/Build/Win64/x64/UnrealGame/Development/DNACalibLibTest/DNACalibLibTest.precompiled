@@ -1,0 +1,31 @@
+{
+	"OutputFiles": [
+		"DNACalibLibTest.cpp.obj",
+		"DNACalibLibTestSuite.cpp.obj",
+		"AnimatedMapDNAReader.cpp.obj",
+		"BlendShapeDNAReader.cpp.obj",
+		"FakeDNACReader.cpp.obj",
+		"JointDNAReader.cpp.obj",
+		"MeshDNAReader.cpp.obj",
+		"TestCalculateMeshLowerLODsCommandImpl.cpp.obj",
+		"TestClearBlendShapesCommand.cpp.obj",
+		"TestConvertUnitsCommand.cpp.obj",
+		"TestPruneBlendShapeTargetsCommand.cpp.obj",
+		"TestRemoveAnimatedMapCommand.cpp.obj",
+		"TestRemoveBlendShapeCommand.cpp.obj",
+		"TestRemoveJointAnimationCommand.cpp.obj",
+		"TestRemoveJointCommand.cpp.obj",
+		"TestRemoveMeshCommand.cpp.obj",
+		"TestRotateCommand.cpp.obj",
+		"TestScaleCommand.cpp.obj",
+		"TestSetBlendShapeTargetDeltasCommand.cpp.obj",
+		"TestSetLODsCommand.cpp.obj",
+		"TestSetSkinWeightsCommand.cpp.obj",
+		"TestSetVertexPositionsCommand.cpp.obj",
+		"TestTranslateCommand.cpp.obj",
+		"TestBoundingBox.cpp.obj",
+		"TestTriangle.cpp.obj",
+		"TestUVBarycentricMapping.cpp.obj",
+		"TestAlgorithm.cpp.obj"
+	]
+}

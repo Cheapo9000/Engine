@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"Bridge": "UnrealEditor-Bridge.dll",
+		"MegascansPlugin": "UnrealEditor-MegascansPlugin.dll"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"OutputFiles": [
+		"Module.ChaosCloth.1.cpp.obj",
+		"Module.ChaosCloth.2.cpp.obj",
+		"ChaosClothingSimulation.ispc_avx512skx.obj",
+		"ChaosClothingSimulation.ispc_avx2.obj",
+		"ChaosClothingSimulation.ispc_avx.obj",
+		"ChaosClothingSimulation.ispc_sse4.obj",
+		"ChaosClothingSimulation.ispc.obj",
+		"ChaosClothingSimulationMesh.ispc_avx512skx.obj",
+		"ChaosClothingSimulationMesh.ispc_avx2.obj",
+		"ChaosClothingSimulationMesh.ispc_avx.obj",
+		"ChaosClothingSimulationMesh.ispc_sse4.obj",
+		"ChaosClothingSimulationMesh.ispc.obj",
+		"ChaosClothingSimulationSolver.ispc_avx512skx.obj",
+		"ChaosClothingSimulationSolver.ispc_avx2.obj",
+		"ChaosClothingSimulationSolver.ispc_avx.obj",
+		"ChaosClothingSimulationSolver.ispc_sse4.obj",
+		"ChaosClothingSimulationSolver.ispc.obj"
+	]
+}

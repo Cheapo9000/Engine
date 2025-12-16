@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PoseSearch": "UnrealEditor-PoseSearch.dll",
+		"PoseSearchEditor": "UnrealEditor-PoseSearchEditor.dll"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"HTNPlanner": "UnrealEditor-HTNPlanner.dll",
+		"HTNTestSuite": "UnrealEditor-HTNTestSuite.dll"
+	}
+}

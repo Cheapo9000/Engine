@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ChaosClothAsset": "UnrealEditor-ChaosClothAsset.dll",
+		"ChaosClothAssetEngine": "UnrealEditor-ChaosClothAssetEngine.dll"
+	}
+}

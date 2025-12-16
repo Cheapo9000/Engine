@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"TweeningUtils": "UnrealEditor-TweeningUtils.dll",
+		"TweeningUtilsEditor": "UnrealEditor-TweeningUtilsEditor.dll"
+	}
+}

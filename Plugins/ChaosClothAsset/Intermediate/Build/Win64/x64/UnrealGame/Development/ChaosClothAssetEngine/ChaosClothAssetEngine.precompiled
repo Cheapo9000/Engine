@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"Module.ChaosClothAssetEngine.cpp.obj",
+		"ClothSimulationProxy.ispc_avx512skx.obj",
+		"ClothSimulationProxy.ispc_avx2.obj",
+		"ClothSimulationProxy.ispc_avx.obj",
+		"ClothSimulationProxy.ispc_sse4.obj",
+		"ClothSimulationProxy.ispc.obj"
+	]
+}
