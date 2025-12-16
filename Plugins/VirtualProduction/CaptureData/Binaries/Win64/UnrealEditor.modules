@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CaptureDataCore": "UnrealEditor-CaptureDataCore.dll",
+		"CaptureDataEditor": "UnrealEditor-CaptureDataEditor.dll",
+		"CaptureDataUtils": "UnrealEditor-CaptureDataUtils.dll"
+	}
+}

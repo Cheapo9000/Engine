@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DataCharts": "UnrealEditor-DataCharts.dll",
+		"DataChartsEditor": "UnrealEditor-DataChartsEditor.dll"
+	}
+}

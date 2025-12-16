@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ols01C+/xHo=",
+  "success": true,
+  "projectFilePath": "F:\\Program Files\\Epic Games\\UE_5.7\\Engine\\Plugins\\ScriptPlugin\\Source\\ScriptGeneratorUbtPlugin\\ScriptGeneratorUbtPlugin.ubtplugin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\timst\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

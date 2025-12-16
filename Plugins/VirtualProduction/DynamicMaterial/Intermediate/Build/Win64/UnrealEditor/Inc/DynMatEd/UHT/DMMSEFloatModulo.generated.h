@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Components/MaterialStageExpressions/DMMSEFloatModulo.h"
+
+#ifdef DYNAMICMATERIALEDITOR_DMMSEFloatModulo_generated_h
+#error "DMMSEFloatModulo.generated.h already included, missing '#pragma once' in DMMSEFloatModulo.h"
+#endif
+#define DYNAMICMATERIALEDITOR_DMMSEFloatModulo_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UDMMaterialStageExpressionFloatModulo ************************************
+struct Z_Construct_UClass_UDMMaterialStageExpressionFloatModulo_Statics;
+DYNAMICMATERIALEDITOR_API UClass* Z_Construct_UClass_UDMMaterialStageExpressionFloatModulo_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Private_Components_MaterialStageExpressions_DMMSEFloatModulo_h_11_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUDMMaterialStageExpressionFloatModulo(); \
+	friend struct ::Z_Construct_UClass_UDMMaterialStageExpressionFloatModulo_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend DYNAMICMATERIALEDITOR_API UClass* ::Z_Construct_UClass_UDMMaterialStageExpressionFloatModulo_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UDMMaterialStageExpressionFloatModulo, UDMMaterialStageExpressionMathBase, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/DynamicMaterialEditor"), Z_Construct_UClass_UDMMaterialStageExpressionFloatModulo_NoRegister) \
+	DECLARE_SERIALIZER(UDMMaterialStageExpressionFloatModulo)
+
+
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Private_Components_MaterialStageExpressions_DMMSEFloatModulo_h_11_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UDMMaterialStageExpressionFloatModulo(UDMMaterialStageExpressionFloatModulo&&) = delete; \
+	UDMMaterialStageExpressionFloatModulo(const UDMMaterialStageExpressionFloatModulo&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UDMMaterialStageExpressionFloatModulo); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDMMaterialStageExpressionFloatModulo); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UDMMaterialStageExpressionFloatModulo) \
+	NO_API virtual ~UDMMaterialStageExpressionFloatModulo();
+
+
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Private_Components_MaterialStageExpressions_DMMSEFloatModulo_h_8_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Private_Components_MaterialStageExpressions_DMMSEFloatModulo_h_11_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Private_Components_MaterialStageExpressions_DMMSEFloatModulo_h_11_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Private_Components_MaterialStageExpressions_DMMSEFloatModulo_h_11_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UDMMaterialStageExpressionFloatModulo;
+
+// ********** End Class UDMMaterialStageExpressionFloatModulo **************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Private_Components_MaterialStageExpressions_DMMSEFloatModulo_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

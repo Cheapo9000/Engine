@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"InterchangeTestEditor": "UnrealEditor-InterchangeTestEditor.dll",
+		"InterchangeTests": "UnrealEditor-InterchangeTests.dll"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AvalancheSceneState": "UnrealEditor-AvalancheSceneState.dll",
+		"AvalancheSceneStateBlueprint": "UnrealEditor-AvalancheSceneStateBlueprint.dll",
+		"AvalancheSceneStateEditor": "UnrealEditor-AvalancheSceneStateEditor.dll"
+	}
+}

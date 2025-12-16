@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CPSLiveLinkDevice": "UnrealEditor-CPSLiveLinkDevice.dll",
+		"MonoVideoIngestDevice": "UnrealEditor-MonoVideoIngestDevice.dll",
+		"StereoVideoIngestDevice": "UnrealEditor-StereoVideoIngestDevice.dll",
+		"TakeArchiveIngestDevice": "UnrealEditor-TakeArchiveIngestDevice.dll",
+		"VideoLiveLinkDeviceCommon": "UnrealEditor-VideoLiveLinkDeviceCommon.dll"
+	}
+}

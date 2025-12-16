@@ -1,0 +1,14 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RemoteControl": "UnrealEditor-RemoteControl.dll",
+		"RemoteControlCommon": "UnrealEditor-RemoteControlCommon.dll",
+		"RemoteControlLogic": "UnrealEditor-RemoteControlLogic.dll",
+		"RemoteControlMultiUser": "UnrealEditor-RemoteControlMultiUser.dll",
+		"RemoteControlProtocol": "UnrealEditor-RemoteControlProtocol.dll",
+		"RemoteControlProtocolWidgets": "UnrealEditor-RemoteControlProtocolWidgets.dll",
+		"RemoteControlUI": "UnrealEditor-RemoteControlUI.dll",
+		"WebRemoteControl": "UnrealEditor-WebRemoteControl.dll"
+	}
+}

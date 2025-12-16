@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LiveLinkMasterLockit": "UnrealEditor-LiveLinkMasterLockit.dll",
+		"LiveLinkMasterLockitEditor": "UnrealEditor-LiveLinkMasterLockitEditor.dll"
+	}
+}

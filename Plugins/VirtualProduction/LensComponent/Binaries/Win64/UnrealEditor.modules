@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LensComponent": "UnrealEditor-LensComponent.dll",
+		"LensComponentEditor": "UnrealEditor-LensComponentEditor.dll"
+	}
+}

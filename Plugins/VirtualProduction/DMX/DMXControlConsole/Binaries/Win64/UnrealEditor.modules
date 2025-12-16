@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DMXControlConsole": "UnrealEditor-DMXControlConsole.dll",
+		"DMXControlConsoleEditor": "UnrealEditor-DMXControlConsoleEditor.dll"
+	}
+}

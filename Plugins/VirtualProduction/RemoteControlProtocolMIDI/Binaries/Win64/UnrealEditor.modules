@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RemoteControlProtocolMIDI": "UnrealEditor-RemoteControlProtocolMIDI.dll",
+		"RemoteControlProtocolMIDIEditor": "UnrealEditor-RemoteControlProtocolMIDIEditor.dll"
+	}
+}

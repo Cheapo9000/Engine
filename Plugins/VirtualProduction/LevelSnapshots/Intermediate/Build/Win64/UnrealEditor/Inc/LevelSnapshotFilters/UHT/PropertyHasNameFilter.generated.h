@@ -1,0 +1,74 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Builtin/PropertyHasNameFilter.h"
+
+#ifdef LEVELSNAPSHOTFILTERS_PropertyHasNameFilter_generated_h
+#error "PropertyHasNameFilter.generated.h already included, missing '#pragma once' in PropertyHasNameFilter.h"
+#endif
+#define LEVELSNAPSHOTFILTERS_PropertyHasNameFilter_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UPropertyHasNameFilter ***************************************************
+struct Z_Construct_UClass_UPropertyHasNameFilter_Statics;
+LEVELSNAPSHOTFILTERS_API UClass* Z_Construct_UClass_UPropertyHasNameFilter_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelShapshotFilters_Public_Builtin_PropertyHasNameFilter_h_32_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUPropertyHasNameFilter(); \
+	friend struct ::Z_Construct_UClass_UPropertyHasNameFilter_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend LEVELSNAPSHOTFILTERS_API UClass* ::Z_Construct_UClass_UPropertyHasNameFilter_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UPropertyHasNameFilter, UPropertySelectorFilter, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/LevelSnapshotFilters"), Z_Construct_UClass_UPropertyHasNameFilter_NoRegister) \
+	DECLARE_SERIALIZER(UPropertyHasNameFilter)
+
+
+#define FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelShapshotFilters_Public_Builtin_PropertyHasNameFilter_h_32_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UPropertyHasNameFilter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UPropertyHasNameFilter(UPropertyHasNameFilter&&) = delete; \
+	UPropertyHasNameFilter(const UPropertyHasNameFilter&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UPropertyHasNameFilter); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UPropertyHasNameFilter); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UPropertyHasNameFilter) \
+	NO_API virtual ~UPropertyHasNameFilter();
+
+
+#define FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelShapshotFilters_Public_Builtin_PropertyHasNameFilter_h_29_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelShapshotFilters_Public_Builtin_PropertyHasNameFilter_h_32_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelShapshotFilters_Public_Builtin_PropertyHasNameFilter_h_32_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelShapshotFilters_Public_Builtin_PropertyHasNameFilter_h_32_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UPropertyHasNameFilter;
+
+// ********** End Class UPropertyHasNameFilter *****************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelShapshotFilters_Public_Builtin_PropertyHasNameFilter_h
+
+// ********** Begin Enum ENameMatchingRule *********************************************************
+#define FOREACH_ENUM_ENAMEMATCHINGRULE(op) \
+	op(ENameMatchingRule::MatchesExactly) \
+	op(ENameMatchingRule::MatchesIgnoreCase) \
+	op(ENameMatchingRule::ContainsExactly) \
+	op(ENameMatchingRule::ContainsIgnoreCase) 
+
+namespace ENameMatchingRule { enum Type : int; }
+template<> LEVELSNAPSHOTFILTERS_NON_ATTRIBUTED_API UEnum* StaticEnum<ENameMatchingRule::Type>();
+// ********** End Enum ENameMatchingRule ***********************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

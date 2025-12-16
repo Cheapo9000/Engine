@@ -1,0 +1,63 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Renderers/Text3DRendererBase.h"
+
+#ifdef TEXT3D_Text3DRendererBase_generated_h
+#error "Text3DRendererBase.generated.h already included, missing '#pragma once' in Text3DRendererBase.h"
+#endif
+#define TEXT3D_Text3DRendererBase_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UText3DRendererBase ******************************************************
+struct Z_Construct_UClass_UText3DRendererBase_Statics;
+TEXT3D_API UClass* Z_Construct_UClass_UText3DRendererBase_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_Text3D_Source_Text3D_Public_Renderers_Text3DRendererBase_h_18_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUText3DRendererBase(); \
+	friend struct ::Z_Construct_UClass_UText3DRendererBase_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend TEXT3D_API UClass* ::Z_Construct_UClass_UText3DRendererBase_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UText3DRendererBase, UObject, COMPILED_IN_FLAGS(CLASS_Abstract), CASTCLASS_None, TEXT("/Script/Text3D"), Z_Construct_UClass_UText3DRendererBase_NoRegister) \
+	DECLARE_SERIALIZER(UText3DRendererBase)
+
+
+#define FID_Engine_Plugins_VirtualProduction_Text3D_Source_Text3D_Public_Renderers_Text3DRendererBase_h_18_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	TEXT3D_API UText3DRendererBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UText3DRendererBase(UText3DRendererBase&&) = delete; \
+	UText3DRendererBase(const UText3DRendererBase&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(TEXT3D_API, UText3DRendererBase); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UText3DRendererBase); \
+	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UText3DRendererBase) \
+	TEXT3D_API virtual ~UText3DRendererBase();
+
+
+#define FID_Engine_Plugins_VirtualProduction_Text3D_Source_Text3D_Public_Renderers_Text3DRendererBase_h_15_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_Text3D_Source_Text3D_Public_Renderers_Text3DRendererBase_h_18_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_Text3D_Source_Text3D_Public_Renderers_Text3DRendererBase_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_Text3D_Source_Text3D_Public_Renderers_Text3DRendererBase_h_18_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UText3DRendererBase;
+
+// ********** End Class UText3DRendererBase ********************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_Text3D_Source_Text3D_Public_Renderers_Text3DRendererBase_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

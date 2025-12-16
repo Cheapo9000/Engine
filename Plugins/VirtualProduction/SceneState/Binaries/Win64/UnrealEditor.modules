@@ -1,0 +1,20 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"SceneState": "UnrealEditor-SceneState.dll",
+		"SceneStateBinding": "UnrealEditor-SceneStateBinding.dll",
+		"SceneStateBlueprint": "UnrealEditor-SceneStateBlueprint.dll",
+		"SceneStateBlueprintEditor": "UnrealEditor-SceneStateBlueprintEditor.dll",
+		"SceneStateEditor": "UnrealEditor-SceneStateEditor.dll",
+		"SceneStateEvent": "UnrealEditor-SceneStateEvent.dll",
+		"SceneStateEventEditor": "UnrealEditor-SceneStateEventEditor.dll",
+		"SceneStateEventGraph": "UnrealEditor-SceneStateEventGraph.dll",
+		"SceneStateGameplay": "UnrealEditor-SceneStateGameplay.dll",
+		"SceneStateGameplayEditor": "UnrealEditor-SceneStateGameplayEditor.dll",
+		"SceneStateMachineEditor": "UnrealEditor-SceneStateMachineEditor.dll",
+		"SceneStateMachineGraph": "UnrealEditor-SceneStateMachineGraph.dll",
+		"SceneStateTasks": "UnrealEditor-SceneStateTasks.dll",
+		"SceneStateTransitionGraph": "UnrealEditor-SceneStateTransitionGraph.dll"
+	}
+}

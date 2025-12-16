@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="BroadcastError.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="64.1875"
+     inkscape:cx="5.4683544"
+     inkscape:cy="8.0311587"
+     inkscape:window-width="3840"
+     inkscape:window-height="2081"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6"
+     showguides="true">
+    <sodipodi:guide
+       position="8.0077897,8.4907498"
+       orientation="1,0"
+       id="guide4377"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="9.7526777,7.976631"
+       orientation="0,-1"
+       id="guide4379"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <ellipse
+     style="fill:#000000;fill-opacity:0.241888;stroke-width:4.93949;paint-order:stroke fill markers"
+     id="path593"
+     cx="7.9610515"
+     cy="8.0233688"
+     rx="7.244401"
+     ry="7.3378773" />
+  <path
+     id="path451"
+     style="fill:#ff0000;stroke-width:4;paint-order:stroke fill markers"
+     d="M 7.960308,1.3714589 A 6.5900683,6.6835442 0 0 0 1.3704642,8.0550526 6.5900683,6.6835442 0 0 0 7.960308,14.738646 6.5900683,6.6835442 0 0 0 14.550151,8.0550526 6.5900683,6.6835442 0 0 0 7.960308,1.3714589 Z M 7.975933,2.1663807 A 5.7643623,5.8889971 0 0 1 13.741557,8.0550526 5.7643623,5.8889971 0 0 1 7.975933,13.943724 5.7643623,5.8889971 0 0 1 2.2122611,8.0550526 5.7643623,5.8889971 0 0 1 7.975933,2.1663807 Z" />
+  <g
+     aria-label="!"
+     id="text3387"
+     style="font-weight:bold;font-size:12px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';fill:#ff0000;stroke-width:4;paint-order:stroke fill markers">
+    <path
+       d="M 7.5662293,9.9993715 7.138495,5.6399965 v -2.015625 h 1.78125 v 2.015625 L 8.49787,9.9993715 Z M 7.2088075,12.214215 v -1.646484 h 1.6464843 v 1.646484 z"
+       id="path4543" />
+  </g>
+</svg>

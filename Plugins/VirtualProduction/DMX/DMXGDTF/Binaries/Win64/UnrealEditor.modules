@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DMXGDTF": "UnrealEditor-DMXGDTF.dll",
+		"DMXGDTFTests": "UnrealEditor-DMXGDTFTests.dll",
+		"DMXZip": "UnrealEditor-DMXZip.dll"
+	}
+}

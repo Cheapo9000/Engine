@@ -1,0 +1,57 @@
+{
+   	 "Version": {
+            	"Major": 4,
+            	"Minor": 0
+    	},
+    	"UniqueId": "a78613f3-e660-47e4-af6a-1298cde7c947",
+    	"TakeNumber": 1,
+    	"Slate": "Fox Jumps Over The Lazy Dog",
+
+    	"Device": {
+            	"Type": "HMC",
+            	"Model": "StereoHMC",
+            	"UserId": "UserDev001"
+    	},
+
+    	"Video": [
+            	{
+                    	"UserId": "secondary",
+                    	"Path": "folder_or_file_name",
+                    	"Format": "mov",
+                    	"FrameRate": 60.0
+            	}
+        ],
+
+        "Depth" : [
+            	{
+                    	"UserId": "primary",
+
+                    	"Path": "file.depth.bin",
+                    	"Format": "MHADepth",
+                    	"FrameRate": 30.0
+            	}
+    	],
+
+    	"Calibration": [
+                {
+                        "UserId" : "calibration_user_id",
+						"Format" : "opencv",
+                        "Path": "calib.json"
+                }
+        ],
+
+    	"Audio": [
+            	{
+                    	"UserId": "primary",
+                    	"Path": "audio.wav"
+            	}
+    	],
+
+    	"Animation": [
+            	{
+                    	"Path": "arkit-calib_1_iPhone_cal.csv",
+                    	"Format": "ARKit"
+            	}
+    	]
+
+}

@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ActorModifier": "UnrealEditor-ActorModifier.dll",
+		"ActorModifierEditor": "UnrealEditor-ActorModifierEditor.dll",
+		"ActorModifierLayout": "UnrealEditor-ActorModifierLayout.dll",
+		"ActorModifierRendering": "UnrealEditor-ActorModifierRendering.dll"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DecoupledOutputProvider": "UnrealEditor-DecoupledOutputProvider.dll",
+		"PixelStreamingVCam": "UnrealEditor-PixelStreamingVCam.dll",
+		"VCamBlueprintNodes": "UnrealEditor-VCamBlueprintNodes.dll",
+		"VCamCore": "UnrealEditor-VCamCore.dll",
+		"VCamCoreEditor": "UnrealEditor-VCamCoreEditor.dll"
+	}
+}

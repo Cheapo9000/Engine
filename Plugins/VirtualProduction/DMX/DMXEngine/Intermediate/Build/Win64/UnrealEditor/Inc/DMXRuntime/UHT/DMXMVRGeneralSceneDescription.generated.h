@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "MVR/DMXMVRGeneralSceneDescription.h"
+
+#ifdef DMXRUNTIME_DMXMVRGeneralSceneDescription_generated_h
+#error "DMXMVRGeneralSceneDescription.generated.h already included, missing '#pragma once' in DMXMVRGeneralSceneDescription.h"
+#endif
+#define DMXRUNTIME_DMXMVRGeneralSceneDescription_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UDMXMVRGeneralSceneDescription *******************************************
+struct Z_Construct_UClass_UDMXMVRGeneralSceneDescription_Statics;
+DMXRUNTIME_API UClass* Z_Construct_UClass_UDMXMVRGeneralSceneDescription_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_DMX_DMXEngine_Source_DMXRuntime_Public_MVR_DMXMVRGeneralSceneDescription_h_44_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUDMXMVRGeneralSceneDescription(); \
+	friend struct ::Z_Construct_UClass_UDMXMVRGeneralSceneDescription_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend DMXRUNTIME_API UClass* ::Z_Construct_UClass_UDMXMVRGeneralSceneDescription_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UDMXMVRGeneralSceneDescription, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/DMXRuntime"), Z_Construct_UClass_UDMXMVRGeneralSceneDescription_NoRegister) \
+	DECLARE_SERIALIZER(UDMXMVRGeneralSceneDescription)
+
+
+#define FID_Engine_Plugins_VirtualProduction_DMX_DMXEngine_Source_DMXRuntime_Public_MVR_DMXMVRGeneralSceneDescription_h_44_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UDMXMVRGeneralSceneDescription(UDMXMVRGeneralSceneDescription&&) = delete; \
+	UDMXMVRGeneralSceneDescription(const UDMXMVRGeneralSceneDescription&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UDMXMVRGeneralSceneDescription); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDMXMVRGeneralSceneDescription); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UDMXMVRGeneralSceneDescription) \
+	NO_API virtual ~UDMXMVRGeneralSceneDescription();
+
+
+#define FID_Engine_Plugins_VirtualProduction_DMX_DMXEngine_Source_DMXRuntime_Public_MVR_DMXMVRGeneralSceneDescription_h_40_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_DMX_DMXEngine_Source_DMXRuntime_Public_MVR_DMXMVRGeneralSceneDescription_h_44_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_DMX_DMXEngine_Source_DMXRuntime_Public_MVR_DMXMVRGeneralSceneDescription_h_44_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_DMX_DMXEngine_Source_DMXRuntime_Public_MVR_DMXMVRGeneralSceneDescription_h_44_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UDMXMVRGeneralSceneDescription;
+
+// ********** End Class UDMXMVRGeneralSceneDescription *********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_DMX_DMXEngine_Source_DMXRuntime_Public_MVR_DMXMVRGeneralSceneDescription_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

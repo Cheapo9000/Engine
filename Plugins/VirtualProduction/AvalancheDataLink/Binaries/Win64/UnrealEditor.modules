@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AvalancheDataLink": "UnrealEditor-AvalancheDataLink.dll",
+		"AvalancheDataLinkEditor": "UnrealEditor-AvalancheDataLinkEditor.dll"
+	}
+}

@@ -1,0 +1,85 @@
+{
+   	 "Version": {
+            	"Major": 2,
+            	"Minor": 0
+    	},
+
+    	"DateTime": "2023-02-27T08:57:17.796000Z",
+    	"Thumbnail": "thumbnail.jpg",
+
+    	"UniqueId": "a78613f3-e660-47e4-af6a-1298cde7c947",
+    	"TakeNumber": 1,
+    	"Slate": "Fox Jumps Over The Lazy Dog",
+
+    	"Device": {
+            	"Type": "HMC",
+            	"Model": "StereoHMC",
+            	"UserId": "",
+            	"Platform": {
+                    	"Name": "iOS",
+                    	"Version": {
+                            	"Major": 17,
+                            	"Minor": 2,
+                            	"Patch": 1
+                    	}
+            	},
+            	"Software": [
+                    	{
+                            	"Name": "Live Link Face",
+                            	"Version": {
+                                    	"Major": 1,
+                                    	"Minor": 0,
+                                    	"Patch": 0
+                            	}
+                    	}
+            	]
+    	},
+
+    	"Video": [
+            	{
+                    	"UserId": "seoondary",
+
+                    	"Path": "folder_or_file_name",
+                    	"PathType": "Folder",
+
+                    	"Format": "mov",
+                    	"Orientation": "CW90",
+
+                    	"FramesCount": 730,
+                    	"DroppedFrames": [10, 11, 12, 109],
+
+                    	"FrameHeight": 720,
+                    	"FrameWidth": 1280,
+
+                    	"FrameRate": 60.0,
+
+                    	"TimecodeStart": "09,01:41:01.300",
+                    	"TimecodeRate": 60
+
+            	}
+        ],
+
+        "Depth" : [
+            	{
+                    	"UserId": "primary",
+
+                    	"Path": "file.depth.bin",
+                    	"PathType": "File",
+
+                    	"Format": "MHADepth",
+                    	"Orientation": "Original",
+
+                    	"FramesCount": 365,
+                    	"DroppedFrames": [3, 205],
+
+                    	"FrameHeight": 640,
+                    	"FrameWidth": 360,
+
+                    	"FrameRate": 30.0,
+
+                    	"TimecodeStart": "09:01:41:01.500",
+                    	"TimecodeRate": 60
+
+            	}
+    	]
+}

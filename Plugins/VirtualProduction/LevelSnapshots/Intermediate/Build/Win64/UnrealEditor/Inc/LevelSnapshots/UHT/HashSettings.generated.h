@@ -1,0 +1,42 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Settings/HashSettings.h"
+
+#ifdef LEVELSNAPSHOTS_HashSettings_generated_h
+#error "HashSettings.generated.h already included, missing '#pragma once' in HashSettings.h"
+#endif
+#define LEVELSNAPSHOTS_HashSettings_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FHashSettings *****************************************************
+struct Z_Construct_UScriptStruct_FHashSettings_Statics;
+#define FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelSnapshots_Public_Settings_HashSettings_h_32_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FHashSettings_Statics; \
+	static class UScriptStruct* StaticStruct();
+
+
+struct FHashSettings;
+// ********** End ScriptStruct FHashSettings *******************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_LevelSnapshots_Source_LevelSnapshots_Public_Settings_HashSettings_h
+
+// ********** Begin Enum EHashAlgorithmChooseBehavior **********************************************
+#define FOREACH_ENUM_EHASHALGORITHMCHOOSEBEHAVIOR(op) \
+	op(EHashAlgorithmChooseBehavior::UseFastest) \
+	op(EHashAlgorithmChooseBehavior::UseCrc32) \
+	op(EHashAlgorithmChooseBehavior::UseMD5) 
+
+namespace EHashAlgorithmChooseBehavior { enum Type : int; }
+template<> LEVELSNAPSHOTS_NON_ATTRIBUTED_API UEnum* StaticEnum<EHashAlgorithmChooseBehavior::Type>();
+// ********** End Enum EHashAlgorithmChooseBehavior ************************************************
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

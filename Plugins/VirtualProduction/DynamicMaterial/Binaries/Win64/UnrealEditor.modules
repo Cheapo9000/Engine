@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DynamicMaterial": "UnrealEditor-DynamicMaterial.dll",
+		"DynamicMaterialEditor": "UnrealEditor-DynamicMaterialEditor.dll",
+		"DynamicMaterialShaders": "UnrealEditor-DynamicMaterialShaders.dll",
+		"DynamicMaterialTextureSet": "UnrealEditor-DynamicMaterialTextureSet.dll",
+		"DynamicMaterialTextureSetEditor": "UnrealEditor-DynamicMaterialTextureSetEditor.dll"
+	}
+}

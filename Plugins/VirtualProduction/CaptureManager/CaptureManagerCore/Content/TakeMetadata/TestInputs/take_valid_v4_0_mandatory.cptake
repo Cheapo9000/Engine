@@ -1,0 +1,14 @@
+{
+   	 "Version": {
+            	"Major": 4,
+            	"Minor": 0
+    	},
+    	"UniqueId": "a78613f3-e660-47e4-af6a-1298cde7c947",
+    	"TakeNumber": 1,
+    	"Slate": "Fox Jumps Over The Lazy Dog",
+    	"Device": {
+            	"Type": "HMC",
+            	"Model": "StereoHMC",
+            	"UserId": "UserDev001"
+    	}
+}

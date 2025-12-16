@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"TimedDataMonitor": "UnrealEditor-TimedDataMonitor.dll",
+		"TimedDataMonitorEditor": "UnrealEditor-TimedDataMonitorEditor.dll"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CaptureManagerEditorSettings": "UnrealEditor-CaptureManagerEditorSettings.dll",
+		"DataIngestCoreEditor": "UnrealEditor-DataIngestCoreEditor.dll",
+		"LiveLinkHubDiscoveryEditor": "UnrealEditor-LiveLinkHubDiscoveryEditor.dll",
+		"LiveLinkHubExportServer": "UnrealEditor-LiveLinkHubExportServer.dll",
+		"LiveLinkHubWorkerManager": "UnrealEditor-LiveLinkHubWorkerManager.dll"
+	}
+}

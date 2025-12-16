@@ -1,0 +1,14 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DataLink": "UnrealEditor-DataLink.dll",
+		"DataLinkDataTable": "UnrealEditor-DataLinkDataTable.dll",
+		"DataLinkEdGraph": "UnrealEditor-DataLinkEdGraph.dll",
+		"DataLinkEditor": "UnrealEditor-DataLinkEditor.dll",
+		"DataLinkHttp": "UnrealEditor-DataLinkHttp.dll",
+		"DataLinkJson": "UnrealEditor-DataLinkJson.dll",
+		"DataLinkJsonEditor": "UnrealEditor-DataLinkJsonEditor.dll",
+		"DataLinkWebSocket": "UnrealEditor-DataLinkWebSocket.dll"
+	}
+}

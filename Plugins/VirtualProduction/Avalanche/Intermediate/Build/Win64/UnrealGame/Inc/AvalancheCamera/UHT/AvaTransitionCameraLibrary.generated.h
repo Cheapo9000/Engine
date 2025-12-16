@@ -1,0 +1,69 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Transition/AvaTransitionCameraLibrary.h"
+
+#ifdef AVALANCHECAMERA_AvaTransitionCameraLibrary_generated_h
+#error "AvaTransitionCameraLibrary.generated.h already included, missing '#pragma once' in AvaTransitionCameraLibrary.h"
+#endif
+#define AVALANCHECAMERA_AvaTransitionCameraLibrary_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+
+// ********** Begin Class UAvaTransitionCameraLibrary **********************************************
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execConditionallyUpdateViewTarget);
+
+
+struct Z_Construct_UClass_UAvaTransitionCameraLibrary_Statics;
+AVALANCHECAMERA_API UClass* Z_Construct_UClass_UAvaTransitionCameraLibrary_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_11_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUAvaTransitionCameraLibrary(); \
+	friend struct ::Z_Construct_UClass_UAvaTransitionCameraLibrary_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend AVALANCHECAMERA_API UClass* ::Z_Construct_UClass_UAvaTransitionCameraLibrary_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UAvaTransitionCameraLibrary, UBlueprintFunctionLibrary, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/AvalancheCamera"), Z_Construct_UClass_UAvaTransitionCameraLibrary_NoRegister) \
+	DECLARE_SERIALIZER(UAvaTransitionCameraLibrary)
+
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_11_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UAvaTransitionCameraLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UAvaTransitionCameraLibrary(UAvaTransitionCameraLibrary&&) = delete; \
+	UAvaTransitionCameraLibrary(const UAvaTransitionCameraLibrary&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UAvaTransitionCameraLibrary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UAvaTransitionCameraLibrary); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UAvaTransitionCameraLibrary) \
+	NO_API virtual ~UAvaTransitionCameraLibrary();
+
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_8_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_11_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_11_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h_11_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UAvaTransitionCameraLibrary;
+
+// ********** End Class UAvaTransitionCameraLibrary ************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheCamera_Private_Transition_AvaTransitionCameraLibrary_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

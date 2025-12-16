@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Components/MaterialStageBlends/DMMSBLightenColor.h"
+
+#ifdef DYNAMICMATERIALEDITOR_DMMSBLightenColor_generated_h
+#error "DMMSBLightenColor.generated.h already included, missing '#pragma once' in DMMSBLightenColor.h"
+#endif
+#define DYNAMICMATERIALEDITOR_DMMSBLightenColor_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UDMMaterialStageBlendLightenColor ****************************************
+struct Z_Construct_UClass_UDMMaterialStageBlendLightenColor_Statics;
+DYNAMICMATERIALEDITOR_API UClass* Z_Construct_UClass_UDMMaterialStageBlendLightenColor_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Public_Components_MaterialStageBlends_DMMSBLightenColor_h_11_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUDMMaterialStageBlendLightenColor(); \
+	friend struct ::Z_Construct_UClass_UDMMaterialStageBlendLightenColor_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend DYNAMICMATERIALEDITOR_API UClass* ::Z_Construct_UClass_UDMMaterialStageBlendLightenColor_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UDMMaterialStageBlendLightenColor, UDMMaterialStageBlendFunction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/DynamicMaterialEditor"), Z_Construct_UClass_UDMMaterialStageBlendLightenColor_NoRegister) \
+	DECLARE_SERIALIZER(UDMMaterialStageBlendLightenColor)
+
+
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Public_Components_MaterialStageBlends_DMMSBLightenColor_h_11_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UDMMaterialStageBlendLightenColor(UDMMaterialStageBlendLightenColor&&) = delete; \
+	UDMMaterialStageBlendLightenColor(const UDMMaterialStageBlendLightenColor&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(DYNAMICMATERIALEDITOR_API, UDMMaterialStageBlendLightenColor); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDMMaterialStageBlendLightenColor); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UDMMaterialStageBlendLightenColor) \
+	DYNAMICMATERIALEDITOR_API virtual ~UDMMaterialStageBlendLightenColor();
+
+
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Public_Components_MaterialStageBlends_DMMSBLightenColor_h_8_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Public_Components_MaterialStageBlends_DMMSBLightenColor_h_11_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Public_Components_MaterialStageBlends_DMMSBLightenColor_h_11_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Public_Components_MaterialStageBlends_DMMSBLightenColor_h_11_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UDMMaterialStageBlendLightenColor;
+
+// ********** End Class UDMMaterialStageBlendLightenColor ******************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_DynamicMaterial_Source_DynamicMaterialEditor_Public_Components_MaterialStageBlends_DMMSBLightenColor_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

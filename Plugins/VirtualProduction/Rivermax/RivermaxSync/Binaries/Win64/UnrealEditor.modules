@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RivermaxSync": "UnrealEditor-RivermaxSync.dll",
+		"RivermaxSyncEditor": "UnrealEditor-RivermaxSyncEditor.dll"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"StormSyncAvaBridge": "UnrealEditor-StormSyncAvaBridge.dll",
+		"StormSyncAvaBridgeEditor": "UnrealEditor-StormSyncAvaBridgeEditor.dll"
+	}
+}

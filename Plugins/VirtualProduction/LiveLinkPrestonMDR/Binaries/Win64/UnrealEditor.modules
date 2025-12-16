@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LiveLinkPrestonMDR": "UnrealEditor-LiveLinkPrestonMDR.dll",
+		"LiveLinkPrestonMDREditor": "UnrealEditor-LiveLinkPrestonMDREditor.dll"
+	}
+}

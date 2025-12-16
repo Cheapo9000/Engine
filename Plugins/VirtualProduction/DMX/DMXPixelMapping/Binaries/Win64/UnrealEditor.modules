@@ -1,0 +1,12 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DMXPixelMappingBlueprintGraph": "UnrealEditor-DMXPixelMappingBlueprintGraph.dll",
+		"DMXPixelMappingCore": "UnrealEditor-DMXPixelMappingCore.dll",
+		"DMXPixelMappingEditor": "UnrealEditor-DMXPixelMappingEditor.dll",
+		"DMXPixelMappingEditorWidgets": "UnrealEditor-DMXPixelMappingEditorWidgets.dll",
+		"DMXPixelMappingRenderer": "UnrealEditor-DMXPixelMappingRenderer.dll",
+		"DMXPixelMappingRuntime": "UnrealEditor-DMXPixelMappingRuntime.dll"
+	}
+}

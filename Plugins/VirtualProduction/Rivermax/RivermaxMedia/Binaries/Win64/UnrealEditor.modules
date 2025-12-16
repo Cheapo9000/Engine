@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RivermaxMedia": "UnrealEditor-RivermaxMedia.dll",
+		"RivermaxMediaEditor": "UnrealEditor-RivermaxMediaEditor.dll",
+		"RivermaxMediaFactory": "UnrealEditor-RivermaxMediaFactory.dll"
+	}
+}

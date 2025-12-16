@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"LiveLinkCamera": "UnrealEditor-LiveLinkCamera.dll",
+		"LiveLinkCameraEditor": "UnrealEditor-LiveLinkCameraEditor.dll",
+		"LiveLinkCameraRecording": "UnrealEditor-LiveLinkCameraRecording.dll"
+	}
+}

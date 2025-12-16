@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PropertyAnimatorCore": "UnrealEditor-PropertyAnimatorCore.dll",
+		"PropertyAnimatorCoreEditor": "UnrealEditor-PropertyAnimatorCoreEditor.dll"
+	}
+}

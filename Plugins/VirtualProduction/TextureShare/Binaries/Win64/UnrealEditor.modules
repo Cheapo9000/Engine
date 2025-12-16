@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"TextureShare": "UnrealEditor-TextureShare.dll",
+		"TextureShareCore": "UnrealEditor-TextureShareCore.dll",
+		"TextureShareDisplayCluster": "UnrealEditor-TextureShareDisplayCluster.dll"
+	}
+}

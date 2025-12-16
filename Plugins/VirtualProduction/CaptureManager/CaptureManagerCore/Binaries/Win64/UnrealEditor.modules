@@ -1,0 +1,12 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CaptureManagerStyle": "UnrealEditor-CaptureManagerStyle.dll",
+		"CaptureManagerTakeMetadata": "UnrealEditor-CaptureManagerTakeMetadata.dll",
+		"CaptureProtocolStack": "UnrealEditor-CaptureProtocolStack.dll",
+		"CaptureUtils": "UnrealEditor-CaptureUtils.dll",
+		"DataIngestCore": "UnrealEditor-DataIngestCore.dll",
+		"LiveLinkHubCaptureMessaging": "UnrealEditor-LiveLinkHubCaptureMessaging.dll"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DMXProtocol": "UnrealEditor-DMXProtocol.dll",
+		"DMXProtocolArtNet": "UnrealEditor-DMXProtocolArtNet.dll",
+		"DMXProtocolBlueprintGraph": "UnrealEditor-DMXProtocolBlueprintGraph.dll",
+		"DMXProtocolEditor": "UnrealEditor-DMXProtocolEditor.dll",
+		"DMXProtocolSACN": "UnrealEditor-DMXProtocolSACN.dll"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"TextureGraph": "UnrealEditor-TextureGraph.dll",
+		"TextureGraphEditor": "UnrealEditor-TextureGraphEditor.dll",
+		"TextureGraphEngine": "UnrealEditor-TextureGraphEngine.dll",
+		"TextureGraphInsight": "UnrealEditor-TextureGraphInsight.dll",
+		"TextureGraphInsightEditor": "UnrealEditor-TextureGraphInsightEditor.dll"
+	}
+}

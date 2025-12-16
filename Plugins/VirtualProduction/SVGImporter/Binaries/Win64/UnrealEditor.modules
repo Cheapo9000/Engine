@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"SVGImporter": "UnrealEditor-SVGImporter.dll",
+		"SVGImporterEditor": "UnrealEditor-SVGImporterEditor.dll"
+	}
+}

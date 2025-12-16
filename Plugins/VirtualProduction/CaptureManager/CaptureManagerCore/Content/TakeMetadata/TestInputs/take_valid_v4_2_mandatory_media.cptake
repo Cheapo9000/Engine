@@ -1,0 +1,49 @@
+{
+   	 "Version": {
+            	"Major": 4,
+            	"Minor": 2
+    	},
+    	"UniqueId": "a78613f3-e660-47e4-af6a-1298cde7c947",
+    	"TakeNumber": 1,
+    	"Slate": "Fox Jumps Over The Lazy Dog",
+
+    	"Device": {
+            	"Type": "HMC",
+            	"Model": "StereoHMC",
+            	"Name": "UserDev001"
+    	},
+
+    	"Video": [
+            	{
+                    	"Name": "secondary",
+                    	"Path": "folder_or_file_name",
+                    	"Format": "mov",
+                    	"FrameRate": 60.0
+            	}
+        ],
+
+        "Depth" : [
+            	{
+                    	"Name": "primary",
+                    	"Path": "file.depth.bin",
+                    	"Format": "MHADepth",
+                    	"FrameRate": 30.0
+            	}
+    	],
+
+    	"Calibration": [
+                {
+                        "Name" : "calibration_user_id",
+						"Format" : "opencv",
+                        "Path": "calib.json"
+                }
+        ],
+
+    	"Audio": [
+            	{
+                    	"Name": "primary",
+                    	"Path": "audio.wav"
+            	}
+    	]
+
+}

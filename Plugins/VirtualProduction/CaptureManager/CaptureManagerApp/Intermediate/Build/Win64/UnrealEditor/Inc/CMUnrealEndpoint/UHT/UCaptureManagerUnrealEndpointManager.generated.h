@@ -1,0 +1,67 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "UCaptureManagerUnrealEndpointManager.h"
+
+#ifdef CAPTUREMANAGERUNREALENDPOINT_UCaptureManagerUnrealEndpointManager_generated_h
+#error "UCaptureManagerUnrealEndpointManager.generated.h already included, missing '#pragma once' in UCaptureManagerUnrealEndpointManager.h"
+#endif
+#define CAPTUREMANAGERUNREALENDPOINT_UCaptureManagerUnrealEndpointManager_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UCaptureManagerUnrealEndpointManager *************************************
+#define FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execWaitForEndpointByHostName); \
+	DECLARE_FUNCTION(execStop); \
+	DECLARE_FUNCTION(execStart);
+
+
+struct Z_Construct_UClass_UCaptureManagerUnrealEndpointManager_Statics;
+CAPTUREMANAGERUNREALENDPOINT_API UClass* Z_Construct_UClass_UCaptureManagerUnrealEndpointManager_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_13_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUCaptureManagerUnrealEndpointManager(); \
+	friend struct ::Z_Construct_UClass_UCaptureManagerUnrealEndpointManager_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend CAPTUREMANAGERUNREALENDPOINT_API UClass* ::Z_Construct_UClass_UCaptureManagerUnrealEndpointManager_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UCaptureManagerUnrealEndpointManager, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/CaptureManagerUnrealEndpoint"), Z_Construct_UClass_UCaptureManagerUnrealEndpointManager_NoRegister) \
+	DECLARE_SERIALIZER(UCaptureManagerUnrealEndpointManager)
+
+
+#define FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_13_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UCaptureManagerUnrealEndpointManager(UCaptureManagerUnrealEndpointManager&&) = delete; \
+	UCaptureManagerUnrealEndpointManager(const UCaptureManagerUnrealEndpointManager&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UCaptureManagerUnrealEndpointManager); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCaptureManagerUnrealEndpointManager); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UCaptureManagerUnrealEndpointManager)
+
+
+#define FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_10_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_13_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h_13_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UCaptureManagerUnrealEndpointManager;
+
+// ********** End Class UCaptureManagerUnrealEndpointManager ***************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_CaptureManager_CaptureManagerApp_Source_CaptureManagerUnrealEndpoint_Private_UCaptureManagerUnrealEndpointManager_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

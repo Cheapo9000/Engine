@@ -1,0 +1,104 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "AvaSequencePlaybackObject.h"
+
+#ifdef AVALANCHESEQUENCE_AvaSequencePlaybackObject_generated_h
+#error "AvaSequencePlaybackObject.generated.h already included, missing '#pragma once' in AvaSequencePlaybackObject.h"
+#endif
+#define AVALANCHESEQUENCE_AvaSequencePlaybackObject_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UAvaSequence;
+class UAvaSequencePlayer;
+struct FAvaSequencePlayParams;
+struct FAvaTagHandle;
+
+// ********** Begin Interface UAvaSequencePlaybackObject *******************************************
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execHasActiveSequencePlayers); \
+	DECLARE_FUNCTION(execGetAllSequencePlayers); \
+	DECLARE_FUNCTION(execStopSequencesByTag); \
+	DECLARE_FUNCTION(execStopSequencesByLabels); \
+	DECLARE_FUNCTION(execStopSequencesByLabel); \
+	DECLARE_FUNCTION(execPauseSequencesByTag); \
+	DECLARE_FUNCTION(execPauseSequencesByLabels); \
+	DECLARE_FUNCTION(execPauseSequencesByLabel); \
+	DECLARE_FUNCTION(execContinueSequencesByTag); \
+	DECLARE_FUNCTION(execContinueSequencesByLabels); \
+	DECLARE_FUNCTION(execContinueSequencesByLabel); \
+	DECLARE_FUNCTION(execPlayScheduledSequences); \
+	DECLARE_FUNCTION(execPlaySequencesByTag); \
+	DECLARE_FUNCTION(execPlaySequencesByLabels); \
+	DECLARE_FUNCTION(execPlaySequencesBySoftReference); \
+	DECLARE_FUNCTION(execPlaySequencesByLabel); \
+	DECLARE_FUNCTION(execPlaySequenceBySoftReference);
+
+
+struct Z_Construct_UClass_UAvaSequencePlaybackObject_Statics;
+AVALANCHESEQUENCE_API UClass* Z_Construct_UClass_UAvaSequencePlaybackObject_NoRegister();
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	AVALANCHESEQUENCE_API UAvaSequencePlaybackObject(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UAvaSequencePlaybackObject(UAvaSequencePlaybackObject&&) = delete; \
+	UAvaSequencePlaybackObject(const UAvaSequencePlaybackObject&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(AVALANCHESEQUENCE_API, UAvaSequencePlaybackObject); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UAvaSequencePlaybackObject); \
+	DEFINE_ABSTRACT_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UAvaSequencePlaybackObject) \
+	virtual ~UAvaSequencePlaybackObject() = default;
+
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_GENERATED_UINTERFACE_BODY() \
+private: \
+	static void StaticRegisterNativesUAvaSequencePlaybackObject(); \
+	friend struct ::Z_Construct_UClass_UAvaSequencePlaybackObject_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend AVALANCHESEQUENCE_API UClass* ::Z_Construct_UClass_UAvaSequencePlaybackObject_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UAvaSequencePlaybackObject, UInterface, COMPILED_IN_FLAGS(CLASS_Abstract | CLASS_Interface), CASTCLASS_None, TEXT("/Script/AvalancheSequence"), Z_Construct_UClass_UAvaSequencePlaybackObject_NoRegister) \
+	DECLARE_SERIALIZER(UAvaSequencePlaybackObject)
+
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_GENERATED_BODY \
+	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+	FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_GENERATED_UINTERFACE_BODY() \
+	FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_ENHANCED_CONSTRUCTORS \
+private: \
+	PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_INCLASS_IINTERFACE_NO_PURE_DECLS \
+protected: \
+	virtual ~IAvaSequencePlaybackObject() {} \
+public: \
+	typedef UAvaSequencePlaybackObject UClassType; \
+	typedef IAvaSequencePlaybackObject ThisClass; \
+	virtual UObject* _getUObject() const { return nullptr; }
+
+
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_22_PROLOG
+#define FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_30_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h_25_INCLASS_IINTERFACE_NO_PURE_DECLS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UAvaSequencePlaybackObject;
+
+// ********** End Interface UAvaSequencePlaybackObject *********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_VirtualProduction_Avalanche_Source_AvalancheSequence_Public_AvaSequencePlaybackObject_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

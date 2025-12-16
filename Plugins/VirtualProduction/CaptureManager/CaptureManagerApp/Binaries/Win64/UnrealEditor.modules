@@ -1,0 +1,16 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CaptureDataConverter": "UnrealEditor-CaptureDataConverter.dll",
+		"CaptureManagerEditor": "UnrealEditor-CaptureManagerEditor.dll",
+		"CaptureManagerMediaRW": "UnrealEditor-CaptureManagerMediaRW.dll",
+		"CaptureManagerPipeline": "UnrealEditor-CaptureManagerPipeline.dll",
+		"CaptureManagerSettings": "UnrealEditor-CaptureManagerSettings.dll",
+		"CaptureManagerUnrealEndpoint": "UnrealEditor-CaptureManagerUnrealEndpoint.dll",
+		"IngestLiveLinkDevice": "UnrealEditor-IngestLiveLinkDevice.dll",
+		"LiveLinkCapabilities": "UnrealEditor-LiveLinkCapabilities.dll",
+		"LiveLinkFaceMetadata": "UnrealEditor-LiveLinkFaceMetadata.dll",
+		"StereoCameraMetadata": "UnrealEditor-StereoCameraMetadata.dll"
+	}
+}

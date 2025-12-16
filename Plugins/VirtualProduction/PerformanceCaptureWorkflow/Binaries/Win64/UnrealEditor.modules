@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PerformanceCaptureWorkflow": "UnrealEditor-PerformanceCaptureWorkflow.dll",
+		"PerformanceCaptureWorkflowRuntime": "UnrealEditor-PerformanceCaptureWorkflowRuntime.dll"
+	}
+}

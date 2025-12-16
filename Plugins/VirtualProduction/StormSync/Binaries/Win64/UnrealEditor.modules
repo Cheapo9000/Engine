@@ -1,0 +1,14 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"StormSyncCore": "UnrealEditor-StormSyncCore.dll",
+		"StormSyncDrives": "UnrealEditor-StormSyncDrives.dll",
+		"StormSyncEditor": "UnrealEditor-StormSyncEditor.dll",
+		"StormSyncImport": "UnrealEditor-StormSyncImport.dll",
+		"StormSyncTests": "UnrealEditor-StormSyncTests.dll",
+		"StormSyncTransportClient": "UnrealEditor-StormSyncTransportClient.dll",
+		"StormSyncTransportCore": "UnrealEditor-StormSyncTransportCore.dll",
+		"StormSyncTransportServer": "UnrealEditor-StormSyncTransportServer.dll"
+	}
+}

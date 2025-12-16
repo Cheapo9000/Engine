@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"VCamExtensions": "UnrealEditor-VCamExtensions.dll",
+		"VCamExtensionsEditor": "UnrealEditor-VCamExtensionsEditor.dll",
+		"VirtualCamera": "UnrealEditor-VirtualCamera.dll",
+		"VirtualCameraEditor": "UnrealEditor-VirtualCameraEditor.dll"
+	}
+}
