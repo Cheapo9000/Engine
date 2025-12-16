@@ -174,9 +174,13 @@ void FPCGEditorModule::ShutdownModule()
 	{
 		FLevelEditorModule& LevelEditorModule = FModuleManager::GetModuleChecked<FLevelEditorModule>("LevelEditor");
 		LevelEditorModule.OnLevelEditorCreated().RemoveAll(this);
-		if (TSharedPtr<ILevelEditor> FirstLevelEditor = LevelEditorModule.GetFirstLevelEditor())
+
+		if (!IsEngineExitRequested())
 		{
-			FirstLevelEditor->GetEditorModeManager().OnEditorModeIDChanged().RemoveAll(this);
+			if (TSharedPtr<ILevelEditor> FirstLevelEditor = LevelEditorModule.GetFirstLevelEditor())
+			{
+				FirstLevelEditor->GetEditorModeManager().OnEditorModeIDChanged().RemoveAll(this);
+			}
 		}
 	}
 

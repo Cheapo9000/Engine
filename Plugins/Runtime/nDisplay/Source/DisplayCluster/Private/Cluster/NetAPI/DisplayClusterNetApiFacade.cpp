@@ -126,7 +126,6 @@ public:
 	/** Failover transaction for SynchronizeOnBarrier */
 	virtual EDisplayClusterCommResult SynchronizeOnBarrier() override
 	{
-		check(IsInRHIThread());
 		return static_cast<IDisplayClusterProtocolRenderSync&>(GetFailoverController().Get()).SynchronizeOnBarrier();
 	}
 

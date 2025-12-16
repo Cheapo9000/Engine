@@ -138,15 +138,6 @@ void UDisplayClusterICVFXCameraComponent::PostLoad()
 		}
 	}
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS;
-
-	// Propagate Media settings from the Archetype. Works around instanced property limitations.
-	if (!IsTemplate())
-	{
-		if (const UDisplayClusterICVFXCameraComponent* Archetype = Cast<UDisplayClusterICVFXCameraComponent>(GetArchetype()))
-		{
-			CameraSettings.RenderSettings.Media = Archetype->CameraSettings.RenderSettings.Media;
-		}
-	}
 }
 
 void UDisplayClusterICVFXCameraComponent::PostApplyToComponent()

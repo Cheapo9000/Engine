@@ -1,20 +1,20 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\Shared\\EpicGames.ProjectStore\\EpicGames.ProjectStore.csproj",
-  "TargetBuildTime": "2025-10-29T23:36:27.0542663+00:00",
+  "TargetBuildTime": "2025-11-20T16:45:14.1941204+00:00",
   "TargetPath": "bin\\Development\\net8.0\\EpicGames.ProjectStore.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\EpicGames.Build\\EpicGames.Build.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:55.1613219+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:42.1727008+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.Horde\\EpicGames.Horde.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:57.828737+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:45.0601292+00:00"
     }
   ],
   "Dependencies": [

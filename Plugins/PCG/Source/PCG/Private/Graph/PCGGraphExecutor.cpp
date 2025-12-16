@@ -1898,7 +1898,7 @@ void FPCGGraphExecutor::Execute(double& InOutEndTime)
 	bool bFirstLoop = true;
 
 #if WITH_EDITOR
-	bool bOnWorldGenerationProcessBroadcasted = bContinueExecute && World;
+	const bool bOnWorldGenerationProcessBroadcasted = bContinueExecute && World && !World->IsGameWorld();
 	if (bOnWorldGenerationProcessBroadcasted)
 	{
 		FEditorDelegates::OnPreWorldGenerationProcess.Broadcast(World);

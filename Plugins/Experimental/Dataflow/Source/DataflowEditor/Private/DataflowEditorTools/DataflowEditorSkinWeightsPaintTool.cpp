@@ -321,6 +321,7 @@ void UDataflowEditorSkinWeightsPaintTool::OnShutdown(EToolShutdownType ShutdownT
 						);
 					}
 				}
+				Dataflow->MarkPackageDirty();
 			}
 
 			TArray<TArray<int32>> CurrentIndices;

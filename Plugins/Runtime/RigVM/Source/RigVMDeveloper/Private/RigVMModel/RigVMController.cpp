@@ -17,6 +17,7 @@
 #include "RigVMFunctions/Execution/RigVMFunction_Sequence.h"
 #include "RigVMCompiler/RigVMCompiler.h"
 #include "RigVMDeveloperModule.h"
+#include "RigVMHost.h"
 #include "UObject/PropertyPortFlags.h"
 #include "UObject/Package.h"
 #include "Misc/CoreMisc.h"
@@ -20053,6 +20054,12 @@ void URigVMController::ApplyPinState(URigVMPin* InPin, const FPinState& InPinSta
 		if (InjectionInfo && !InjectionInfo->Node)
 		{
 			InjectionInfo->Node = InjectionInfo->UnitNode_DEPRECATED;
+		}
+
+		// If this node has been destroyed already or is marked as garbage
+		if (InjectionInfo && URigVMHost::IsGarbageOrDestroyed(InjectionInfo->Node))
+		{
+			continue;
 		}
 
 		if (InjectionInfo && InjectionInfo->Node)

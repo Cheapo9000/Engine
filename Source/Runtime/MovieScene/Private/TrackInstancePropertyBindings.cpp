@@ -513,10 +513,6 @@ FTrackInstancePropertyBindings::FTrackInstancePropertyBindings(FName InPropertyN
 	: PropertyPath(InPropertyPath)
 	, PropertyName(InPropertyName)
 {
-	static const FString Set(TEXT("Set"));
-	const FString FunctionString = Set + PropertyName.ToString();
-
-	FunctionName = FName(*FunctionString);
 }
 
 FProperty* FTrackInstancePropertyBindings::FindProperty(const UObject* Object, FStringView InPropertyPath)
@@ -613,7 +609,20 @@ void FTrackInstancePropertyBindings::CacheBinding(const UObject& Object)
 {
 	FResolvedPropertyAndFunction PropAndFunction = FindPropertyAndFunction(&Object, PropertyPath);
 	{
-		UFunction* SetterFunction = Object.FindFunction(FunctionName);
+		FString PropertyVarName = PropertyName.ToString();
+
+		// If this is a bool property, strip off the 'b' so that the "Set" functions to be 
+		// found are, for example, "SetHidden" instead of "SetbHidden"
+		FProperty* Property = PropAndFunction.GetValidProperty();
+		if (FBoolProperty* BoolProperty = CastField<FBoolProperty>(Property))
+		{
+			PropertyVarName.RemoveFromStart("b", ESearchCase::CaseSensitive);
+		}
+
+		static const FString Set("Set");
+		const FString FunctionString = Set + PropertyVarName;
+
+		UFunction* SetterFunction = Object.FindFunction(FName(*FunctionString));
 		if (SetterFunction && SetterFunction->NumParms >= 1)
 		{
 			PropAndFunction.SetterFunction = SetterFunction;

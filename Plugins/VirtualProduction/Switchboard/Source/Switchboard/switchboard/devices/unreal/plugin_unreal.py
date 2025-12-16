@@ -1616,9 +1616,7 @@ class DeviceUnreal(Device):
 
         syncstatus_args = [
             f'"{self.sbl_helper_path}"',
-            # '--log-level=DEBUG',
             'syncstatus',
-            f'--engine-dir="{engine_dir}"',
             f'--project="{project_path}"',
         ]
 
@@ -1630,6 +1628,20 @@ class DeviceUnreal(Device):
 
         if project_workspace:
             syncstatus_args.append(f'--p4client-project={project_workspace}')
+
+        if DeviceUnreal.csettings['use_sync_filters'].get_value():
+            include_str = ''
+            custom_view_str = self.csettings['custom_sync_view'].get_value()
+
+            incl_categories: list[SyncCategoryOption] = self.csettings[
+                'included_sync_categories'].get_value()
+            if incl_categories:
+                incl_categories.sort(key=lambda cat: str(cat.catid))
+                include_str = ','.join(str(cat.catid) for cat in incl_categories)
+                syncstatus_args.append(f'--include-categories="{include_str}"')
+
+            if custom_view_str:
+                syncstatus_args.append(f'--custom-view="{custom_view_str}"')
 
         program_name = UnrealJobs.SyncStatus.value
 
@@ -1813,7 +1825,7 @@ class DeviceUnreal(Device):
             incl_categories: list[SyncCategoryOption] = self.csettings[
                 'included_sync_categories'].get_value()
             if incl_categories:
-                incl_categories.sort(key=lambda cat: cat.catid)
+                incl_categories.sort(key=lambda cat: str(cat.catid))
                 include_str = ','.join(str(cat.catid) for cat in incl_categories)
                 sync_args += f' --include-categories="{include_str}"'
 

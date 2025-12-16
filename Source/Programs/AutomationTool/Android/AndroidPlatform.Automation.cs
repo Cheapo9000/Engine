@@ -3378,10 +3378,12 @@ public class AndroidPlatform : Platform
 				if (!long.TryParse(RunAdbCommand(Params, DeviceName, "shell cat ./files/libUnreal.so.timestamp", null, ERunOptions.AppMustExist).Output, out long OldTimestamp) || OldTimestamp != NewTimestamp)
 				{
 					int SuccessCode = 0;
-					string PushSO = $"push -z lz4 {FinalSOPathStripped} /data/local/tmp/{FinalSOFileNameStripped}";
-					string CopySO = $"shell run-as {PackageName} cp /data/local/tmp/{FinalSOFileNameStripped} ./files/libUnreal.so";
-					string DeleteSO = $"shell rm /data/local/tmp/{FinalSOFileNameStripped}";
+					string PushSO = $"push -z lz4 \"{FinalSOPathStripped}\" /data/local/tmp/";
+					string MkdirDestDirSO = $"shell run-as {PackageName} mkdir -p ./files";
+					string CopySO = $"shell run-as {PackageName} cp \"/data/local/tmp/{FinalSOFileNameStripped}\" ./files/libUnreal.so";
+					string DeleteSO = $"shell rm \"/data/local/tmp/{FinalSOFileNameStripped}\"";
 					RunAndLogAdbCommand(Params, DeviceName, PushSO, out SuccessCode);
+					RunAndLogAdbCommand(Params, DeviceName, MkdirDestDirSO, out SuccessCode);
 					RunAndLogAdbCommand(Params, DeviceName, CopySO, out SuccessCode);
 					RunAndLogAdbCommand(Params, DeviceName, DeleteSO, out SuccessCode);
 

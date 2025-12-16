@@ -810,16 +810,18 @@ UMovieSceneSubSection* UDaySequenceModifierComponent::InitializeDaySequence(cons
 		{
 			if (FMovieSceneTimeWarpVariant* Variant = SubSection->GetTimeWarp())
 			{
-				UMovieScene* SubMovieScene = Sequence->GetMovieScene();
-				const FFrameRate TickResolution = SubMovieScene->GetTickResolution();
-				const FQualifiedFrameTime SubDuration = FQualifiedFrameTime(
-					UE::MovieScene::DiscreteSize(SubMovieScene->GetPlaybackRange()),
-					TickResolution);
+				if (UMovieScene* SubMovieScene = Sequence ? Sequence->GetMovieScene() : nullptr)
+				{
+					const FFrameRate TickResolution = SubMovieScene->GetTickResolution();
+					const FQualifiedFrameTime SubDuration = FQualifiedFrameTime(
+						UE::MovieScene::DiscreteSize(SubMovieScene->GetPlaybackRange()),
+						TickResolution);
 
-				const float TargetFixedRatio = FMath::Fmod(DayNightCycleTime / TargetActor->GetDayLength(), 1.0f);
-				const FTimecode TargetFixedTimecode = FTimecode(TargetFixedRatio * SubDuration.AsSeconds(), TickResolution, false, false);
-				const FFrameNumber TargetFrame = TargetFixedTimecode.ToFrameNumber(TickResolution);
-				Variant->Set(FMovieSceneTimeWarpFixedFrame{TargetFrame});
+					const float TargetFixedRatio = FMath::Fmod(DayNightCycleTime / TargetActor->GetDayLength(), 1.0f);
+					const FTimecode TargetFixedTimecode = FTimecode(TargetFixedRatio * SubDuration.AsSeconds(), TickResolution, false, false);
+					const FFrameNumber TargetFrame = TargetFixedTimecode.ToFrameNumber(TickResolution);
+					Variant->Set(FMovieSceneTimeWarpFixedFrame{TargetFrame});
+				}
 			}
 		}
 		else

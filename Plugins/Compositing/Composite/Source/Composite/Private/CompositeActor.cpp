@@ -501,6 +501,9 @@ void ACompositeActor::PostEditChangeChainProperty(struct FPropertyChangedChainEv
 				{
 					if (!CompositeLayers.Contains(PreEditCompositeLayer))
 					{
+						// 5.7 hotfix: Ensure scene capture component destruction
+						DestroySceneCaptures(PreEditCompositeLayer);
+
 						PreEditCompositeLayer->OnRemoved(GetWorld());
 					}
 				}
@@ -547,6 +550,9 @@ void ACompositeActor::PostEditUndo()
 		{
 			if (!CompositeLayers.Contains(PreEditCompositeLayer))
 			{
+				// 5.7 hotfix: Ensure scene capture component destruction
+				DestroySceneCaptures(PreEditCompositeLayer);
+
 				PreEditCompositeLayer->OnRemoved(GetWorld());
 			}
 		}

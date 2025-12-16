@@ -91,7 +91,7 @@ namespace UE::PixelStreaming2
 		TRefCountPtr<IPooledRenderTarget> OutTexture;
 		{
 			FRDGBuilder GraphBuilder(FRHICommandListImmediate::Get());
-			FRDGTextureRef InputTexture = GraphBuilder.RegisterExternalTexture(CreateRenderTarget(BackBuffer, *Window.GetTitle().ToString()));
+			FRDGTextureRef InputTexture = GraphBuilder.RegisterExternalTexture(CreateRenderTarget(BackBuffer, TEXT("VideoProducerViewportBaseInput")));
 			// TODO (william.belcher): The cropped texture having an 8bit pixel format matches the full editor video producer code path but we may need to reconsider this if we want to add 10bit video support
 			FRDGTextureRef CroppedTexture = GraphBuilder.CreateTexture(FRDGTextureDesc::Create2D(VirtualSize, EPixelFormat::PF_B8G8R8A8, FClearValueBinding::None, GetTexCreateFlags()), TEXT("VideoProducerViewportBaseCropped"));
 

@@ -450,6 +450,9 @@ FVulkanDynamicRHI::FVulkanDynamicRHI()
 	GRHISupportsPipelineFileCache = !GRHISupportsPSOPrecaching || CVarEnableVulkanPSOFileCacheWhenPrecachingActive.GetValueOnAnyThread();
 	UE_LOG(LogVulkanRHI, Log, TEXT("Vulkan PSO Precaching = %d, PipelineFileCache = %d"), GRHISupportsPSOPrecaching, GRHISupportsPipelineFileCache);
 
+	// Vulkan always uses SPIR-V. This is used to differentiate standard and preview shaders in the DDC.
+	GRHIGlobals.PreferredPreviewShaderCodeFormat = TEXT("SPIRV");
+
 	// Copy source requires its own image layout.
 	EnumRemoveFlags(GRHIMergeableAccessMask, ERHIAccess::CopySrc);
 

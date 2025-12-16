@@ -910,10 +910,10 @@ void FControlRigEditorModule::GetDirectManipulationMenuActions(IRigVMClientHost*
 								}
 
 								// run the task after a bit so that the rig has the opportunity to run first
-								FFunctionGraphTask::CreateAndDispatchWhenReady([ControlRigBlueprint, UnitNode, Target]()
+								ExecuteOnGameThread(UE_SOURCE_LOCATION, [ControlRigBlueprint, UnitNode, Target]()
 								{
 									ControlRigBlueprint->AddTransientControl(UnitNode, Target);
-								}, TStatId(), NULL, ENamedThreads::GameThread);
+								});
 							}),
 							FCanExecuteAction::CreateLambda([HasNoUnconstrainedAffectedPin, IsSliced]() -> bool
 							{

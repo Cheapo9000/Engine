@@ -1183,7 +1183,7 @@ void SRigVMExecutionStackView::HandleHostInitializedEvent(URigVMHost* InHost, co
 	}
 	else
 	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady(HandleHostInitializedEventLambda, TStatId(), NULL, ENamedThreads::GameThread);
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, HandleHostInitializedEventLambda);
 	}
 }
 
@@ -1256,7 +1256,7 @@ void SRigVMExecutionStackView::HandleHostExecutedEvent(URigVMHost* InHost, const
 	}
 	else
 	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady(HandleHostExecutedEventLambda, TStatId(), NULL, ENamedThreads::GameThread);
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, HandleHostExecutedEventLambda);
 	}
 
 }

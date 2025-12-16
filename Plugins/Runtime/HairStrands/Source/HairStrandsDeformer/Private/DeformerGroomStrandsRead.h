@@ -73,7 +73,7 @@ private:
 	using FParameters = FOptimusGroomStrandsReadParameters;
 
 	/** List of instances (invocations) used in that data interface */
-	TArray<const FHairGroupInstance*> GroupInstances;
+	TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 
 	/** Binding Resources */
 	struct FBindingResources

@@ -78,7 +78,7 @@ private:
 	using FParameters = FOptimusGroomStrandsWriteParameters;
 
 	/** List of instances (invocations) used in that data interface */
-	TArray<const FHairGroupInstance*> GroupInstances;
+	TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 
 	/** Output mask for gpu buffer format*/
 	uint64 OutputMask = 0;

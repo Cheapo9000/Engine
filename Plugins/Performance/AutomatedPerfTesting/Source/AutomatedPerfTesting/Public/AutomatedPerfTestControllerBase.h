@@ -50,6 +50,34 @@ namespace AutomatedPerfTest
 
 		return World;
 	}
+
+	// New function because there could be more than one Game world alive at any point with MultiWorld
+	static bool IsWorldLoaded(const FString & WorldName)
+	{
+		for (const FWorldContext& WorldContext : GEngine->GetWorldContexts())
+		{
+			if (WorldContext.WorldType == EWorldType::Game)
+			{
+				UWorld* World = WorldContext.World();
+				if (World && World->GetName().Compare(WorldName) == 0)
+				{
+					return true;
+				}
+			}
+#if WITH_EDITOR
+			else if (GIsEditor && WorldContext.WorldType == EWorldType::PIE)
+			{
+				UWorld* World = WorldContext.World();
+				if (World && World->GetName().Compare(WorldName) == 0)
+				{
+					return true;
+				}
+			}
+#endif
+		}
+
+		return false;
+	}
 }
 /**
  * 

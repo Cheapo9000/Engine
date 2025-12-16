@@ -3326,11 +3326,11 @@ void ImportDataInternal(ULandscapeInfo* LandscapeInfo, const FString& Filename, 
 	TiledImage.Load<T>(*Filename);
 	FIntPoint ImportResolution = TiledImage.GetResolution();
 
-	bool bResolutionMismatch = false;
+	bool bTransformInputData = false;
 
 	if ((ImportResolution.X != ImportRegionVerts.Width() || ImportResolution.Y != ImportRegionVerts.Height()) && TransformType != ELandscapeImportTransformType::Subregion)
 	{
-		bResolutionMismatch = true;
+		bTransformInputData = true;
 
 		FFormatNamedArguments Args;
 		Args.Add(TEXT("ImportSizeX"), ImportResolution.X);
@@ -3347,41 +3347,53 @@ void ImportDataInternal(ULandscapeInfo* LandscapeInfo, const FString& Filename, 
 		}
 	}
 
-	TArray<T> ImportData;
-	if (TransformType == ELandscapeImportTransformType::Subregion)
+	bool bReadUnmodified = bTransformInputData ||
+		TransformType == ELandscapeImportTransformType::None ||
+		TransformType == ELandscapeImportTransformType::Subregion;
+
+	FIntRect DestRegionVerts = ImportRegionVerts;
+
+	// None/Original mode doesn't handle resolution mismatch at all.  Tailor the destination region using the offset and image resolution.
+	if (TransformType == ELandscapeImportTransformType::None)
 	{
-		TiledImage.ReadRegion<T>(ImportRegionVerts, ImportData, bFlipYAxis);
+		DestRegionVerts.Min = Offset;
+		DestRegionVerts.Max = Offset + ImportResolution;
 	}
-	else if (bResolutionMismatch)
+	else if (TransformType == ELandscapeImportTransformType::Subregion)
+	{
+		// Subregion mode depends on TransformImportData to re-align data to the offset even if it starts at the correct resolution.
+		bTransformInputData = true;
+	}
+
+	TArray<T> ImportData;
+	if (bReadUnmodified)
 	{
 		TiledImage.Read<T>(ImportData, bFlipYAxis);
 	}
 	else
 	{
-		const FIntRect RegionToLoad(0, 0, ImportRegionVerts.Width(), ImportRegionVerts.Height());
+		const FIntRect RegionToLoad(0, 0, DestRegionVerts.Width(), DestRegionVerts.Height());
 		TiledImage.ReadRegion<T>(RegionToLoad, ImportData, bFlipYAxis);
 	}
 
-	// Expand if necessary...
 	{
 		TArray<T> FinalData;
-		if (bResolutionMismatch)
+		if (bTransformInputData)
 		{
 			FLandscapeImportHelper::TransformImportData<T>(ImportData, FinalData, FLandscapeImportResolution(ImportResolution.X, ImportResolution.Y), FLandscapeImportResolution(ImportRegionVerts.Width(), ImportRegionVerts.Height()), TransformType, Offset);
-		}
-		else if (TransformType == ELandscapeImportTransformType::Subregion)
-		{
-			FinalData = MoveTemp(ImportData);
 		}
 		else
 		{
 			FinalData = MoveTemp(ImportData);
 		}
 
+		// SetDataFunc (FHeightmapAccessor::SetData / TAlphamapAccessor::SetData) expects the data buffer to exactly match the region dimensions.  Important
+		// for memory access safety and stride.
+		check(DestRegionVerts.Area() == FinalData.Num());
+
 		// Set Data is in Quads (so remove 1)
-		SetDataFunc(ImportRegionVerts.Min.X, ImportRegionVerts.Min.Y, ImportRegionVerts.Max.X - 1, ImportRegionVerts.Max.Y - 1, FinalData);
+		SetDataFunc(DestRegionVerts.Min.X, DestRegionVerts.Min.Y, DestRegionVerts.Max.X - 1, DestRegionVerts.Max.Y - 1, FinalData);
 	}
-	
 }
 
 void FEdModeLandscape::ImportHeightData(ULandscapeInfo* LandscapeInfo, const FGuid& LayerGuid, const FString& Filename, const FIntRect& ImportRegionVerts, ELandscapeImportTransformType TransformType, FIntPoint Offset, const ELandscapeLayerPaintingRestriction& PaintRestriction, bool bFlipYAxis)

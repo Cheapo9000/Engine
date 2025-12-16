@@ -78,7 +78,8 @@ static const TCHAR* MetaHumanCharacterEditorToolkitTransactionContext = TEXT("Me
 
 namespace UE::MetaHuman
 {
-	static void DuplicateSkeletalMesh(const UMetaHumanCharacter* MetaHumanCharacter, const FString& InNameSuffix, const USkeletalMesh* InSkeletalMeshAsset)
+	// Internal utility to duplicate a Skeletal Mesh asset and save it as a standalone object in the project
+	static void DuplicateSkeletalMeshAsStandalone(const UMetaHumanCharacter* MetaHumanCharacter, const FString& InNameSuffix, const USkeletalMesh* InSkeletalMeshAsset)
 	{
 		FAssetToolsModule& AssetToolsModule = FAssetToolsModule::GetModule();
 
@@ -94,6 +95,7 @@ namespace UE::MetaHuman
 
 		UPackage* NewPackage = CreatePackage(*NewPackageName);
 		USkeletalMesh* NewAsset = DuplicateObject(InSkeletalMeshAsset, NewPackage, FName(NewAssetName));
+		NewAsset->SetFlags(RF_Public | RF_Transactional | RF_Standalone);
 
 		FAssetRegistryModule::AssetCreated(NewAsset);
 	}
@@ -1245,7 +1247,7 @@ void FMetaHumanCharacterEditorToolkit::ExportFaceSkelMesh()
 
 	const USkeletalMesh* FaceMeshAsset = MetaHumanCharacterSubsystem->Debug_GetFaceEditMesh(MetaHumanCharacter);
 	const FString FaceSuffix = TEXT("_ExportedFace");
-	UE::MetaHuman::DuplicateSkeletalMesh(MetaHumanCharacter, FaceSuffix, FaceMeshAsset);
+	UE::MetaHuman::DuplicateSkeletalMeshAsStandalone(MetaHumanCharacter, FaceSuffix, FaceMeshAsset);
 }
 
 void FMetaHumanCharacterEditorToolkit::ExportBodySkelMesh()
@@ -1260,7 +1262,7 @@ void FMetaHumanCharacterEditorToolkit::ExportBodySkelMesh()
 
 	const USkeletalMesh* BodyMeshAsset = MetaHumanCharacterSubsystem->Debug_GetBodyEditMesh(MetaHumanCharacter);
 	const FString BodySuffix = TEXT("_ExportedBody");
-	UE::MetaHuman::DuplicateSkeletalMesh(MetaHumanCharacter, BodySuffix, BodyMeshAsset);
+	UE::MetaHuman::DuplicateSkeletalMeshAsStandalone(MetaHumanCharacter, BodySuffix, BodyMeshAsset);
 }
 
 void FMetaHumanCharacterEditorToolkit::SaveFaceState()

@@ -77,7 +77,7 @@ private:
 	using FParameters = FOptimusGroomGuidesReadParameters;
 
 	/** List of instances (invocations) used in that data interface */
-	TArray<const FHairGroupInstance*> GroupInstances;
+	TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 
 	/** Binding Resources used to dispatch CS on GPU */
 	struct FBindingResources

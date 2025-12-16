@@ -267,14 +267,28 @@ void UGroomSolverComponent::DestroyRenderState_Concurrent()
 
 void UGroomSolverComponent::AddGroomComponent(UGroomComponent* GroomPhysicsComponent)
 {
-	GroomComponents.Add(GroomPhysicsComponent);
-	GroomPhysicsComponent->SetGroomSolver(this);
+	if(GroomPhysicsComponent)
+	{ 
+		GroomComponents.Add(GroomPhysicsComponent);
+		GroomPhysicsComponent->SetGroomSolver(this);
+
+#if WITH_EDITOR
+		GroomPhysicsComponent->InvalidateAndRecreate();
+#endif
+	}
 }
 
 void UGroomSolverComponent::RemoveGroomComponent(UGroomComponent* GroomPhysicsComponent)
 {
-	GroomComponents.Remove(GroomPhysicsComponent);
-	GroomPhysicsComponent->SetGroomSolver(nullptr);
+	if (GroomPhysicsComponent)
+	{
+		GroomComponents.Remove(GroomPhysicsComponent);
+		GroomPhysicsComponent->SetGroomSolver(nullptr);
+
+#if WITH_EDITOR
+		GroomPhysicsComponent->InvalidateAndRecreate();
+#endif
+	}
 }
 
 void UGroomSolverComponent::ResetGroomComponents()

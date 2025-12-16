@@ -202,7 +202,7 @@ using FShaderCompilerInputHash = FBlake3Hash;
 struct FShaderDebugDataContext
 {
 	bool bIsPipeline = false;
-	TMap<EShaderFrequency, FString> DebugSourceFiles;
+	TArray<TPair<EShaderFrequency, FString>> DebugSourceFiles;
 };
 
 /** Struct that gathers all readonly inputs needed for the compilation of a single shader. */

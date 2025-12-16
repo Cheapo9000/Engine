@@ -75,6 +75,7 @@
 #include "MetaHumanRigLogicUnpackLibrary.h"
 #include "MetaHumanCommonDataUtils.h"
 
+extern UNREALED_API UEditorEngine* GEditor;
 
 #define LOCTEXT_NAMESPACE "MetaHumanDefaultEditorPipelineBase"
 
@@ -2110,7 +2111,7 @@ bool UMetaHumanDefaultEditorPipelineBase::TryMoveObjectToAssetPackage(
 			const FName UniqueName = MakeUniqueObjectName(GetTransientPackage(), ExistingBlueprintAsset->StaticClass()); 
 			ExistingBlueprintAsset->RenameGeneratedClasses(*UniqueName.ToString(), GetTransientPackage(), REN_DontCreateRedirectors);
 		}
-		else if (!ExistingAsset->Rename(nullptr, GetTransientPackage(), REN_DontCreateRedirectors))
+		else if (!ExistingAsset->Rename(nullptr, GetTransientPackage(), REN_DontCreateRedirectors | REN_DoNotDirty | REN_NonTransactional))
 		{
 			return false;
 		}
@@ -2131,6 +2132,32 @@ bool UMetaHumanDefaultEditorPipelineBase::TryMoveObjectToAssetPackage(
 		FMetaHumanCharacterEditorBuild::SetMetaHumanVersionMetadata(Object);
 
 		FAssetRegistryModule::AssetCreated(Object);
+	}
+	else
+	{
+		// For files of older MH version, we are forcing them to be deleted as cached data may not match with their latest version.
+		// Note this does not cover all cases since older MH versioned assets that are not replaced by new assembled ones
+		// are not tracked in any part of the assembly.
+		// See https://jira.it.epicgames.com/browse/MH-16372 for reference
+		if (!FMetaHumanCharacterEditorBuild::MetaHumanAssetMetadataVersionIsCompatible(ExistingAsset))
+		{
+			ExistingAsset->MarkAsGarbage();
+
+			// If the existing asset is a Material Instance, make sure that any child MIs are also released
+			// Otherwise, child MIs could end up with invalid render resources
+			if (UMaterialInstance* ParentMI = Cast<UMaterialInstance>(ExistingAsset))
+			{
+				FMetaHumanCharacterEditorBuild::DeleteMaterialInstanceChildren(ParentMI);
+			}
+
+			// Notify any editor tools about the object that was replaced
+			if (GEditor)
+			{
+				TMap<UObject*, UObject*> ReplacementMap;
+				ReplacementMap.Add(ExistingAsset, Object);
+				GEditor->NotifyToolsOfObjectReplacement(ReplacementMap);
+			}
+		}
 	}
 
 	return true;

@@ -2,11 +2,13 @@
 
 #include "Modules/ModuleManager.h"
 #include "CaptureData.h"
+#include "ImgMediaSource.h" 
 #include "Widgets/SMetaHumanCalibrationGeneratorWindow.h"
 #include "Settings/MetaHumanCalibrationGeneratorSettings.h"
 #include "ContentBrowserMenuContexts.h"
 #include "ToolMenu.h"
 #include "ToolMenuDelegates.h"
+#include "Misc/MessageDialog.h"
 
 #include "Framework/Docking/TabManager.h"
 #include "Widgets/Docking/SDockTab.h"
@@ -45,16 +47,31 @@ public:
 				UIAction.ExecuteAction = FToolMenuExecuteAction::CreateLambda([this](const FToolMenuContext& InContext)
 				{
 					const UContentBrowserAssetContextMenuContext* Context = UContentBrowserAssetContextMenuContext::FindContextWithAssets(InContext);
-
-					UFootageCaptureData* FootageCaptureData = Context->LoadFirstSelectedObject<UFootageCaptureData>();
-					if (FootageCaptureData)
+					if (Context)
 					{
-						TSharedPtr<SDockTab> DockTab = FGlobalTabmanager::Get()->TryInvokeTab(TabName);
-						if (DockTab)
+						UFootageCaptureData* FootageCaptureData = Context->LoadFirstSelectedObject<UFootageCaptureData>();
+						if (IsValid(FootageCaptureData))
 						{
-							DockTab->SetContent(
-								SNew(SMetaHumanCalibrationGeneratorWindow, DockTab->GetParentWindow(), DockTab.ToSharedRef())
-								.CaptureData(FootageCaptureData));
+							if (FootageCaptureData->ImageSequences.Num() < 2)
+							{
+								FText Text = LOCTEXT("GenerateCalibration_InvalidInput", "Could not run Generate Calibration. At least 2 Image Sequences required in the Footage Capture Data asset.");
+								FMessageDialog::Open(EAppMsgCategory::Error, EAppMsgType::Ok, Text);
+							}
+							else if (!IsValid(FootageCaptureData->ImageSequences[0]) || !IsValid(FootageCaptureData->ImageSequences[1]))
+							{
+								FText Text = LOCTEXT("GenerateCalibration_NullImageSequences", "Could not run Generate Calibration. Image Sequences in the Footage Capture Data cannot be null.");
+								FMessageDialog::Open(EAppMsgCategory::Error, EAppMsgType::Ok, Text);
+							}
+							else
+							{
+								TSharedPtr<SDockTab> DockTab = FGlobalTabmanager::Get()->TryInvokeTab(TabName);
+								if (DockTab)
+								{
+									DockTab->SetContent(
+										SNew(SMetaHumanCalibrationGeneratorWindow, DockTab->GetParentWindow(), DockTab.ToSharedRef())
+										.CaptureData(FootageCaptureData));
+								}
+							}
 						}
 					}
 				});

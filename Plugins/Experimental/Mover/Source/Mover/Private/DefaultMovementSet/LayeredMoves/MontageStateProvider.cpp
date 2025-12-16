@@ -43,4 +43,6 @@ void FMoverAnimMontageState::NetSerialize(FArchive& Ar)
 	{
 		PlayRate = 1.0f;
 	}
+
+	Ar << CurrentPosition;
 }

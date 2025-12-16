@@ -608,10 +608,10 @@ void SRigHierarchy::RefreshTreeView(bool bRebuildContent)
 		// is the rig currently running
 		if(Hierarchy->HasExecuteContext())
 		{
-			FFunctionGraphTask::CreateAndDispatchWhenReady([this, bRebuildContent]()
+			ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, bRebuildContent]()
 			{
 				RefreshTreeView(bRebuildContent);
-			}, TStatId(), NULL, ENamedThreads::GameThread);
+			});
 		}
 	}
 	
@@ -972,7 +972,7 @@ void SRigHierarchy::OnHierarchyModified_AnyThread(ERigHierarchyNotification InNo
 
 		TWeakObjectPtr<URigHierarchy> WeakHierarchy = InHierarchy;
 
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this, InNotif, WeakHierarchy, Key]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, InNotif, WeakHierarchy, Key]()
         {
             if(!WeakHierarchy.IsValid())
             {
@@ -983,7 +983,7 @@ void SRigHierarchy::OnHierarchyModified_AnyThread(ERigHierarchyNotification InNo
 	            OnHierarchyModified(InNotif, WeakHierarchy.Get(), Element);
             }
 			
-        }, TStatId(), NULL, ENamedThreads::GameThread);
+        });
 	}
 }
 
@@ -1141,10 +1141,10 @@ void SRigHierarchy::OnPostConstruction_AnyThread(UControlRig* InRig, const FName
 		}
 		else
 		{
-			FFunctionGraphTask::CreateAndDispatchWhenReady([Task]()
+			ExecuteOnGameThread(UE_SOURCE_LOCATION, [Task]()
 			{
 				Task();
-			}, TStatId(), NULL, ENamedThreads::GameThread);
+			});
 		}
 	}
 }

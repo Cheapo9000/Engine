@@ -87,6 +87,7 @@ BEGIN_SHADER_PARAMETER_STRUCT(FBuildInstanceBufferPassParams, )
 	SHADER_PARAMETER_RDG_BUFFER_UAV(RWStructuredBuffer, OutputStats)
 	SHADER_PARAMETER_RDG_BUFFER_UAV(RWStructuredBuffer, InstanceExtraDataBuffer)
 	SHADER_PARAMETER_RDG_UNIFORM_BUFFER(FSceneUniformParameters, Scene)
+	SHADER_PARAMETER_STRUCT_INCLUDE(FGPUSceneResourceParameters, GPUSceneParameters)
 END_SHADER_PARAMETER_STRUCT()
 
 const FRayTracingScene::FInstanceHandle FRayTracingScene::INVALID_INSTANCE_HANDLE = FInstanceHandle();
@@ -401,6 +402,7 @@ void FRayTracingScene::Update(FRDGBuilder& GraphBuilder, FSceneUniformBuffer& Sc
 					
 					PassParams->InstanceExtraDataBuffer = InstanceExtraDataBufferUAV;
 					PassParams->Scene = SceneUniformBuffer.GetBuffer(GraphBuilder);
+					PassParams->GPUSceneParameters = GPUScene->GetShaderParameters(GraphBuilder);
 					PassParams->OutputStats = bCompactInstanceBuffer || bStatsEnabled ? InstanceStatsBufferUAV : nullptr;
 
 					const uint32 OutputStatsOffset = LayerIndex * MaxNumViews + ViewIndex;
@@ -418,9 +420,18 @@ void FRayTracingScene::Update(FRDGBuilder& GraphBuilder, FSceneUniformBuffer& Sc
 						bCompactInstanceBuffer
 						](FRHICommandList& RHICmdList)
 						{
+							FGPUSceneResourceParametersRHI GPUSceneParameters;
+							GPUSceneParameters.CommonParameters = PassParams->GPUSceneParameters.CommonParameters;
+							GPUSceneParameters.GPUSceneInstanceSceneData = PassParams->GPUSceneParameters.GPUSceneInstanceSceneData->GetRHI();
+							GPUSceneParameters.GPUSceneInstancePayloadData = PassParams->GPUSceneParameters.GPUSceneInstancePayloadData->GetRHI();
+							GPUSceneParameters.GPUScenePrimitiveSceneData = PassParams->GPUSceneParameters.GPUScenePrimitiveSceneData->GetRHI();
+							GPUSceneParameters.GPUSceneLightmapData = PassParams->GPUSceneParameters.GPUSceneLightmapData->GetRHI();
+							GPUSceneParameters.GPUSceneLightData = PassParams->GPUSceneParameters.GPUSceneLightData->GetRHI();
+
 							InstanceBufferBuilder.BuildRayTracingInstanceBuffer(
 								RHICmdList,
 								GPUScene,
+								&GPUSceneParameters,
 								CullingParameters,
 								PassParams->InstanceBuffer->GetRHI(),
 								GRHIGlobals.RayTracing.RequiresSeparateHitGroupContributionsBuffer ? PassParams->HitGroupContributionsBuffer->GetRHI() : nullptr,

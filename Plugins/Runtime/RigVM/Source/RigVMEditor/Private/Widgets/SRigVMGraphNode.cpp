@@ -410,13 +410,13 @@ void SRigVMGraphNode::Construct( const FArguments& InArgs )
 	if(EdGraphNode->bRenameIsPending)
 	{
 		TWeakObjectPtr<URigVMEdGraphNode> WeakNode = EdGraphNode;
-		FFunctionGraphTask::CreateAndDispatchWhenReady([WeakNode]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [WeakNode]()
 		{
 			if(WeakNode.IsValid())
 			{
 				(void)WeakNode->RequestRename();
 			}
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }
 

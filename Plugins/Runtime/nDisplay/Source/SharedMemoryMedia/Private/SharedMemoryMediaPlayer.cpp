@@ -7,6 +7,8 @@
 #include "IMediaTextureSampleConverter.h"
 #include "Misc/Timespan.h"
 #include "Tasks/Task.h"
+
+#include "RHIUtilities.h"
 #include "TextureResource.h"
 
 #include "SharedMemoryMediaOutput.h"
@@ -835,7 +837,7 @@ void FSharedMemoryMediaPlayer::JustInTimeSampleRender(FRHICommandListImmediate& 
 		RHI_BREADCRUMB_EVENT_STAT(RHICmdList, SharedMemoryMedia_CopyToSampleCommon, "SharedMemoryMedia_CopyToSampleCommon");
 		SCOPED_GPU_STAT(RHICmdList, SharedMemoryMedia_CopyToSampleCommon);
 
-		RHICmdList.CopyTexture(SharedCrossGpuTextures[SharedMemoryIdx], SampleCommonTexture->GetResource()->GetTextureRHI(), CopyInfo);
+		TransitionAndCopyTexture(RHICmdList, SharedCrossGpuTextures[SharedMemoryIdx], SampleCommonTexture->GetResource()->GetTextureRHI(), CopyInfo);
 	}
 	else
 	{

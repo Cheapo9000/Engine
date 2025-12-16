@@ -39,7 +39,7 @@ static inline const TCHAR * GetBoolVectorName(EDerivativeType Type)
 	case EDerivativeType::LWCVector4:
 		return TEXT("bool4");
 	default:
-		check(0);
+		ensureMsgf(false, TEXT("Unhandled EDerivativeType value: %d for GetBoolVectorName"), static_cast<int32>(Type));
 		return TEXT("");
 	}
 }
@@ -65,7 +65,7 @@ static inline const TCHAR * GetFloatVectorName(EDerivativeType Type)
 	case EDerivativeType::LWCVector4:
 		return TEXT("FWSVector4");
 	default:
-		check(0);
+		ensureMsgf(false, TEXT("Unhandled EDerivativeType value: %d for GetFloatVectorName"), static_cast<int32>(Type));
 		return TEXT("");
 	}
 }
@@ -82,7 +82,7 @@ static inline uint32 GetNumComponents(EDerivativeType Type)
 	case EDerivativeType::LWCVector2: return 2u;
 	case EDerivativeType::LWCVector3: return 3u;
 	case EDerivativeType::LWCVector4: return 4u;
-	default: check(0); return 0u;
+	default: ensureMsgf(false, TEXT("Unhandled EDerivativeType value: %d for GetNumComponents"), static_cast<int32>(Type)); return 0u;
 	}
 }
 
@@ -112,7 +112,7 @@ static inline const TCHAR * GetDerivVectorName(EDerivativeType Type)
 	case EDerivativeType::LWCVector4:
 		return TEXT("FWSVector4Deriv");
 	default:
-		check(0);
+		ensureMsgf(false, TEXT("Unhandled EDerivativeType value: %d for GetDerivVectorName"), static_cast<int32>(Type));
 		return TEXT("");
 	}
 }
@@ -141,7 +141,7 @@ EDerivativeType GetDerivType(EMaterialValueType ValueType, bool bAllowNonFloat)
 	case MCT_LWCVector4:
 		return EDerivativeType::LWCVector4;
 	default:
-		check(bAllowNonFloat);
+		ensureMsgf(bAllowNonFloat, TEXT("Invalid EDerivativeType value: %d for GetDerivType"), static_cast<int32>(ValueType));
 		return EDerivativeType::None;
 	}
 }
@@ -167,8 +167,8 @@ static EMaterialValueType GetMaterialTypeFromDerivType(EDerivativeType Type)
 	case EDerivativeType::LWCVector4:
 		return MCT_LWCVector4;
 	default:
-		check(0);
-		return (EMaterialValueType)0; // invalid, should be a Float 1/2/3/4, break at the check(0);
+		ensureMsgf(false, TEXT("Invalid EDerivativeType value: %d for GetMaterialTypeFromDerivType"), static_cast<int32>(Type));
+		return (EMaterialValueType)0;
 	}
 }
 
@@ -477,7 +477,7 @@ int32 FMaterialDerivativeAutogen::GenerateExpressionFunc1(FHLSLMaterialTranslato
 	const FOperationType1 OperationType = GetFunc1ReturnType(SrcDerivInfo.DerivType, Op);
 	if (OperationType.ReturnType == EDerivativeType::None)
 	{
-		return Translator.Errorf(TEXT("Invalid input type: %ss"), GetFloatVectorName(SrcDerivInfo.DerivType));
+		return Translator.Errorf(TEXT("Invalid input type: %s"), Translator.DescribeType(SrcDerivInfo.Type));
 	}
 	const bool bIsLWC = IsLWCType(OperationType.IntermediateType);
 
@@ -840,8 +840,12 @@ int32 FMaterialDerivativeAutogen::GenerateExpressionFunc2(FHLSLMaterialTranslato
 	const FOperationType2 OperationType = GetFunc2ReturnType(LhsDerivInfo.DerivType, RhsDerivInfo.DerivType, Op);
 	if (OperationType.ReturnType == EDerivativeType::None)
 	{
-		return Translator.Errorf(TEXT("Invalid input types: %s, %s"), GetFloatVectorName(LhsDerivInfo.DerivType), GetFloatVectorName(RhsDerivInfo.DerivType));
+		const FString Param1 = LhsDerivInfo.DerivType != EDerivativeType::None ? GetFloatVectorName(LhsDerivInfo.DerivType) : Translator.DescribeType(LhsDerivInfo.Type);
+		const FString Param2 = RhsDerivInfo.DerivType != EDerivativeType::None ? GetFloatVectorName(LhsDerivInfo.DerivType) : Translator.DescribeType(RhsDerivInfo.Type);
+
+		return Translator.Errorf(TEXT("Invalid input types: %s, %s"), *Param1, *Param2);
 	}
+			
 	const bool bIsLWC = IsLWCType(OperationType.LhsIntermediateType) || IsLWCType(OperationType.RhsIntermediateType);
 
 	EDerivativeStatus DstStatus = EDerivativeStatus::NotValid;

@@ -307,10 +307,10 @@ void UControlRigSkeletalMeshComponent::OnHierarchyModified_AnyThread(ERigHierarc
 	}
 	else
 	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady([Task]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [Task]()
 		{
 			Task();		
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }
 
@@ -329,9 +329,9 @@ void UControlRigSkeletalMeshComponent::OnPostConstruction_AnyThread(UControlRig*
 	}
 	else
 	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this]()
 		{
 			RebuildDebugDrawSkeleton();
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }

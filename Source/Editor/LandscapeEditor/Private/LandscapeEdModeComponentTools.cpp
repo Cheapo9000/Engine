@@ -2477,7 +2477,7 @@ public:
 		const int32 Height = EdMode->UISettings->ImportType == ELandscapeImportTransformType::None ? EdMode->UISettings->ImportLandscape_Height : (LandscapeExtent.Height()+1);
 		const int32 Width = EdMode->UISettings->ImportType == ELandscapeImportTransformType::None ? EdMode->UISettings->ImportLandscape_Width: (LandscapeExtent.Width()+1);
 		const int32 ImportHeight = EdMode->UISettings->ImportType != ELandscapeImportTransformType::Resample ? EdMode->UISettings->ImportLandscape_Height : (LandscapeExtent.Height() + 1);
-		const int32 ImportWidth = EdMode->UISettings->ImportType != ELandscapeImportTransformType::Resample ? EdMode->UISettings->ImportLandscape_Height : (LandscapeExtent.Height() + 1);
+		const int32 ImportWidth = EdMode->UISettings->ImportType != ELandscapeImportTransformType::Resample ? EdMode->UISettings->ImportLandscape_Width : (LandscapeExtent.Width() + 1);
 
 		const FTransform LandscapeTransfo = FTransform(FRotator(0, 0, 0), MinLocation, LandscapeInfo->DrawScale);
 

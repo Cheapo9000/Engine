@@ -23,7 +23,7 @@ namespace LandscapeRegionUtils
 	void ForEachComponentByRegion(int32 RegionSize, const TArray<FIntPoint>& ComponentCoordinates, TFunctionRef<bool(const FIntPoint&, const TArray<FIntPoint>&)> RegionFn);
 
 	// Load, Process (call RegionFn) and Unload the Region
-	void ForEachRegion_LoadProcessUnload(ULandscapeInfo* LandscapeInfo, const FIntRect& Domain, UWorld* World, TFunctionRef<bool(const FBox&, const TArray<ALandscapeProxy*>)> RegionFn);
+	void ForEachRegion_LoadProcessUnload(ULandscapeInfo* LandscapeInfo, UWorld* World, TFunctionRef<bool(const FBox&, const TArray<ALandscapeProxy*>)> RegionFn);
 
 	// Number of landscape regions in this landscape.
 	int32 NumLandscapeRegions(ULandscapeInfo* InLandscapeInfo);

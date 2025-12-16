@@ -37,7 +37,6 @@ public:
 	/** Access to the render sync API (RHI thread only) */
 	TSharedRef<IDisplayClusterProtocolRenderSync> GetRenderSyncAPI()
 	{
-		check(IsInRHIThread());
 		return RenderSyncAPI;
 	}
 

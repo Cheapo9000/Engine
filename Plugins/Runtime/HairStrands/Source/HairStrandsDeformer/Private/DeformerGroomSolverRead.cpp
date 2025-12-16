@@ -314,7 +314,7 @@ FComputeDataProviderRenderProxy* UOptimusGroomSolverReadDataProvider::GetRenderP
 			}
 			if(bResetSimulationCount > 0)
 			{
-				TArray<const FHairGroupInstance*> GroupInstances;
+				TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 				UE::Groom::Private::GroomComponentsToInstances(GroomComponents, GroupInstances);
 				
 				if(!UE::Groom::Private::HaveGuidesInstanceResources(GroupInstances) || !UE::Groom::Private::HaveGuidesSkinnedResources(GroupInstances))

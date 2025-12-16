@@ -441,6 +441,10 @@ namespace UE::PixelStreamingVCam
 			return;
 		}
 
+		// These should already be empty, but clients will have new IDs when restarting capture, so clear them just to be safe
+		TransformControlHolder.Reset();
+		TransformControlQueue.Empty();
+
 		FMediaCaptureOptions Options;
 		Options.bSkipFrameWhenRunningExpensiveTasks = false;
 		Options.OverrunAction = EMediaCaptureOverrunAction::Skip;
@@ -853,6 +857,13 @@ namespace UE::PixelStreamingVCam
 
 	bool FVCamPixelStreamingSessionLogic::TryTakeTransformControl(const FString& PlayerId, bool bForce)
 	{
+		if (!MediaCapture)
+		{
+			// If capture is stopped, we've cleared the transform holder. Nobody else can take control until capture
+			// starts again, because they'll have different player IDs assigned on startup.
+			return false;
+		}
+
 		if (TransformControlHolder.IsSet() && TransformControlHolder.GetValue().Equals(PlayerId))
 		{
 			return true;

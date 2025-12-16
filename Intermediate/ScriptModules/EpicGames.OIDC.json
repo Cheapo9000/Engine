@@ -1,7 +1,7 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
-  "TargetBuildTime": "2025-10-29T23:35:52.9832133+00:00",
+  "TargetBuildTime": "2025-11-20T16:44:40.3060617+00:00",
   "TargetPath": "bin\\Development\\net8.0\\EpicGames.OIDC.dll",
   "ProjectReferencesAndTimes": [],
   "Dependencies": [

@@ -160,7 +160,7 @@ bool FAvaOutliner::IsDefaultWorldActorToHide(const UWorld* const InWorld, const 
 	}
 
 	// Make sure the Actor is none of these Default World Actors
-	return InActor == InWorld->GetDefaultPhysicsVolume()
+	return (InWorld->HasDefaultPhysicsVolume() && InActor == InWorld->GetDefaultPhysicsVolume())
 		|| InActor == InWorld->GetDefaultBrush()
 		|| InActor == InWorld->GetWorldSettings()
 		|| InActor == InWorld->MyParticleEventManager;

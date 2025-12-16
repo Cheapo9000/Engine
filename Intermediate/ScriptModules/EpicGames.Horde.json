@@ -1,28 +1,28 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
-  "TargetBuildTime": "2025-10-29T23:35:57.828737+00:00",
+  "TargetBuildTime": "2025-11-20T16:44:45.0601292+00:00",
   "TargetPath": "bin\\Development\\net8.0\\EpicGames.Horde.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.8679744+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:41.1061252+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:52.9832133+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.3060617+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.Oodle\\EpicGames.Oodle.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:52.9198154+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.2431579+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:54.650041+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:41.7645656+00:00"
     }
   ],
   "Dependencies": [

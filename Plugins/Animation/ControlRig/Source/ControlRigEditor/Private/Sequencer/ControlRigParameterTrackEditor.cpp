@@ -1719,14 +1719,14 @@ void FControlRigParameterTrackEditor::FRecreateRigOperator::RefreshSettingsFromC
 
 void FControlRigParameterTrackEditor::FRecreateRigOperator::OnPostControlRigForwardSolve_AnyThread(UControlRig*, const FName&)
 {
-	FFunctionGraphTask::CreateAndDispatchWhenReady(
+	ExecuteOnGameThread(UE_SOURCE_LOCATION, 
 		[WeakThis = TWeakPtr<FControlRigParameterTrackEditor::FRecreateRigOperator>(SharedThis(this))]()
 	{
 		if (WeakThis.IsValid())
 		{
 			WeakThis.Pin()->RefreshSettingsFromControlRig();
 		}
-	}, TStatId(), nullptr, ENamedThreads::GameThread);
+	});
 }
 
 void FControlRigParameterTrackEditor::FRecreateRigOperator::OnRigSettingsChanged(const FPropertyChangedEvent& InEvent)

@@ -1,12 +1,12 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\AutomationTool\\Mutable\\Mutable.Automation.csproj",
-  "TargetBuildTime": "2025-10-29T23:36:32.9125745+00:00",
+  "TargetBuildTime": "2025-11-20T16:45:19.7299452+00:00",
   "TargetPath": "..\\..\\..\\..\\Binaries\\DotNET\\AutomationTool\\AutomationScripts\\Mutable\\Mutable.Automation.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\Gauntlet\\Gauntlet.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:31.9365231+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:18.8562554+00:00"
     }
   ],
   "Dependencies": [

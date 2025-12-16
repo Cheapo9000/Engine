@@ -2051,7 +2051,7 @@ namespace UE::ShaderCompilerCommon
 		FString DebugSourcePath = Options.GetDebugShaderPath(Input, Suffix);
 		FFileHelper::SaveStringToFile(Contents, *DebugSourcePath);
 
-		Ctx.DebugSourceFiles.Add(Input.Target.GetFrequency(), MoveTemp(DebugSourcePath));
+		Ctx.DebugSourceFiles.Add({ Input.Target.GetFrequency(), MoveTemp(DebugSourcePath) });
 	}
 
 	void DumpDebugShaderData(const FShaderCompilerInput& Input, const FString& PreprocessedSource, const FDebugShaderDataOptions& Options)

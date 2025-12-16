@@ -1770,6 +1770,7 @@ VkEvent FVulkanDevice::GetBarrierEvent()
 		ZeroVulkanStruct(Info, VK_STRUCTURE_TYPE_EVENT_CREATE_INFO);
 		Info.flags = VK_EVENT_CREATE_DEVICE_ONLY_BIT;
 		VERIFYVULKANRESULT(VulkanRHI::vkCreateEvent(Device, &Info, VULKAN_CPU_ALLOCATOR, &Handle));
+		INC_DWORD_STAT(STAT_VulkanNumPooledBarrierEvents);
 	}
 
 	return Handle;

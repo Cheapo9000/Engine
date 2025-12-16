@@ -589,10 +589,14 @@ FReply FLandscapeEditorDetailCustomization_ImportExport::OnImportExportButtonCli
 			{
 				ImportOffset = LocalGizmoPoint - FIntPoint(LandscapeExtent.Min.X, LandscapeExtent.Min.Y);
 			}
-			else if (TransformType == ELandscapeImportTransformType::None)
+			else if (TransformType == ELandscapeImportTransformType::None ||
+					 TransformType == ELandscapeImportTransformType::Subregion)
 			{
-				ImportRegion = FIntRect(LocalGizmoPoint.X, LocalGizmoPoint.Y, LocalGizmoPoint.X + LandscapeEdMode->UISettings->ImportLandscape_Width, LocalGizmoPoint.Y + LandscapeEdMode->UISettings->ImportLandscape_Height);
+				// We only know the image size here if a heightmap is being imported (which requires that all weightmaps match when imported at the same 
+				// time).  Pass in the correct offset consistently and let ImportHeightData/ImportWeightData figure out what that means for the import region.
+				ImportOffset = { LocalGizmoPoint.X, LocalGizmoPoint.Y };
 			}
+			// Note:  Resample mode is always aligned to the landscape and uses no offset.
 			
 			check(LandscapeEdMode->UISettings->ImportLandscape_HeightmapImportResult != ELandscapeImportResult::Error);
 			const bool bIsWorldPartition = LandscapeEdMode->GetWorld()->GetSubsystem<ULandscapeSubsystem>()->IsGridBased();
@@ -642,8 +646,8 @@ FReply FLandscapeEditorDetailCustomization_ImportExport::OnImportExportButtonCli
 
 					return !Progress.ShouldCancel();
 				};
-					
-				LandscapeRegionUtils::ForEachRegion_LoadProcessUnload(LandscapeInfo, ImportRegion, World, RegionImporter);
+
+				LandscapeRegionUtils::ForEachRegion_LoadProcessUnload(LandscapeInfo, World, RegionImporter);
 
 				FLandscapeImageFileCache& LandscapeImageFileCache = FModuleManager::GetModuleChecked<ILandscapeEditorModule>("LandscapeEditor").GetImageFileCache();
 				LandscapeImageFileCache.Clear();
@@ -657,10 +661,6 @@ FReply FLandscapeEditorDetailCustomization_ImportExport::OnImportExportButtonCli
 				{
 					Progress.EnterProgressFrame(1.0f, LOCTEXT("ImportingLandscapeHeight", "Importing Landscape Height"));
 					LandscapeEdMode->ImportHeightData(LandscapeInfo, CurrentLayerGuid, LandscapeEdMode->UISettings->ImportLandscape_HeightmapFilename, ImportRegion, TransformType, ImportOffset, PaintRestriction, LandscapeEdMode->UISettings->bFlipYAxis);
-				}
-				else
-				{
-					ImportRegion = LandscapeExtent;
 				}
 
 				for (const FLandscapeImportLayer& ImportLayer : LandscapeEdMode->UISettings->ImportLandscape_Layers)
@@ -756,7 +756,7 @@ FReply FLandscapeEditorDetailCustomization_ImportExport::OnImportExportButtonCli
 					
 				};
 
-				LandscapeRegionUtils::ForEachRegion_LoadProcessUnload(LandscapeInfo, LandscapeExtent, World, Exporter);
+				LandscapeRegionUtils::ForEachRegion_LoadProcessUnload(LandscapeInfo, World, Exporter);
 			
 
 				// For multiple file export, export each landscape proxy individually :

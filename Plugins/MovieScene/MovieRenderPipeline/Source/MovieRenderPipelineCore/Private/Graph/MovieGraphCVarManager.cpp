@@ -219,15 +219,15 @@ void FMovieGraphCVarManager::ApplyCVar(IConsoleVariable* InCVar, float InValue)
 	// cast to integer first (to avoid scientific notation) if we know the cvar is an integer.
 	if (InCVar->IsVariableInt())
 	{
-		InCVar->SetWithCurrentPriority(static_cast<int32>(InValue));
+		InCVar->SetWithCurrentPriority(static_cast<int32>(InValue), NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 	else if (InCVar->IsVariableBool())
 	{
-		InCVar->SetWithCurrentPriority(InValue != 0.f ? true : false);
+		InCVar->SetWithCurrentPriority(InValue != 0.f ? true : false, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 	else
 	{
-		InCVar->SetWithCurrentPriority(InValue);
+		InCVar->SetWithCurrentPriority(InValue, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 }
 

@@ -396,7 +396,7 @@ void FRigVMEditorBase::InitRigVMEditor(const EToolkitMode::Type Mode, const TSha
 	}
 
 	TWeakPtr<IRigVMEditor> ThisWeakPtr = SharedRef().ToWeakPtr();
-	FFunctionGraphTask::CreateAndDispatchWhenReady([ThisWeakPtr, InRigVMBlueprint]()
+	ExecuteOnGameThread(UE_SOURCE_LOCATION, [ThisWeakPtr, InRigVMBlueprint]()
 	{
 		if (TSharedPtr<IRigVMEditor> Editor = ThisWeakPtr.Pin())
 		{
@@ -420,7 +420,7 @@ void FRigVMEditorBase::InitRigVMEditor(const EToolkitMode::Type Mode, const TSha
 			   TabManager->TryInvokeTab(MyBlueprintTabId);
 		   }
 		}
-	}, TStatId(), nullptr, ENamedThreads::GameThread);
+	});
 
 	bRigVMEditorInitialized = true;
 	UpdateStaleWatchedPins();

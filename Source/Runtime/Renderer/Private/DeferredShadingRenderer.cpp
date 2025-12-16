@@ -2044,7 +2044,7 @@ void FDeferredShadingSceneRenderer::Render(FRDGBuilder& GraphBuilder, const FSce
 			PreparePathTracingCloudMaterial(GraphBuilder, Scene, Views);
 		}
 
-		if (IsRayTracingEnabled(ViewFamily.GetShaderPlatform()) && GRHISupportsRayTracingShaders)
+		if (IsRayTracingEnabled(ViewFamily.GetShaderPlatform()) && ShouldCompileRayTracingShadersForProject(ViewFamily.GetShaderPlatform()))
 		{
 			if (!ViewFamily.EngineShowFlags.PathTracing)
 			{

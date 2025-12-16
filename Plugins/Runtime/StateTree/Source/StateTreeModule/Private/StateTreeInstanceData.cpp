@@ -1023,20 +1023,22 @@ void FStateTreeInstanceData::Append(UObject& InOwner, TConstArrayView<FConstStru
 		// The instance struct can be empty, in which case the temporary instance is ignored.
 		// If the source is specified, move it to the instance data.
 		// We assume that if the source is object wrapper, it is already the instance we want.
-		if (Struct.IsValid()
-			&& (Source && Source->IsValid()))
+		if (Struct.IsValid())
 		{
-			check(Struct.GetScriptStruct() == Source->GetScriptStruct());
-				
-			FMemory::Memswap(Struct.GetMemory(), Source->GetMutableMemory(), Struct.GetScriptStruct()->GetStructureSize());
-			Source->Reset();
-		}
-		else if (FStateTreeInstanceObjectWrapper* Wrapper = Struct.GetPtr<FStateTreeInstanceObjectWrapper>())
-		{
-			if (Wrapper->InstanceObject)
+			if (Source && Source->IsValid())
 			{
-				const bool bDuplicate = Args.bDuplicateWrappedObject || &InOwner != Wrapper->InstanceObject->GetOuter();
-				Wrapper->InstanceObject = UE::StateTree::InstanceData::Private::CopyNodeInstance(Wrapper->InstanceObject, &InOwner, bDuplicate);
+				check(Struct.GetScriptStruct() == Source->GetScriptStruct());
+				
+				FMemory::Memswap(Struct.GetMemory(), Source->GetMutableMemory(), Struct.GetScriptStruct()->GetStructureSize());
+				Source->Reset();
+			}
+			else if (FStateTreeInstanceObjectWrapper* Wrapper = Struct.GetPtr<FStateTreeInstanceObjectWrapper>())
+			{
+				if (Wrapper->InstanceObject)
+				{
+					const bool bDuplicate = Args.bDuplicateWrappedObject || &InOwner != Wrapper->InstanceObject->GetOuter();
+					Wrapper->InstanceObject = UE::StateTree::InstanceData::Private::CopyNodeInstance(Wrapper->InstanceObject, &InOwner, bDuplicate);
+				}
 			}
 		}
 	}

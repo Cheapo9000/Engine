@@ -1226,6 +1226,7 @@ bool FSceneRenderState::SetupRayTracingScene(FRDGBuilder& GraphBuilder, FSceneUn
 				RHICmdList,
 				nullptr,
 				nullptr,
+				nullptr,
 				InstanceBuffer.UAV,
 				GRHIGlobals.RayTracing.RequiresSeparateHitGroupContributionsBuffer ? HitGroupContributionsBuffer.UAV : nullptr,
 				SceneInitializer.MaxNumInstances,

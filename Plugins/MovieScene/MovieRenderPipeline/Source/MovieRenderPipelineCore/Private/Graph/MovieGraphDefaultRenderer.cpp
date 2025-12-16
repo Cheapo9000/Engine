@@ -368,7 +368,7 @@ void UMovieGraphDefaultRenderer::Render(const FMovieGraphTimeStepData& InTimeSte
 		IConsoleVariable* HairStrandsCVar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.HairStrands.Strands.MotionVectorCheckViewID"));
 		if (HairStrandsCVar)
 		{
-			HairStrandsCVar->SetWithCurrentPriority(0);
+			HairStrandsCVar->SetWithCurrentPriority(0, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 		}
 	}
 
@@ -384,7 +384,7 @@ void UMovieGraphDefaultRenderer::Render(const FMovieGraphTimeStepData& InTimeSte
 		IConsoleVariable* HairStrandsCVar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.HairStrands.Strands.MotionVectorCheckViewID"));
 		if (HairStrandsCVar)
 		{
-			HairStrandsCVar->SetWithCurrentPriority(1);
+			HairStrandsCVar->SetWithCurrentPriority(1, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 		}
 	}
 

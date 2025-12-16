@@ -5385,13 +5385,13 @@ if ""%ERRORLEVEL%"" NEQ ""0"" (exit /b %ERRORLEVEL%)
 					else
 					{
 						SOPushScript += @$"
-%ADB% %DEVICE% push -z lz4 {FinalSONameStrippedRelative} /data/local/tmp/{FinalSONameStrippedRelative}
-if ""%ERRORLEVEL%"" NEQ ""0"" (%ADB% %DEVICE% push {FinalSONameStrippedRelative} /data/local/tmp/{FinalSONameStrippedRelative})
+%ADB% %DEVICE% push -z lz4 ""{FinalSONameStrippedRelative}"" /data/local/tmp/
+if ""%ERRORLEVEL%"" NEQ ""0"" (%ADB% %DEVICE% push ""{FinalSONameStrippedRelative}"" /data/local/tmp/)
 if ""%ERRORLEVEL%"" NEQ ""0"" (exit /b %ERRORLEVEL%)
 %ADB% %DEVICE% shell run-as {PackageName} mkdir -p ./files
-%ADB% %DEVICE% shell run-as {PackageName} cp /data/local/tmp/{FinalSONameStrippedRelative} ./files/libUnreal.so
+%ADB% %DEVICE% shell run-as {PackageName} cp ""/data/local/tmp/{FinalSONameStrippedRelative}"" ./files/libUnreal.so
 if ""%ERRORLEVEL%"" NEQ ""0"" (exit /b %ERRORLEVEL%)
-%ADB% %DEVICE% shell rm /data/local/tmp/{FinalSONameStrippedRelative}
+%ADB% %DEVICE% shell rm ""/data/local/tmp/{FinalSONameStrippedRelative}""
 ";
 					}
 

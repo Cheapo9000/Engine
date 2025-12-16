@@ -651,7 +651,14 @@ bool FInstanceDataManager::FlushChanges(FInstanceDataManagerSourceDataDesc&& Com
 	// This should not happen in a cooked client, ideally.
 	if (GetState() == ETrackingState::Optimized)
 	{
-		UE_LOG(LogTemp, Log, TEXT("Discarded PrecomputedOptimizationData"));
+#if !UE_BUILD_SHIPPING
+		static bool bLoggedOnce = false;
+		if (!bLoggedOnce)
+		{
+			UE_LOG(LogTemp, Log, TEXT("Discarded PrecomputedOptimizationData"));
+			bLoggedOnce = true;
+		}
+#endif
 		PrecomputedOptimizationData.Reset();
 	}
 

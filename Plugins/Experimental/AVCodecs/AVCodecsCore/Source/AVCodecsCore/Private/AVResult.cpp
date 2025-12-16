@@ -126,6 +126,10 @@ void FAVResult::Log() const
 		{
 			UE_LOG(LogAVCodecs, Verbose, TEXT("%s"), *ToString());
 		}
+		else
+		{
+			UE_LOG(LogAVCodecs, Log, TEXT("%s"), *ToString());
+		}
 	}
 	else
 	{

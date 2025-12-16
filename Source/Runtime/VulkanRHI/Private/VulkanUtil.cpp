@@ -1134,6 +1134,7 @@ DEFINE_STAT(STAT_VulkanVkCreateDescriptorPool);
 DEFINE_STAT(STAT_VulkanNumDescPools);
 DEFINE_STAT(STAT_VulkanUpdateUniformBuffers);
 DEFINE_STAT(STAT_VulkanUpdateUniformBuffersRename);
+DEFINE_STAT(STAT_VulkanNumPooledBarrierEvents);
 #if VULKAN_ENABLE_AGGRESSIVE_STATS
 DEFINE_STAT(STAT_VulkanBarrierTime);
 DEFINE_STAT(STAT_VulkanUpdateDescriptorSets);

@@ -97,11 +97,8 @@ void ForEachComponentByRegion(int32 RegionSize, const TArray<FIntPoint>& Compone
 	}
 }
 
-void ForEachRegion_LoadProcessUnload(ULandscapeInfo* InLandscapeInfo, const FIntRect& InDomain, UWorld* InWorld, TFunctionRef<bool(const FBox&, const TArray<ALandscapeProxy*>)> InRegionFn)
+void ForEachRegion_LoadProcessUnload(ULandscapeInfo* InLandscapeInfo, UWorld* InWorld, TFunctionRef<bool(const FBox&, const TArray<ALandscapeProxy*>)> InRegionFn)
 {
-	const int32 RegionSizeInTexels = InLandscapeInfo->ComponentSizeQuads * InLandscapeInfo->RegionSizeInComponents + 1;
-	const FIntRect RegionCoordinates = InDomain / RegionSizeInTexels;
-
 	TArray<AActor*> Children;
 	InLandscapeInfo->LandscapeActor->GetAttachedActors(Children);
 	TArray<ALocationVolume*> LandscapeRegions;

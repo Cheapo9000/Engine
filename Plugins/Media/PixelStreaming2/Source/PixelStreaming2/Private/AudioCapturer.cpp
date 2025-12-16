@@ -128,9 +128,9 @@ namespace UE::PixelStreaming2
 	/***************************************************
 	 *
 	 ****************************************************/
-	FMixAudioTask::FMixAudioTask(FAudioCapturer* Capturer, TSharedPtr<FAudioPatchMixer> Mixer)
-		: Capturer(Capturer)
-		, Mixer(Mixer)
+	FMixAudioTask::FMixAudioTask(TWeakPtr<FAudioCapturer> InCapturer, TSharedPtr<FAudioPatchMixer> InMixer)
+		: Capturer(InCapturer)
+		, Mixer(InMixer)
 	{
 		MixingBuffer.SetNumUninitialized(Mixer->GetMaxBufferSize());
 	}
@@ -160,7 +160,10 @@ namespace UE::PixelStreaming2
 			return;
 		}
 
-		Capturer->OnAudio(MixingBuffer.GetData(), NSamplesPopped, Mixer->GetNumChannels(), Mixer->GetSampleRate());
+		if (TSharedPtr<FAudioCapturer> PinnedCapturer = Capturer.Pin())
+		{
+			PinnedCapturer->OnAudio(MixingBuffer.GetData(), NSamplesPopped, Mixer->GetNumChannels(), Mixer->GetSampleRate());
+		}
 	}
 	const FString& FMixAudioTask::GetName() const
 	{
@@ -171,27 +174,26 @@ namespace UE::PixelStreaming2
 	/***************************************************
 	 *
 	 ****************************************************/
-	TSharedPtr<FAudioCapturer> FAudioCapturer::Create(const int InSampleRate, const int InNumChannels, const float InSampleSizeInSeconds)
+
+	void FAudioCapturer::Initialize()
 	{
-		TSharedPtr<FAudioCapturer> AudioCapturer(new FAudioCapturer(InSampleRate, InNumChannels, InSampleSizeInSeconds));
-
-		FAudioDeviceManagerDelegates::OnAudioDeviceCreated.AddSP(AudioCapturer.ToSharedRef(), &FAudioCapturer::CreateAudioProducer);
-		FAudioDeviceManagerDelegates::OnAudioDeviceDestroyed.AddSP(AudioCapturer.ToSharedRef(), &FAudioCapturer::RemoveAudioProducer);
-
-		if (UPixelStreaming2PluginSettings::FDelegates* Delegates = UPixelStreaming2PluginSettings::Delegates())
+		// If No engine. Possibly running editor tests
+		if (GEngine)
 		{
-			Delegates->OnDebugDumpAudioChanged.AddSP(AudioCapturer.ToSharedRef(), &FAudioCapturer::OnDebugDumpAudioChanged);
-
-			TWeakPtr<FAudioCapturer> WeakAudioMixingCapturer = AudioCapturer;
-			FCoreDelegates::OnEnginePreExit.AddLambda([WeakAudioMixingCapturer]() {
-				if (TSharedPtr<FAudioCapturer> AudioCapturer = WeakAudioMixingCapturer.Pin())
-				{
-					AudioCapturer->OnEnginePreExit();
-				}
-			});
+			// subscribe to audio data
+			Mixer = MakeShared<FAudioPatchMixer>(NumChannels, SampleRate, SampleSizeSeconds);
+			MixerTask = FPixelStreamingTickableTask::Create<FMixAudioTask>(AsWeak(), Mixer);
+			if (FAudioDeviceManager* AudioDeviceManager = FAudioDeviceManager::Get(); AudioDeviceManager != nullptr)
+			{
+				TWeakPtr<FAudioCapturer> LocalAudioCapturer = AsWeak();
+				AudioDeviceManager->IterateOverAllDevices([LocalAudioCapturer](Audio::FDeviceId AudioDeviceId, FAudioDevice*) {
+					if (TSharedPtr<FAudioCapturer> Pin = LocalAudioCapturer.Pin())
+					{
+						Pin->CreateAudioProducer(AudioDeviceId);
+					}
+				});
+			}
 		}
-
-		return AudioCapturer;
 	}
 
 	FAudioCapturer::FAudioCapturer(const int SampleRate, const int NumChannels, const float NumSampleSizeInSeconds)
@@ -199,20 +201,6 @@ namespace UE::PixelStreaming2
 		, NumChannels(NumChannels)
 		, SampleSizeSeconds(NumSampleSizeInSeconds)
 	{
-		// subscribe to audio data
-		if (!GEngine)
-		{
-			// No engine. Possibly running editor tests
-			return;
-		}
-		Mixer = MakeShared<FAudioPatchMixer>(NumChannels, SampleRate, SampleSizeSeconds);
-		MixerTask = FPixelStreamingTickableTask::Create<FMixAudioTask>(this, Mixer);
-		if (FAudioDeviceManager* AudioDeviceManager = FAudioDeviceManager::Get(); AudioDeviceManager != nullptr)
-		{
-			AudioDeviceManager->IterateOverAllDevices([this](Audio::FDeviceId AudioDeviceId, FAudioDevice*) {
-				CreateAudioProducer(AudioDeviceId);
-			});
-		}
 	}
 
 	void FAudioCapturer::CreateAudioProducer(Audio::FDeviceId AudioDeviceId)
@@ -240,11 +228,10 @@ namespace UE::PixelStreaming2
 
 	void FAudioCapturer::OnAudio(const float* AudioData, int32 InNumSamples, int32 InNumChannels, int32 InSampleRate)
 	{
-		// Note: TSampleBuffer takes in AudioData as float* and internally converts to int16
-		Audio::TSampleBuffer<int16_t> Buffer(AudioData, InNumSamples, InNumChannels, SampleRate);
-
 		if (UPixelStreaming2PluginSettings::CVarDebugDumpAudio.GetValueOnAnyThread())
 		{
+			// Note: TSampleBuffer takes in AudioData as float* and internally converts to int16
+			Audio::TSampleBuffer<int16_t> Buffer(AudioData, InNumSamples, InNumChannels, SampleRate);
 			DebugDumpAudioBuffer.Append(Buffer.GetData(), Buffer.GetNumSamples(), Buffer.GetNumChannels(), Buffer.GetSampleRate());
 		}
 

@@ -239,6 +239,11 @@ struct FMetaHumanCharacterEditorBuild
 		TFunction<bool(const UObject*)> InIsAssetSupported);
 
 	/**
+	 * Helper that deletes and MIDs & MICs that are children of the input MI
+	 */
+	METAHUMANCHARACTEREDITOR_API static void DeleteMaterialInstanceChildren(TNotNull<UMaterialInterface*> InParentMI);
+
+	/**
 	 * Finds all the outer objects that are dependencies of the input root objects by walking recursively over all referenced objects
 	 * It limits the tracking to the MetaHuman Character plugin and Game mount point by default
 	 * Note that dependencies do not have to be saved on disk

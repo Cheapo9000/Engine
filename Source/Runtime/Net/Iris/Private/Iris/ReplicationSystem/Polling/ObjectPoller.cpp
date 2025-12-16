@@ -423,9 +423,9 @@ void FObjectPoller::PushModelPollObject(FInternalNetRefIndex ObjectIndex, FNetSt
 		UE_NET_TRACE_POLL_OBJECT_SCOPE(ObjectData.RefHandle, Timer);
 
 		// If the object has fragments with pushed based properties, and is not marked dirty and object is affected by GC we need to make sure that we refresh cached references for all fragments with push based properties
-		const bool bIsFullPushBasedObject = EnumHasAnyFlags(InstanceTraits, EReplicationInstanceProtocolTraits::HasFullPushBasedDirtiness);
+		const bool bHasPushBasedFragments = EnumHasAnyFlags(InstanceTraits, EReplicationInstanceProtocolTraits::HasPushBasedDirtiness);
 		const bool bHasObjectReferences = EnumHasAnyFlags(InstanceTraits, EReplicationInstanceProtocolTraits::HasObjectReference);
-		const bool bNeedsRefreshOfCachedObjectReferences = ((!(bWantsFullPoll | bIsDirtyObject)) & bIsGCAffectedObject & bIsFullPushBasedObject & bHasObjectReferences);
+		const bool bNeedsRefreshOfCachedObjectReferences = ((!(bWantsFullPoll | bIsDirtyObject)) & bIsGCAffectedObject & bHasPushBasedFragments & bHasObjectReferences);
 		if (bNeedsRefreshOfCachedObjectReferences)
 		{
 			// Only states which has full push based dirtiness need to be updated as the other states will be at least partially polled anyway.

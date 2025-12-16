@@ -251,7 +251,6 @@ namespace AIE
 		UMovieScene* MovieScene = Sequencer->GetFocusedMovieSceneSequence()->GetMovieScene();
 		const FConstraintsManagerController& Controller = FConstraintsManagerController::Get(World);
 		FFrameRate TickResolution = MovieScene->GetTickResolution();
-		FFrameRate DisplayRate = MovieScene->GetDisplayRate();
 
 		TOptional<TRange<FFrameNumber>> OptionalRange = Sequencer->GetSubSequenceRange();
 		const FFrameNumber StartFrame = OptionalRange.IsSet() ? OptionalRange.GetValue().GetLowerBoundValue() : MovieScene->GetPlaybackRange().GetLowerBoundValue();
@@ -261,6 +260,10 @@ namespace AIE
 
 		TSet<UControlRig*> ControlsToRevalaute;
 		FControlRigEditMode::FTurnOffPosePoseUpdate  TurnOff; //stop flashing
+
+		const float DisplayRate = static_cast<float>(MovieScene->GetDisplayRate().AsDecimal());
+		const Anim::FEvaluationForCachingScope CachingScope(DisplayRate > 0.f ? 1.f / DisplayRate : 1.f / 30.f);
+		
 		for (int32 Index : Indices)
 		{
 			FFrameNumber FrameNumber = FrameTimeByIndex.CalculateFrame(Index);

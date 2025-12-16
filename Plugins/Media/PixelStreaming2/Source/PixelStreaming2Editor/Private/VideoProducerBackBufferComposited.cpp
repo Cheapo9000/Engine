@@ -102,8 +102,6 @@ namespace UE::EditorPixelStreaming2
 		 * Finally, the composited frame is extracted from the RDG pipeline and we send it on its way through the PixelCapturer
 		 *
 		 */
-		UE_LOG(LogPixelStreaming2BackBufferComposited, Verbose, TEXT("Type: %s"), *SlateWindow.GetTitle().ToString());
-
 		TSharedPtr<FVideoProducerUserData> UserData = MakeShared<FVideoProducerUserData>();
 		UserData->ProducerName = TEXT("FVideoProducerBackBufferComposited");
 		UserData->ProductionBeginCycles = FPlatformTime::Cycles64();
@@ -128,7 +126,7 @@ namespace UE::EditorPixelStreaming2
 				FRDGBuilder GraphBuilder(FRHICommandListImmediate::Get());
 
 				// Register an external RDG texture from the provided frame buffer
-				FRDGTextureRef InputTexture = GraphBuilder.RegisterExternalTexture(CreateRenderTarget(FrameBuffer, *SlateWindow.GetTitle().ToString()));
+				FRDGTextureRef InputTexture = GraphBuilder.RegisterExternalTexture(CreateRenderTarget(FrameBuffer, TEXT("VideoProducerBackBufferCompositedInput")));
 
 				// Create an internal RDG texture with the same extent and format as the source
 				FRDGTextureRef OutputTexture = GraphBuilder.CreateTexture(FRDGTextureDesc::Create2D(InputTexture->Desc.Extent, InputTexture->Desc.Format, FClearValueBinding::None, GetTexCreateFlags()), TEXT("VideoProducerBackBufferCompositedStaging"));

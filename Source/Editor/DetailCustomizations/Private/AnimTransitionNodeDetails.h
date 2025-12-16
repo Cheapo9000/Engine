@@ -13,6 +13,7 @@
 #include "UObject/WeakObjectPtr.h"
 #include "UObject/WeakObjectPtrTemplates.h"
 
+class IDetailPropertyRow;
 class FText;
 class IDetailCategoryBuilder;
 class IDetailLayoutBuilder;
@@ -33,7 +34,9 @@ public:
 	virtual void CustomizeDetails( IDetailLayoutBuilder& DetailBuilder ) override;
 
 protected:
-	void CreateTransitionEventPropertyWidgets(IDetailCategoryBuilder& TransitionCategory, FString TransitionName, bool bInWarnAboutDeprecation);
+	static TSharedPtr<IPropertyHandle> GetTransitionEventProperty(const IDetailCategoryBuilder& TransitionCategory, const FString& TransitionName);
+	static void AddTransitionEventField(IDetailCategoryBuilder& TransitionCategory, const FString& TransitionName);
+	static void BuildTransitionEventRow(IDetailPropertyRow& Row, const TSharedPtr<IPropertyHandle>& NameProperty, const FText& InfoText = FText::GetEmpty());
 
 	FReply OnClickEditBlendGraph();
 	EVisibility GetBlendGraphButtonVisibility(bool bMultiSelect) const;

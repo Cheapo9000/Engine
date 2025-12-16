@@ -347,58 +347,63 @@ void FCompensationEvaluator::ComputeLocalTransformsForBaking(UWorld* InWorld, co
 	
 	FMovieSceneInverseSequenceTransform LocalToRootTransform = Sequencer->GetFocusedMovieSceneSequenceTransform().Inverse();
 
-	for (int32 Index = 0; Index < NumFrames; ++Index)
 	{
-		TOptional<FFrameTime> RootTime = LocalToRootTransform.TryTransformTime(Frames[Index]);
-		if (!RootTime)
+		const float DisplayRate = static_cast<float>(MovieScene->GetDisplayRate().AsDecimal());
+		const UE::Anim::FEvaluationForCachingScope CachingScope(DisplayRate > 0.f ? 1.f / DisplayRate : 1.f / 30.f);
+	
+		for (int32 Index = 0; Index < NumFrames; ++Index)
 		{
-			continue;
-		}
-
-		FFrameNumber FrameNumber = RootTime->GetFrame();
-
-		// evaluate animation
-		const FMovieSceneEvaluationRange EvaluationRange = FMovieSceneEvaluationRange(FFrameTime(FrameNumber), TickResolution);
-		const FMovieSceneContext Context = FMovieSceneContext(EvaluationRange, PlaybackStatus).SetHasJumped(true);
-
-		BakingWrapper.PreEvaluate(FrameNumber);
-
-		Sequencer->GetEvaluationTemplate().EvaluateSynchronousBlocking(Context);
-
-		// evaluate constraints
-		for (const TWeakObjectPtr<UTickableConstraint>& InConstraint : AllConstraints)
-		{
-			if (InConstraint.IsValid())
+			TOptional<FFrameTime> RootTime = LocalToRootTransform.TryTransformTime(Frames[Index]);
+			if (!RootTime)
 			{
-				InConstraint->Evaluate(true);
+				continue;
+			}
+
+			FFrameNumber FrameNumber = RootTime->GetFrame();
+
+			// evaluate animation
+			const FMovieSceneEvaluationRange EvaluationRange = FMovieSceneEvaluationRange(FFrameTime(FrameNumber), TickResolution);
+			const FMovieSceneContext Context = FMovieSceneContext(EvaluationRange, PlaybackStatus).SetHasJumped(true);
+
+			BakingWrapper.PreEvaluate(FrameNumber);
+
+			Sequencer->GetEvaluationTemplate().EvaluateSynchronousBlocking(Context);
+
+			// evaluate constraints
+			for (const TWeakObjectPtr<UTickableConstraint>& InConstraint : AllConstraints)
+			{
+				if (InConstraint.IsValid())
+				{
+					InConstraint->Evaluate(true);
+				}
+			}
+
+			BakingWrapper.PostEvaluate(FrameNumber);
+
+			FTransform& ChildLocal = ChildLocals[Index];
+			FTransform& ChildGlobal = ChildGlobals[Index];
+			FTransform& SpaceGlobal = SpaceGlobals[Index];
+
+			// store child transforms
+			ChildLocal = Handle->GetLocalTransform();
+			ChildGlobal = Handle->GetGlobalTransform();
+
+			// store constraint/parent space global transform
+			if (const UTickableTransformConstraint* LastConstraint = GetLastActiveConstraint())
+			{
+				SpaceGlobal = LastConstraint->GetParentGlobalTransform();
+				TOptional<FTransform> Relative =
+					UE::TransformConstraintUtil::GetConstraintsRelativeTransform(ConstraintsMinusThis, ChildLocal, ChildGlobal);
+				if (Relative)
+				{
+					ChildLocal = *Relative;
+				}
 			}
 		}
 
-		BakingWrapper.PostEvaluate(FrameNumber);
-
-		FTransform& ChildLocal = ChildLocals[Index];
-		FTransform& ChildGlobal = ChildGlobals[Index];
-		FTransform& SpaceGlobal = SpaceGlobals[Index];
-
-		// store child transforms        	
-		ChildLocal = Handle->GetLocalTransform();
-		ChildGlobal = Handle->GetGlobalTransform();
-
-		// store constraint/parent space global transform
-		if (const UTickableTransformConstraint* LastConstraint = GetLastActiveConstraint())
-		{
-			SpaceGlobal = LastConstraint->GetParentGlobalTransform();
-			TOptional<FTransform> Relative =
-				UE::TransformConstraintUtil::GetConstraintsRelativeTransform(ConstraintsMinusThis, ChildLocal, ChildGlobal);
-			if (Relative)
-			{
-				ChildLocal = *Relative;
-			}
-		}
+		BakingWrapper.Stop();
 	}
-
-	BakingWrapper.Stop();
-
+	
 	const bool bIsValidAfterBaking = IsValid(Handle) && Handle->IsValid();
 	if (!bIsValidAfterBaking)
 	{

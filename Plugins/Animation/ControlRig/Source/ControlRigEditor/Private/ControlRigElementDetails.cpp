@@ -1819,14 +1819,14 @@ void FRigBaseElementDetails::CustomizeMetadata(IDetailLayoutBuilder& DetailBuild
 							}
 						}
 						// run the refresh of the user interface on the next tick on the game thread 
-						FFunctionGraphTask::CreateAndDispatchWhenReady([WeakPropertyUtilities]()
+						ExecuteOnGameThread(UE_SOURCE_LOCATION, [WeakPropertyUtilities]()
 						{
 							const TSharedPtr<IPropertyUtilities> PropertyUtilities = WeakPropertyUtilities.IsValid() ? WeakPropertyUtilities.Pin() : nullptr;
 							if(PropertyUtilities.IsValid())
 							{
 								PropertyUtilities->ForceRefresh();
 							}
-						}, TStatId(), NULL, ENamedThreads::GameThread);
+						});
 					}
 				}
 			});

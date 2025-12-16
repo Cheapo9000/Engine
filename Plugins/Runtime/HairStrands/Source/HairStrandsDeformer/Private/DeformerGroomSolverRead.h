@@ -148,7 +148,7 @@ private:
 	FRDGBufferSRVRef ObjectDistanceLodsResource = nullptr;
 
 	/** List of instances (invocations) used in that data interface */
-	TArray<const FHairGroupInstance*> GroupInstances;
+	TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 
 	/** Reset simulation trigger */
 	bool bResetSimulationTrigger = false;

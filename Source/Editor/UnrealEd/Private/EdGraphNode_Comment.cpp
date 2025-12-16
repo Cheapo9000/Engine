@@ -49,7 +49,7 @@ UEdGraphNode_Comment::UEdGraphNode_Comment(const FObjectInitializer& ObjectIniti
 	NodeWidth = 400;
 	NodeHeight = 100;
 	FontSize = 18;
-	CommentColor = GetDefault<UGraphEditorSettings>()->DefaultCommentNodeTitleColor;
+	CommentColor = FLinearColor::White;
 	bColorCommentBubble = false;
 	MoveMode = ECommentBoxMode::GroupMovement;
 

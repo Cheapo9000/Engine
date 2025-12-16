@@ -36,6 +36,7 @@
 #include "Transform/TransformConstraint.h"
 #include "Transform/TransformConstraintUtil.h"
 #include "Constraints/MovieSceneConstraintChannelHelper.inl"
+#include "Transform/AnimationEvaluation.h"
 
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(ControlRigSnapper)
@@ -132,10 +133,12 @@ static bool LocalGetControlRigControlTransforms(IMovieScenePlayer* Player, const
 		UWorld* World = ControlRig->GetWorld();
 		const FConstraintsManagerController& Controller = FConstraintsManagerController::Get(World);
 		FFrameRate TickResolution = MovieScene->GetTickResolution();
-		FFrameRate DisplayRate = MovieScene->GetDisplayRate();
 
 		FMovieSceneInverseSequenceTransform LocalToRootTransform = RootToLocalTransform.Inverse();
 
+		const float DisplayRate = static_cast<float>(MovieScene->GetDisplayRate().AsDecimal());
+		const UE::Anim::FEvaluationForCachingScope CachingScope(DisplayRate > 0.f ? 1.f / DisplayRate : 1.f / 30.f);
+		
 		OutTransforms.SetNum(Frames.Num());
 		for (int32 Index = 0; Index < Frames.Num(); ++Index)
 		{
@@ -273,12 +276,14 @@ struct FGuidAndActor
 		{
 			UMovieScene* MovieScene = Sequencer->GetFocusedMovieSceneSequence()->GetMovieScene();
 			FFrameRate TickResolution = MovieScene->GetTickResolution();
-			FFrameRate DisplayRate = MovieScene->GetDisplayRate();
 			FMovieSceneInverseSequenceTransform LocalToRootTransform = Sequencer->GetFocusedMovieSceneSequenceTransform().Inverse();
 
 			//adjust keys for constraint
 			const FConstraintsManagerController& Controller = FConstraintsManagerController::Get(Actor->GetWorld());
 
+			const float DisplayRate = static_cast<float>(MovieScene->GetDisplayRate().AsDecimal());
+			const UE::Anim::FEvaluationForCachingScope CachingScope(DisplayRate > 0.f ? 1.f / DisplayRate : 1.f / 30.f);
+			
 			for (int32 Index = 0; Index < LocalTransforms.Num(); ++Index) 
 			{
 				const FFrameNumber Frame = Frames[Index];

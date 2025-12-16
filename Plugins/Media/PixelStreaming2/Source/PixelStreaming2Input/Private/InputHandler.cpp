@@ -52,6 +52,8 @@ namespace UE::PixelStreaming2Input
 
 	FPixelStreaming2InputHandler::~FPixelStreaming2InputHandler()
 	{
+		IModularFeatures::Get().UnregisterModularFeature(GetModularFeatureName(), this);
+
 		if (UPixelStreaming2PluginSettings::FDelegates* Delegates = UPixelStreaming2PluginSettings::Delegates())
 		{
 			Delegates->OnInputKeyFilterChanged.Remove(OnInputKeyFilterChangedHandle);

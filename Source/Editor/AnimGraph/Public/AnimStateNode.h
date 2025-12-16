@@ -34,13 +34,13 @@ public:
 	UPROPERTY()
 	TEnumAsByte<EAnimStateType> StateType;
 
-	UPROPERTY(EditAnywhere, Category = "Deprecated")
+	UPROPERTY(EditAnywhere, Category = "Animation State")
 	FAnimNotifyEvent StateEntered;
 	
-	UPROPERTY(EditAnywhere, Category = "Deprecated")
+	UPROPERTY(EditAnywhere, Category = "Animation State")
 	FAnimNotifyEvent StateLeft;
 
-	UPROPERTY(EditAnywhere, Category = "Deprecated")
+	UPROPERTY(EditAnywhere, Category = "Animation State")
 	FAnimNotifyEvent StateFullyBlended;
 
 	// Whether or not this state will ALWAYS reset it's state on reentry, regardless of remaining weight

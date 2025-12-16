@@ -1754,7 +1754,7 @@ namespace UE::RHI::GPUProfiler
 		#if WITH_RHI_BREADCRUMBS
 			TMap<FRHIBreadcrumbData_Stats, int32> ActiveStats;
 			TArray<FRHIBreadcrumbData_Stats> ActiveStatsStack;
-			FRHIBreadcrumbNode* Breadcrumb = nullptr;
+			FRHIBreadcrumbNodeRef Breadcrumb {};
 		#endif
 
 		#if WITH_PROFILEGPU
@@ -2182,9 +2182,7 @@ namespace UE::RHI::GPUProfiler
 				}
 				
 				Breadcrumb->TraceEndGPU(Queue.Value, Event.GPUTimestampBOP);
-
 				Breadcrumb = Event.Breadcrumb->GetParent();
-
 
 			#if WITH_PROFILEGPU
 				if (Profile.bProfileFrame)

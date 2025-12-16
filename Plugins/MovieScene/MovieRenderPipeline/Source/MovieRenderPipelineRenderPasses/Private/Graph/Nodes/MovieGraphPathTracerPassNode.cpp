@@ -89,7 +89,7 @@ void UMovieGraphPathTracerRenderPassNode::SetupImpl(const FMovieGraphRenderPassS
 	if (IConsoleVariable* ProgressDisplayCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.PathTracing.ProgressDisplay")))
 	{
 		bOriginalProgressDisplayCvarValue = ProgressDisplayCvar->GetBool();
-		ProgressDisplayCvar->Set(false);
+		ProgressDisplayCvar->SetWithCurrentPriority(false, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 
 	// Different Path Traced renders can't currently use different NFOR settings, so we take the largest setting from all branches.
@@ -126,14 +126,13 @@ void UMovieGraphPathTracerRenderPassNode::SetupImpl(const FMovieGraphRenderPassS
 	if (IConsoleVariable* FrameCountCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.NFOR.FrameCount")))
 	{
 		OriginalFrameCountCvarValue = FrameCountCvar->GetInt();
-		FrameCountCvar->Set(MaxFrameCount);
+		FrameCountCvar->SetWithCurrentPriority(MaxFrameCount, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 
 	if (IConsoleVariable* DenoiserTypeCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.PathTracing.SpatialDenoiser.Type")))
 	{
-
 		OriginalDenoiserType = DenoiserTypeCvar->GetInt();
-		DenoiserTypeCvar->Set(static_cast<int32>(MaxDenoiserType));
+		DenoiserTypeCvar->SetWithCurrentPriority(static_cast<int32>(MaxDenoiserType), NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 
 	//If no temporal denoiser is enabled, provide warning if we use temporal denoiser.
@@ -175,17 +174,17 @@ void UMovieGraphPathTracerRenderPassNode::TeardownImpl()
 	// Restore the original setting for the progress display
 	if (IConsoleVariable* ProgressDisplayCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.PathTracing.ProgressDisplay")))
 	{
-		ProgressDisplayCvar->Set(bOriginalProgressDisplayCvarValue);
+		ProgressDisplayCvar->SetWithCurrentPriority(bOriginalProgressDisplayCvarValue, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 
 	if (IConsoleVariable* FrameCountCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.NFOR.FrameCount")))
 	{
-		FrameCountCvar->Set(OriginalFrameCountCvarValue);
+		FrameCountCvar->SetWithCurrentPriority(OriginalFrameCountCvarValue, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 
 	if (IConsoleVariable* DenoiserTypeCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.PathTracing.SpatialDenoiser.Type")))
 	{
-		DenoiserTypeCvar->Set(OriginalDenoiserType);
+		DenoiserTypeCvar->SetWithCurrentPriority(OriginalDenoiserType, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 }
 

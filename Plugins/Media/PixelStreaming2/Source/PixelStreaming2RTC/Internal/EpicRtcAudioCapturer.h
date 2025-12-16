@@ -15,17 +15,20 @@ namespace UE::PixelStreaming2
 	class FEpicRtcAudioCapturer : public FAudioCapturer
 	{
 	public:
-		static UE_API TSharedPtr<FEpicRtcAudioCapturer> Create();
-		virtual ~FEpicRtcAudioCapturer() = default;
+		UE_API virtual ~FEpicRtcAudioCapturer() = default;
 
 		// Override the push audio method as EpicRtc needs the broadcasted audio to be in 10ms chunks
 		UE_API virtual void PushAudio(const float* AudioData, int32 NumSamples, int32 NumChannels, int32 SampleRate) override;
 
 	protected:
-		FEpicRtcAudioCapturer() = default;
+		UE_API FEpicRtcAudioCapturer(const int SampleRate = 48000, const int NumChannels = 2, const float SampleSizeInSeconds = 0.5f)
+			: FAudioCapturer(SampleRate, NumChannels, SampleSizeInSeconds) {}
 
 	private:
 		TArray<int16_t> RecordingBuffer;
+
+		// Needed so FAudioCapturer::Create can access the constructor
+		friend FAudioCapturer;
 	};
 } // namespace UE::PixelStreaming2
 

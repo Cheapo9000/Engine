@@ -114,17 +114,23 @@ namespace UE::Groom::Private
 
 	FORCEINLINE void CreateDeformerInstance(UOptimusDeformer* DeformerGraph, UMeshDeformerInstance* DeformerInstance, const FGuid InstanceGuid, UDataflow* DataflowObject)
 	{
-		if(DeformerGraph && DeformerInstance)
+		if(DeformerGraph && DeformerInstance && DeformerInstance->GetOuter())
 		{
 			FFunctionGraphTask::CreateAndDispatchWhenReady([DeformerGraph, DeformerInstance, InstanceGuid, DataflowObject]()
 			{
-				if (!UE::IsSavingPackage(nullptr) && !IsGarbageCollectingAndLockingUObjectHashTables())
+				if (UMeshComponent* MeshComponent = Cast<UMeshComponent>(DeformerInstance->GetOuter()))
 				{
-					if (UOptimusDeformerDynamicInstanceManager* DeformerInstanceManager = Cast<UOptimusDeformerDynamicInstanceManager>(DeformerInstance))
+					if (!MeshComponent->IsBeingDestroyed() && MeshComponent->GetScene())
 					{
-						if (!DeformerInstanceManager->GetDeformerInstance(InstanceGuid))
+						if (!UE::IsSavingPackage(nullptr) && !IsGarbageCollectingAndLockingUObjectHashTables())
 						{
-							DeformerInstanceManager->AddProducerDeformer(DataflowObject, InstanceGuid, DeformerGraph);
+							if (UOptimusDeformerDynamicInstanceManager* DeformerInstanceManager = Cast<UOptimusDeformerDynamicInstanceManager>(DeformerInstance))
+							{
+								if (!DeformerInstanceManager->GetDeformerInstance(InstanceGuid))
+								{
+									DeformerInstanceManager->AddProducerDeformer(DataflowObject, InstanceGuid, DeformerGraph);
+								}
+							}
 						}
 					}
 				}

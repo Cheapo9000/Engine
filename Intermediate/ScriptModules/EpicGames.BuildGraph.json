@@ -1,16 +1,16 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\Shared\\EpicGames.BuildGraph\\EpicGames.BuildGraph.csproj",
-  "TargetBuildTime": "2025-10-29T23:36:26.7231231+00:00",
+  "TargetBuildTime": "2025-11-20T16:45:13.8957693+00:00",
   "TargetPath": "bin\\Development\\net8.0\\EpicGames.BuildGraph.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\..\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:54.650041+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:41.7645656+00:00"
     }
   ],
   "Dependencies": [

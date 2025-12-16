@@ -1448,11 +1448,6 @@ FAudioChunkHandle::FAudioChunkHandle(const uint8* InData, uint32 NumBytes, const
 			CorrespondingWaveGuid = SoundWaveData->GetGUID();
 		}
 	}
-
-	if (IsValid())
-	{
-		IStreamingManager::Get().GetAudioStreamingManager().AddReferenceToChunk(*this);
-	}
 }
 
 FAudioChunkHandle::FAudioChunkHandle(const FAudioChunkHandle& Other)

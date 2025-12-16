@@ -5085,8 +5085,8 @@ void FControlRigEditMode::OnHierarchyModified_AnyThread(ERigHierarchyNotificatio
 	}
 
 	TWeakObjectPtr<URigHierarchy> WeakHierarchy = InHierarchy;
-	
-	FFunctionGraphTask::CreateAndDispatchWhenReady([this, InNotif, WeakHierarchy, ElementKey, ComponentKey]()
+
+	ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, InNotif, WeakHierarchy, ElementKey, ComponentKey]()
 	{
 		if(!WeakHierarchy.IsValid())
 		{
@@ -5101,7 +5101,7 @@ void FControlRigEditMode::OnHierarchyModified_AnyThread(ERigHierarchyNotificatio
 			OnHierarchyModified(InNotif, WeakHierarchy.Get(), Element);
 		}
 		
-	}, TStatId(), NULL, ENamedThreads::GameThread);
+	});
 }
 
 void FControlRigEditMode::OnControlModified(UControlRig* Subject, FRigControlElement* InControlElement, const FRigControlModifiedContext& Context)
@@ -5160,10 +5160,10 @@ void FControlRigEditMode::OnPostConstruction_AnyThread(UControlRig* InRig, const
 		}
 		else
 		{
-			FFunctionGraphTask::CreateAndDispatchWhenReady([Task]()
+			ExecuteOnGameThread(UE_SOURCE_LOCATION, [Task]()
 			{
 				Task();
-			}, TStatId(), NULL, ENamedThreads::GameThread);
+			});
 		}
 	}
 }

@@ -1,28 +1,28 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\AutomationTool\\BuildGraph\\BuildGraph.Automation.csproj",
-  "TargetBuildTime": "2025-10-29T23:36:29.1233893+00:00",
+  "TargetBuildTime": "2025-11-20T16:45:16.0588553+00:00",
   "TargetPath": "..\\..\\..\\..\\Binaries\\DotNET\\AutomationTool\\AutomationScripts\\BuildGraph\\BuildGraph.Automation.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\..\\Shared\\EpicGames.BuildGraph\\EpicGames.BuildGraph.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:26.7231231+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:13.8957693+00:00"
     },
     {
       "ProjectPath": "..\\..\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     },
     {
       "ProjectPath": "..\\..\\Shared\\EpicGames.ProjectStore\\EpicGames.ProjectStore.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:27.0542663+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:14.1941204+00:00"
     },
     {
       "ProjectPath": "..\\..\\UnrealBuildTool\\UnrealBuildTool.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:01.795139+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:49.1403502+00:00"
     },
     {
       "ProjectPath": "..\\AutomationUtils\\AutomationUtils.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:27.8601502+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:14.8991955+00:00"
     }
   ],
   "Dependencies": [

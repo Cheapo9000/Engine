@@ -53,21 +53,25 @@ void FTimeAveragedStat::Add(FMonotonicTimePoint StartTime, FMonotonicTimePoint E
 
 	if (EndTime <= LastTime - Period)
 	{
+		// Ignore because the value ended before the active time window.
 		return;
 	}
 	else
 	{
+		// Queue to subtract when EndTime leaves the active time window.
 		const int32 Index = Algo::LowerBoundBy(EndValues, EndTime, &FValue::Time);
 		EndValues.Insert({EndTime, Value}, Index);
 	}
 
 	if (StartTime < LastTime)
 	{
+		// Accumulate immediately because the value is within the active time window.
 		AccumulatedValue += Value;
 		++AccumulatedValueCount;
 	}
 	else
 	{
+		// Queue to add when StartTime enters the active time window.
 		const int32 Index = Algo::LowerBoundBy(StartValues, StartTime, &FValue::Time);
 		StartValues.Insert({StartTime, Value}, Index);
 	}
@@ -76,6 +80,7 @@ void FTimeAveragedStat::Add(FMonotonicTimePoint StartTime, FMonotonicTimePoint E
 	const int32 StartIndex = Algo::LowerBoundBy(ActiveRanges, StartTime, &FRange::EndTime);
 	if (StartIndex == Count)
 	{
+		// StartTime is later than existing ranges. Add a new range.
 		ActiveRanges.Add({StartTime, EndTime});
 	}
 	else
@@ -83,19 +88,20 @@ void FTimeAveragedStat::Add(FMonotonicTimePoint StartTime, FMonotonicTimePoint E
 		FRange& StartRange = ActiveRanges[StartIndex];
 		if (EndTime < StartRange.StartTime)
 		{
+			// EndTime is earlier than existing ranges. Add a new range.
 			ActiveRanges.Insert({StartTime, EndTime}, StartIndex);
 		}
-		else
+		else if (StartTime != EndTime)
 		{
-			if (StartTime < StartRange.StartTime)
-			{
-				StartRange.StartTime = StartTime;
-			}
+			// Extend the existing range earlier to include StartTime.
+			StartRange.StartTime = FMath::Min(StartTime, StartRange.StartTime);
 
-			const int32 EndIndex = Algo::LowerBoundBy(ActiveRanges, EndTime, &FRange::StartTime);
-			StartRange.EndTime = FMath::Max(EndTime, ActiveRanges[EndIndex - 1].EndTime);
+			// Extend the existing range later to include EndTime.
+			const int32 EndIndex = Algo::LowerBoundBy(ActiveRanges, EndTime, &FRange::StartTime) - 1;
+			StartRange.EndTime = FMath::Max(EndTime, ActiveRanges[EndIndex].EndTime);
 
-			ActiveRanges.RemoveAt(StartIndex + 1, EndIndex - StartIndex - 1, EAllowShrinking::No);
+			// Remove any ranges that have been subsumed by this range.
+			ActiveRanges.RemoveAt(StartIndex + 1, EndIndex - StartIndex, EAllowShrinking::No);
 		}
 	}
 
@@ -104,14 +110,18 @@ void FTimeAveragedStat::Add(FMonotonicTimePoint StartTime, FMonotonicTimePoint E
 	{
 		Update(EndTime);
 	}
+	else
+	{
+		bUpdatePending = true;
+	}
 }
 
 double FTimeAveragedStat::GetRate(FMonotonicTimePoint Time)
 {
 	TUniqueLock Lock(Mutex);
-	if (LastTime < Time)
+	if (LastTime < Time || bUpdatePending)
 	{
-		Update(Time);
+		Update(FMath::Max(LastTime, Time));
 	}
 	return AverageRate;
 }
@@ -119,15 +129,16 @@ double FTimeAveragedStat::GetRate(FMonotonicTimePoint Time)
 double FTimeAveragedStat::GetValue(FMonotonicTimePoint Time)
 {
 	TUniqueLock Lock(Mutex);
-	if (LastTime < Time)
+	if (LastTime < Time || bUpdatePending)
 	{
-		Update(Time);
+		Update(FMath::Max(LastTime, Time));
 	}
 	return AverageValue;
 }
 
 void FTimeAveragedStat::Update(FMonotonicTimePoint Time)
 {
+	bUpdatePending = false;
 	LastTime = Time;
 
 	const FMonotonicTimePoint StartTime = Time - Period;
@@ -155,7 +166,7 @@ void FTimeAveragedStat::Update(FMonotonicTimePoint Time)
 	int32 EndCount = 0;
 	for (const FValue& Value : EndValues)
 	{
-		if (StartTime <= Value.Time)
+		if (StartTime < Value.Time)
 		{
 			break;
 		}

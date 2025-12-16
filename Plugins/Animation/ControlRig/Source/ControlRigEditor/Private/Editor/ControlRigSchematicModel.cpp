@@ -1431,7 +1431,7 @@ void FControlRigSchematicModel::HandleSchematicCancelDrag(SSchematicGraphPanel* 
 			}
 		}
 
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this, Keys]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, Keys]()
 		{
 			if (UModularRigController* Controller = ControlRigBlueprint->GetModularRigController())
 			{
@@ -1442,7 +1442,7 @@ void FControlRigSchematicModel::HandleSchematicCancelDrag(SSchematicGraphPanel* 
 					Controller->DisconnectConnector(Key);
 				}
 			}
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }
 
@@ -1542,7 +1542,7 @@ void FControlRigSchematicModel::HandleSchematicDrop(SSchematicGraphPanel* InPane
 
 			if(ControlRigClass && ModuleSettings.IsValidModule())
 			{
-				FFunctionGraphTask::CreateAndDispatchWhenReady([this, ControlRigClass, ModuleSettings, TargetKeys]()
+				ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, ControlRigClass, ModuleSettings, TargetKeys]()
 				{
 					if (UModularRigController* Controller = ControlRigBlueprint->GetModularRigController())
 					{
@@ -1587,14 +1587,14 @@ void FControlRigSchematicModel::HandleSchematicDrop(SSchematicGraphPanel* InPane
 
 						ClearSelection();
 					}
-				}, TStatId(), NULL, ENamedThreads::GameThread);
+				});
 			}
 		}
 	}
 	else if(SchematicDragDropOp.IsValid())
 	{
 		const TArray<FGuid> Sources = SchematicDragDropOp->GetElements();
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this, Sources, TargetKeys]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, Sources, TargetKeys]()
 		{
 			UModularRig* ControlRig = Cast<UModularRig>(ControlRigBlueprint->GetDebuggedControlRig());
 			if (!ControlRig)
@@ -1630,12 +1630,12 @@ void FControlRigSchematicModel::HandleSchematicDrop(SSchematicGraphPanel* InPane
 
 				ClearSelection();
 			}
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 	else if(ModuleDragDropOperation.IsValid())
 	{
 		const TArray<FName> ModuleNames = ModuleDragDropOperation->GetModules();
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this, ModuleNames, TargetKeys]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, ModuleNames, TargetKeys]()
 		{
 			UModularRig* ControlRig = Cast<UModularRig>(ControlRigBlueprint->GetDebuggedControlRig());
 			if (!ControlRig)
@@ -1691,7 +1691,7 @@ void FControlRigSchematicModel::HandleSchematicDrop(SSchematicGraphPanel* InPane
 					}
 				}
 			}
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }
 

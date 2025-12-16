@@ -4117,10 +4117,10 @@ void FControlRigBaseEditor::OnDirectManipulationChanged(TSharedPtr<FString> NewV
 		if(Target.Name.Equals(DesiredTarget, ESearchCase::CaseSensitive))
 		{
 			// run the task after a bit so that the rig has the opportunity to run first
-			FFunctionGraphTask::CreateAndDispatchWhenReady([ControlRigBlueprint, UnitNode, Target]()
+			ExecuteOnGameThread(UE_SOURCE_LOCATION, [ControlRigBlueprint, UnitNode, Target]()
 			{
 				ControlRigBlueprint->AddTransientControl(UnitNode, Target);
-			}, TStatId(), NULL, ENamedThreads::GameThread);
+			});
 			break;
 		}
 	}
@@ -4176,10 +4176,10 @@ void FControlRigBaseEditor::RefreshDirectManipulationTextList()
 	(void)GetDirectManipulationTargetTextList();
 	if(DirectManipulationCombo.IsValid())
 	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this]()
 		{
 			DirectManipulationCombo->RefreshOptions();
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }
 
@@ -4757,10 +4757,10 @@ void FControlRigBaseEditor::OnHierarchyModified_AnyThread(ERigHierarchyNotificat
 	}
 	else
 	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady([Task]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [Task]()
 		{
 			Task();
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }
 
@@ -6595,10 +6595,10 @@ void FControlRigBaseEditor::OnPostConstruction_AnyThread(UControlRig* InRig, con
 		}
 		else
 		{
-			FFunctionGraphTask::CreateAndDispatchWhenReady([Task]()
+			ExecuteOnGameThread(UE_SOURCE_LOCATION, [Task]()
 			{
 				Task();
-			}, TStatId(), NULL, ENamedThreads::GameThread);
+			});
 		}
 	}
 	else if(bShouldExecute)

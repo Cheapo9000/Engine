@@ -219,6 +219,9 @@ FD3D11DynamicRHI::FD3D11DynamicRHI(IDXGIFactory1* InDXGIFactory1, D3D_FEATURE_LE
 	GRHIGlobals.MaxViewSizeBytesForNonTypedBuffer = 1 << 27;
 	GRHIGlobals.MaxViewDimensionForTypedBuffer = 1 << 27;
 	
+	// D3D11 always uses DXBC. This is used to differentiate standard and preview shaders in the DDC.
+	GRHIGlobals.PreferredPreviewShaderCodeFormat = TEXT("DXBC");
+
 	// Initialize the constant buffers.
 	InitConstantBuffers();
 

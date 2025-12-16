@@ -502,9 +502,10 @@ private:
 
 UE_NET_TEST_FIXTURE(FTestReplicationOperationsForObjectsFixture, StaleObjectPointerIsUpdated)
 {
+	TGuardConsoleVariable<bool> CVarOverride(TEXT("gc.GarbageEliminationEnabled"), true);
+
 	// Create two objects, one which is referencing the other. Verify reference gets updated when first object is destroyed.
 	UTestReplicatedIrisObject* Object0 = CreateObject();
-	FNetRefHandle HandleToObject0 = ReplicationBridge->BeginReplication(Object0);
 
 	UTestReplicatedIrisObject* Object1 = CreateObject();
 	constexpr uint32 ObjectReferenceComponentCount = 1;
@@ -549,7 +550,57 @@ UE_NET_TEST_FIXTURE(FTestReplicationOperationsForObjectsFixture, StaleObjectPoin
 	// Compare the two state buffers. Despite that we haven't manually changed any object references we expect them to differ thanks to garbage collection support.
 	UE_NET_ASSERT_FALSE(FReplicationProtocolOperationsInternal::IsEqualQuantizedState(SerializationContext, StateBuffers1[0], StateBuffers1[1], Protocol1));
 }
-	
+
+UE_NET_TEST_FIXTURE(FTestReplicationOperationsForObjectsFixture, StaleObjectPointerPolledAfterGC)
+{
+	TGuardConsoleVariable<bool> CVarOverride(TEXT("gc.GarbageEliminationEnabled"), true);
+
+	// Create two objects, one which is referencing the other. Verify reference gets updated when first object is destroyed.
+	UTestReplicatedIrisObject* Object0 = CreateObject();
+
+	UTestReplicatedIrisObject* Object1 = CreateObject();
+	constexpr uint32 ObjectReferenceComponentCount = 1;
+	Object1->AddComponents(UTestReplicatedIrisObject::FComponents{0,0,0,0,ObjectReferenceComponentCount});
+	Object1->ObjectReferenceComponents[0]->RawObjectPtrRef = Object0;
+	FNetRefHandle HandleToObject1 = ReplicationBridge->BeginReplication(Object1);
+
+	const FReplicationInstanceProtocol* InstanceProtocol1 = ReplicationBridge->GetReplicationInstanceProtocol(HandleToObject1);
+	const FReplicationProtocol* Protocol1 = ReplicationSystem->GetReplicationProtocol(HandleToObject1);
+
+	// Verify protocol, if it fails, the test needs to be updated
+	UE_NET_ASSERT_EQ(Protocol1->ReplicationStateCount, 2U);
+	UE_NET_ASSERT_EQ((uint32)Protocol1->ReplicationStateDescriptors[1]->MemberCount, 3U);
+	UE_NET_ASSERT_TRUE(FCString::Strcmp(Protocol1->ReplicationStateDescriptors[1]->MemberDebugDescriptors[1].DebugName->Name, TEXT("RawObjectPtrRef")) == 0);
+
+	// Update polling
+	ReplicationSystem->NetUpdate(0.033f);
+	ReplicationSystem->PostSendUpdate();
+
+	// Get polled value
+	UObject* PolledPointerValue0 = nullptr;
+	((FPropertyReplicationFragment*)InstanceProtocol1->Fragments[1])->GetPropertyReplicationState()->GetPropertyValue(1, &PolledPointerValue0);
+
+	// Should be same as source
+	UE_NET_ASSERT_TRUE(PolledPointerValue0 == Object1->ObjectReferenceComponents[0]->RawObjectPtrRef);
+
+	// Destroy first object and invalidate references to it.
+	ReplicationBridge->EndReplication(Object0);
+	DestroyObject(Object0);
+	constexpr bool bPerformFullPurge = false;
+	CollectGarbage(GARBAGE_COLLECTION_KEEPFLAGS, bPerformFullPurge);
+
+	// Update polling
+	ReplicationSystem->NetUpdate(0.033f);
+	ReplicationSystem->PostSendUpdate();
+
+	// Get polled value
+	UObject* PolledPointerValue1 = nullptr;
+	((FPropertyReplicationFragment*)InstanceProtocol1->Fragments[1])->GetPropertyReplicationState()->GetPropertyValue(1, &PolledPointerValue1);
+
+	// Polled value should now be nullptr
+	UE_NET_ASSERT_TRUE(PolledPointerValue1 == nullptr);
+}
+
 class FTestReplicationOperationsOnInitStateFixture : public FTestReplicationOperationsFixture
 {
 protected:

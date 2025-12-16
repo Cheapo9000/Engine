@@ -226,7 +226,7 @@ void SRigVMBulkEditWidget::Tick(const FGeometry& AllottedGeometry, const double 
 			Transaction = MakeShareable(new FScopedTransaction(LOCTEXT("BulkEdit", "Bulk Edit")));
 		}
 		
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this]()
 		{
 			TSharedPtr<FRigVMTreeTask> Task;
 			{
@@ -335,7 +335,7 @@ void SRigVMBulkEditWidget::Tick(const FGeometry& AllottedGeometry, const double 
 
 				ReportDelegateGuard.Reset();
 			}
-		}, TStatId(), nullptr, ENamedThreads::GameThread);		
+		});		
 	}
 	else if(!CompletedTasks.IsEmpty())
 	{

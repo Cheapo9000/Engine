@@ -1448,6 +1448,7 @@ namespace UnrealBuildTool
 					// Copy the mobile provision into the system store
 					if (Target.ImportProvision != null)
 					{
+						Writer.WriteLine("mkdir -p {0}", Utils.EscapeShellArgument(AppleExports.GetProvisionDirectory().FullName));
 						Writer.WriteLine("cp -f {0} {1}", Utils.EscapeShellArgument(Target.ImportProvision), Utils.EscapeShellArgument(AppleExports.GetProvisionDirectory().FullName));
 					}
 

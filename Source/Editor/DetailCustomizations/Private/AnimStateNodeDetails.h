@@ -5,8 +5,10 @@
 #include "AnimTransitionNodeDetails.h"
 #include "Templates/SharedPointer.h"
 
+class IDetailGroup;
 class IDetailCustomization;
 class IDetailLayoutBuilder;
+class STextComboBox;
 
 class FAnimStateNodeDetails : public FAnimTransitionNodeDetails
 {
@@ -18,7 +20,6 @@ public:
 	virtual void CustomizeDetails( IDetailLayoutBuilder& DetailBuilder ) override;
 
 private:
-	
-	void GenerateAnimationStateEventRow(IDetailCategoryBuilder& AnimationStateCategory, const FText & StateEventLabel, const FString & TransitionName);
+	static void AddAnimationStateEventField(const IDetailCategoryBuilder& AnimationStateCategory, IDetailGroup& AnimationStateGroup, const FString& TransitionName);
 };
 

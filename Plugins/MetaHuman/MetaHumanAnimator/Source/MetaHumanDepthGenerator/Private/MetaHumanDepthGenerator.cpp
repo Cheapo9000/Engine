@@ -34,6 +34,8 @@
 #include "HAL/FileManager.h"
 #include "Internationalization/Regex.h"
 
+#include "Misc/MessageDialog.h"
+
 #include UE_INLINE_GENERATED_CPP_BY_NAME(MetaHumanDepthGenerator)
 
 #define LOCTEXT_NAMESPACE "MetaHumanDepthGenerator"
@@ -45,6 +47,33 @@ static constexpr int32 MaxStandardHMCImageSize = 3145728; // Technoprops resolut
 
 namespace UE::MetaHuman::Private
 {
+
+static bool IsViewFrameRateSame(UFootageCaptureData* InFootageCaptureData)
+{
+	UImgMediaSource* FirstMediaSource = InFootageCaptureData->ImageSequences[0];
+	UImgMediaSource* SecondMediaSource = InFootageCaptureData->ImageSequences[1];
+
+	if (!FirstMediaSource->FrameRateOverride.IsValid() || !SecondMediaSource->FrameRateOverride.IsValid())
+	{
+		return false;
+	}
+
+	return FirstMediaSource->FrameRateOverride == SecondMediaSource->FrameRateOverride;
+}
+
+static bool IsViewTimecodeAligned(UFootageCaptureData* InFootageCaptureData)
+{
+	UImgMediaSource* FirstMediaSource = InFootageCaptureData->ImageSequences[0];
+	UImgMediaSource* SecondMediaSource = InFootageCaptureData->ImageSequences[1];
+
+	if (!IsViewFrameRateSame(InFootageCaptureData))
+	{
+		return false;
+	}
+
+	return FirstMediaSource->StartTimecode.ToTimespan(FirstMediaSource->FrameRateOverride) == 
+		SecondMediaSource->StartTimecode.ToTimespan(SecondMediaSource->FrameRateOverride);
+}
 
 int32 GetResizeDepthFactor(EMetaHumanCaptureDepthResolutionType InDepthResolution)
 {
@@ -494,6 +523,31 @@ void SaveDepthProcessCreatedAssets(const FString& InAssetPath)
 
 bool UMetaHumanDepthGenerator::Process(UFootageCaptureData* InFootageCaptureData)
 {
+	if (InFootageCaptureData->ImageSequences.Num() < 2)
+	{
+		UE_LOG(LogMetaHumanDepthGeneration, Error, TEXT("Generating depth images is not possible on this footage. Expecting 2 image sequences, found %d"), InFootageCaptureData->ImageSequences.Num());
+		return false;
+	}
+
+	if (!IsValid(InFootageCaptureData->ImageSequences[0]) || !IsValid(InFootageCaptureData->ImageSequences[1]))
+	{
+		UE_LOG(LogMetaHumanDepthGeneration, Error, TEXT("Could not run Generate Depth. Image Sequences in the Footage Capture Data cannot be null."));
+		return false;
+	}
+
+	if (!UE::MetaHuman::Private::IsViewTimecodeAligned(InFootageCaptureData))
+	{
+		FTextBuilder TextBuilder;
+		TextBuilder.AppendLine(LOCTEXT("ProcessDepth_MisalignedTimecode", "Image Sequences are misaligned. Start timecode and/or frame rate do not match. This may result in generation of low quality depth data."));
+
+		EAppReturnType::Type Result = FMessageDialog::Open(EAppMsgCategory::Warning,
+														   EAppMsgType::Ok,
+														   TextBuilder.ToText(),
+														   LOCTEXT("ProcessDepth_WarningTitle", "Misaligned Image Sequences"));
+
+		return false;
+	}
+
 	TSharedRef<SMetaHumanGenerateDepthWindow> GenerateDepthWindow =
 		SNew(SMetaHumanGenerateDepthWindow)
 		.CaptureData(InFootageCaptureData);
@@ -525,7 +579,7 @@ bool UMetaHumanDepthGenerator::Process(UFootageCaptureData* InFootageCaptureData
 		return false;
 	}
 
-	if (InFootageCaptureData->ImageSequences.Num() != 2)
+	if (InFootageCaptureData->ImageSequences.Num() < 2)
 	{
 		UE_LOG(LogMetaHumanDepthGeneration, Error, TEXT("Generating depth images is not possible on this footage. Expecting 2 image sequences, found %d"), InFootageCaptureData->ImageSequences.Num());
 		return false;
@@ -533,7 +587,13 @@ bool UMetaHumanDepthGenerator::Process(UFootageCaptureData* InFootageCaptureData
 
 	if (!IsValid(InFootageCaptureData->ImageSequences[0]) || !IsValid(InFootageCaptureData->ImageSequences[1]))
 	{
-		UE_LOG(LogMetaHumanDepthGeneration, Error, TEXT("Provided image sequences are invalid"));
+		UE_LOG(LogMetaHumanDepthGeneration, Error, TEXT("Could not run Generate Depth. Image Sequences in the Footage Capture Data cannot be null."));
+		return false;
+	}
+
+	if (!IsViewTimecodeAligned(InFootageCaptureData))
+	{
+		UE_LOG(LogMetaHumanDepthGeneration, Error, TEXT("Image Sequences are misaligned. Start timecode and/or frame rate do not match. This may result in generation of low quality depth data."));
 		return false;
 	}
 

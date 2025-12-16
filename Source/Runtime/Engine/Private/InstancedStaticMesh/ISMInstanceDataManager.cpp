@@ -597,7 +597,14 @@ bool FPrimitiveInstanceDataManager::FlushChanges(FInstanceUpdateComponentDesc &&
 	// If we got here & the state is "optimized" then we know the precomputed data is now invalid and we ditch it.
 	if (GetState() == ETrackingState::Optimized)
 	{
-		UE_LOG(LogInstanceProxy, Log, TEXT("Discarded PrecomputedOptimizationData"));
+#if !UE_BUILD_SHIPPING
+		static bool bLoggedOnce = false;
+		if (!bLoggedOnce)
+		{
+			UE_LOG(LogInstanceProxy, Log, TEXT("Discarded PrecomputedOptimizationData"));
+			bLoggedOnce = true;
+		}
+#endif
 		PrecomputedOptimizationData.Reset();
 	}
 

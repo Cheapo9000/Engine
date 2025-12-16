@@ -729,7 +729,12 @@ FReply SMetaHumanCalibrationImageViewer::OnResetButtonClicked()
 	{
 		SharedState->Options->SelectedFrames.Empty();
 		DetectedPointsForSelectedFrames.Empty();
-		ChessboardPointCounter->Invalidate();
+
+		if (ChessboardPointCounter)
+		{
+			ChessboardPointCounter->Invalidate();
+		}
+
 		ScrubberSlider->RemoveFrameStates();
 	}
 

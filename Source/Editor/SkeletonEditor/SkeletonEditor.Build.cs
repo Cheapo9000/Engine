@@ -29,7 +29,7 @@ public class SkeletonEditor : ModuleRules
 				"EditorWidgets",
 				"ToolWidgets",
 				"AnimationCore",
-				"AnimationWidgets",
+				"AnimationWidgets", 
 			}
 		);
 
@@ -43,12 +43,14 @@ public class SkeletonEditor : ModuleRules
         PrivateIncludePathModuleNames.AddRange(
             new string[] {
                 "PropertyEditor",
+                "MeshBoneReduction",
             }
         );
 
         DynamicallyLoadedModuleNames.AddRange(
 			new string[] {
 				"PropertyEditor",
+				"MeshBoneReduction",
 			}
 		);
 	}

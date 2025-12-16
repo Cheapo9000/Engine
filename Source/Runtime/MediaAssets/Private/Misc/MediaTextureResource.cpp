@@ -23,6 +23,7 @@
 #include "StaticBoundShaderState.h"
 #include "RenderUtils.h"
 #include "RHIStaticStates.h"
+#include "RHIUtilities.h"
 #include "GenerateMips.h"
 #include "ProfilingDebugging/CsvProfiler.h"
 #include "Async/Async.h"
@@ -1448,7 +1449,7 @@ void FMediaTextureResource::CopySample(FRHICommandListImmediate& RHICmdList, con
 			CreateIntermediateRenderTarget(RHICmdList, Sample->GetOutputDim(), MediaTextureResourceHelpers::GetPixelFormat(Sample), MediaTextureResourceHelpers::RequiresSrgbTexture(Sample), ClearColor, NumMips, bNeedsUAVTexture);
 
 			// Copy data into the output texture to able to add mips later on
-			RHICmdList.CopyTexture(SampleTexture, IntermediateTarget, FRHICopyTextureInfo());
+			TransitionAndCopyTexture(RHICmdList, SampleTexture, IntermediateTarget, FRHICopyTextureInfo());
 		}
 	}
 	else

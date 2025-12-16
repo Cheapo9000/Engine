@@ -131,9 +131,10 @@ void UAutomatedSequencePerfTest::NextMap()
 			OptionsString += "game=" + CurrentMapSequenceCombo->GameModeOverride;
 		}
 		
-		if (OptionsString.IsEmpty() && AutomatedPerfTest::FindCurrentWorld()->GetName() == CurrentMapSequenceCombo->Map.GetAssetName())
+		if (OptionsString.IsEmpty() && AutomatedPerfTest::IsWorldLoaded(CurrentMapSequenceCombo->Map.GetAssetName()))
 		{
 			UE_LOG(LogAutomatedPerfTest, Log, TEXT("%s is already loaded and does not have any options string, skipping map load and setting up the test"), *CurrentMapSequenceCombo->Map.GetAssetName());
+			// TODO: Fix up SetupTest's logic to also correctly deal with MultiWorld
 			SetupTest();
 		}
 		else 

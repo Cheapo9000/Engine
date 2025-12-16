@@ -1239,6 +1239,7 @@ namespace UnrealBuildTool
 				}
 
 				// copy the provision into standard location
+				Writer.WriteLine("mkdir -p {0}", Utils.EscapeShellArgument(AppleExports.GetProvisionDirectory().FullName));
 				Writer.WriteLine("cp -f {0} {1}", Utils.EscapeShellArgument(Target.RemoteImportProvision), Utils.EscapeShellArgument(AppleExports.GetProvisionDirectory().FullName));
 				MobileProvisionContents MobileProvision = MobileProvisionContents.Read(new FileReference(Target.RemoteImportProvision));
 				MobileProvisionUUID = MobileProvision.GetUniqueId();

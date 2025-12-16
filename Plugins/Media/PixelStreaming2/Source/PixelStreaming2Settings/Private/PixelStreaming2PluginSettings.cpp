@@ -890,6 +890,11 @@ void UPixelStreaming2PluginSettings::PostEditChangeProperty(FPropertyChangedEven
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
 
+	if (!PropertyChangedEvent.Property)
+	{
+		return;
+	}
+
 	FString PropertyName = PropertyChangedEvent.Property->GetNameCPP();
 
 	FString CVarName;

@@ -48,6 +48,35 @@ FAnimationEvaluator::FAnimationEvaluator(USkeletalMeshComponent* InSkeletalMeshC
 	}
 }
 
+static float CachingDelta = 0.f;
+static int32 CachingCount = 0;
+
+bool IsCaching()
+{
+	return CachingCount > 0;
+}
+	
+FEvaluationForCachingScope::FEvaluationForCachingScope(const float InDeltaTime)
+{
+	if (ensure(CachingCount == 0))
+	{
+		CachingDelta = InDeltaTime;
+	}
+	++CachingCount;
+}
+
+FEvaluationForCachingScope::~FEvaluationForCachingScope()
+{
+	ensure(CachingCount > 0);
+	
+	--CachingCount;
+	if (CachingCount <= 0)
+	{
+		CachingDelta = 0.f;
+		CachingCount = 0;
+	}
+}
+	
 FAnimationEvaluator::~FAnimationEvaluator()
 {
 	if (OnBoneTransformsFinalizedHandle.IsValid())
@@ -276,12 +305,12 @@ void FAnimationEvaluator::EvaluateAnimation()
 			bShouldTickAnimation |= !Context.PostProcessAnimInstance->GetUpdateCounter().HasEverBeenUpdated();
 		}
 
-		if (bShouldTickAnimation)
+		if (bShouldTickAnimation || IsCaching())
 		{
 			// We bypass TickPose() and call TickAnimation directly, so URO doesn't intercept us.
 			static constexpr float DeltaTime = 0.0f;
 			static constexpr bool bNeedsValidRootMotion = false;
-			RawSkeletalMeshComponent->TickAnimation(DeltaTime, bNeedsValidRootMotion);
+			RawSkeletalMeshComponent->TickAnimation(IsCaching() ? CachingDelta : DeltaTime, bNeedsValidRootMotion);
 		}
 	}
 

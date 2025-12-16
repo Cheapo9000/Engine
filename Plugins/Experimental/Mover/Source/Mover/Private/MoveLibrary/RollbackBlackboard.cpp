@@ -30,6 +30,14 @@ uint32 URollbackBlackboard::BlackboardEntryBase::ComputeBufferSize(EBlackboardSi
 	return BufferSize;
 }
 
+URollbackBlackboard::BlackboardEntryBase::BlackboardEntryBase(const EntrySettings& InSettings, uint32 BufferSize)
+	: Settings(InSettings)
+	, Timestamps(BufferSize, EntryTimeStamp())
+	, ExternalIdx(0)
+	, InternalIdx(0)
+{
+}
+
 void URollbackBlackboard::BlackboardEntryBase::RollBack(uint32 NewPendingFrame)
 {
 	// Goal: adjust entry to point at the value from the prior frame. May make the entry invalidated, if there were no values that old.

@@ -611,10 +611,11 @@ FDelayedAutoRegisterHelper SAssetView::ToolBarMenuExtensionRegistration(
 							FToolUIAction SortAction;
 							SortAction.IsActionVisibleDelegate = FToolMenuIsActionButtonVisible::CreateSPLambda(
 								AssetView,
-								[AssetView](const FToolMenuContext&)
+								[WeakAssetView = AssetView.ToWeakPtr()](const FToolMenuContext&)
 								{
 									// Sort button only visible in Tile view mode - others have their own sorting UI representation.
-									return AssetView->IsCurrentViewType(EAssetViewType::Tile);
+									const TSharedPtr<SAssetView> PinnedAssetView = WeakAssetView.Pin();
+									return PinnedAssetView && PinnedAssetView->IsCurrentViewType(EAssetViewType::Tile);
 								});
 
 							FToolMenuEntry& SortEntry = InSection.AddEntry(

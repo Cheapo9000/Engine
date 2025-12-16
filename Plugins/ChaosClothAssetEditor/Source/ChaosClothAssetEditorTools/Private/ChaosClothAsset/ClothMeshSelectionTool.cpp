@@ -541,6 +541,8 @@ void UClothMeshSelectionTool::UpdateSelectedNode()
 		GetToolManager()->GetContextTransactionsAPI()->AppendChange(Dataflow, 
 			FChaosClothAssetSelectionNode_v2::MakeSelectedNodeChange(*SelectionNodeToUpdate),
 			LOCTEXT("SelectionNodeChangeDescription", "Update Selection Node"));
+
+		Dataflow->MarkPackageDirty();
 	}
 
 	const UE::Geometry::FGroupTopologySelection& Selection = SelectionMechanic->GetActiveSelection();

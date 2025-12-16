@@ -54,6 +54,12 @@ static TAutoConsoleVariable<bool> CVarRayTracingInstanceBufferParallelFill(
 	TEXT("Whether to fill the ray tracing instance upload buffer using parallel loops. 0=disabled, 1=enabled (default)"),
 	ECVF_RenderThreadSafe);
 
+static TAutoConsoleVariable<bool> CVarRayTracingInstanceBufferLateGetGPUSceneParameters(
+	TEXT("r.RayTracing.InstanceBuffer.LateGetGPUSceneParameters"),
+	false,
+	TEXT(""),
+	ECVF_RenderThreadSafe);
+
 struct FRayTracingInstanceGroup
 {
 	uint32 BaseInstanceIndex : 30;
@@ -666,7 +672,7 @@ IMPLEMENT_GLOBAL_SHADER(FRayTracingBuildInstanceBufferCS, "/Engine/Private/Raytr
 
 void BuildRayTracingInstanceBuffer(
 	FRHICommandList& RHICmdList,
-	const FGPUScene* GPUScene,
+	const FGPUSceneResourceParametersRHI* GPUSceneParameters,
 	const FDFVector3& PreViewTranslation,
 	uint32 MaxNumInstances,
 	uint32 NumGroups,
@@ -700,9 +706,9 @@ void BuildRayTracingInstanceBuffer(
 	PassParams.PreViewTranslationHigh = PreViewTranslation.High;
 	PassParams.PreViewTranslationLow = PreViewTranslation.Low;
 
-	if (GPUScene)
+	if (GPUSceneParameters)
 	{
-		PassParams.GPUSceneParameters = GPUScene->GetShaderParametersRHI();
+		PassParams.GPUSceneParameters = *GPUSceneParameters;
 	}
 
 	if (CullingParameters)
@@ -747,7 +753,7 @@ void BuildRayTracingInstanceBuffer(
 
 void BuildRayTracingInstanceBuffer(
 	FRHICommandList& RHICmdList,
-	const FGPUScene* GPUScene,
+	const FGPUSceneResourceParametersRHI* GPUSceneParameters,
 	const FDFVector3& PreViewTranslation,
 	FRHIUnorderedAccessView* InstancesUAV,
 	FRHIUnorderedAccessView* HitGroupContributionsUAV,
@@ -770,7 +776,7 @@ void BuildRayTracingInstanceBuffer(
 	{
 		BuildRayTracingInstanceBuffer(
 			RHICmdList,
-			GPUScene,
+			GPUSceneParameters,
 			PreViewTranslation,
 			MaxNumInstances,
 			NumGPUGroups,
@@ -794,7 +800,7 @@ void BuildRayTracingInstanceBuffer(
 	{
 		BuildRayTracingInstanceBuffer(
 			RHICmdList,
-			GPUScene,
+			GPUSceneParameters,
 			PreViewTranslation,
 			MaxNumInstances,
 			NumCPUGroups,
@@ -830,9 +836,15 @@ void BuildRayTracingInstanceBuffer(
 	FRHIUnorderedAccessView* OutputStatsUAV,
 	FRHIUnorderedAccessView* InstanceExtraDataUAV)
 {
+	FGPUSceneResourceParametersRHI GPUSceneParameters;
+	if (GPUScene)
+	{
+		GPUSceneParameters = GPUScene->GetShaderParametersRHI();
+	}
+
 	BuildRayTracingInstanceBuffer(
 		RHICmdList,
-		GPUScene,
+		GPUScene ? &GPUSceneParameters : nullptr,
 		PreViewTranslation,
 		InstancesUAV,
 		HitGroupContributionsUAV,
@@ -1034,9 +1046,15 @@ void FRayTracingInstanceBufferBuilder::BuildRayTracingInstanceBuffer(
 	uint32 OutputStatsOffset,
 	FRHIUnorderedAccessView* InstanceExtraDataUAV)
 {
+	FGPUSceneResourceParametersRHI GPUSceneParameters;
+	if (GPUScene)
+	{
+		GPUSceneParameters = GPUScene->GetShaderParametersRHI();
+	}
+
 	::BuildRayTracingInstanceBuffer(
 		RHICmdList,
-		GPUScene,
+		GPUScene ? &GPUSceneParameters : nullptr,
 		FDFVector3(PreViewTranslation),
 		InstancesUAV,
 		HitGroupContributionsUAV,
@@ -1054,6 +1072,58 @@ void FRayTracingInstanceBufferBuilder::BuildRayTracingInstanceBuffer(
 		OutputStatsUAV,
 		OutputStatsOffset,
 		InstanceExtraDataUAV);
+}
+
+void FRayTracingInstanceBufferBuilder::BuildRayTracingInstanceBuffer(
+	FRHICommandList& RHICmdList,
+	const FGPUScene* GPUScene,
+	const FGPUSceneResourceParametersRHI* GPUSceneParameters,
+	const FRayTracingCullingParameters* CullingParameters,
+	FRHIUnorderedAccessView* InstancesUAV,
+	FRHIUnorderedAccessView* HitGroupContributionsUAV,
+	uint32 MaxNumInstances,
+	bool bCompactOutput,
+	FRHIUnorderedAccessView* OutputStatsUAV,
+	uint32 OutputStatsOffset,
+	FRHIUnorderedAccessView* InstanceExtraDataUAV)
+{
+	if (CVarRayTracingInstanceBufferLateGetGPUSceneParameters.GetValueOnAnyThread())
+	{
+		BuildRayTracingInstanceBuffer(
+			RHICmdList,
+			GPUScene,
+			CullingParameters,
+			InstancesUAV,
+			HitGroupContributionsUAV,
+			MaxNumInstances,
+			bCompactOutput,
+			OutputStatsUAV,
+			OutputStatsOffset,
+			InstanceExtraDataUAV);
+	}
+	else
+	{
+		::BuildRayTracingInstanceBuffer(
+			RHICmdList,
+			GPUSceneParameters,
+			FDFVector3(PreViewTranslation),
+			InstancesUAV,
+			HitGroupContributionsUAV,
+			InstanceGroupUploadSRV,
+			InstanceUploadSRV,
+			AccelerationStructureAddressesBuffer.SRV,
+			TransformUploadSRV,
+			MaxNumInstances,
+			Data.NumGPUInstanceGroups,
+			Data.NumCPUInstanceGroups,
+			Data.NumGPUInstanceDescriptors,
+			Data.NumCPUInstanceDescriptors,
+			CullingParameters,
+			bCompactOutput,
+			OutputStatsUAV,
+			OutputStatsOffset,
+			InstanceExtraDataUAV);
+	}
 }
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

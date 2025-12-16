@@ -154,4 +154,15 @@ public:
 	FChaosClothAssetRemeshNode(const UE::Dataflow::FNodeParameters& InParam, FGuid InGuid = FGuid::NewGuid());
 
 	virtual void Evaluate(UE::Dataflow::FContext& Context, const FDataflowOutput* Out) const override;
+
+private:
+
+	void RemeshSimMesh(const TSharedRef<const FManagedArrayCollection>& ClothCollection,
+		const FString& DensityMapName,
+		const TSharedRef<FManagedArrayCollection>& OutClothCollection) const;
+
+	void RemeshRenderMesh(const TSharedRef<const FManagedArrayCollection>& ClothCollection,
+		const FString& DensityMapName,
+		const TSharedRef<FManagedArrayCollection>& OutClothCollection) const;
+
 };

@@ -7,6 +7,9 @@
 
 /**
 * Templated accessor for polygon vertices accessor.
+* NOTE FOR 5.7.1: This accessor is NOT thread-safe on Set, and is replaced by a thread-safe copy in the PCGPolygon2DData.inl
+* since we can't modify this file in a minor version.
+* You must not use this accessor directly.
 */
 template<typename T, EPCGPolygon2DProperties Target>
 class FPCGPolygon2DVerticesAccessor : public IPCGAttributeAccessorT<FPCGPolygon2DVerticesAccessor<T, Target>>

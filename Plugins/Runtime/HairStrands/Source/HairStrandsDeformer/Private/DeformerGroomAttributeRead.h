@@ -141,7 +141,7 @@ private:
 	void CreateInternalBuffers(FRDGBuilder& GraphBuilder);
 
 	/** List of instances (invocations) used in that data interface */
-	TArray<const FHairGroupInstance*> GroupInstances;
+	TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 
 	/** Groom assets group indices the proxy instance is linked to */
 	TArray<TPair<UGroomAsset*, UE::Groom::Private::FGroupElements>> GroupElements;

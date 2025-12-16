@@ -1435,7 +1435,7 @@
         },
         "runtime": {
           "Apple.Automation.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1451,7 +1451,7 @@
         },
         "runtime": {
           "EpicGames.Build.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1477,7 +1477,7 @@
         },
         "runtime": {
           "EpicGames.Horde.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1490,7 +1490,7 @@
         },
         "runtime": {
           "EpicGames.IoHash.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1504,7 +1504,7 @@
         },
         "runtime": {
           "EpicGames.MsBuild.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1519,7 +1519,7 @@
         },
         "runtime": {
           "EpicGames.OIDC.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1527,7 +1527,7 @@
       "EpicGames.Oodle/1.0.0": {
         "runtime": {
           "EpicGames.Oodle.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1539,7 +1539,7 @@
         },
         "runtime": {
           "EpicGames.Perforce.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1552,7 +1552,7 @@
         },
         "runtime": {
           "EpicGames.Serialization.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1564,7 +1564,7 @@
         },
         "runtime": {
           "EpicGames.UBA.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }
@@ -1577,7 +1577,7 @@
         },
         "runtime": {
           "EpicGames.UHT.dll": {
-            "assemblyVersion": "5.7.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "5.7.0.0"
           }
         }

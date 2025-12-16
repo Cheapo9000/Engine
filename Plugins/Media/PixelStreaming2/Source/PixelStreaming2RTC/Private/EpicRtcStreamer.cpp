@@ -2,6 +2,7 @@
 
 #include "EpicRtcStreamer.h"
 
+#include "AudioCapturer.h"
 #include "PixelStreaming2PluginSettings.h"
 #include "PixelStreaming2Delegates.h"
 #include "Engine/GameEngine.h"
@@ -257,8 +258,7 @@ namespace UE::PixelStreaming2
 			UE_LOGFMT(LogPixelStreaming2RTC, Log, "Streamer is already streaming. Ignoring subsequent call to StartStreaming!");
 			return;
 		}
-		StreamState = EStreamState::Connecting;
-
+		
 		if (CurrentSignallingServerURL.IsEmpty())
 		{
 			UE_LOGFMT(LogPixelStreaming2RTC, Warning, "Attempted to start streamer ({0}) but no signalling server URL has been set. Use Streamer->SetConnectionURL(URL) or -PixelStreamingConnectionURL=", StreamerId);
@@ -267,12 +267,14 @@ namespace UE::PixelStreaming2
 
 		check(EpicRtcConference.IsValid());
 
+		StreamState = EStreamState::Connecting;
+
 		ReconnectTimer->Stop();
 
 		VideoCapturer->ResetFrameCapturer();
 
 		TickableTasks = FPixelStreaming2RTCModule::GetModule()->GetSharedTickableTasks();
-		AudioCapturer = FEpicRtcAudioCapturer::Create();
+		AudioCapturer = FAudioCapturer::Create<FEpicRtcAudioCapturer>();
 
 		{
 			FScopeLock Lock(&CustomAudioProducersCS);

@@ -1,16 +1,16 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
-  "TargetBuildTime": "2025-10-29T23:35:57.7597014+00:00",
+  "TargetBuildTime": "2025-11-20T16:44:44.918982+00:00",
   "TargetPath": "bin\\Development\\net8.0\\EpicGames.UHT.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\..\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     },
     {
       "ProjectPath": "..\\EpicGames.Build\\EpicGames.Build.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:55.1613219+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:42.1727008+00:00"
     }
   ],
   "Dependencies": [

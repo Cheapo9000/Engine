@@ -3,7 +3,10 @@
 #pragma once
 
 #include "DSP/MultithreadedPatching.h"
+#include "AudioDeviceManager.h"
 #include "AudioProducer.h"
+#include "Misc/CoreDelegates.h"
+#include "PixelStreaming2PluginSettings.h"
 #include "SampleBuffer.h"
 #include "TickableTask.h"
 
@@ -17,7 +20,7 @@ namespace UE::PixelStreaming2
 	{
 	public:
 		UE_API FAudioPatchMixer(uint8 NumChannels, uint32 SampleRate, float SampleSizeSeconds);
-		virtual ~FAudioPatchMixer() = default;
+		UE_API virtual ~FAudioPatchMixer() = default;
 
 		UE_API uint32 GetMaxBufferSize() const;
 		UE_API uint8  GetNumChannels() const;
@@ -48,7 +51,7 @@ namespace UE::PixelStreaming2
 	class FMixAudioTask : public FPixelStreamingTickableTask
 	{
 	public:
-		UE_API FMixAudioTask(FAudioCapturer* Capturer, TSharedPtr<FAudioPatchMixer> Mixer);
+		UE_API FMixAudioTask(TWeakPtr<FAudioCapturer> InCapturer, TSharedPtr<FAudioPatchMixer> InMixer);
 
 		virtual ~FMixAudioTask() = default;
 
@@ -61,14 +64,16 @@ namespace UE::PixelStreaming2
 		bool								  bIsRunning;
 		Audio::VectorOps::FAlignedFloatBuffer MixingBuffer;
 
-		FAudioCapturer*				 Capturer;
+		TWeakPtr<FAudioCapturer>	 Capturer;
 		TSharedPtr<FAudioPatchMixer> Mixer;
 	};
 
-	class FAudioCapturer
+	class FAudioCapturer : public TSharedFromThis<FAudioCapturer>
 	{
 	public:
-		static UE_API TSharedPtr<FAudioCapturer> Create(const int InSampleRate = 48000, const int InNumChannels = 2, const float InSampleSizeInSeconds = 0.5f);
+		template<typename T>
+		static TSharedPtr<T> Create(const int InSampleRate = 48000, const int InNumChannels = 2, const float InSampleSizeInSeconds = 0.5f);
+
 		virtual ~FAudioCapturer() = default;
 
 		// Mixed audio input will push its audio to an FPatchInputProxy for mixing
@@ -90,6 +95,10 @@ namespace UE::PixelStreaming2
 
 	protected:
 		UE_API FAudioCapturer(const int SampleRate = 48000, const int NumChannels = 2, const float SampleSizeInSeconds = 0.5f);
+		
+		// Required to be called by derived classes if the class is not constructed with FAudioCapturer::Create.
+		// It initializes members that require TSharedPtr to FAudioCapturer
+		UE_API void Initialize();
 
 		UE_API void OnDebugDumpAudioChanged(IConsoleVariable* Var);
 		UE_API void OnEnginePreExit();
@@ -114,6 +123,32 @@ namespace UE::PixelStreaming2
 
 		Audio::TSampleBuffer<int16_t> DebugDumpAudioBuffer;
 	};
+
+	template <typename T>
+	TSharedPtr<T> FAudioCapturer::Create(const int InSampleRate, const int InNumChannels, const float InSampleSizeInSeconds)
+	{
+		static_assert(std::is_base_of_v<FAudioCapturer, T>);
+		TSharedPtr<T> AudioCapturer(new T(InSampleRate, InNumChannels, InSampleSizeInSeconds));
+		AudioCapturer->Initialize();
+
+		FAudioDeviceManagerDelegates::OnAudioDeviceCreated.AddSP(AudioCapturer.ToSharedRef(), &T::CreateAudioProducer);
+		FAudioDeviceManagerDelegates::OnAudioDeviceDestroyed.AddSP(AudioCapturer.ToSharedRef(), &T::RemoveAudioProducer);
+
+		if (UPixelStreaming2PluginSettings::FDelegates* Delegates = UPixelStreaming2PluginSettings::Delegates())
+		{
+			Delegates->OnDebugDumpAudioChanged.AddSP(AudioCapturer.ToSharedRef(), &T::OnDebugDumpAudioChanged);
+
+			TWeakPtr<T> WeakAudioMixingCapturer = AudioCapturer;
+			FCoreDelegates::OnEnginePreExit.AddLambda([WeakAudioMixingCapturer]() {
+				if (TSharedPtr<T> AudioCapturer = WeakAudioMixingCapturer.Pin())
+				{
+					AudioCapturer->OnEnginePreExit();
+				}
+			});
+		}
+
+		return AudioCapturer;
+	}
 } // namespace UE::PixelStreaming2
 
 #undef UE_API

@@ -89,7 +89,7 @@ private:
 	TArray<TArray<FMatrix44f>> BindTransforms;
 
 	/** List of instances (invocations) used in that data interface */
-	TArray<const FHairGroupInstance*> GroupInstances;
+	TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 	
 	/** Bones Resources used to dispatch CS on GPU */
 	TArray<FRDGBufferSRVRef> BoneMatricesResources;

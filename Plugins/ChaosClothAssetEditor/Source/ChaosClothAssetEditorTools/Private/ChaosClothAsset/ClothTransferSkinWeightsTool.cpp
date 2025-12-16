@@ -10,6 +10,7 @@
 #include "ContextObjectStore.h"
 #include "Dataflow/DataflowContextObject.h"
 #include "Dataflow/DataflowEdNode.h"
+#include "Dataflow/DataflowObject.h"
 #include "ChaosClothAsset/TransferSkinWeightsNode.h"
 #include "BaseGizmos/TransformGizmoUtil.h"
 #include "InteractiveToolObjects.h"
@@ -192,6 +193,13 @@ void UClothTransferSkinWeightsTool::Shutdown(EToolShutdownType ShutdownType)
 		TransferSkinWeightsNode->SkeletalMesh = ToolProperties->SourceMesh;
 		TransferSkinWeightsNode->Transform = TransformFromProperties();
 		TransferSkinWeightsNode->Invalidate();
+		if (DataflowContextObject)
+		{
+			if (TObjectPtr<UDataflow> const Dataflow = DataflowContextObject->GetDataflowAsset())
+			{
+				Dataflow->MarkPackageDirty();
+			}
+		}
 	}
 
 	if (SourceMeshTransformProxy)

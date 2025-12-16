@@ -65,7 +65,7 @@ namespace UE::Chaos::ClothAsset
 		: ClothCollection(ClothCollection)
 		, MorphTargetIndex(InMorphTargetIndex)
 	{
-		check(ClothCollection->IsValid(EClothCollectionExtendedSchemas::CookedOnly | EClothCollectionExtendedSchemas::SimMorphTargets));
+		check(ClothCollection->IsValid(EClothCollectionExtendedSchemas::CookedOnly) || ClothCollection->IsValid(EClothCollectionExtendedSchemas::SimMorphTargets));
 		check(MorphTargetIndex >= 0 && MorphTargetIndex < ClothCollection->GetNumElements(ClothCollectionGroup::SimMorphTargets));
 	}
 

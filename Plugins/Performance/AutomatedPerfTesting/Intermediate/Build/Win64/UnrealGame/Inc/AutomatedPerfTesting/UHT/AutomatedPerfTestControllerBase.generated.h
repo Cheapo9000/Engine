@@ -19,7 +19,7 @@ class AGameStateBase;
 class UWorld;
 
 // ********** Begin Class UAutomatedPerfTestControllerBase *****************************************
-#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_60_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_88_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnVideoRecordingFinalized); \
 	DECLARE_FUNCTION(execEndAutomatedPerfTest); \
 	DECLARE_FUNCTION(execOnGameStateSet); \
@@ -30,7 +30,7 @@ class UWorld;
 struct Z_Construct_UClass_UAutomatedPerfTestControllerBase_Statics;
 AUTOMATEDPERFTESTING_API UClass* Z_Construct_UClass_UAutomatedPerfTestControllerBase_NoRegister();
 
-#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_60_INCLASS_NO_PURE_DECLS \
+#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_88_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUAutomatedPerfTestControllerBase(); \
 	friend struct ::Z_Construct_UClass_UAutomatedPerfTestControllerBase_Statics; \
@@ -41,7 +41,7 @@ public: \
 	DECLARE_SERIALIZER(UAutomatedPerfTestControllerBase)
 
 
-#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_60_ENHANCED_CONSTRUCTORS \
+#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_88_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UAutomatedPerfTestControllerBase(UAutomatedPerfTestControllerBase&&) = delete; \
 	UAutomatedPerfTestControllerBase(const UAutomatedPerfTestControllerBase&) = delete; \
@@ -51,13 +51,13 @@ public: \
 	AUTOMATEDPERFTESTING_API virtual ~UAutomatedPerfTestControllerBase();
 
 
-#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_57_PROLOG
-#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_60_GENERATED_BODY \
+#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_85_PROLOG
+#define FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_88_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_60_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_60_INCLASS_NO_PURE_DECLS \
-	FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_60_ENHANCED_CONSTRUCTORS \
+	FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_88_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_88_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Performance_AutomatedPerfTesting_Source_AutomatedPerfTesting_Public_AutomatedPerfTestControllerBase_h_88_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

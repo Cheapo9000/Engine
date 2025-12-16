@@ -4538,10 +4538,11 @@ void URigHierarchy::SendEvent(const FRigEventContext& InEvent, bool bAsynchronou
 
 		if (bAsynchronous)
 		{
-			FFunctionGraphTask::CreateAndDispatchWhenReady([WeakThis, Delegate, InEvent]()
-            {
+
+			ExecuteOnGameThread(UE_SOURCE_LOCATION,[WeakThis, Delegate, InEvent]()
+			{
                 Delegate.Broadcast(WeakThis.Get(), InEvent);
-            }, TStatId(), NULL, ENamedThreads::GameThread);
+            });
 		}
 		else
 		{

@@ -7,6 +7,7 @@
 #include "DetailCategoryBuilder.h"
 #include "DetailLayoutBuilder.h"
 #include "DetailWidgetRow.h"
+#include "IDetailGroup.h"
 #include "Fonts/SlateFontInfo.h"
 #include "HAL/Platform.h"
 #include "Internationalization/Internationalization.h"
@@ -16,6 +17,7 @@
 #include "Widgets/Images/SImage.h"
 #include "Widgets/Layout/SBox.h"
 #include "Widgets/SToolTip.h"
+#include "Widgets/Input/STextComboBox.h"
 
 class IDetailCustomization;
 
@@ -31,6 +33,7 @@ TSharedRef<IDetailCustomization> FAnimStateNodeDetails::MakeInstance()
 
 void FAnimStateNodeDetails::CustomizeDetails( IDetailLayoutBuilder& DetailBuilder )
 {
+	// Add uproperty info from the following nodes.
 	TArray<TWeakObjectPtr<UAnimStateNode>> StateNodes = DetailBuilder.GetObjectsOfTypeBeingCustomized<UAnimStateNode>();
 	TArray<UObject*> StateResultNodes;
 	for (TWeakObjectPtr<UAnimStateNode> WeakStateNode : StateNodes)
@@ -49,30 +52,36 @@ void FAnimStateNodeDetails::CustomizeDetails( IDetailLayoutBuilder& DetailBuilde
 
 		StateResultNodes.Add(StateResultNode);
 	}
-
-	IDetailCategoryBuilder& AnimationStateCategory = DetailBuilder.EditCategory("Animation State", LOCTEXT("AnimationState", "Animation State"));
-
-	IDetailPropertyRow* Row = AnimationStateCategory.AddExternalObjects(StateResultNodes, EPropertyLocation::Default, FAddPropertyParams().HideRootObjectNode(true));
-	if (Row != nullptr)
-	{
-		Row->ShouldAutoExpand(true);
-	}
-
-	IDetailCategoryBuilder& DeprecatedCategory = DetailBuilder.EditCategory("Deprecated", LOCTEXT("DeprecatedCategory", "Deprecated"));
-	DeprecatedCategory.InitiallyCollapsed(true);
 	
-	GenerateAnimationStateEventRow(DeprecatedCategory, LOCTEXT("EnteredAnimationStateEventLabel", "Entered State Event"), TEXT("StateEntered"));
-	GenerateAnimationStateEventRow(DeprecatedCategory, LOCTEXT("ExitedAnimationStateEventLabel", "Left State Event"), TEXT("StateLeft"));
-	GenerateAnimationStateEventRow(DeprecatedCategory, LOCTEXT("FullyBlendedAnimationStateEventLabel", "Fully Blended State Event"), TEXT("StateFullyBlended"));
+	// Customize the animation state events (as they need a specific widget)
+	{
+		IDetailCategoryBuilder& AnimationStateCategory = DetailBuilder.EditCategory("Animation State", LOCTEXT("AnimationState", "Animation State"));
 
-	DetailBuilder.HideProperty("StateEntered");
-	DetailBuilder.HideProperty("StateLeft");
-	DetailBuilder.HideProperty("StateFullyBlended");
+		IDetailPropertyRow* Row = AnimationStateCategory.AddExternalObjects(StateResultNodes, EPropertyLocation::Default, FAddPropertyParams().HideRootObjectNode(true));
+		if (Row != nullptr)
+		{
+			Row->ShouldAutoExpand(true);
+		}
+
+		IDetailGroup& NotificationsGroup = AnimationStateCategory.AddGroup("Notifications", LOCTEXT("NotificationsGroupName", "Notifications"), false, true);
+	
+		AddAnimationStateEventField(AnimationStateCategory, NotificationsGroup, TEXT("StateEntered"));
+		AddAnimationStateEventField(AnimationStateCategory, NotificationsGroup, TEXT("StateLeft"));
+		AddAnimationStateEventField(AnimationStateCategory, NotificationsGroup, TEXT("StateFullyBlended"));
+		
+		DetailBuilder.HideProperty("StateEntered");
+		DetailBuilder.HideProperty("StateLeft");
+		DetailBuilder.HideProperty("StateFullyBlended");	
+	}
 }
 
-void FAnimStateNodeDetails::GenerateAnimationStateEventRow(IDetailCategoryBuilder& AnimationStateCategory,const FText& StateEventLabel, const FString& TransitionName)
+void FAnimStateNodeDetails::AddAnimationStateEventField(const IDetailCategoryBuilder& AnimationStateCategory, IDetailGroup& AnimationStateGroup, const FString& TransitionName)
 {
-	CreateTransitionEventPropertyWidgets(AnimationStateCategory, TransitionName, true);
+	TSharedPtr<IPropertyHandle> NameProperty = GetTransitionEventProperty(AnimationStateCategory, TransitionName);
+	IDetailPropertyRow& Row = AnimationStateGroup.AddPropertyRow(NameProperty.ToSharedRef());
+	FText InfoText = LOCTEXT("AnimStateEventInfoTooltip", "These events are deferred and executed after the animation graph has been updated. Non-thread-safe code can safely be executed here. For thread-safe code that must run during the animation graph update, use the Anim Node function versions instead.");
+	
+	BuildTransitionEventRow(Row, NameProperty, InfoText);
 }
 
 #undef LOCTEXT_NAMESPACE

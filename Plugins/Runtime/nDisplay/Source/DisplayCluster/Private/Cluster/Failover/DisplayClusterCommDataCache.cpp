@@ -275,8 +275,16 @@ void FDisplayClusterCommDataCache::OpSaveImpl(const FName& SlotName, Args&... Sl
 
 void FDisplayClusterCommDataCache::SubscribeToCallbacks()
 {
-	// DCEndFrame is used to invalidate per-frame cache
-	IDisplayCluster::Get().GetCallbacks().OnDisplayClusterEndFrame().AddRaw(this, &FDisplayClusterCommDataCache::ProcessDCEndFrame);
+	if (!GDisplayCluster)
+	{
+		return;
+	}
+
+	if (IDisplayCluster::IsAvailable())
+	{
+		// DCEndFrame is used to invalidate per-frame cache
+		IDisplayCluster::Get().GetCallbacks().OnDisplayClusterEndFrame().AddRaw(this, &FDisplayClusterCommDataCache::ProcessDCEndFrame);
+	}
 
 	// Set up a post-failure negotiation delegate
 	{
@@ -304,8 +312,16 @@ void FDisplayClusterCommDataCache::SubscribeToCallbacks()
 
 void FDisplayClusterCommDataCache::UnsubscribeFromCallbacks()
 {
-	// Unsubscribe from DCEndFrame
-	IDisplayCluster::Get().GetCallbacks().OnDisplayClusterEndFrame().RemoveAll(this);
+	if (!GDisplayCluster)
+	{
+		return;
+	}
+
+	if (IDisplayCluster::IsAvailable())
+	{
+		// Unsubscribe from DCEndFrame
+		IDisplayCluster::Get().GetCallbacks().OnDisplayClusterEndFrame().RemoveAll(this);
+	}
 
 	// Clear post-failure negotiation delegate
 	bool bSubscribedToNegotiationSync = false;

@@ -110,7 +110,7 @@ private:
 	using FParameters = FGroomExecDataInterfaceParameters;
 
 	/** List of instances (invocations) used in that data interface */
-	TArray<const FHairGroupInstance*> GroupInstances;
+	TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 
 	/** Number of elements for each invocation */
 	TArray<int32> GroupCounts;

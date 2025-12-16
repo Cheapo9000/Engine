@@ -8,31 +8,13 @@
 
 namespace UE::PixelStreaming2
 {
-	TSharedPtr<FEpicRtcAudioCapturer> FEpicRtcAudioCapturer::Create()
-	{
-		TSharedPtr<FEpicRtcAudioCapturer> AudioMixingCapturer(new FEpicRtcAudioCapturer());
-
-		FAudioDeviceManagerDelegates::OnAudioDeviceCreated.AddSP(AudioMixingCapturer.ToSharedRef(), &FEpicRtcAudioCapturer::CreateAudioProducer);
-		FAudioDeviceManagerDelegates::OnAudioDeviceDestroyed.AddSP(AudioMixingCapturer.ToSharedRef(), &FEpicRtcAudioCapturer::RemoveAudioProducer);
-
-		if (UPixelStreaming2PluginSettings::FDelegates* Delegates = UPixelStreaming2PluginSettings::Delegates())
-		{
-			Delegates->OnDebugDumpAudioChanged.AddSP(AudioMixingCapturer.ToSharedRef(), &FEpicRtcAudioCapturer::OnDebugDumpAudioChanged);
-
-			TWeakPtr<FEpicRtcAudioCapturer> WeakAudioMixingCapturer = AudioMixingCapturer;
-			FCoreDelegates::OnEnginePreExit.AddLambda([WeakAudioMixingCapturer]() {
-				if (TSharedPtr<FEpicRtcAudioCapturer> AudioMixingCapturer = WeakAudioMixingCapturer.Pin())
-				{
-					AudioMixingCapturer->OnEnginePreExit();
-				}
-			});
-		}
-
-		return AudioMixingCapturer;
-	}
-
 	void FEpicRtcAudioCapturer::PushAudio(const float* AudioData, int32 InNumSamples, int32 InNumChannels, const int32 InSampleRate)
 	{
+		check(AudioData != nullptr);
+		check(InNumSamples > 0);
+		check(InNumChannels > 0);
+		check(InSampleRate > 0);
+		check(InSampleRate == SampleRate);
 		Audio::TSampleBuffer<int16_t> Buffer(AudioData, InNumSamples, InNumChannels, SampleRate);
 		RecordingBuffer.Append(Buffer.GetData(), Buffer.GetNumSamples());
 
@@ -40,7 +22,7 @@ namespace UE::PixelStreaming2
 		const size_t BytesPerFrame = NumChannels * sizeof(int16_t);
 
 		// Feed in 10ms chunks
-		while (RecordingBuffer.Num() > SamplesPer10Ms)
+		while (RecordingBuffer.Num() >= SamplesPer10Ms)
 		{
 			OnAudioBuffer.Broadcast(RecordingBuffer.GetData(), SamplesPer10Ms, NumChannels, SampleRate);
 

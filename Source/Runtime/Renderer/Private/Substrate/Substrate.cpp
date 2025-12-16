@@ -398,7 +398,7 @@ static bool NeedsSampledMaterials(const FScene* Scene, const FViewInfo& View)
 static bool NeedsClosureOffsets(const FScene* Scene, const FViewInfo& View)
 {
 	// No need for closure index when either BlendableGBuffer is enabled or if ClosureCount == 1
-	return  (ShouldRenderLumenDiffuseGI(Scene, View) || ShouldRenderLumenReflections(View) || NeedsSampledMaterials(Scene, *View.Family) || Substrate::ShouldRenderSubstrateDebugPasses(View))
+	return  (ShouldRenderLumenDiffuseGI(Scene, View) || ShouldRenderLumenReflections(View) || MegaLights::IsEnabled(*View.Family) || NeedsSampledMaterials(Scene, *View.Family) || Substrate::ShouldRenderSubstrateDebugPasses(View))
 		&& !Substrate::IsSubstrateBlendableGBufferEnabled(View.GetShaderPlatform())
 		&& View.SubstrateViewData.MaxClosurePerPixel > 1;
 }

@@ -1146,6 +1146,9 @@ static void InitRHICapabilitiesForGL()
 	GRHISupportsPipelineFileCache = !GRHISupportsPSOPrecaching || CVarEnablePSOFileCacheWhenPrecachingActive.GetValueOnAnyThread();
 
 	GRHIGlobals.NeedsShaderUnbinds = true;
+
+	// OpenGL always uses GLSL (aka GLSL ES or ESSL). This is used to differentiate standard and preview shaders in the DDC.
+	GRHIGlobals.PreferredPreviewShaderCodeFormat = TEXT("GLSL");
 }
 
 FDynamicRHI* FOpenGLDynamicRHIModule::CreateRHI(ERHIFeatureLevel::Type InRequestedFeatureLevel)

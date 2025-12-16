@@ -308,9 +308,59 @@ ELandscapeImportResult GetImportDescriptorInternal(const FString& FilePath, bool
 	return ELandscapeImportResult::Success;
 }
 
+// Copy the pixels (no resampling) from InSrcRegion of InData into the same size region in OutData, aligned to InDestOffset.  Outside this region will be reset to 0.
+// InDestSize is the desired overall dimensions of the dest buffer.
+// Note:  InSrcRegion is exlcusive/half-open, possibly unlike the other functions in this class.
+// TODO [alan.roach]: move this to LandscapeConfigHelper.h, alongside the old CopySubregion.  Kept out of the public header for hotfix compatibility.
+template<typename T>
+static void TransformImportDataCopySubregion(TConstArrayView<T> InData, TArray<T>& OutData, FIntRect InSrcRegion, int32 InSrcDataPitch, FIntPoint InDestOffset, FIntPoint InDestSize)
+{
+	FIntRect DestTotalRegion(0, 0, InDestSize.X, InDestSize.Y);
+	FIntRect DestRegion(InDestOffset, InDestOffset + InSrcRegion.Size());  // copy region in dest buffer
+	DestRegion.Clip(DestTotalRegion);  // limit copy region to overall bounds of dest buffer
+	FIntPoint SrcOffsetAdjustment = DestRegion.Min - InDestOffset + InSrcRegion.Min;  // after clipping, that might affect the source region
+	int32 DestDataPitch = InDestSize.X;
+	int32 DestDataSize = InDestSize.X * InDestSize.Y;
+
+	// Set the output buffer size and initialize to 0.
+	check(InDestSize.X > 0 && InDestSize.Y > 0);
+	OutData.Empty(DestDataSize);
+	OutData.AddZeroed(DestDataSize);
+
+	if (DestRegion.Area() <= 0)
+	{
+		return;  // Nothing to copy
+	}
+
+	check(InSrcRegion.Min.X >= 0 && InSrcRegion.Min.Y >= 0);
+	check(InSrcRegion.Max.X <= InSrcDataPitch);
+	check(InData.Num() >= ((InSrcRegion.Max.Y - 1) * InSrcDataPitch) + InSrcRegion.Max.X);  // input buffer must be large enough to contain InSrcRegion
+	check(DestDataSize >= ((DestRegion.Max.Y - 1) * DestDataPitch) + DestRegion.Max.X);
+
+
+	const int32 XEnd = DestRegion.Width();
+	const int32 YEnd = DestRegion.Height();
+
+	for (int32 Y = 0; Y < YEnd; ++Y)
+	{
+		for (int32 X = 0; X < XEnd; ++X)
+		{
+			FIntPoint CopyCoords = FIntPoint(X, Y);
+			FIntPoint SrcCoords = CopyCoords + SrcOffsetAdjustment;
+			FIntPoint DestCoords = CopyCoords + DestRegion.Min;
+
+			const int32 SrcIndex = SrcCoords.X + SrcCoords.Y * InSrcDataPitch;
+			const int32 DstIndex = DestCoords.X + DestCoords.Y * DestDataPitch;
+
+			OutData[DstIndex] = InData[SrcIndex];
+		}
+	}
+}
+
 template<class T>
 void TransformImportDataInternal(const TArray<T>& InData, TArray<T>& OutData, const FLandscapeImportResolution& CurrentResolution, const FLandscapeImportResolution& RequiredResolution, ELandscapeImportTransformType TransformType, FIntPoint Offset)
 {
+	// TODO [alan.roach]:  the (-1) applied to Width and Height here is fishy.
 	check(InData.Num() == CurrentResolution.Width * CurrentResolution.Height);
 	if (TransformType == ELandscapeImportTransformType::Resample)
 	{
@@ -336,6 +386,12 @@ void TransformImportDataInternal(const TArray<T>& InData, TArray<T>& OutData, co
 		const FIntRect SrcRegion(0, 0, CurrentResolution.Width - 1, CurrentResolution.Height - 1);
 		const FIntRect DestRegion(-OffsetX, -OffsetY, RequiredResolution.Width - OffsetX - 1, RequiredResolution.Height - OffsetY - 1);
 		FLandscapeConfigHelper::ExpandData<T>(InData, OutData, SrcRegion, DestRegion, OffsetX != 0 || OffsetY != 0);
+	}
+	else if (TransformType == ELandscapeImportTransformType::Subregion)
+	{
+		const FIntRect SrcRegion(0, 0, CurrentResolution.Width, CurrentResolution.Height);
+		const FIntPoint DestSize(RequiredResolution.Width, RequiredResolution.Height);
+		TransformImportDataCopySubregion<T>(InData, OutData, SrcRegion, CurrentResolution.Width, Offset, DestSize);
 	}
 	else
 	{

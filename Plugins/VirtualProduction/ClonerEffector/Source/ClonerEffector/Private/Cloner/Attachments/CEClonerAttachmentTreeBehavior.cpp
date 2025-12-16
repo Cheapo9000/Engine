@@ -606,9 +606,10 @@ void FCEClonerAttachmentGroupBehavior::RefreshBakedMeshRootMaterials(FCEClonerAt
 					StaticMaterials[MaterialSlotIndex].MaterialInterface = Material;
 				}
 			}
-
-			MaterialIndexOffset++;
 		}
+
+		// Increment offset by material count for next attachment
+		MaterialIndexOffset += AttachmentItem->BakedMaterials.Num();
 	}
 
 	InTree.bItemAttachmentsDirty = true;

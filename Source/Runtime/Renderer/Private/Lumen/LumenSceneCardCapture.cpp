@@ -668,10 +668,11 @@ void FCardPageRenderData::UpdateViewMatrices(const FViewInfo& MainView)
 {
 	ensureMsgf(FVector::DotProduct(CardWorldOBB.AxisX, FVector::CrossProduct(CardWorldOBB.AxisY, CardWorldOBB.AxisZ)) < 0.0f, TEXT("Card has wrong handedness"));
 
-	FMatrix ViewRotationMatrix = FMatrix::Identity;
+	// Moved lower as workaround for MSVC 14.44.35211 bug - portions of these calls are incorrectly optimized out on some platforms when done before the ProjectionMatrix setup
+	/*FMatrix ViewRotationMatrix = FMatrix::Identity;
 	ViewRotationMatrix.SetColumn(0, CardWorldOBB.AxisX);
 	ViewRotationMatrix.SetColumn(1, CardWorldOBB.AxisY);
-	ViewRotationMatrix.SetColumn(2, -CardWorldOBB.AxisZ);
+	ViewRotationMatrix.SetColumn(2, -CardWorldOBB.AxisZ);*/
 
 	FVector ViewLocation(CardWorldOBB.Origin);
 	FVector FaceLocalExtent(CardWorldOBB.Extent);
@@ -701,6 +702,12 @@ void FCardPageRenderData::UpdateViewMatrices(const FViewInfo& MainView)
 		ZOffset);
 
 	ProjectionMatrixUnadjustedForRHI = ProjectionMatrix;
+
+	// Moved lower as workaround for MSVC 14.44.35211 bug - see above
+	FMatrix ViewRotationMatrix = FMatrix::Identity;
+	ViewRotationMatrix.SetColumn(0, CardWorldOBB.AxisX);
+	ViewRotationMatrix.SetColumn(1, CardWorldOBB.AxisY);
+	ViewRotationMatrix.SetColumn(2, -CardWorldOBB.AxisZ);
 
 	FViewMatrices::FMinimalInitializer Initializer;
 	Initializer.ViewRotationMatrix = ViewRotationMatrix;

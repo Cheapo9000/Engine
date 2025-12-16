@@ -265,7 +265,13 @@ void FIntervalStructCustomization<NumericType>::SetValue(NumericType NewValue, E
 	// b). It's possible that the event DetailsView resets its Object gets routed before the event SSpinBox loses user focus, which will commit value.   
 	if (Handle->GetNumOuterObjects() == 0)
 	{
-		return;
+		TArray<TSharedPtr<FStructOnScope>> OuterStructs;
+		Handle->GetOuterStructs(OuterStructs);
+
+		if (OuterStructs.Num() == 0)
+		{
+			return;
+		}
 	}
 
 	const TOptional<NumericType> OtherValue = GetValue<NumericType>(OtherHandle);

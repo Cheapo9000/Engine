@@ -9,18 +9,6 @@
 #include "CrossCompilerCommon.h"
 
 /**
-* Shader related constants.
-*/
-enum
-{
-	METAL_MAX_UNIFORM_BUFFER_BINDINGS = 12,	// @todo-mobile: Remove me
-	METAL_FIRST_UNIFORM_BUFFER = 0,			// @todo-mobile: Remove me
-	METAL_MAX_COMPUTE_STAGE_UAV_UNITS = 8,	// @todo-mobile: Remove me
-	METAL_UAV_NOT_SUPPORTED_FOR_GRAPHICS_UNIT = -1, // for now, only CS supports UAVs/ images
-	METAL_MAX_BUFFERS = 31,
-};
-
-/**
 * Buffer data-types for MetalRHI & MetalSL
 */
 enum class EMetalBufferFormat : uint8

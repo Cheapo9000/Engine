@@ -72,7 +72,7 @@ FNVDEC::FNVDEC()
 		}
 		else
 		{
-			FAVResult::Log(EAVResult::Warning, TEXT("Failed to get NVDEC dll handle. NVDEC module will not be available."), TEXT("NVDEC"));
+			FAVResult::Log(EAVResult::Unknown, TEXT("Failed to get NVDEC dll handle. NVDEC module will not be available."), TEXT("NVDEC"));
 		}
 	}
 	else

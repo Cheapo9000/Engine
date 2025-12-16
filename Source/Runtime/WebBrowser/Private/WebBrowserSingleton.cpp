@@ -379,12 +379,15 @@ FWebBrowserSingleton::FWebBrowserSingleton(const FWebBrowserInitSettings& WebBro
 
 		// Initialize CEF.
 		bCEFInitialized = CefInitialize(MainArgs, Settings, CEFBrowserApp.get(), nullptr);
-		check(bCEFInitialized);
+		ensure(bCEFInitialized);
 
 		// Set the thread name back to GameThread.
 		FPlatformProcess::SetThreadName(*FName(NAME_GameThread).GetPlainNameString());
 
-		DefaultCookieManager = FCefWebBrowserCookieManagerFactory::Create(CefCookieManager::GetGlobalManager(nullptr));
+		if (bCEFInitialized)
+		{
+			DefaultCookieManager = FCefWebBrowserCookieManagerFactory::Create(CefCookieManager::GetGlobalManager(nullptr));
+		}
 	}
 #elif (PLATFORM_MAC || PLATFORM_IOS) && !BUILD_EMBEDDED_APP
 	DefaultCookieManager = MakeShareable(new FAppleCookieManager());

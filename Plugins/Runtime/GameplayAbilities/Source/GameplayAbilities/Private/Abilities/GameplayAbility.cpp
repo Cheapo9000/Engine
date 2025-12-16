@@ -2057,8 +2057,14 @@ FActiveGameplayEffectHandle UGameplayAbility::ApplyGameplayEffectSpecToOwner(con
 	if (SpecHandle.IsValid() && (HasAuthorityOrPredictionKey(ActorInfo, &ActivationInfo)))
 	{
 		UAbilitySystemComponent* const AbilitySystemComponent = ActorInfo->AbilitySystemComponent.Get();
-		return AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get(), AbilitySystemComponent->GetPredictionKeyForNewAction());
+		FActiveGameplayEffectHandle ReturnHandle = AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get(), AbilitySystemComponent->GetPredictionKeyForNewAction());
 
+		// Force a net update for predicted effects so that short durations are replicated correctly
+		if (ReturnHandle.IsValid() && ActorInfo && ActorInfo->OwnerActor.IsValid() && ActorInfo->OwnerActor->HasAuthority())
+		{
+			AbilitySystemComponent->GetOwner()->ForceNetUpdate();
+		}
+		return ReturnHandle;
 	}
 	return FActiveGameplayEffectHandle();
 }

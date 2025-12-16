@@ -499,6 +499,9 @@ FMetalDynamicRHI::FMetalDynamicRHI(ERHIFeatureLevel::Type RequestedFeatureLevel)
 		GMaxRHIShaderPlatform = SP_METAL_SM5;
 	}
 	
+	// Metal always uses AIR. This is used to differentiate standard and preview shaders in the DDC.
+	GRHIGlobals.PreferredPreviewShaderCodeFormat = TEXT("AIR");
+
 #if PLATFORM_SUPPORTS_MESH_SHADERS
     GRHISupportsMeshShadersTier0 = RHISupportsMeshShadersTier0(GMaxRHIShaderPlatform);
     GRHISupportsMeshShadersTier1 = RHISupportsMeshShadersTier1(GMaxRHIShaderPlatform);
@@ -518,9 +521,8 @@ FMetalDynamicRHI::FMetalDynamicRHI(ERHIFeatureLevel::Type RequestedFeatureLevel)
 	}
 	
 	GRHIGlobals.bSupportsBindless = RHIGetRuntimeBindlessConfiguration(GMaxRHIShaderPlatform) != ERHIBindlessConfiguration::Disabled;
-
-	// Bindless is technically unlimited so we set 32 as Max UAV's, < SM5 8 
-	GRHIGlobals.MaxSimultaneousUAVs = GMaxRHIFeatureLevel >= ERHIFeatureLevel::SM6 ? 32 : 8;
+	
+	GRHIGlobals.MaxSimultaneousUAVs = FMath::Min(METAL_MAX_TEXTURES, METAL_MAX_BUFFERS);
 	
 	ValidateTargetedRHIFeatureLevelExists(GMaxRHIShaderPlatform);
 	

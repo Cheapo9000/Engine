@@ -112,7 +112,7 @@ LLM_DEFINE_TAG(SceneCulling, NAME_None, NAME_None, GET_STATFNAME(STAT_SceneCulli
 
 static TAutoConsoleVariable<int32> CVarSceneCullingPrecomputed(
 	TEXT("r.SceneCulling.Precomputed"), 
-	1, 
+	0, 
 	TEXT("Enable/Disable precomputed spatial hashes for scene culling."),
 	ECVF_RenderThreadSafe | ECVF_ReadOnly);
 

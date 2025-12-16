@@ -13,6 +13,7 @@
 #include "Render/Viewport/IDisplayClusterViewportManagerProxy.h"
 
 #include "RHICommandList.h"
+#include "RHIUtilities.h"
 
 
 FDisplayClusterFrameQueueItem::FDisplayClusterFrameQueueItem(const FDisplayClusterFrameQueueItem& Other)
@@ -24,7 +25,7 @@ FDisplayClusterFrameQueueItem::FDisplayClusterFrameQueueItem(const FDisplayClust
 		{
 			NewItem.Texture = CreateTexture(View.Value.Texture);
 			FRHICommandListImmediate& RHICmdList = GetImmediateCommandList_ForRenderCommand();
-			RHICmdList.CopyTexture(View.Value.Texture.GetReference(), NewItem.Texture, FRHICopyTextureInfo());
+			TransitionAndCopyTexture(RHICmdList, View.Value.Texture.GetReference(), NewItem.Texture, FRHICopyTextureInfo());
 		}
 	}
 }
@@ -52,7 +53,7 @@ void FDisplayClusterFrameQueueItem::SaveView(FRHICommandListImmediate& RHICmdLis
 	// Copy texture data
 	if (View->Texture.IsValid())
 	{
-		RHICmdList.CopyTexture(Texture, View->Texture.GetReference(), FRHICopyTextureInfo());
+		TransitionAndCopyTexture(RHICmdList, Texture, View->Texture.GetReference(), FRHICopyTextureInfo());
 	}
 }
 
@@ -78,7 +79,7 @@ void FDisplayClusterFrameQueueItem::LoadView(FRHICommandListImmediate& RHICmdLis
 		}
 		else
 		{
-			RHICmdList.CopyTexture(View->Texture.GetReference(), Texture, FRHICopyTextureInfo());
+			TransitionAndCopyTexture(RHICmdList, View->Texture.GetReference(), Texture, FRHICopyTextureInfo());
 		}
 	}
 }
@@ -134,19 +135,19 @@ FTextureRHIRef FDisplayClusterFrameQueueItem::CreateTexture(FRHITexture* Referen
 		const int32 SizeY = ReferenceTexture->GetDesc().Extent.Y;
 		const EPixelFormat Format = ReferenceTexture->GetFormat();
 
+		// Preserve sRGB flag from the reference
+		const ETextureCreateFlags RefFlags = ReferenceTexture->GetFlags();
+		const bool bIsSRGB = EnumHasAnyFlags(RefFlags, ETextureCreateFlags::SRGB);
+		const ETextureCreateFlags NewSRGBFlags = (bIsSRGB ? ETextureCreateFlags::SRGB : ETextureCreateFlags::None);
+		const ETextureCreateFlags NewFlags = NewSRGBFlags | ETextureCreateFlags::ShaderResource | ETextureCreateFlags::MultiGPUGraphIgnore;
+
 		// Prepare description
 		FRHITextureCreateDesc Desc =
 			FRHITextureCreateDesc::Create2D(TEXT("DisplayClusterFrameQueueCacheTexture"), SizeX, SizeY, Format)
 			.SetClearValue(FClearValueBinding::Black)
 			.SetNumMips(1)
-			.SetFlags(ETextureCreateFlags::MultiGPUGraphIgnore)
+			.SetFlags(NewFlags)
 			.SetInitialState(ERHIAccess::SRVMask);
-
-		// Leave original flags, but make sure it's ResolveTargetable but not RenderTargetable
-		ETextureCreateFlags Flags = ReferenceTexture->GetFlags();
-		Flags &= ~ETextureCreateFlags::RenderTargetable;
-		Flags |= ETextureCreateFlags::ResolveTargetable;
-		Desc.SetFlags(Flags);
 
 		// Create texture
 		return RHICreateTexture(Desc);

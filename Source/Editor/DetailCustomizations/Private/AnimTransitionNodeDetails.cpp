@@ -276,10 +276,10 @@ void FAnimTransitionNodeDetails::CustomizeDetails( IDetailLayoutBuilder& DetailB
 		//////////////////////////////////////////////////////////////////////////
 
 		IDetailCategoryBuilder& NotificationCategory = DetailBuilder.EditCategory("Notifications", LOCTEXT("NotificationsCategoryTitle", "Notifications") );
-
-		CreateTransitionEventPropertyWidgets(NotificationCategory, TEXT("TransitionStart"), false);
-		CreateTransitionEventPropertyWidgets(NotificationCategory, TEXT("TransitionEnd"), false);
-		CreateTransitionEventPropertyWidgets(NotificationCategory, TEXT("TransitionInterrupt"), false);
+		
+		AddTransitionEventField(NotificationCategory, TEXT("TransitionStart"));
+		AddTransitionEventField(NotificationCategory, TEXT("TransitionEnd"));
+		AddTransitionEventField(NotificationCategory, TEXT("TransitionInterrupt"));
 	}
 
 	DetailBuilder.HideProperty(GET_MEMBER_NAME_CHECKED(UAnimStateTransitionNode, TransitionStart));
@@ -497,58 +497,53 @@ EVisibility FAnimTransitionNodeDetails::GetBlendGraphButtonVisibility(bool bMult
 	return EVisibility::Hidden;
 }
 
-
-void FAnimTransitionNodeDetails::CreateTransitionEventPropertyWidgets(IDetailCategoryBuilder& TransitionCategory, FString TransitionName, bool bInWarnAboutDeprecation)
+TSharedPtr<IPropertyHandle> FAnimTransitionNodeDetails::GetTransitionEventProperty(const IDetailCategoryBuilder& TransitionCategory, const FString& TransitionName)
 {
 	TSharedPtr<IPropertyHandle> NameProperty = TransitionCategory.GetParentLayout().GetProperty(*(TransitionName + TEXT(".NotifyName")));
+	return NameProperty;
+}
 
-	IDetailPropertyRow& Row = TransitionCategory.AddProperty(NameProperty);
+void FAnimTransitionNodeDetails::AddTransitionEventField(IDetailCategoryBuilder& TransitionCategory, const FString& TransitionName)
+{
+	TSharedPtr<IPropertyHandle> Property = GetTransitionEventProperty(TransitionCategory, TransitionName);
+	BuildTransitionEventRow(TransitionCategory.AddProperty(Property), Property);
+}
 
-	if (bInWarnAboutDeprecation)
-	{
-		const FSlateBrush* WarningIcon = FAppStyle::GetBrush("Icons.WarningWithColor");
-
-		Row.CustomWidget()
-		.NameContent()
-		[
-			SNew(SHorizontalBox)
-			.ToolTipText(LOCTEXT("AnimStateEventDeprecatedTooltip", "This is no longer recommended. The recommended approach is to use the anim node function versions."))
-			.Visibility(EVisibility::Visible)
+void FAnimTransitionNodeDetails::BuildTransitionEventRow(IDetailPropertyRow& Row, const TSharedPtr<IPropertyHandle>& NameProperty, const FText& InfoText)
+{
+	Row.CustomWidget()
+	.NameContent()
+	[
+		SNew(SHorizontalBox)
+		.ToolTipText(InfoText)
+		.Visibility(EVisibility::Visible)
 			
-			+SHorizontalBox::Slot()
-			.VAlign(VAlign_Center)
-			.AutoWidth()
-			[
-				NameProperty->GetParentHandle()->CreatePropertyNameWidget()
-			]
-
-			+SHorizontalBox::Slot()
-			.VAlign(VAlign_Center)
-			.AutoWidth()
-			.HAlign(HAlign_Right)
-			.Padding(4.0f, 0.0f, 0.0f, 0.0f)
-			[
-				SNew(SImage)
-				.Image(WarningIcon)
-			]
-		]
-		.ValueContent()
-		[
-			NameProperty->CreatePropertyValueWidget()
-		];
-	}
-	else
-	{
-		Row.CustomWidget()
-		.NameContent()
+		+SHorizontalBox::Slot()
+		.VAlign(VAlign_Center)
+		.AutoWidth()
 		[
 			NameProperty->GetParentHandle()->CreatePropertyNameWidget()
 		]
-		.ValueContent()
+
+		+SHorizontalBox::Slot()
+		.VAlign(VAlign_Center)
+		.AutoWidth()
+		.HAlign(HAlign_Right)
+		.Padding(8.0f, 0.0f, 0.0f, 0.0f)
 		[
-			NameProperty->CreatePropertyValueWidget()
-		];
-	}
+			SNew(SImage)
+			.Visibility_Lambda([bShouldDisplay = !InfoText.IsEmpty()]()
+			{
+				return bShouldDisplay ? EVisibility::Visible : EVisibility::Hidden;
+			})
+			.Image(FAppStyle::GetBrush("Icons.Info"))
+			.ColorAndOpacity(FSlateColor::UseSubduedForeground())
+		]
+	]
+	.ValueContent()
+	[
+		NameProperty->CreatePropertyValueWidget()
+	];
 }
 
 TSharedRef<SWidget> FAnimTransitionNodeDetails::GetWidgetForInlineShareMenu(const TAttribute<FText>& InSharedNameText, const TAttribute<bool>& bInIsCurrentlyShared, FOnClicked PromoteClick, FOnClicked DemoteClick, FOnGetContent GetContentMenu)

@@ -49,7 +49,7 @@ void UMoviePipeline::SetupAudioRendering()
 	{
 		AudioState.PrevRenderEveryTickValue = AudioRenderEveryTickCvar->GetInt();
 		// Override it to prevent it from automatically ticking, we'll control this below.
-		AudioRenderEveryTickCvar->Set(0, ECVF_SetByConstructor);
+		AudioRenderEveryTickCvar->SetWithCurrentPriority(0, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 }
 
@@ -64,8 +64,7 @@ void UMoviePipeline::TeardownAudioRendering()
 	// This will be null if the NRT wasn't used (module not loaded).
 	if (AudioRenderEveryTickCvar)
 	{
-		AudioRenderEveryTickCvar->Set(AudioState.PrevRenderEveryTickValue, ECVF_SetByConstructor);
-
+		AudioRenderEveryTickCvar->SetWithCurrentPriority(AudioState.PrevRenderEveryTickValue, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 }
 

@@ -98,6 +98,7 @@
 #include "GameFramework/Character.h"
 #include "Systems/MovieSceneTransformOriginSystem.h"
 #include "Tracks/IMovieSceneTransformOrigin.h"
+#include "Transform/AnimationEvaluation.h"
 
 /* FSkelMeshRecorder
  ***********/
@@ -4148,6 +4149,7 @@ static void TickFrame(const FFrameNumber& FrameNumber,float DeltaTime, UMovieSce
 	UWorld* World = GCurrentLevelEditingViewportClient ? GCurrentLevelEditingViewportClient->GetWorld() : nullptr;
 	if (World)
 	{
+		const UE::Anim::FEvaluationForCachingScope CachingScope(DeltaTime);
 		const FConstraintsManagerController& Controller = FConstraintsManagerController::Get(World);
 		Controller.EvaluateAllConstraints();
 	}
@@ -5082,7 +5084,6 @@ static void GetSequencerActorWorldTransforms(IMovieScenePlayer* Player, FMovieSc
 			OutTransforms.SetNum(Frames.Num());
 
 			FFrameRate TickResolution = MovieScene->GetTickResolution();
-			FFrameRate DisplayRate = MovieScene->GetDisplayRate();
 			const TArray<IMovieSceneToolsAnimationBakeHelper*>& BakeHelpers = FMovieSceneToolsModule::Get().GetAnimationBakeHelpers();
 
 			for (IMovieSceneToolsAnimationBakeHelper* BakeHelper : BakeHelpers)
@@ -5093,6 +5094,7 @@ static void GetSequencerActorWorldTransforms(IMovieScenePlayer* Player, FMovieSc
 				}
 			}
 
+			const float DisplayRate = static_cast<float>(MovieScene->GetDisplayRate().AsDecimal());
 			for (int32 Index = 0; Index < Frames.Num(); ++Index)
 			{
 				FFrameNumber FrameNumber = Frames[Index];
@@ -5114,8 +5116,11 @@ static void GetSequencerActorWorldTransforms(IMovieScenePlayer* Player, FMovieSc
 				Player->GetEvaluationTemplate().EvaluateSynchronousBlocking(Context);
 
 
-				const FConstraintsManagerController& Controller = FConstraintsManagerController::Get(Actor->GetWorld());
-				Controller.EvaluateAllConstraints();
+				{
+					const UE::Anim::FEvaluationForCachingScope CachingScope(DisplayRate > 0.f ? 1.f / DisplayRate : 1.f / 30.f);
+					const FConstraintsManagerController& Controller = FConstraintsManagerController::Get(Actor->GetWorld());
+					Controller.EvaluateAllConstraints();
+				}
 					
 				for (IMovieSceneToolsAnimationBakeHelper* BakeHelper : BakeHelpers)
 				{

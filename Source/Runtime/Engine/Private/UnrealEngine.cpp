@@ -16355,6 +16355,9 @@ void UEngine::TrimMemory()
 		[](FRHICommandList& RHICmdList)
 		{
 			GRHICommandList.GetImmediateCommandList().ImmediateFlush(EImmediateFlushType::FlushRHIThread);
+#if !WITH_EDITOR
+			GetRendererModule().ReleaseVirtualTexturePendingResources();
+#endif			
 			RHIFlushResources();
 			GRHICommandList.GetImmediateCommandList().ImmediateFlush(EImmediateFlushType::FlushRHIThreadFlushResources);
 		});

@@ -9,6 +9,7 @@
 #if RHI_RAYTRACING
 
 class FGPUScene;
+class FGPUSceneResourceParametersRHI;
 struct FRayTracingCullingParameters;
 struct FDFVector3;
 
@@ -124,6 +125,19 @@ public:
 	RENDERER_API void BuildRayTracingInstanceBuffer(
 		FRHICommandList& RHICmdList,
 		const FGPUScene* GPUScene,
+		const FRayTracingCullingParameters* CullingParameters,
+		FRHIUnorderedAccessView* InstancesUAV,
+		FRHIUnorderedAccessView* HitGroupContributionsUAV,
+		uint32 MaxNumInstances,
+		bool bCompactOutput,
+		FRHIUnorderedAccessView* OutputStatsUAV,
+		uint32 OutputStatsOffset,
+		FRHIUnorderedAccessView* InstanceExtraDataUAV);
+
+	RENDERER_API void BuildRayTracingInstanceBuffer(
+		FRHICommandList& RHICmdList,
+		const FGPUScene* GPUScene,
+		const FGPUSceneResourceParametersRHI* GPUSceneParameters,
 		const FRayTracingCullingParameters* CullingParameters,
 		FRHIUnorderedAccessView* InstancesUAV,
 		FRHIUnorderedAccessView* HitGroupContributionsUAV,

@@ -558,6 +558,7 @@ void FDataflowEditorVertexAttributePaintToolData::UpdateNode(TObjectPtr<UDataflo
 							LOCTEXT("DataflowEditorVertexAttributePaintTool_ChangeDescription", "Update Weight Map Node")
 						);
 					}
+					Dataflow->MarkPackageDirty();
 				}
 
 				// apply the new values to the node

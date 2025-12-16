@@ -97,6 +97,8 @@ private:
 	double AccumulatedValue = 0.0;
 	/** Number of values within the period at the most recent update time. */
 	int32 AccumulatedValueCount = 0;
+	/** Whether values have been added since the last update. */
+	bool bUpdatePending = false;
 	/** Mutex that can be used to synchronize access to the stat from multiple threads. */
 	FMutex Mutex;
 };

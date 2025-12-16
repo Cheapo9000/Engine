@@ -2489,7 +2489,7 @@ void SControlRigOutliner::HandleOnObjectBoundToControlRig(UObject* InObject)
 	//just refresh the views, but do so on next tick since with FK control rig's the controls aren't set up
 	//until AFTER we are bound.
 	TWeakPtr<SControlRigOutliner> WeakPtr = StaticCastSharedRef<SControlRigOutliner>(AsShared()).ToWeakPtr();
-	FFunctionGraphTask::CreateAndDispatchWhenReady([WeakPtr]()
+	ExecuteOnGameThread(UE_SOURCE_LOCATION, [WeakPtr]()
 	{
 		if (WeakPtr.IsValid())
 		{
@@ -2506,7 +2506,7 @@ void SControlRigOutliner::HandleOnObjectBoundToControlRig(UObject* InObject)
 				}
 			}
 		}
-	}, TStatId(), nullptr, ENamedThreads::GameThread);
+	});
 }
 
 void SControlRigOutliner::HandlePostConstruction(UControlRig* InControlRig, const FName& InEventName)

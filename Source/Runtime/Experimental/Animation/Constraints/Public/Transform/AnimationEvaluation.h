@@ -123,4 +123,17 @@ private:
 	FDelegateHandle ConstraintsNotificationHandle;
 };
 
+/**
+ * FEvaluationForCachingScope provides a way to set the delta time when updating the animations.
+ * This class is currently not thread safe and won't update the delta time on re-entrant calls.
+*/
+
+struct FEvaluationForCachingScope : public FNoncopyable
+{
+	CONSTRAINTS_API FEvaluationForCachingScope(const float InDeltaTime = 1.f / 30.f);
+	CONSTRAINTS_API ~FEvaluationForCachingScope();
+};
+
+CONSTRAINTS_API bool IsCaching();
+	
 }

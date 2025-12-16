@@ -322,6 +322,14 @@ TFuture<bool> UInterchangeMeshUtilities::InternalImportCustomLod(TSharedPtr<TPro
 				UStaticMesh* SourceStaticMesh = Cast< UStaticMesh >(ImportResult.GetFirstAssetOfClass(UStaticMesh::StaticClass()));
 				if(SourceStaticMesh)
 				{
+					// If an imported static mesh does not have LODs, UEFN is setting LOD group to 'Default'.
+					// Therefore creating at least 2 more LODs. But, UStaticMesh::SetCustomLOD is using the targeted LOD index from the source
+					// static mesh if this one exists. If a LOD group is added, the source model at this index does not exist. Hence the failure.
+					// To circumvent any potential LOD addition after import, make sure the imported mesh has only LOD0 which is the one requested
+					for (int32 LODIndex = SourceStaticMesh->GetNumLODs() - 1; LODIndex > 0; --LODIndex)
+					{
+						SourceStaticMesh->RemoveSourceModel(LODIndex);
+					}
 					Promise->SetValue(StaticMesh->SetCustomLOD(SourceStaticMesh, LodIndex, SourceDataFilename));
 				}
 				else

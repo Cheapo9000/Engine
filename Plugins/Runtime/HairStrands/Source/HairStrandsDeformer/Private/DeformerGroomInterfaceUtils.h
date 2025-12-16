@@ -46,7 +46,7 @@ namespace UE::Groom::Private
 		return nullptr;
 	}
 	
-	FORCEINLINE void GroomComponentsToInstances(const TArray<const UGroomComponent*>& GroomComponents, TArray<const FHairGroupInstance*>& GroupInstances)
+	FORCEINLINE void GroomComponentsToInstances(const TArray<const UGroomComponent*>& GroomComponents, TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
  	{
  		GroupInstances.Reset();
  		for (const UGroomComponent* GroomComponent : GroomComponents)
@@ -58,14 +58,15 @@ namespace UE::Groom::Private
  				{
  					if(HasDeformationEnabledOrHasMeshDeformer(GroomComponent, GroupIndex) && GroomComponent->GetGroupInstance(GroupIndex))
  					{
- 						GroupInstances.Add(GroomComponent->GetGroupInstance(GroupIndex));
+						const TRefCountPtr<const FHairGroupInstance> GroupInstance(GroomComponent->GetGroupInstance(GroupIndex));
+ 						GroupInstances.Add(GroupInstance);
  					}
  				}
  			}
  		}
  	}
 	FORCEINLINE void GroomComponentsToSkelmeshes(const TArray<const UGroomComponent*>& GroomComponents, TArray<const FSkeletalMeshObject*>& SkeletalMeshes, TArray<FMatrix44f>& SkeletalTransforms,
-		TArray<TArray<FMatrix44f>>& BonesRefToLocals, TArray<TArray<FMatrix44f>>& BindTransforms, TArray<const FHairGroupInstance*>& GroupInstances)
+		TArray<TArray<FMatrix44f>>& BonesRefToLocals, TArray<TArray<FMatrix44f>>& BindTransforms, TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
 	{
 		SkeletalMeshes.Reset();
 		SkeletalTransforms.Reset();
@@ -123,7 +124,7 @@ namespace UE::Groom::Private
 									BonesRefToLocals.Add(RefToLocals);
 									BindTransforms.Add(RefBases);
 									SkeletalMeshes.Add(SkelMesh->MeshObject);
-									GroupInstances.Add(GroomComponent->GetGroupInstance(GroupIndex));
+									GroupInstances.Add(TRefCountPtr<const FHairGroupInstance>(GroomComponent->GetGroupInstance(GroupIndex)));
 								}
 							}
 						}
@@ -149,7 +150,7 @@ namespace UE::Groom::Private
 		}
 	}
 	
-	FORCEINLINE void GatherGroupInstances(const UActorComponent* ActorComponent, TArray<const FHairGroupInstance*>& GroupInstances)
+	FORCEINLINE void GatherGroupInstances(const UActorComponent* ActorComponent, TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
 	{
 		TArray<const UGroomComponent*> GroomComponents;
 		GatherGroomComponents(ActorComponent, GroomComponents);
@@ -158,7 +159,7 @@ namespace UE::Groom::Private
 	}
 
 	FORCEINLINE void GatherGroupSkelmeshes(const UActorComponent* ActorComponent, TArray<const FSkeletalMeshObject*>& SkeletalMeshes, TArray<FMatrix44f>& SkeletalTransforms,
-		TArray<TArray<FMatrix44f>>& BonesRefToLocals, TArray<TArray<FMatrix44f>>& BindTransforms, TArray<const FHairGroupInstance*>& GroupInstances)
+		TArray<TArray<FMatrix44f>>& BonesRefToLocals, TArray<TArray<FMatrix44f>>& BindTransforms, TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
 	{
 		TArray<const UGroomComponent*> GroomComponents;
 		GatherGroomComponents(ActorComponent, GroomComponents);
@@ -180,9 +181,9 @@ namespace UE::Groom::Private
 		return false;
 	}
 
-	static bool HaveGuidesInstanceResources(const TArray<const FHairGroupInstance*>& GroupInstances)
+	static bool HaveGuidesInstanceResources(const TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
 	{
-		for(const FHairGroupInstance* GroupInstance : GroupInstances)
+		for(TRefCountPtr<const FHairGroupInstance> GroupInstance : GroupInstances)
 		{
 			if(!GroupInstance || (GroupInstance && !HaveValidInstanceResources(GroupInstance->Guides)))
 			{
@@ -192,9 +193,9 @@ namespace UE::Groom::Private
 		return true;
 	}
 
-	FORCEINLINE bool HaveStrandsInstanceResources(const TArray<const FHairGroupInstance*>& GroupInstances)
+	FORCEINLINE bool HaveStrandsInstanceResources(const TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
 	{
-		for(const FHairGroupInstance* GroupInstance : GroupInstances)
+		for(TRefCountPtr<const FHairGroupInstance> GroupInstance : GroupInstances)
 		{
 			if(!GroupInstance || (GroupInstance && !HaveValidInstanceResources(GroupInstance->Strands)))
 			{
@@ -221,9 +222,9 @@ namespace UE::Groom::Private
 		return false;
 	}
 
-	static bool HaveGuidesSkinnedResources(const TArray<const FHairGroupInstance*>& GroupInstances)
+	static bool HaveGuidesSkinnedResources(const TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
 	{
-		for(const FHairGroupInstance* GroupInstance : GroupInstances)
+		for(TRefCountPtr<const FHairGroupInstance> GroupInstance : GroupInstances)
 		{
 			if(GroupInstance && GroupInstance->HairGroupPublicData)
 			{
@@ -243,9 +244,9 @@ namespace UE::Groom::Private
 		return true;
 	}
 
-	FORCEINLINE bool HaveStrandsSkinnedResources(const TArray<const FHairGroupInstance*>& GroupInstances)
+	FORCEINLINE bool HaveStrandsSkinnedResources(const TArray<TRefCountPtr<const FHairGroupInstance>>& GroupInstances)
 	{
-		for(const FHairGroupInstance* GroupInstance : GroupInstances)
+		for(TRefCountPtr<const FHairGroupInstance> GroupInstance : GroupInstances)
 		{
 			if(GroupInstance && GroupInstance->HairGroupPublicData)
 			{
@@ -376,7 +377,7 @@ namespace UE::Groom::Private
 						const uint32 NumGroups = GroomComponent->GetGroupCount();
 						for (uint32 GroupIndex = 0; GroupIndex < NumGroups; ++GroupIndex)
 						{
-							if (const FHairGroupInstance* GroupInstance = GroomComponent->GetGroupInstance(GroupIndex))
+							if (TRefCountPtr<const FHairGroupInstance> GroupInstance = TRefCountPtr<const FHairGroupInstance>(GroomComponent->GetGroupInstance(GroupIndex)))
 							{
 								if(FBoxSphereBounds::BoxesIntersect(GroupInstance->GetBounds(), CollisionBounds))
 								{
@@ -507,7 +508,7 @@ namespace UE::Groom::Private
 	{
 		TArray<int32> GroupIndices;
 		TArray<int32> GroupOffsets;
-		TArray<const FHairGroupInstance*> GroupInstances;
+		TArray<TRefCountPtr<const FHairGroupInstance>> GroupInstances;
 	};
 	
 	FORCEINLINE void GetGroomInvocationElementGroups(const TArray<const UGroomComponent*>& GroomComponents, const FName DomainName, TArray<TPair<UGroomAsset*, FGroupElements>>& InvocationGroups,  const bool bSourceElements = false)

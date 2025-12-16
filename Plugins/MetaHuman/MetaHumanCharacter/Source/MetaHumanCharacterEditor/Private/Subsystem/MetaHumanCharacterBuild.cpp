@@ -61,7 +61,8 @@
 #include "LevelSequenceEditorBlueprintLibrary.h"
 #include "LevelSequence.h"
 #include "MovieSceneSequencePlayer.h"
-
+#include "Materials/MaterialInstanceConstant.h"
+#include "Materials/MaterialInstanceDynamic.h"
 
 #define LOCTEXT_NAMESPACE "MetaHumanCharacterBuild"
 
@@ -973,6 +974,13 @@ void FMetaHumanCharacterEditorBuild::DuplicateDepedenciesToNewRoot(
 				const FName UniqueName = MakeUniqueObjectName(GetTransientPackage(), FoundBlueprint->StaticClass());
 				FoundBlueprint->RenameGeneratedClasses(*UniqueName.ToString(), GetTransientPackage(), REN_DontCreateRedirectors);
 			}
+
+			// Any loaded MIDs/MICs of this (older version) MI need to be deleted since their render proxies 
+			// could cause a crash during the render resource update, after the MI is replaced with the latest one
+			if (UMaterialInterface* ParentMI = Cast<UMaterialInterface>(FoundObject))
+			{
+				DeleteMaterialInstanceChildren(ParentMI);
+			}
 		}
 
 		// Duplicate the dependency to the target package so it becomes its new principal asset
@@ -1046,6 +1054,30 @@ void FMetaHumanCharacterEditorBuild::DuplicateDepedenciesToNewRoot(
 			DuplicatedBP->PreEditChange(nullptr);
 			DuplicatedBP->PostEditChange();
 		}
+	}
+}
+
+void FMetaHumanCharacterEditorBuild::DeleteMaterialInstanceChildren(TNotNull<UMaterialInterface*> InParentMI)
+{
+	TArray<UMaterialInstance*> ChildMIs;
+	// Limit the search to MID and MIC types
+	ForEachObjectOfClasses(
+		{ UMaterialInstanceDynamic::StaticClass(), UMaterialInstanceConstant::StaticClass() },
+		[InParentMI, &ChildMIs](UObject* Obj)
+		{
+			if (UMaterialInstance* MI = Cast<UMaterialInstance>(Obj))
+			{
+				// Skip garbage objects
+				if (!MI->HasAnyInternalFlags(EInternalObjectFlags::Garbage) && MI->IsChildOf(InParentMI))
+				{
+					ChildMIs.Add(MI);
+				}
+			}
+		});
+
+	for (UMaterialInstance* MI : ChildMIs)
+	{
+		MI->MarkAsGarbage();
 	}
 }
 
@@ -1170,6 +1202,19 @@ void FMetaHumanCharacterEditorBuild::BuildMetaHumanCharacter(TNotNull<UMetaHuman
 
 	// Path to location the MetaHuman assets will be stored
 	const FString AbsBuildPath = TargetBuildPath / CharacterName;
+
+	// Check that the build path is valid
+	{
+		const bool bIncludeReadOnlyRoots = false;
+		FText OutReason;
+		if (!FPackageName::IsValidLongPackageName(AbsBuildPath, bIncludeReadOnlyRoots, &OutReason))
+		{
+			const FText SuccessMessageText = FText::GetEmpty();
+			const FText FailureMessageText = FText::Format(LOCTEXT("InvalidFullBuildPath", "Invalid assembly path, reason: {0}"), OutReason);
+			ReportMessageLogErrors(false, SuccessMessageText, FailureMessageText);
+			return;
+		}
+	}
 
 	bool bGenerateCollectionAndInstanceAssets = true;
 

@@ -16,6 +16,8 @@
 #include "Serialization/ArchiveCrc32.h"
 #include "UObject/Package.h"
 
+#include "Data/PCGPolygon2DData.inl"
+
 #include UE_INLINE_GENERATED_CPP_BY_NAME(PCGPolygon2DData)
 
 #define LOCTEXT_NAMESPACE "PCGPolygon2DData"
@@ -163,9 +165,9 @@ namespace PCGPolygon2DData
 			switch (Property)
 			{
 			case EPCGPolygon2DProperties::Position:
-				return MakeUnique<FPCGPolygon2DVerticesAccessor<FVector, EPCGPolygon2DProperties::Position>>(bConst);
+				return MakeUnique<PCGTemporary::FPCGPolygon2DVerticesAccessor<FVector, EPCGPolygon2DProperties::Position>>(bConst);
 			case EPCGPolygon2DProperties::LocalPosition:
-				return MakeUnique<FPCGPolygon2DVerticesAccessor<FVector2d, EPCGPolygon2DProperties::LocalPosition>>(bConst);
+				return MakeUnique<PCGTemporary::FPCGPolygon2DVerticesAccessor<FVector2d, EPCGPolygon2DProperties::LocalPosition>>(bConst);
 			case EPCGPolygon2DProperties::Rotation: //fall-through
 			case EPCGPolygon2DProperties::SegmentIndex: //fall-through
 			case EPCGPolygon2DProperties::HoleIndex: //fall-through

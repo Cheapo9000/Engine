@@ -1747,7 +1747,8 @@ public:
 
 			FD3D12Resource* SourceResource = UploadResourceLocation.GetResource();
 			FD3D12Resource* DestResource = D3D12InlineBindingDataBuffer->ResourceLocation.GetResource();
-						
+
+			Context.FlushResourceBarriers();
 			Context.UpdateResidency(DestResource);
 			Context.CopyBufferRegionChecked(
 				DestResource->GetResource(), DestResource->GetName(),

@@ -1295,6 +1295,12 @@ void FD3D12Adapter::InitializeDevices()
 				{
 					GRHIGlobals.PreferredPreviewShaderCodeFormat = TEXT("DXIL");
 				}
+				else
+				{
+					// If SM 6.0 is not supported, we cannot use DXIL and therefore have to use the same code format as D3D11, which is DXBC.
+					// In this case, preview shaders can potentially be shared between D3D11 and D3D12 just like they can be shared in a cook for standard (i.e. non-preview) shaders.
+					GRHIGlobals.PreferredPreviewShaderCodeFormat = TEXT("DXBC");
+				}
 
 				if (D3D12Caps7.MeshShaderTier >= D3D12_MESH_SHADER_TIER_1)
 				{

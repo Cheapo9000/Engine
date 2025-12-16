@@ -1,44 +1,44 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\AutomationTool\\Gauntlet\\Gauntlet.Automation.csproj",
-  "TargetBuildTime": "2025-10-29T23:36:31.9365231+00:00",
+  "TargetBuildTime": "2025-11-20T16:45:18.8562554+00:00",
   "TargetPath": "..\\..\\..\\..\\Binaries\\DotNET\\AutomationTool\\AutomationScripts\\Gauntlet\\Gauntlet.Automation.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\..\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     },
     {
       "ProjectPath": "..\\..\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:57.828737+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:45.0601292+00:00"
     },
     {
       "ProjectPath": "..\\..\\UnrealBuildTool\\UnrealBuildTool.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:01.795139+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:49.1403502+00:00"
     },
     {
       "ProjectPath": "..\\AutomationUtils\\AutomationUtils.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:27.8601502+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:14.8991955+00:00"
     },
     {
       "ProjectPath": "..\\Scripts\\AutomationScripts.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:29.9478514+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:16.8578808+00:00"
     },
     {
       "ProjectPath": "..\\OneSkyLocalization\\OneSkyLocalization.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:29.1711315+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:16.1819035+00:00"
     },
     {
       "ProjectPath": "..\\XLocLocalization\\XLocLocalization.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:29.1880104+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:16.0745948+00:00"
     },
     {
       "ProjectPath": "..\\Localization\\Localization.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:28.5876708+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:15.4789567+00:00"
     },
     {
       "ProjectPath": "..\\Android\\Android.Automation.csproj",
-      "TargetBuildTime": "2025-10-29T23:36:30.7053989+00:00"
+      "TargetBuildTime": "2025-11-20T16:45:17.6129505+00:00"
     }
   ],
   "Dependencies": [

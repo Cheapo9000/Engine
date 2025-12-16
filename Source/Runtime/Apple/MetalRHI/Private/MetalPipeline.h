@@ -19,6 +19,9 @@ typedef __uint128_t FMetalTextureMask;
 #else
 #error "Unsupported Platform!"
 #endif
+
+#define METAL_MAX_BUFFERS 31
+
 typedef uint32 FMetalBufferMask;
 typedef uint16 FMetalSamplerMask;
 

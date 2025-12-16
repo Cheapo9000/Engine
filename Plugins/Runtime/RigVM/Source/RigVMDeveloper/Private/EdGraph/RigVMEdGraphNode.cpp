@@ -2440,7 +2440,7 @@ void URigVMEdGraphNode::RequestRename(float InDelay)
 				
 				if(InDelay < SMALL_NUMBER)
 				{
-					FFunctionGraphTask::CreateAndDispatchWhenReady(RequestRenameLambda, TStatId(), NULL, ENamedThreads::GameThread);
+					ExecuteOnGameThread(UE_SOURCE_LOCATION, RequestRenameLambda);
 				}
 				else
 				{

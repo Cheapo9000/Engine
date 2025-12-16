@@ -464,10 +464,10 @@ void SRigCurveContainer::RefreshCurveList_AnyThread()
 	}
 	else
 	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this]()
 		{
 			RefreshCurveList();
-		}, TStatId(), nullptr, ENamedThreads::GameThread);
+		});
 	}
 }
 
@@ -645,7 +645,7 @@ void SRigCurveContainer::OnHierarchyModified_AnyThread(ERigHierarchyNotification
 		}
 		
 		TWeakObjectPtr<URigHierarchy> WeakHierarchy = InHierarchy;
-		FFunctionGraphTask::CreateAndDispatchWhenReady([this, InNotif, WeakHierarchy,Key]()
+		ExecuteOnGameThread(UE_SOURCE_LOCATION, [this, InNotif, WeakHierarchy,Key]()
 		{
 			if(!WeakHierarchy.IsValid())
 			{
@@ -656,7 +656,7 @@ void SRigCurveContainer::OnHierarchyModified_AnyThread(ERigHierarchyNotification
 			{
 				OnHierarchyModified(InNotif, WeakHierarchy.Get(), Element);
 			}
-		}, TStatId(), NULL, ENamedThreads::GameThread);
+		});
 	}
 }
 

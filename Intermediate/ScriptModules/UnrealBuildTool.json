@@ -1,40 +1,40 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
-  "TargetBuildTime": "2025-10-29T23:36:01.795139+00:00",
+  "TargetBuildTime": "2025-11-20T16:44:49.1403502+00:00",
   "TargetPath": "bin\\Development\\UnrealBuildTool.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:55.1613219+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:42.1727008+00:00"
     },
     {
       "ProjectPath": "..\\Shared\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     },
     {
       "ProjectPath": "..\\Shared\\EpicGames.Horde\\EpicGames.Horde.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:57.828737+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:45.0601292+00:00"
     },
     {
       "ProjectPath": "..\\Shared\\EpicGames.IoHash\\EpicGames.IoHash.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.8679744+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:41.1061252+00:00"
     },
     {
       "ProjectPath": "..\\Shared\\EpicGames.OIDC\\EpicGames.OIDC.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:52.9832133+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.3060617+00:00"
     },
     {
       "ProjectPath": "..\\Shared\\EpicGames.Serialization\\EpicGames.Serialization.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:54.650041+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:41.7645656+00:00"
     },
     {
       "ProjectPath": "..\\Shared\\EpicGames.UBA\\EpicGames.UBA.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:52.9354264+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.2431579+00:00"
     },
     {
       "ProjectPath": "..\\Shared\\EpicGames.UHT\\EpicGames.UHT.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:57.7597014+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:44.918982+00:00"
     }
   ],
   "Dependencies": [

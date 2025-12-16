@@ -172,11 +172,11 @@ void UMovieGraphDefaultAudioRenderer::TeardownAudioRendering() const
 	// This will be null if the NRT wasn't used (module not loaded)
 	if (IConsoleVariable* AudioRenderEveryTickCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("au.nrt.RenderEveryTick")))
 	{
-		AudioRenderEveryTickCvar->Set(AudioState.PrevRenderEveryTickValue, ECVF_SetByConstructor);
+		AudioRenderEveryTickCvar->SetWithCurrentPriority(AudioState.PrevRenderEveryTickValue, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 
 	if (IConsoleVariable* NeverMuteNRTAudioCvar = IConsoleManager::Get().FindConsoleVariable(TEXT("au.NeverMuteNonRealtimeAudioDevices")))
 	{
-		NeverMuteNRTAudioCvar->Set(AudioState.PrevNeverMuteNRTAudioValue, ECVF_SetByConstructor);
+		NeverMuteNRTAudioCvar->SetWithCurrentPriority(AudioState.PrevNeverMuteNRTAudioValue, NAME_None, ECVF_SetByConsole, ECVF_SetByScalability);
 	}
 }

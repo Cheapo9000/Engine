@@ -296,7 +296,7 @@ static TAutoConsoleVariable<int32> CVarNaniteCullingDrawDistance(
 
 static TAutoConsoleVariable<int32> CVarNaniteCullingMinLOD(
 	TEXT("r.Nanite.Culling.MinLOD"),
-	1,
+	0,
 	TEXT("Set to 0 to test disabling Nanite culling based on cluster group MinLOD."),
 	ECVF_RenderThreadSafe
 );

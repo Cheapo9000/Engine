@@ -1,12 +1,12 @@
 {
   "Version": 6,
   "ProjectPath": "..\\..\\Source\\Programs\\Shared\\EpicGames.Perforce\\EpicGames.Perforce.csproj",
-  "TargetBuildTime": "2025-10-29T23:36:25.1410673+00:00",
+  "TargetBuildTime": "2025-11-20T16:45:12.3116902+00:00",
   "TargetPath": "bin\\Development\\net8.0\\EpicGames.Perforce.dll",
   "ProjectReferencesAndTimes": [
     {
       "ProjectPath": "..\\EpicGames.Core\\EpicGames.Core.csproj",
-      "TargetBuildTime": "2025-10-29T23:35:53.3304024+00:00"
+      "TargetBuildTime": "2025-11-20T16:44:40.6575213+00:00"
     }
   ],
   "Dependencies": [

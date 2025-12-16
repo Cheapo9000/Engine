@@ -219,6 +219,7 @@ bool RunRayTracingTestbed_RenderThread(const FString& Parameters)
 		RHICmdList,
 		nullptr,
 		nullptr,
+		nullptr,
 		InstanceBuffer.UAV,
 		GRHIGlobals.RayTracing.RequiresSeparateHitGroupContributionsBuffer ? HitGroupContributionsBuffer.UAV : nullptr,
 		SceneInitializer.MaxNumInstances,

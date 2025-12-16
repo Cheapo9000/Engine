@@ -59,7 +59,7 @@ FNVENC::FNVENC()
 		}
 		else
 		{
-			FAVResult::Log(EAVResult::Warning, TEXT("Failed to get NVENC dll handle. NVENC module will not be available."), TEXT("NVENC"));
+			FAVResult::Log(EAVResult::Unknown, TEXT("Failed to get NVENC dll handle. NVENC module will not be available."), TEXT("NVENC"));
 		}
 	}
 	else

@@ -1445,7 +1445,17 @@ void ProcessTransitionSync2(FVulkanCommandListContext& Context, TArrayView<const
 		if (Data->EventHandle)
 		{
 			checkf(bIsSingleQueue, TEXT("Split barriers must remain on same queue!"));
-			SubmitBarriers(MakeArrayView(BarrierArrays.MemoryBarriers), MakeArrayView(BarrierArrays.BufferBarriers), MakeArrayView(BarrierArrays.ImageBarriers), Data->EventHandle);
+
+			if (BarrierArrays.MemoryBarriers.Num() || BarrierArrays.BufferBarriers.Num() || BarrierArrays.ImageBarriers.Num())
+			{
+				SubmitBarriers(MakeArrayView(BarrierArrays.MemoryBarriers), MakeArrayView(BarrierArrays.BufferBarriers), MakeArrayView(BarrierArrays.ImageBarriers), Data->EventHandle);
+			}
+			else if (!bIsBeginTransition)
+			{
+				// In some cases, transitions result in no barriers (like a destination of Discard for example), make sure we discard the event properly
+				Context.Device.ReleaseBarrierEvent(Data->EventHandle);
+			}
+
 			continue;
 		}
 
