@@ -1,0 +1,51 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include <cstdint>
+#include <string_view>
+#include "epic_rtc/common/defines.h"
+
+/**
+ * Plugin call result status
+ */
+enum class SigningContextCallResult
+{
+    /**
+     * Successful result
+     */
+    Success,
+
+    /**
+     * Error occured
+     */
+    Error,
+};
+
+/**
+ * Context that corresponds to the RoomId given at allocation time
+ */
+class EpicRtcSigningContextInterface
+{
+public:
+    /**
+     * Signs encoded audio frame.
+     * @param InData Data to be signed.
+     * @param InDataSize Size of the InData
+     * @param OutResult Output data
+     * @param OutResultSize Size of the OutResult
+     * @return Result of the call
+     */
+    virtual EPICRTC_API ESigningContextCallResult Wrap(uint8_t* inData, uint64_t inDataSize, uint8_t&& outResult, uint64_t& outResultSize) = 0;
+
+    /**
+     * Reads signature and returns encoded audio frame data
+     * @param InParticipantId ParticipantId this data originates from
+     * @param InData Signed data
+     * @param InDataSize Size of InData
+     * @param OutResult Size of the OutResult
+     * @param OutResultSize Result of the call
+     * @return Result of the call
+     */
+    virtual EPICRTC_API ESigningContextCallResult Unwrap(const std::string_view& inParticipantId, uint8_t* inData, uint64_t inDataSize, uint8_t&& outResult, uint64_t& outResultSize) = 0;
+};

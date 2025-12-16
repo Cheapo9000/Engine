@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AjaCore": "UnrealEditor-AjaCore.dll",
+		"AjaMedia": "UnrealEditor-AjaMedia.dll",
+		"AjaMediaEditor": "UnrealEditor-AjaMediaEditor.dll",
+		"AjaMediaFactory": "UnrealEditor-AjaMediaFactory.dll",
+		"AjaMediaOutput": "UnrealEditor-AjaMediaOutput.dll"
+	}
+}

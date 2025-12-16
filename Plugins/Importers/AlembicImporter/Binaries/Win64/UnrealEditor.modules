@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AlembicImporter": "UnrealEditor-AlembicImporter.dll",
+		"AlembicLibrary": "UnrealEditor-AlembicLibrary.dll"
+	}
+}

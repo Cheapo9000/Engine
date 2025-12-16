@@ -1,0 +1,32 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "NiagaraScriptHighlight.h"
+
+#ifdef NIAGARA_NiagaraScriptHighlight_generated_h
+#error "NiagaraScriptHighlight.generated.h already included, missing '#pragma once' in NiagaraScriptHighlight.h"
+#endif
+#define NIAGARA_NiagaraScriptHighlight_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FNiagaraScriptHighlight *******************************************
+struct Z_Construct_UScriptStruct_FNiagaraScriptHighlight_Statics;
+#define FID_Engine_Plugins_FX_Niagara_Source_Niagara_Classes_NiagaraScriptHighlight_h_10_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FNiagaraScriptHighlight_Statics; \
+	NIAGARA_API static class UScriptStruct* StaticStruct();
+
+
+struct FNiagaraScriptHighlight;
+// ********** End ScriptStruct FNiagaraScriptHighlight *********************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_FX_Niagara_Source_Niagara_Classes_NiagaraScriptHighlight_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

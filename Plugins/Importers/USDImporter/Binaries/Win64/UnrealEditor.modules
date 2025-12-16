@@ -1,0 +1,15 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"GeometryCacheUSD": "UnrealEditor-GeometryCacheUSD.dll",
+		"USDClassesEditor": "UnrealEditor-USDClassesEditor.dll",
+		"USDExporter": "UnrealEditor-USDExporter.dll",
+		"USDSchemas": "UnrealEditor-USDSchemas.dll",
+		"USDStage": "UnrealEditor-USDStage.dll",
+		"USDStageEditor": "UnrealEditor-USDStageEditor.dll",
+		"USDStageEditorViewModels": "UnrealEditor-USDStageEditorViewModels.dll",
+		"USDStageImporter": "UnrealEditor-USDStageImporter.dll",
+		"USDTests": "UnrealEditor-USDTests.dll"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PixelStreaming2": "UnrealEditor-PixelStreaming2.dll",
+		"PixelStreaming2Core": "UnrealEditor-PixelStreaming2Core.dll",
+		"PixelStreaming2Editor": "UnrealEditor-PixelStreaming2Editor.dll",
+		"PixelStreaming2HMD": "UnrealEditor-PixelStreaming2HMD.dll",
+		"PixelStreaming2Input": "UnrealEditor-PixelStreaming2Input.dll",
+		"PixelStreaming2RTC": "UnrealEditor-PixelStreaming2RTC.dll",
+		"PixelStreaming2Servers": "UnrealEditor-PixelStreaming2Servers.dll",
+		"PixelStreaming2Settings": "UnrealEditor-PixelStreaming2Settings.dll"
+	}
+}

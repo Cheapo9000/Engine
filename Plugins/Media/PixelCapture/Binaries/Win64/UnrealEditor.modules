@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PixelCapture": "UnrealEditor-PixelCapture.dll",
+		"PixelCaptureShaders": "UnrealEditor-PixelCaptureShaders.dll"
+	}
+}

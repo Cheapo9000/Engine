@@ -1,0 +1,24 @@
+{
+	"OutputFiles": [
+		"Module.Niagara.1.cpp.obj",
+		"Module.Niagara.2.cpp.obj",
+		"Module.Niagara.3.cpp.obj",
+		"Module.Niagara.4.cpp.obj",
+		"Module.Niagara.5.cpp.obj",
+		"Module.Niagara.6.cpp.obj",
+		"Module.Niagara.7.cpp.obj",
+		"Module.Niagara.8.cpp.obj",
+		"Module.Niagara.9.cpp.obj",
+		"Module.Niagara.10.cpp.obj",
+		"Module.Niagara.11.cpp.obj",
+		"Module.Niagara.12.cpp.obj",
+		"Module.Niagara.13.cpp.obj",
+		"Module.Niagara.14.cpp.obj",
+		"Module.Niagara.15.cpp.obj",
+		"NiagaraDataInterfaceVectorField.ispc_avx512skx.obj",
+		"NiagaraDataInterfaceVectorField.ispc_avx2.obj",
+		"NiagaraDataInterfaceVectorField.ispc_avx.obj",
+		"NiagaraDataInterfaceVectorField.ispc_sse4.obj",
+		"NiagaraDataInterfaceVectorField.ispc.obj"
+	]
+}

@@ -1,0 +1,63 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "InterchangeSparseVolumeTexturePipeline.h"
+
+#ifdef INTERCHANGEPIPELINES_InterchangeSparseVolumeTexturePipeline_generated_h
+#error "InterchangeSparseVolumeTexturePipeline.generated.h already included, missing '#pragma once' in InterchangeSparseVolumeTexturePipeline.h"
+#endif
+#define INTERCHANGEPIPELINES_InterchangeSparseVolumeTexturePipeline_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UInterchangeSparseVolumeTexturePipeline **********************************
+struct Z_Construct_UClass_UInterchangeSparseVolumeTexturePipeline_Statics;
+INTERCHANGEPIPELINES_API UClass* Z_Construct_UClass_UInterchangeSparseVolumeTexturePipeline_NoRegister();
+
+#define FID_Engine_Plugins_Interchange_Runtime_Source_Pipelines_Public_InterchangeSparseVolumeTexturePipeline_h_21_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUInterchangeSparseVolumeTexturePipeline(); \
+	friend struct ::Z_Construct_UClass_UInterchangeSparseVolumeTexturePipeline_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend INTERCHANGEPIPELINES_API UClass* ::Z_Construct_UClass_UInterchangeSparseVolumeTexturePipeline_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UInterchangeSparseVolumeTexturePipeline, UInterchangePipelineBase, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/InterchangePipelines"), Z_Construct_UClass_UInterchangeSparseVolumeTexturePipeline_NoRegister) \
+	DECLARE_SERIALIZER(UInterchangeSparseVolumeTexturePipeline)
+
+
+#define FID_Engine_Plugins_Interchange_Runtime_Source_Pipelines_Public_InterchangeSparseVolumeTexturePipeline_h_21_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	INTERCHANGEPIPELINES_API UInterchangeSparseVolumeTexturePipeline(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UInterchangeSparseVolumeTexturePipeline(UInterchangeSparseVolumeTexturePipeline&&) = delete; \
+	UInterchangeSparseVolumeTexturePipeline(const UInterchangeSparseVolumeTexturePipeline&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(INTERCHANGEPIPELINES_API, UInterchangeSparseVolumeTexturePipeline); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UInterchangeSparseVolumeTexturePipeline); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UInterchangeSparseVolumeTexturePipeline) \
+	INTERCHANGEPIPELINES_API virtual ~UInterchangeSparseVolumeTexturePipeline();
+
+
+#define FID_Engine_Plugins_Interchange_Runtime_Source_Pipelines_Public_InterchangeSparseVolumeTexturePipeline_h_18_PROLOG
+#define FID_Engine_Plugins_Interchange_Runtime_Source_Pipelines_Public_InterchangeSparseVolumeTexturePipeline_h_21_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Interchange_Runtime_Source_Pipelines_Public_InterchangeSparseVolumeTexturePipeline_h_21_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Interchange_Runtime_Source_Pipelines_Public_InterchangeSparseVolumeTexturePipeline_h_21_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UInterchangeSparseVolumeTexturePipeline;
+
+// ********** End Class UInterchangeSparseVolumeTexturePipeline ************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Interchange_Runtime_Source_Pipelines_Public_InterchangeSparseVolumeTexturePipeline_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MfMediaEditor": "UnrealEditor-MfMediaEditor.dll",
+		"MfMediaFactory": "UnrealEditor-MfMediaFactory.dll"
+	}
+}

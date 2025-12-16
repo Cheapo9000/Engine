@@ -1,0 +1,22 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include <memory>
+#include <string_view>
+#include "epic_rtc/common/defines.h"
+#include "ISigningContext.h"
+
+/**
+ * Plugin that implements signing (transforming) encoded data, in and out
+ */
+class EpicRtcSigningPluginInterface
+{
+public:
+    /**
+     * Creates context for the Room.
+     * @param InContextId RoomId
+     * @return EpicRtcSigningContextInterface or nullptr
+     */
+    virtual EPICRTC_API std::shared_ptr<EpicRtcSigningContextInterface> CreateContext(const std::string_view& inContextId) = 0;
+};

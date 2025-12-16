@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MassInsightsAnalysis": "UnrealInsights-MassInsightsAnalysis.dll",
+		"MassInsightsUI": "UnrealInsights-MassInsightsUI.dll"
+	}
+}

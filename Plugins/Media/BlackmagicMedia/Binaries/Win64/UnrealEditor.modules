@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"BlackmagicCore": "UnrealEditor-BlackmagicCore.dll",
+		"BlackmagicMedia": "UnrealEditor-BlackmagicMedia.dll",
+		"BlackmagicMediaEditor": "UnrealEditor-BlackmagicMediaEditor.dll",
+		"BlackmagicMediaFactory": "UnrealEditor-BlackmagicMediaFactory.dll",
+		"BlackmagicMediaOutput": "UnrealEditor-BlackmagicMediaOutput.dll"
+	}
+}

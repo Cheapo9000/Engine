@@ -1,0 +1,12 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ElectraPlayerFactory": "UnrealEditor-ElectraPlayerFactory.dll",
+		"ElectraPlayerPlugin": "UnrealEditor-ElectraPlayerPlugin.dll",
+		"ElectraPlayerPluginHandler": "UnrealEditor-ElectraPlayerPluginHandler.dll",
+		"ElectraPlayerRuntime": "UnrealEditor-ElectraPlayerRuntime.dll",
+		"ElectraProtron": "UnrealEditor-ElectraProtron.dll",
+		"ElectraProtronFactory": "UnrealEditor-ElectraProtronFactory.dll"
+	}
+}

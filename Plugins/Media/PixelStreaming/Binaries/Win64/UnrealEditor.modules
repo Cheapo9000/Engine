@@ -1,0 +1,13 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PixelStreaming": "UnrealEditor-PixelStreaming.dll",
+		"PixelStreamingBlueprint": "UnrealEditor-PixelStreamingBlueprint.dll",
+		"PixelStreamingBlueprintEditor": "UnrealEditor-PixelStreamingBlueprintEditor.dll",
+		"PixelStreamingEditor": "UnrealEditor-PixelStreamingEditor.dll",
+		"PixelStreamingHMD": "UnrealEditor-PixelStreamingHMD.dll",
+		"PixelStreamingInput": "UnrealEditor-PixelStreamingInput.dll",
+		"PixelStreamingServers": "UnrealEditor-PixelStreamingServers.dll"
+	}
+}

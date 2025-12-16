@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"InterchangeOpenUSDEditor": "UnrealEditor-InterchangeOpenUSDEditor.dll",
+		"InterchangeOpenUSDImport": "UnrealEditor-InterchangeOpenUSDImport.dll"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"InterchangeEditor": "UnrealEditor-InterchangeEditor.dll",
+		"InterchangeEditorPipelines": "UnrealEditor-InterchangeEditorPipelines.dll",
+		"InterchangeEditorUtilities": "UnrealEditor-InterchangeEditorUtilities.dll"
+	}
+}
