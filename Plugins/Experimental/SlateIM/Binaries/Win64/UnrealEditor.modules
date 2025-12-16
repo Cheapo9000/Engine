@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"SlateIM": "UnrealEditor-SlateIM.dll",
+		"SlateIMInGame": "UnrealEditor-SlateIMInGame.dll"
+	}
+}

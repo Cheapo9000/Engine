@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PSDImporter": "UnrealEditor-PSDImporter.dll",
+		"PSDImporterCore": "UnrealEditor-PSDImporterCore.dll",
+		"PSDImporterEditor": "UnrealEditor-PSDImporterEditor.dll"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PhysicsControl": "UnrealEditor-PhysicsControl.dll",
+		"PhysicsControlEditor": "UnrealEditor-PhysicsControlEditor.dll",
+		"PhysicsControlUncookedOnly": "UnrealEditor-PhysicsControlUncookedOnly.dll"
+	}
+}

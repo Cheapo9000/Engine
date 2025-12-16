@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"Module.DetailPoseModel.cpp.obj",
+		"DetailPoseModelPoseSearch.ispc_avx512skx.obj",
+		"DetailPoseModelPoseSearch.ispc_avx2.obj",
+		"DetailPoseModelPoseSearch.ispc_avx.obj",
+		"DetailPoseModelPoseSearch.ispc_sse4.obj",
+		"DetailPoseModelPoseSearch.ispc.obj"
+	]
+}

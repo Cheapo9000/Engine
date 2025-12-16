@@ -1,0 +1,108 @@
+#usda 1.0
+(
+    """ This file describes the Unreal Engine's Dynamic Wind custom USD schemas.
+    """
+    subLayers = [
+        @usd/schema.usda@
+    ]
+)
+
+over "GLOBAL" (
+    customData = {
+        string libraryName       = "unrealDynamicWind"
+        string libraryPrefix     = "unreal"
+        bool skipCodeGeneration  = true
+    }
+) {
+}
+
+class "DynamicWindSkeletonAPI" (
+    inherits = </APISchemaBase>
+    customData = {
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Skeleton"]
+    }
+    doc = """This API schema is used by the Unreal Engine's Dynamic Wind plugin to import data that is supplemental to a skeleton,
+    and required for the plugin to simulate skinned foliage wind animation at run time. Its purpose is to classify joints into
+    "simulation groups" which define how sub-sections of the skeleton behave in the wind, and to provide the data for these
+    simulation groups to define this behavior.
+
+    In Unreal Engine, this data is imported as asset user data on the SkeletalMesh. Note that all simulation group data is
+    optional, and that the simulation groups assigned to joints will be created with defaults. They can be edited from the
+    SkeletalMesh properties after import.
+
+    # HOW SIMULATION GROUPS WORK
+
+    Each simulation group has an associated set of data that defines how these joints are influenced by directional wind, and can
+    be modified to obtain desirable behavior. Within each simulation group, the system identifies connected bones as chains. Some
+    of the parameters exposed by this schema have an effect that is applied accordingly to the bone's position in the chain.
+    For instance, a simulation group could provide a range of influence (min/max), and the influence for each bone in the chain
+    will be a single value between the two values, based on it's position in the chain, providing variance.
+
+    While simulation groups theoretically give the author the power to tweak every branch in the skeleton of their foliage
+    individually, it is generally recommended to assign them in some way based on their hierarchy. On a tree, for example, one
+    might assign a simulation group for the trunk, another for large branches, and another for twigs.
+    """
+)
+{
+    uniform token[] unreal:dynamicWind:jointNames = [] (
+        customData = {
+            string apiName = "jointNames"
+        }
+        doc = """The list of joint names for joints relevant to dynamic wind."""
+    )
+
+    uniform int[] unreal:dynamicWind:jointSimulationGroups = [] (
+        customData = {
+            string apiName = "jointSimulationGroups"
+        }
+        doc = """The simulation group index of the joints specified by `joints`."""
+    )
+
+    uniform float[] unreal:dynamicWind:simulationGroupInfluences = [] (
+        customData = {
+            string apiName = "simulationGroupInfluences"
+        }
+        doc = """The influence values of the simulation groups (Default=1). If `simulationGroupNumInfluences` is left empty,
+        all joints are assumed to be single-influence, and there will be one entry in this array for each simulation group.
+        Otherwise, the number of influences should be equal to the sum of all values in `simulationGroupNumInfluences`, which
+        will determine the offset and number of floats read from this array for each simulation group."""
+    )
+
+    uniform int[] unreal:dynamicWind:simulationGroupNumInfluences = [] (
+        customData = {
+            string apiName = "simulationGroupNumInfluences"
+        }
+        doc = """The number of influences per simulation group. Valid values are 1 or 2 (Default = 1)."""
+    )
+
+    uniform float[] unreal:dynamicWind:simulationGroupShiftTops = [] (
+        customData = {
+            string apiName = "simulationGroupShiftTops"
+        }
+        doc = """The ShiftTop value of each simulation group (Default = 0). This is a parameter that is used to attenuate the
+        influence of wind near the end of each bone chain in a simulation group. See DynamicWindSkeletonAPI schema documentation
+        for more details."""
+    )
+
+    uniform int[] unreal:dynamicWind:trunkSimulationGroups = [] (
+        customData = {
+            string apiName = "trunkSimulationGroups"
+        }
+        doc = """A list of simulation group indices, specifying which groups are to be considered tree trunks"""
+    )
+
+    uniform bool unreal:dynamicWind:isGroundCover = false (
+        customData = {
+            string apiName = "isGroundCover"
+        }
+        doc = """Whether or not to treat this object as ground cover."""
+    )
+
+    uniform float unreal:dynamicWind:gustAttenuation = 0.0 (
+        customData = {
+            string apiName = "gustAttenuation"
+        }
+        doc = """Gust attenuation factor for this object (NOTE: affects trunk simulation groups only)."""
+    )
+}

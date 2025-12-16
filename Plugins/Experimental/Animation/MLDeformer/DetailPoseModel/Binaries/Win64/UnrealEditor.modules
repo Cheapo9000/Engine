@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DetailPoseModel": "UnrealEditor-DetailPoseModel.dll",
+		"DetailPoseModelEditor": "UnrealEditor-DetailPoseModelEditor.dll"
+	}
+}

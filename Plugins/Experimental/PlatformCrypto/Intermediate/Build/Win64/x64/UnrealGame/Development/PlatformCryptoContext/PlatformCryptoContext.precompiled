@@ -1,0 +1,9 @@
+{
+	"OutputFiles": [
+		"EncryptionContextOpenSSL.cpp.obj",
+		"PlatformCryptoAesDecryptorsOpenSSL.cpp.obj",
+		"PlatformCryptoAesEncryptorsOpenSSL.cpp.obj",
+		"PlatformCryptoContext.cpp.obj",
+		"PlatformCryptoUtilsOpenSSL.cpp.obj"
+	]
+}

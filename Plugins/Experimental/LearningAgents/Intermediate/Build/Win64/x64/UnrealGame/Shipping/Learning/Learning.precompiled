@@ -1,0 +1,11 @@
+{
+	"OutputFiles": [
+		"Module.Learning.1.cpp.obj",
+		"Module.Learning.2.cpp.obj",
+		"Learning.ispc_avx512skx.obj",
+		"Learning.ispc_avx2.obj",
+		"Learning.ispc_avx.obj",
+		"Learning.ispc_sse4.obj",
+		"Learning.ispc.obj"
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ImagePlate": "UnrealEditor-ImagePlate.dll",
+		"ImagePlateEditor": "UnrealEditor-ImagePlateEditor.dll"
+	}
+}

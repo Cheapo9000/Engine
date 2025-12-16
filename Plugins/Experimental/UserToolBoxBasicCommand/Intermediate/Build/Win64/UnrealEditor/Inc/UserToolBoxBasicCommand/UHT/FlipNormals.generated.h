@@ -1,0 +1,61 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "FlipNormals.h"
+
+#ifdef USERTOOLBOXBASICCOMMAND_FlipNormals_generated_h
+#error "FlipNormals.generated.h already included, missing '#pragma once' in FlipNormals.h"
+#endif
+#define USERTOOLBOXBASICCOMMAND_FlipNormals_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class UFlipNormals *************************************************************
+struct Z_Construct_UClass_UFlipNormals_Statics;
+USERTOOLBOXBASICCOMMAND_API UClass* Z_Construct_UClass_UFlipNormals_NoRegister();
+
+#define FID_Engine_Plugins_Experimental_UserToolBoxBasicCommand_Source_UserToolBoxBasicCommand_Public_FlipNormals_h_15_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUFlipNormals(); \
+	friend struct ::Z_Construct_UClass_UFlipNormals_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend USERTOOLBOXBASICCOMMAND_API UClass* ::Z_Construct_UClass_UFlipNormals_NoRegister(); \
+public: \
+	DECLARE_CLASS2(UFlipNormals, UUTBBaseCommand, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/UserToolBoxBasicCommand"), Z_Construct_UClass_UFlipNormals_NoRegister) \
+	DECLARE_SERIALIZER(UFlipNormals)
+
+
+#define FID_Engine_Plugins_Experimental_UserToolBoxBasicCommand_Source_UserToolBoxBasicCommand_Public_FlipNormals_h_15_ENHANCED_CONSTRUCTORS \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UFlipNormals(UFlipNormals&&) = delete; \
+	UFlipNormals(const UFlipNormals&) = delete; \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UFlipNormals); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UFlipNormals); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UFlipNormals) \
+	NO_API virtual ~UFlipNormals();
+
+
+#define FID_Engine_Plugins_Experimental_UserToolBoxBasicCommand_Source_UserToolBoxBasicCommand_Public_FlipNormals_h_12_PROLOG
+#define FID_Engine_Plugins_Experimental_UserToolBoxBasicCommand_Source_UserToolBoxBasicCommand_Public_FlipNormals_h_15_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Engine_Plugins_Experimental_UserToolBoxBasicCommand_Source_UserToolBoxBasicCommand_Public_FlipNormals_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Engine_Plugins_Experimental_UserToolBoxBasicCommand_Source_UserToolBoxBasicCommand_Public_FlipNormals_h_15_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+class UFlipNormals;
+
+// ********** End Class UFlipNormals ***************************************************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Experimental_UserToolBoxBasicCommand_Source_UserToolBoxBasicCommand_Public_FlipNormals_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

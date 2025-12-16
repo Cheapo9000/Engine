@@ -1,0 +1,25 @@
+args:
+  input_path: "${workspaceFolder}/data/grooms/Hair_S_Messy_Hairline_Back.abc"
+  metadata_path: "${workspaceFolder}/data/output/MetaData/"
+  obj_path: "${workspaceFolder}/data/output/Card/"
+  texture_path: "${workspaceFolder}/data/output/Texture/"
+  output_path: "${workspaceFolder}/data/output/Hair_S_Messy_Hairline_Back"
+  name: "Hair_S_Messy_Hairline_Back"
+  debug: True
+  num_cards: 500
+  v_subdivision: 5
+  h_subdivision: 1
+  area_subd: False
+  atlas_size: 4096
+  num_textures: 80
+  width_scale: 20
+  uv_smoothing_iter: 25
+  accurate_card_geometry: False
+  depth_min_range: -2.0
+  depth_max_range: 2.0
+  depth_min_range: -2.0
+  depth_max_range: 2.0
+
+meta:
+  version: 4.4
+

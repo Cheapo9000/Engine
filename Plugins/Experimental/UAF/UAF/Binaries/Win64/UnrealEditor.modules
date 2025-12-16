@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"UAF": "UnrealEditor-UAF.dll",
+		"UAFEditor": "UnrealEditor-UAFEditor.dll",
+		"UAFTestSuite": "UnrealEditor-UAFTestSuite.dll",
+		"UAFUncookedOnly": "UnrealEditor-UAFUncookedOnly.dll"
+	}
+}

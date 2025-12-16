@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ProceduralVegetation": "UnrealEditor-ProceduralVegetation.dll",
+		"ProceduralVegetationEditor": "UnrealEditor-ProceduralVegetationEditor.dll"
+	}
+}

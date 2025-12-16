@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CurveExpression": "UnrealEditor-CurveExpression.dll",
+		"CurveExpressionEditor": "UnrealEditor-CurveExpressionEditor.dll"
+	}
+}

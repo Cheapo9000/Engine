@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"NaniteDisplacedMesh": "UnrealEditor-NaniteDisplacedMesh.dll",
+		"NaniteDisplacedMeshEditor": "UnrealEditor-NaniteDisplacedMeshEditor.dll"
+	}
+}

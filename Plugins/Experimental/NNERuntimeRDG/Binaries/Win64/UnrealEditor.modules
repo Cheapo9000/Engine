@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"NNEHlslShaders": "UnrealEditor-NNEHlslShaders.dll",
+		"NNERuntimeRDG": "UnrealEditor-NNERuntimeRDG.dll",
+		"NNERuntimeRDGData": "UnrealEditor-NNERuntimeRDGData.dll",
+		"NNERuntimeRDGUtils": "UnrealEditor-NNERuntimeRDGUtils.dll"
+	}
+}

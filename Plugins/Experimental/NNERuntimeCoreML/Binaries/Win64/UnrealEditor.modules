@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"NNERuntimeCoreML": "UnrealEditor-NNERuntimeCoreML.dll",
+		"NNERuntimeCoreMLEditor": "UnrealEditor-NNERuntimeCoreMLEditor.dll"
+	}
+}

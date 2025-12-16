@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"QuicMessaging": "UnrealMultiUserServer-QuicMessaging.dll",
+		"QuicMessagingTransport": "UnrealMultiUserServer-QuicMessagingTransport.dll"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PackedAttributes": "UnrealEditor-PackedAttributes.dll",
+		"PackedAttributesTestSuite": "UnrealEditor-PackedAttributesTestSuite.dll"
+	}
+}

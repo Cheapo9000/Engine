@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PlatformCrypto": "UnrealPak-PlatformCrypto.dll",
+		"PlatformCryptoContext": "UnrealPak-PlatformCryptoContext.dll",
+		"PlatformCryptoTypes": "UnrealPak-PlatformCryptoTypes.dll"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MoverIntegrations": "UnrealEditor-MoverIntegrations.dll",
+		"MoverMassIntegration": "UnrealEditor-MoverMassIntegration.dll"
+	}
+}

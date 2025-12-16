@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PythonScriptPlugin": "UnrealEditor-PythonScriptPlugin.dll",
+		"PythonScriptPluginPreload": "UnrealEditor-PythonScriptPluginPreload.dll"
+	}
+}

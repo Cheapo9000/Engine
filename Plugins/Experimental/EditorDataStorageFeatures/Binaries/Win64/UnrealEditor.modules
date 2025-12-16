@@ -1,0 +1,21 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"TedsActorCompatibility": "UnrealEditor-TedsActorCompatibility.dll",
+		"TedsAlerts": "UnrealEditor-TedsAlerts.dll",
+		"TedsAssetData": "UnrealEditor-TedsAssetData.dll",
+		"TedsContentBrowser": "UnrealEditor-TedsContentBrowser.dll",
+		"TedsDebugger": "UnrealEditor-TedsDebugger.dll",
+		"TedsEditorCompatibility": "UnrealEditor-TedsEditorCompatibility.dll",
+		"TedsEverythingPicker": "UnrealEditor-TedsEverythingPicker.dll",
+		"TedsOutliner": "UnrealEditor-TedsOutliner.dll",
+		"TedsPropertyEditor": "UnrealEditor-TedsPropertyEditor.dll",
+		"TedsQueryStack": "UnrealEditor-TedsQueryStack.dll",
+		"TedsRevisionControl": "UnrealEditor-TedsRevisionControl.dll",
+		"TedsSettings": "UnrealEditor-TedsSettings.dll",
+		"TedsTableViewer": "UnrealEditor-TedsTableViewer.dll",
+		"TedsTypeInfo": "UnrealEditor-TedsTypeInfo.dll",
+		"TedsTypedElementBridge": "UnrealEditor-TedsTypedElementBridge.dll"
+	}
+}

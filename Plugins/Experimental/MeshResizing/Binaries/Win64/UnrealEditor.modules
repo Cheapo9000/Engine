@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MeshResizingCore": "UnrealEditor-MeshResizingCore.dll",
+		"MeshResizingDataflowNodes": "UnrealEditor-MeshResizingDataflowNodes.dll",
+		"MeshResizingEditorTools": "UnrealEditor-MeshResizingEditorTools.dll"
+	}
+}

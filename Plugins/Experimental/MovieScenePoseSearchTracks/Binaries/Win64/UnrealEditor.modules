@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"MovieScenePoseSearchTracks": "UnrealEditor-MovieScenePoseSearchTracks.dll",
+		"MovieScenePoseSearchTracksEditor": "UnrealEditor-MovieScenePoseSearchTracksEditor.dll"
+	}
+}

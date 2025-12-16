@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"DynamicMaterialMediaStreamBridge": "UnrealEditor-DynamicMaterialMediaStreamBridge.dll",
+		"DynamicMaterialMediaStreamBridgeEditor": "UnrealEditor-DynamicMaterialMediaStreamBridgeEditor.dll"
+	}
+}

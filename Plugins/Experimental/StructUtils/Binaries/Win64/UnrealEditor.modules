@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"StructUtils": "UnrealEditor-StructUtils.dll",
+		"StructUtilsEngine": "UnrealEditor-StructUtilsEngine.dll"
+	}
+}

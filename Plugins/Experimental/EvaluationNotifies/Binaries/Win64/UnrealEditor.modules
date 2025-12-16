@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"EvaluationNotifiesEditor": "UnrealEditor-EvaluationNotifiesEditor.dll",
+		"EvaluationNotifiesRuntime": "UnrealEditor-EvaluationNotifiesRuntime.dll"
+	}
+}

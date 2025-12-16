@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"Landmass": "UnrealEditor-Landmass.dll",
+		"LandmassEditor": "UnrealEditor-LandmassEditor.dll"
+	}
+}

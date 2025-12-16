@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"AudioExperimentalRuntime": "UnrealEditor-AudioExperimentalRuntime.dll",
+		"MetasoundExperimentalEditor": "UnrealEditor-MetasoundExperimentalEditor.dll",
+		"MetasoundExperimentalEngineRuntime": "UnrealEditor-MetasoundExperimentalEngineRuntime.dll",
+		"MetasoundExperimentalRuntime": "UnrealEditor-MetasoundExperimentalRuntime.dll"
+	}
+}

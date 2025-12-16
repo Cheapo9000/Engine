@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"Module.NNERuntimeBasicCpu.cpp.obj",
+		"NNERuntimeBasicCpu.ispc_avx512skx.obj",
+		"NNERuntimeBasicCpu.ispc_avx2.obj",
+		"NNERuntimeBasicCpu.ispc_avx.obj",
+		"NNERuntimeBasicCpu.ispc_sse4.obj",
+		"NNERuntimeBasicCpu.ispc.obj"
+	]
+}

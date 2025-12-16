@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RazerChromaDevices": "UnrealEditor-RazerChromaDevices.dll",
+		"RazerChromaEditor": "UnrealEditor-RazerChromaEditor.dll"
+	}
+}

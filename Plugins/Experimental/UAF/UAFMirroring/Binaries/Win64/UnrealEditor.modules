@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"UAFMirroring": "UnrealEditor-UAFMirroring.dll",
+		"UAFMirroringUncookedOnly": "UnrealEditor-UAFMirroringUncookedOnly.dll"
+	}
+}

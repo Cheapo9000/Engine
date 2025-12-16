@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"WebAPI": "UnrealEditor-WebAPI.dll",
+		"WebAPIBlueprintGraph": "UnrealEditor-WebAPIBlueprintGraph.dll",
+		"WebAPIEditor": "UnrealEditor-WebAPIEditor.dll",
+		"WebAPILiquidJS": "UnrealEditor-WebAPILiquidJS.dll",
+		"WebAPIOpenAPI": "UnrealEditor-WebAPIOpenAPI.dll"
+	}
+}

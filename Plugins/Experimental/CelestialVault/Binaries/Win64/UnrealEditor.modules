@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CelestialVault": "UnrealEditor-CelestialVault.dll",
+		"CelestialVaultEditor": "UnrealEditor-CelestialVaultEditor.dll"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PPMChainGraph": "UnrealEditor-PPMChainGraph.dll",
+		"PPMChainGraphEditor": "UnrealEditor-PPMChainGraphEditor.dll"
+	}
+}

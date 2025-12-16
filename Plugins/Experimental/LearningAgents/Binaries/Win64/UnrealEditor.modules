@@ -1,0 +1,12 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"Learning": "UnrealEditor-Learning.dll",
+		"LearningAgents": "UnrealEditor-LearningAgents.dll",
+		"LearningAgentsReplay": "UnrealEditor-LearningAgentsReplay.dll",
+		"LearningAgentsTraining": "UnrealEditor-LearningAgentsTraining.dll",
+		"LearningAgentsTrainingEditor": "UnrealEditor-LearningAgentsTrainingEditor.dll",
+		"LearningTraining": "UnrealEditor-LearningTraining.dll"
+	}
+}

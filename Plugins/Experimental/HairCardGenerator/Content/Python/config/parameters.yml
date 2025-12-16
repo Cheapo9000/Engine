@@ -1,0 +1,33 @@
+geometry:
+  strand_clustering_mode: "all_ctrl_points"
+  margin: 0.03
+  min_strands_per_card: 3
+  opt:
+    name: "LBFGS"
+    strong_wold: True
+    hist_size: 3
+    max_iter: 3
+    num_repetitions: 1
+    lr: 0.01
+    loss:
+      p2p_weight: 2.0
+      laplacian_weight: 1.0
+  post_quant_opt:
+    run: False
+    hist_size: 2
+    max_iter: 3
+    weight_std: 0.2
+rendering:
+  default_width_scale: 20
+  full_atlas_size: 8192
+  pts_per_curve: 128
+  batch_size: 25
+  full_uv_smooth_iter: 25
+quantization:
+  vgg_version: 16
+  num_layers: 9
+  norm_size: 256
+  img_mean: [0.485, 0.456, 0.406]
+  img_std: [0.229, 0.224, 0.225]
+  vgg_img_size: 224
+  batch_size: 20

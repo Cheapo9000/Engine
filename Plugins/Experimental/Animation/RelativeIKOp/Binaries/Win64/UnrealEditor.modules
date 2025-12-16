@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"BodyIntersectIKOp": "UnrealEditor-BodyIntersectIKOp.dll",
+		"RelativeBodyAnimInfo": "UnrealEditor-RelativeBodyAnimInfo.dll",
+		"RelativeBodyAnimUtils": "UnrealEditor-RelativeBodyAnimUtils.dll",
+		"RelativeIKOp": "UnrealEditor-RelativeIKOp.dll"
+	}
+}

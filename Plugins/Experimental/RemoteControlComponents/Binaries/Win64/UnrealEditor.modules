@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RemoteControlComponents": "UnrealEditor-RemoteControlComponents.dll",
+		"RemoteControlComponentsEditor": "UnrealEditor-RemoteControlComponentsEditor.dll"
+	}
+}

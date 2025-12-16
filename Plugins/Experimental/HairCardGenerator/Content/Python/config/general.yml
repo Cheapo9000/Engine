@@ -1,0 +1,4 @@
+dirs:
+  data: "data"
+  output: "data/output"
+  config: "config"

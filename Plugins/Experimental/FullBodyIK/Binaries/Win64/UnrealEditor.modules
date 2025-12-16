@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"FullBodyIK": "UnrealEditor-FullBodyIK.dll",
+		"PBIK": "UnrealEditor-PBIK.dll"
+	}
+}

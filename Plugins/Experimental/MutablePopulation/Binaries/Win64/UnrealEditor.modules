@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"CustomizableObjectPopulation": "UnrealEditor-CustomizableObjectPopulation.dll",
+		"CustomizableObjectPopulationEditor": "UnrealEditor-CustomizableObjectPopulationEditor.dll"
+	}
+}

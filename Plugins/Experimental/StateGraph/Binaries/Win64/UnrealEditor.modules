@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"StateGraph": "UnrealEditor-StateGraph.dll",
+		"StateGraphManager": "UnrealEditor-StateGraphManager.dll"
+	}
+}

@@ -1,0 +1,122 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+$include <include/units.glsli>
+
+// Input information about a line segment
+struct LineSeg
+{
+    vec2 pos_cm[2];
+    float width_cm[2];
+};
+
+// Type for expanded line-brush
+struct LineBrush
+{
+    // Distance to expand line segment in direction normal to line (start=[0] end=[1])
+    float width_radius_cm[2];
+    // Distance to expand line segment with anti-aliasing (start=[0], end=[1])
+    float aa_width_radius_cm[2];
+
+    // Line radius (1/2 length)
+    float length_radius_cm;
+    // Distance to expand anti-alias expand line segment tangent to line (start=end)
+    float aa_length_radius_cm;
+
+    // Width radius expansion vectors (start=[0], end=[1])
+    vec2 aa_width_extend[2];
+    // Length radius expansion vector (start=end)
+    vec2 aa_length_extend;
+};
+
+// Compute brush information (line-segment expansion) in order to emit triangle vertices corresponding to the widened line segment
+void build_line_brush(in float dilation, in LineSeg line_info, in vec2 aa_radius_px, in RenderUnits units, out LineBrush brush)
+{
+    // Relevant coordinate systems:
+    // _cm  - [0,units.card_size_cm]: physical coordinates strand widths and card sizes are in this system
+    // _px  - [0,units.texture_size_px]:  texture pixel coordinates, anti-aliasing sizes are in this space
+    //
+    // scl_[a]_[b] - scale-factor in "units" of [a]/[b] (e.g. scl_px_cm is in pixels/cm)
+    //
+    // NOTE: the computations here assume an orthographic projection with [0,card_size_cm] extents,
+    //       this code won't work for other projections (e.g. perspective)
+    //
+    // brush.<param>[0] - parameter <param> computed for the start of the line segment
+    // brush.<param>[1] - parameter <param> computed for the end of the line segment
+    vec2 line_cm = line_info.pos_cm[1] - line_info.pos_cm[0];
+
+    // We need unit vector tangent/normal to the line in physical space (1cm step)
+    vec2 utan_cm = normalize(line_cm);
+    vec2 unrm_cm = vec2(-utan_cm.y, utan_cm.x);
+
+    // TODO: Test how badly this affects brightness of angled segments
+    // // Compute single-pixel length in physical line-normal direction
+    // float width_1px = length(normalize(unrm_cm / scl_cm_px) * scl_px_ndc);
+    // float length_1px = length(normalize(utan_cm / scl_cm_px) * scl_px_ndc);
+
+    vec2 aa_radius_cm = compute_antialias_params_cm(aa_radius_px, units);
+
+    // Compute actual ndc line widths (without 1px clamping)
+    float widthactual[2] = {line_info.width_cm[0] * dilation, line_info.width_cm[1] * dilation};
+
+    // Compute width params for line start/end
+    for ( int i=0; i < 2; ++i )
+    {
+        // // Clamp line-widths to minimum ~1px (this only really works if the width step is approximately normal to texture compression direction, see todo above)
+        // float widthradius_st = 0.5 * max(len_1px_cm, widthactual_st);
+        // float widthradius_en = 0.5 * max(len_1px_cm, widthactual_en);
+        brush.width_radius_cm[i] = 0.5 * widthactual[i];
+        brush.aa_width_radius_cm[i] = brush.width_radius_cm[i] + aa_radius_cm.x;
+
+        // Compute width extensions + anti-aliasing at start and end of line segment
+        brush.aa_width_extend[i] = brush.aa_width_radius_cm[i] * unrm_cm;
+    }
+
+    // Compute length params for line (start=end)
+    brush.length_radius_cm = 0.5 * length(line_cm);
+    brush.aa_length_radius_cm = brush.length_radius_cm + 2.0 * aa_radius_cm.y;
+
+    brush.aa_length_extend = 2.0 * aa_radius_cm.y * utan_cm;
+}
+
+// Forward declare the shader-specific function for setting per-vertex data
+void gs_set_vertex_attributes(int line_vert_idx);
+
+// This is the function for building widened quads from line segments
+// for both coverage and depth-tested attributes geometry shaders.
+// (shader-specific outputs are set in gs_set_vertex_attributes)
+void gs_emit_vertices()
+{
+    RenderUnits units = {u_card_size_cm, u_viewport_size_px};
+    LineSeg line = {{v_line_pos_cm[1],v_line_pos_cm[2]}, {v_line_width_cm[1],v_line_width_cm[2]}};
+
+    LineBrush brush;
+    build_line_brush(u_dilation, line, u_aa_radius_px, units, brush);
+
+    // vertex INFO for the beginning of the line (shader dependent)
+    gs_set_vertex_attributes(1);
+
+    g_uv = vec2(brush.aa_width_radius_cm[0], -brush.aa_length_radius_cm);
+    g_line_extents = vec2(brush.width_radius_cm[0], brush.length_radius_cm);
+    gl_Position = u_projection * vec4( (v_line_pos_cm[1] + brush.aa_width_extend[0] - brush.aa_length_extend), -v_line_depth_cm[1], 1.0 );
+    EmitVertex();
+
+    g_uv = vec2(-brush.aa_width_radius_cm[0], -brush.aa_length_radius_cm);
+    g_line_extents = vec2(brush.width_radius_cm[0], brush.length_radius_cm);
+    gl_Position = u_projection * vec4( (v_line_pos_cm[1] - brush.aa_width_extend[0] - brush.aa_length_extend), -v_line_depth_cm[1], 1.0 );
+    EmitVertex();
+    
+    // vertex INFO for the end of the line (shader dependent)
+    gs_set_vertex_attributes(2);
+
+    g_uv = vec2(brush.aa_width_radius_cm[1], brush.aa_length_radius_cm);
+    g_line_extents = vec2(brush.width_radius_cm[1], brush.length_radius_cm);
+    gl_Position = u_projection * vec4( (v_line_pos_cm[2] + brush.aa_width_extend[1] + brush.aa_length_extend), -v_line_depth_cm[2], 1.0 );
+    EmitVertex();
+    
+    g_uv = vec2(-brush.aa_width_radius_cm[1], brush.aa_length_radius_cm);
+    g_line_extents = vec2(brush.width_radius_cm[1], brush.length_radius_cm);
+    gl_Position = u_projection * vec4( (v_line_pos_cm[2] - brush.aa_width_extend[1] + brush.aa_length_extend), -v_line_depth_cm[2], 1.0 );
+    EmitVertex();
+        
+    EndPrimitive();
+}

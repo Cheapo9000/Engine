@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"JsonSerialization": "UnrealEditor-JsonSerialization.dll",
+		"XmlSerialization": "UnrealEditor-XmlSerialization.dll"
+	}
+}

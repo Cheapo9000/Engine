@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"PixelStreamingPlayer": "UnrealEditor-PixelStreamingPlayer.dll",
+		"PixelStreamingPlayerEditor": "UnrealEditor-PixelStreamingPlayerEditor.dll"
+	}
+}

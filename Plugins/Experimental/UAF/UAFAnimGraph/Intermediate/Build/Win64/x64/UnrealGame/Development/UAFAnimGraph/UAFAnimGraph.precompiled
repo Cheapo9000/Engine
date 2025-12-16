@@ -1,0 +1,17 @@
+{
+	"OutputFiles": [
+		"Module.UAFAnimGraph.1.cpp.obj",
+		"Module.UAFAnimGraph.2.cpp.obj",
+		"Module.UAFAnimGraph.3.cpp.obj",
+		"ConvertRotationSpace.ispc_avx512skx.obj",
+		"ConvertRotationSpace.ispc_avx2.obj",
+		"ConvertRotationSpace.ispc_avx.obj",
+		"ConvertRotationSpace.ispc_sse4.obj",
+		"ConvertRotationSpace.ispc.obj",
+		"DeadBlending.ispc_avx512skx.obj",
+		"DeadBlending.ispc_avx2.obj",
+		"DeadBlending.ispc_avx.obj",
+		"DeadBlending.ispc_sse4.obj",
+		"DeadBlending.ispc.obj"
+	]
+}

@@ -1,0 +1,32 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "Utils/RenderGridUtils.h"
+
+#ifdef RENDERGRID_RenderGridUtils_generated_h
+#error "RenderGridUtils.generated.h already included, missing '#pragma once' in RenderGridUtils.h"
+#endif
+#define RENDERGRID_RenderGridUtils_generated_h
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin ScriptStruct FRenderGridPreviousEngineFpsSettings ******************************
+struct Z_Construct_UScriptStruct_FRenderGridPreviousEngineFpsSettings_Statics;
+#define FID_Engine_Plugins_Experimental_RenderGrid_Source_RenderGrid_Public_Utils_RenderGridUtils_h_21_GENERATED_BODY \
+	friend struct ::Z_Construct_UScriptStruct_FRenderGridPreviousEngineFpsSettings_Statics; \
+	static class UScriptStruct* StaticStruct();
+
+
+struct FRenderGridPreviousEngineFpsSettings;
+// ********** End ScriptStruct FRenderGridPreviousEngineFpsSettings ********************************
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Engine_Plugins_Experimental_RenderGrid_Source_RenderGrid_Public_Utils_RenderGridUtils_h
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

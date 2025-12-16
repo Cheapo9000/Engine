@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"UAFPoseSearch": "UnrealEditor-UAFPoseSearch.dll",
+		"UAFPoseSearchUncookedOnly": "UnrealEditor-UAFPoseSearchUncookedOnly.dll"
+	}
+}

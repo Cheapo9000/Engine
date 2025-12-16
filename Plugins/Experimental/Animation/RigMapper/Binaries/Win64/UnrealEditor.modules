@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RigMapper": "UnrealEditor-RigMapper.dll",
+		"RigMapperDeveloper": "UnrealEditor-RigMapperDeveloper.dll",
+		"RigMapperEditor": "UnrealEditor-RigMapperEditor.dll"
+	}
+}

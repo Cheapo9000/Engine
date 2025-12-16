@@ -1,0 +1,11 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"IREEDriverRDG": "UnrealEditor-IREEDriverRDG.dll",
+		"IREEUtils": "UnrealEditor-IREEUtils.dll",
+		"NNERuntimeIREE": "UnrealEditor-NNERuntimeIREE.dll",
+		"NNERuntimeIREEEditor": "UnrealEditor-NNERuntimeIREEEditor.dll",
+		"NNERuntimeIREEShader": "UnrealEditor-NNERuntimeIREEShader.dll"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"HierarchyTableAnimationEditor": "UnrealEditor-HierarchyTableAnimationEditor.dll",
+		"HierarchyTableAnimationRuntime": "UnrealEditor-HierarchyTableAnimationRuntime.dll",
+		"HierarchyTableAnimationUncookedOnly": "UnrealEditor-HierarchyTableAnimationUncookedOnly.dll"
+	}
+}

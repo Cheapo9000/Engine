@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"ColorCorrectRegions": "UnrealEditor-ColorCorrectRegions.dll",
+		"ColorCorrectRegionsEditor": "UnrealEditor-ColorCorrectRegionsEditor.dll"
+	}
+}

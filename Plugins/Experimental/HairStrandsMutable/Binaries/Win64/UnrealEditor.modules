@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"HairStrandsMutable": "UnrealEditor-HairStrandsMutable.dll",
+		"HairStrandsMutableEditor": "UnrealEditor-HairStrandsMutableEditor.dll"
+	}
+}

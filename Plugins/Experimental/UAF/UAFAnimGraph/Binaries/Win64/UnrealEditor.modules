@@ -1,0 +1,10 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"UAFAnimGraph": "UnrealEditor-UAFAnimGraph.dll",
+		"UAFAnimGraphEditor": "UnrealEditor-UAFAnimGraphEditor.dll",
+		"UAFAnimGraphTestSuite": "UnrealEditor-UAFAnimGraphTestSuite.dll",
+		"UAFAnimGraphUncookedOnly": "UnrealEditor-UAFAnimGraphUncookedOnly.dll"
+	}
+}
